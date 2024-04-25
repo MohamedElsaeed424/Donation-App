@@ -35,7 +35,8 @@
               "projects/donor/src/assets"
             ],
             "styles": [
-              "projects/donor/src/styles.css"
+              "projects/donor/src/styles.css" ,
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -133,7 +134,8 @@
               "projects/admin/src/assets"
             ],
             "styles": [
-              "projects/admin/src/styles.css"
+              "projects/admin/src/styles.css" ,
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
