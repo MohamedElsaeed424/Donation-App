@@ -1,0 +1,23 @@
+Index: donataion-application/src/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!doctype html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"utf-8\">\r\n  <title>DonataionApplication</title>\r\n  <base href=\"/\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n  <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\r\n</head>\r\n<body>\r\n  <app-root></app-root>\r\n</body>\r\n</html>\r\n
+===================================================================
+diff --git a/donataion-application/src/index.html b/donataion-application/src/index.html
+--- a/donataion-application/src/index.html	
++++ b/donataion-application/src/index.html	
+@@ -1,13 +1,1 @@
+-<!doctype html>
+-<html lang="en">
+-<head>
+-  <meta charset="utf-8">
+-  <title>DonataionApplication</title>
+-  <base href="/">
+-  <meta name="viewport" content="width=device-width, initial-scale=1">
+-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+-</head>
+-<body>
+-  <app-root></app-root>
+-</body>
+-</html>
++<app-root></app-root>
