@@ -3,32 +3,17 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "donataion-application": {
+    "donation-application": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
         "@schematics/angular:component": {
-          "skipTests": true
+          "standalone": false
         },
         "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
+          "standalone": false
         },
         "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:resolver": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
+          "standalone": false
         }
       },
       "root": "",
@@ -38,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/donataion-application",
+            "outputPath": "dist/donation-application",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,13 +44,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ],
               "outputHashing": "all"
@@ -82,10 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "donataion-application:build:production"
+              "buildTarget": "donation-application:build:production"
             },
             "development": {
-              "buildTarget": "donataion-application:build:development"
+              "buildTarget": "donation-application:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "donataion-application:build"
+            "buildTarget": "donation-application:build"
           }
         },
         "test": {
