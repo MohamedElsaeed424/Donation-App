@@ -1,33 +1,40 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "./services/auth.service";
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
-  username: string = '';
-  password: string = '';
+export class LoginComponent implements OnInit{
   signInFrom : FormGroup
+  isValid : boolean = true ;
 
   ngOnInit(){
     this.signInFrom = new FormGroup({
-      'username'  : new FormControl(null) ,
-      'password'  : new FormControl(null) ,
+      'username'  : new FormControl(null , Validators.required),
+      'password'  : new FormControl(null,Validators.required) ,
     })
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService ,  private router : Router) { }
 
   login() {
-    const isAuthenticated = this.authService.login(this.username, this.password);
+    let username = this.signInFrom.get('username').value
+    let password = this.signInFrom.get('password').value
+    const isAuthenticated = this.authService.login(username,password);
     if (isAuthenticated) {
-      // Redirect to the dashboard or another page
+      this.redirectToDashboard()
     } else {
-      // Show error message or handle authentication failure
+      this.isValid = false ;
     }
+  }
+
+  redirectToDashboard(){
+    console.log(this.signInFrom)
+    this.router.navigate(['/Dashboard'] , {queryParams:{username:this.signInFrom.get('username').value}})
   }
 
 }

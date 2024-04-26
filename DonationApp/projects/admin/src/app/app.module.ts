@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {NgOptimizedImage} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { NavbarComponent } from './home-page/navbar/navbar.component';
+import { Dashboard } from './home-page/Dashboard';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent,
+    Dashboard
   ],
   imports: [
     BrowserModule,
