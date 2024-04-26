@@ -1,0 +1,48 @@
+<section class="login-clean rounded-form">
+    <form [formGroup]="donorForm" (ngSubmit)="submitDonorInfo()" class="rounded-form">
+      <div class="form-group">
+        <div class="form-group mb-3">
+          <input type="text" class="form-control" id="clinicAddress" formControlName="clinicAddress" placeholder="Clinic Address">
+        </div>
+        <div *ngIf="donorForm.get('clinicAddress').invalid && donorForm.get('clinicAddress').touched" class="text-danger">
+          Clinic Address is required
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-group mb-3">
+          <input type="text" class="form-control" id="clinicArea" formControlName="clinicArea" placeholder="Clinic Area">
+        </div>
+        <div *ngIf="donorForm.get('clinicArea').invalid && donorForm.get('clinicArea').touched" class="text-danger">
+          Clinic Area is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group mb-3">
+          <input type="text" class="form-control" id="clinicGovernorate" formControlName="clinicGovernorate" placeholder="Clinic Governorate">
+        </div>
+        <div *ngIf="donorForm.get('clinicGovernorate').invalid && donorForm.get('clinicGovernorate').touched" class="text-danger">
+          Clinic Governorate is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group mb-3">
+          <input type="text" class="form-control" id="specialty" formControlName="specialty" placeholder="Specialty">
+        </div>
+        <div *ngIf="donorForm.get('specialty').invalid && donorForm.get('specialty').touched" class="text-danger">
+          Specialty is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-group mb-3">
+          <input type="number" class="form-control" id="proBonoCases" formControlName="proBonoCases" placeholder="Pro-bono Cases">
+        </div>
+        <div *ngIf="donorForm.get('proBonoCases').invalid && donorForm.get('proBonoCases').touched" class="text-danger">
+          Pro-bono Cases is required and must be a positive number
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
