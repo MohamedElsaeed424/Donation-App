@@ -9,6 +9,8 @@ import { DoctorSignupComponent } from './auth/sign-up/doctor-signup/doctor-signu
 import { TeacherSignupComponent } from './auth/sign-up/teacher-signup/teacher-signup.component';
 import { UploadComponent } from './shared/upload/upload.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { GoogleMapComponent } from './shared/google-map/google-map.component';
+import {GoogleMapsModule} from "@angular/google-maps";
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import {ReactiveFormsModule} from "@angular/forms";
     DoctorSignupComponent,
     TeacherSignupComponent,
     UploadComponent,
+    GoogleMapComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule ,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GoogleMapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

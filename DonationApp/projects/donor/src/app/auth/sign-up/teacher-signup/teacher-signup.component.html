@@ -1,0 +1,34 @@
+<section class="login-clean rounded-form">
+  <form [formGroup]="donorTeachingForm" (ngSubmit)="submitDonorTeachingInfo()" class="rounded-form">
+    <!-- Form fields -->
+    <!-- Subjects -->
+    <div class="form-group">
+      <div class="form-group mb-3">
+        <input type="text" class="form-control" id="subjects" formControlName="subjects" placeholder="Subjects">
+      </div>
+      <div *ngIf="donorTeachingForm.get('subjects').invalid && donorTeachingForm.get('subjects').touched" class="text-danger">
+        Subjects are required
+      </div>
+    </div>
+    <!-- Pro-bono Classes -->
+    <div class="form-group">
+      <div class="form-group mb-3">
+        <input type="number" class="form-control" id="proBonoClasses" formControlName="proBonoClasses" placeholder="number of Classes">
+      </div>
+      <div *ngIf="donorTeachingForm.get('proBonoClasses').invalid && donorTeachingForm.get('proBonoClasses').touched" class="text-danger">
+        number of Classes must be a positive number
+      </div>
+    </div>
+    <!-- Pro-bono students -->
+    <div class="form-group">
+      <div class="form-group mb-3">
+        <input type="number" class="form-control" id="proBonoStudents" formControlName="proBonoStudents" placeholder="number of Students">
+      </div>
+      <div *ngIf="donorTeachingForm.get('proBonoStudents').invalid && donorTeachingForm.get('proBonoStudents').touched" class="text-danger">
+        number of Students must be a positive number
+      </div>
+    </div>
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</section>
