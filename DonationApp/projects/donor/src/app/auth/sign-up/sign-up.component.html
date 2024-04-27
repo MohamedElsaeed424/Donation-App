@@ -1,2 +1,100 @@
-<app-doctor-signup></app-doctor-signup>
-<app-teacher-signup></app-teacher-signup>
+<section class="login-clean login-clean-wide rounded-form">
+  <form [formGroup]="donorSignupForm" (ngSubmit)="submitDonorSignupInfo()" class="rounded-form">
+    <div class="form-group">
+      <label for="firstName" style="color: #AFF0F2;">First Name:</label>
+      <input type="text" id="firstName" formControlName="firstName" class="form-control" placeholder="Enter your first name">
+      <div *ngIf="donorSignupForm.get('firstName').invalid && donorSignupForm.get('firstName').touched" class="text-danger">
+        First Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName" style="color: #AFF0F2;">Last Name:</label>
+      <input type="text" id="lastName" formControlName="lastName" class="form-control" placeholder="Enter your last name">
+      <div *ngIf="donorSignupForm.get('lastName').invalid && donorSignupForm.get('lastName').touched" class="text-danger">
+        Last Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="gender" style="color: #AFF0F2;">Gender:</label>
+      <select id="gender" formControlName="gender" class="form-control">
+        <option value="">Select gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <div *ngIf="donorSignupForm.get('gender').invalid && donorSignupForm.get('gender').touched" class="text-danger">
+        Gender is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email" style="color: #AFF0F2;">Email:</label>
+      <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email">
+      <div *ngIf="donorSignupForm.get('email').invalid && donorSignupForm.get('email').touched" class="text-danger">
+        Valid email is required
+      </div>
+    </div>
+
+    <!-- Other form fields (contactNumber, password, address, area, governorate) go here -->
+    <div class="form-group">
+      <label for="contactNumber" style="color: #AFF0F2;">Contact Number:</label>
+      <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control" placeholder="Enter your contact number">
+      <div *ngIf="donorSignupForm.get('contactNumber').invalid && donorSignupForm.get('contactNumber').touched" class="text-danger">
+        Contact Number is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password" style="color: #AFF0F2;">Password:</label>
+      <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
+      <div *ngIf="donorSignupForm.get('password').invalid && donorSignupForm.get('password').touched" class="text-danger">
+        Password is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address" style="color: #AFF0F2;">Address:</label>
+      <input type="text" id="address" formControlName="address" class="form-control" placeholder="Enter your address">
+      <div *ngIf="donorSignupForm.get('address').invalid && donorSignupForm.get('address').touched" class="text-danger">
+        Address is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="area" style="color: #AFF0F2;">Area:</label>
+      <input type="text" id="area" formControlName="area" class="form-control" placeholder="Enter your area">
+      <div *ngIf="donorSignupForm.get('area').invalid && donorSignupForm.get('area').touched" class="text-danger">
+        Area is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="governorate" style="color: #AFF0F2;">Governorate:</label>
+      <input type="text" id="governorate" formControlName="governorate" class="form-control" placeholder="Enter your governorate">
+      <div *ngIf="donorSignupForm.get('governorate').invalid && donorSignupForm.get('governorate').touched" class="text-danger">
+        Governorate is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label>
+        <input type="radio" name="role" value="donor" (change)="selectRole('donor')" [checked]="selectedRole === 'donor'">
+        Register as Donor
+      </label>
+      <label>
+        <input type="radio" name="role" value="doctor" (change)="selectRole('doctor')" [checked]="selectedRole === 'doctor'">
+        Register as Doctor
+      </label>
+      <label>
+        <input type="radio" name="role" value="teacher" (change)="selectRole('teacher')" [checked]="selectedRole === 'teacher'">
+        Register as Teacher
+      </label>
+    </div>
+
+    <div *ngIf="selectedRole === 'doctor'">
+      <app-doctor-signup></app-doctor-signup>
+    </div>
+    <div *ngIf="selectedRole === 'teacher'">
+      <app-teacher-signup></app-teacher-signup>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</section>
+
+
