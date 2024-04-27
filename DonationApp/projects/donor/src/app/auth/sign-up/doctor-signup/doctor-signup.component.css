@@ -1,6 +1,6 @@
 .login-clean {
-  background: #043B38; /* Dark Teal */
-  padding: 80px 0;
+  background: transparent; /* Dark Teal */
+  padding: 8px 0;
 }
 
 .login-clean form {

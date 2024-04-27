@@ -24,6 +24,8 @@
 
 
 
+
+
 .login-clean {
   background: #043B38; /* Dark Teal */
   padding: 80px 0;
@@ -60,7 +62,7 @@
 }
 
 .login-clean form .btn-primary {
-  background: #30D9C8; /* Bright Cyan */
+  background: #0a3622; /* Bright Cyan */
   border: none;
   border-radius: 4px;
   padding: 10px 20px; /* Reduced padding */
