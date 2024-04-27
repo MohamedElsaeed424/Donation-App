@@ -11,7 +11,7 @@
 <section class="login-clean"
          style="background-color: transparent;font-family:  Poppins, sans-serif; border-radius: 1000px">
   <div class="rounded-form">
-    <form [formGroup]="signInFrom" (ngSubmit)="login()" method="post" style="margin-top: 40px;" action="login.html">
+    <form [formGroup]="signInFrom" (ngSubmit)="login()" method="post" style="margin-top: 40px;" >
       <h2 class="visually-hidden">Login Form</h2>
       <div class="illustration"><img ngSrc="assets/ApplicationLogo.webp" alt="Description of the image"
                                      class="rounded-image" height="180"
@@ -27,7 +27,7 @@
       <div class="form-group mb-3">
         <button class="btn btn-primary d-block w-100" type="submit" style="background-color: #043b38; ">Login</button>
       </div>
-      <span *ngIf="!isValid"  style="color: red; align-content: center;align-content: center">Invalid login info</span>
+      <span *ngIf="!isValid"  style="color: red; align-content: center;">Invalid login info</span>
     </form>
   </div>
 </section>
