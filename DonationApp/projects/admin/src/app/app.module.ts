@@ -7,12 +7,17 @@ import { LoginComponent } from './login/login.component';
 import {NgOptimizedImage} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DropdownDirective} from "./shared/dropdown.directive";
+import { NavbarComponent } from './home-page/navbar/navbar.component';
+import { Dashboard } from './home-page/Dashboard';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent ,
-    DropdownDirective
+    DropdownDirective,
+    LoginComponent,
+    NavbarComponent,
+    Dashboard
   ],
   imports: [
     BrowserModule,

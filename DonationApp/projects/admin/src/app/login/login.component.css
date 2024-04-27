@@ -91,6 +91,7 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
   border-radius: 20px; /* Adjust the value to control the roundness of the corners */
 }
 
+
 :root, [data-bs-theme=light] {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
