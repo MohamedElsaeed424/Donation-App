@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, HostListener} from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthService} from "../login/services/auth.service";
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,7 @@ import {Router} from "@angular/router";
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  public constructor(private route:Router ) {
+  public constructor(private route:Router , private elementRef:ElementRef ,private authservice:AuthService) {
   }
   organizationsDropdownOpen = false;
   donorsDropdownOpen = false;
@@ -24,4 +25,15 @@ export class NavbarComponent {
   toggleSettingsDropdown() {
     this.settingsDropdownOpen = !this.settingsDropdownOpen;
   }
+
+  @HostListener('document:click', ['$event'])
+  closeDropdownOnClickOutside(event: MouseEvent) {
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+      this.elementRef.nativeElement.close();
+    }
+  }
+  Logout(){
+    this.authservice.isLoggedIn = false ;
+  }
+
 }
