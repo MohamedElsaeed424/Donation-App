@@ -21,6 +21,25 @@
               Last Name is required
             </div>
           </div>
+          <div class="form-group">
+            <div class="row-cols-2">
+              <label for="Organization name" style="color: #333;">Organization Name:</label>
+              <input type="text" id="Organization name" formControlName="Organization name" class="form-control" placeholder="Enter your Organization name">
+              <div *ngIf="donorSignupForm.get('Organization').invalid && donorSignupForm.get('Organization name').touched" class="text-danger">
+                Organization name is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row-cols-2">
+              <label for="organization type" style="color: #333;">Organization type:</label>
+              <input type="text" id="organization type" formControlName="organization type" class="form-control" placeholder="Enter your Organization type">
+              <div *ngIf="donorSignupForm.get('organization type').invalid && donorSignupForm.get('organization type').touched" class="text-danger">
+                Organization type is required
+              </div>
+            </div>
+
+          </div>
 
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -94,32 +113,7 @@
                 Governorate is required
               </div>
             </div>
-            <div class="form-group col-md-6">
-              <!-- i want to make them beside each other -->
-              <div class="radio-group">
-                <label style="color:#0a3622;">Role:</label>
-                <div class="row">
-                  <div class="col-md-3" style="margin-right: auto">
-                    <label class="radio-label">
-                      <input type="radio" name="role" value="donor" (change)="selectRole('donor')" [checked]="selectedRole === 'donor'">
-                      Donor
-                    </label>
-                  </div>
-                  <div class="col-md-3" style="margin-right: auto">
-                    <label class="radio-label">
-                      <input type="radio" name="role" value="doctor" (change)="selectRole('doctor')" [checked]="selectedRole === 'doctor'">
-                      Doctor
-                    </label>
-                  </div>
-                  <div class="col-md-3" style="margin-right: auto">
-                    <label class="radio-label">
-                      <input type="radio" name="role" value="teacher" (change)="selectRole('teacher')" [checked]="selectedRole === 'teacher'">
-                      Teacher
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
                  <button type="submit" class="btn btn-primary">Signup</button>
