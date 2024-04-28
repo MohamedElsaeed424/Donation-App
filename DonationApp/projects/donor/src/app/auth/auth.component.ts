@@ -12,6 +12,6 @@ export class AuthComponent implements OnInit{
   constructor(private  authService : AuthService) { }
 
   ngOnInit(){
-    this.mode = this.authService.login ? 'login' : 'signup';
+    this.mode = this.authService.isLoggedIn ? 'login' : 'signup';
   }
 }
