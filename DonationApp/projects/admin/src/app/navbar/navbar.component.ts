@@ -1,5 +1,5 @@
 import {Component, ElementRef, HostListener} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../login/services/auth.service";
 
 @Component({
@@ -36,4 +36,6 @@ export class NavbarComponent {
     this.authservice.isLoggedIn = false ;
   }
 
-}
+  NaviagteToChnagePassword(){
+    this.route.navigate(["/changePassword"],{queryParams:{username:this.authservice.username}})
+  }}

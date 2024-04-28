@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit{
   }
 
   constructor(private authService: AuthService ,  private router : Router) { }
-
   login() {
     let username = this.signInFrom.get('username').value
     let password = this.signInFrom.get('password').value

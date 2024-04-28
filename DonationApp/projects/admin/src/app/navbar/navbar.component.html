@@ -42,7 +42,7 @@
           <li class="nav-item dropdown"  [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 220px;">
             <a class="dropdown-toggle nav-link" (click)="toggleSettingsDropdown()" href="#" style="margin-left: 530px;">Settings</a>
             <div class="dropdown-menu" [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 480px; max-width: 50px;">
-              <a class="dropdown-item" routerLink = "/changePassword" style="padding: 5px 10px;">change password</a>
+              <a class="dropdown-item" (click)="NaviagteToChnagePassword()" style="padding: 5px 10px;">change password</a>
               <a class="dropdown-item" routerLink="" (click)="Logout()" style="padding: 5px 10px; color: red;">Logout</a>
             </div>
           </li>
