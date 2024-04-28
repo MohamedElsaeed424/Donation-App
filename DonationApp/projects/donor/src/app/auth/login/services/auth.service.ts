@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
+  public username: string ;
   public isLoggedIn: boolean = false;
   private users: { username: string, password: string }[] = [
     { username: 'donor1', password: '1' },

@@ -16,6 +16,14 @@ import { FileUploadComponent } from './shared/file-upload/file-upload.component'
 import { HttpClientModule} from "@angular/common/http";
 import {LoginComponent} from "./auth/login/login.component";
 
+import { RequestedItemsComponent } from './requested-items/requested-items.component';
+import { RequestedItemsListComponent } from './requested-items/requested-items-list/requested-items-list.component';
+import { RequestedItemComponent } from './requested-items/requested-items-list/requested-item/requested-item.component';
+import { RequestedItemDetailsComponent } from './requested-items/requested-items-list/requested-item/requested-item-details/requested-item-details.component';
+import {NavbarComponent} from "./shared/navbar/navbar.component";
+
+
+
 
 @NgModule({
   declarations: [
@@ -27,6 +35,12 @@ import {LoginComponent} from "./auth/login/login.component";
     TeacherSignupComponent,
     GoogleMapComponent,
     FileUploadComponent,
+    NavbarComponent,
+    RequestedItemsComponent,
+    RequestedItemsListComponent,
+    RequestedItemComponent,
+    RequestedItemDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
