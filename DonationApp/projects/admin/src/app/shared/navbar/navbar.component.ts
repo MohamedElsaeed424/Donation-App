@@ -1,6 +1,6 @@
 import {Component, ElementRef, HostListener} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {AuthService} from "../login/services/auth.service";
+import {AuthService} from "../../login/services/auth.service";
 
 @Component({
   selector: 'app-navbar',

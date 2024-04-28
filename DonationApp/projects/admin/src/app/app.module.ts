@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import {NgOptimizedImage} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {DropdownDirective} from "./shared/dropdown.directive";
-import { NavbarComponent } from './navbar/navbar.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ErrorComponent } from './shared/error-component/error-component.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
