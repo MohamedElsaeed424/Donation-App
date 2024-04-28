@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -9,7 +10,7 @@ export class SignUpComponent implements OnInit {
   selectedRole: string;
   donorSignupForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder , private route : ActivatedRoute , private router : Router) { }
 
   ngOnInit(): void {
     this.createDonorSignupForm();
@@ -32,7 +33,7 @@ export class SignUpComponent implements OnInit {
 
   submitDonorSignupInfo(): void {
     if (this.donorSignupForm.valid) {
-      // Here you can handle the form submission logic
+      this.router.navigate(['login'] , {relativeTo : this.route});
       console.log(this.donorSignupForm.value);
     } else {
       // Handle form validation errors

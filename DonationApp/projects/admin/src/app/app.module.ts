@@ -14,7 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent ,
+    LoginComponent,
     DropdownDirective,
     LoginComponent,
     NavbarComponent,
@@ -30,6 +30,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     ReactiveFormsModule
   ],
   providers: [],
+  exports: [
+    LoginComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

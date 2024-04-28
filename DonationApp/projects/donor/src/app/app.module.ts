@@ -14,6 +14,7 @@ import {GoogleMapsModule} from "@angular/google-maps";
 import {NgOptimizedImage} from "@angular/common";
 import { FileUploadComponent } from './shared/file-upload/file-upload.component';
 import { HttpClientModule} from "@angular/common/http";
+import {LoginComponent} from "./auth/login/login.component";
 
 
 @NgModule({
@@ -21,19 +22,21 @@ import { HttpClientModule} from "@angular/common/http";
     AppComponent,
     AuthComponent,
     SignUpComponent,
+    LoginComponent,
     DoctorSignupComponent,
     TeacherSignupComponent,
     GoogleMapComponent,
     FileUploadComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        GoogleMapsModule,
-        NgOptimizedImage ,
-      HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    GoogleMapsModule,
+    NgOptimizedImage ,
+    HttpClientModule ,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
