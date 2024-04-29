@@ -87,7 +87,7 @@ export class SignUpComponent implements OnInit {
   }
 
   submitDonorSignupInfo(): void {
-    this.router.navigate(['login'] , {relativeTo : this.route}) ;
+    this.router.navigate(['../login'] , {relativeTo : this.route}) ;
     if (this.donorSignupForm.valid) {
       console.log(this.donorSignupForm.value);
 
