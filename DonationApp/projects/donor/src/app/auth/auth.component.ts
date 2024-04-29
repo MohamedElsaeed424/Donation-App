@@ -8,10 +8,9 @@ import {AuthService} from "./login/services/auth.service";
   styleUrl: './auth.component.css'
 })
 export class AuthComponent implements OnInit{
-  mode : string = 'login' ;
   constructor(private  authService : AuthService) { }
 
   ngOnInit(){
-    this.mode = this.authService.isLoggedIn ? 'login' : 'signup';
+
   }
 }
