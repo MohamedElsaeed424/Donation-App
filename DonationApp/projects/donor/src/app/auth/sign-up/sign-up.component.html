@@ -12,7 +12,6 @@
                 First Name is required
               </div>
             </div>
-
           </div>
           <div class="form-group">
             <label for="lastName" style="color: #333;">Last Name:</label>
@@ -21,21 +20,19 @@
               Last Name is required
             </div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group">
               <label for="gender" style="color:
               #0a3622;">Gender:</label>
               <select id="gender" formControlName="gender" class="form-control">
-                <option value="" disabled selected>Select your gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="" disabled selected style="color: #333;">Select your gender</option>
+                <option value="male" style="color: #333;">Male</option>
+                <option value="female" style="color: #333;">Female</option>
               </select>
               <div *ngIf="donorSignupForm.get('gender').invalid && donorSignupForm.get('gender').touched" class="text-danger">
                 Gender is required
               </div>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
               <label for="email" style="color:
               #0a3622;">Email:</label>
               <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email">
@@ -43,20 +40,14 @@
                 Valid email is required
               </div>
             </div>
-          </div>
-
-          <!-- Other form fields (contactNumber, password, address, area, governorate) go here -->
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group ">
               <label for="contactNumber" style="color:
               #0a3622;">Contact Number:</label>
               <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control" placeholder="Enter your contact number">
               <div *ngIf="donorSignupForm.get('contactNumber').invalid && donorSignupForm.get('contactNumber').touched" class="text-danger">
                 Contact Number is required
               </div>
-            </div>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
               <label for="password" style="color:
               #0a3622;">Password:</label>
               <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
@@ -65,9 +56,7 @@
               </div>
             </div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group ">
               <label for="address" style="color:
               #0a3622;">Address:</label>
               <input type="text" id="address" formControlName="address" class="form-control" placeholder="Enter your address">
@@ -75,7 +64,7 @@
                 Address is required
               </div>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group ">
               <label for="area" style="color:
               #0a3622;">Area:</label>
               <input type="text" id="area" formControlName="area" class="form-control" placeholder="Enter your area">
@@ -83,10 +72,7 @@
                 Area is required
               </div>
             </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group ">
               <label for="governorate" style="color:
               #0a3622;">Governorate:</label>
               <input type="text" id="governorate" formControlName="governorate" class="form-control" placeholder="Enter your governorate">
@@ -94,8 +80,7 @@
                 Governorate is required
               </div>
             </div>
-            <div class="form-group col-md-6">
-              <!-- i want to make them beside each other -->
+            <div class="form-group ">
               <div class="radio-group">
                 <label style="color:#0a3622;">Role:</label>
                 <div class="row">
@@ -120,14 +105,92 @@
                 </div>
               </div>
             </div>
-          </div>
           <div *ngIf="selectedRole === 'doctor'">
-            <app-doctor-signup></app-doctor-signup>
+            <section class=" rounded-form">
+              <div formGroupName="doctorData">
+                <div class="form-group">
+                  <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="clinicAddress" formControlName="clinicAddress" placeholder="Clinic Address">
+                  </div>
+                  <div *ngIf="donorSignupForm.get('doctorData').get('clinicAddress').invalid && donorSignupForm.get('doctorData').get('clinicAddress').touched" class="text-danger">
+                    Clinic Address is required
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="clinicArea" formControlName="clinicArea" placeholder="Clinic Area">
+                  </div>
+                  <div *ngIf="donorSignupForm.get('doctorData').get('clinicArea').invalid && donorSignupForm.get('doctorData').get('clinicArea').touched" class="text-danger">
+                    Clinic Area is required
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="clinicGovernorate" formControlName="clinicGovernorate" placeholder="Clinic Governorate">
+                  </div>
+                  <div *ngIf="donorSignupForm.get('doctorData').get('clinicGovernorate').invalid && donorSignupForm.get('doctorData').get('clinicGovernorate').touched" class="text-danger">
+                    Clinic Governorate is required
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-group mb-3">
+                    <input type="text" class="form-control" id="specialty" formControlName="specialty" placeholder="Specialty">
+                  </div>
+                  <div *ngIf="donorSignupForm.get('doctorData').get('specialty').invalid && donorSignupForm.get('doctorData').get('specialty').touched" class="text-danger">
+                    Specialty is required
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-group mb-3">
+                    <input type="number" class="form-control" id="proBonoCases" formControlName="proBonoCases" placeholder="Pro-bono Cases">
+                  </div>
+                  <div *ngIf="donorSignupForm.get('doctorData').get('proBonoCases').invalid && donorSignupForm.get('doctorData').get('proBonoCases').touched" class="text-danger">
+                    Pro-bono Cases is required and must be a positive number
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label style="color: #0a3622">Doctor Licence</label>
+                  <app-file-upload></app-file-upload>
+                </div>
+              </div>
+            </section>
           </div>
           <div *ngIf="selectedRole === 'teacher'">
-            <app-teacher-signup></app-teacher-signup>
+            <section class="rounded-form">
+               <div formGroupName="teacherData">
+                  <div class="form-group">
+                    <div class="form-group mb-3">
+                      <input type="text" class="form-control" id="subjects" formControlName="subjects" placeholder="Subjects">
+                    </div>
+                    <div *ngIf="donorSignupForm.get('teacherData').get('subjects').invalid && donorSignupForm.get('teacherData').get('subjects').touched" class="text-danger">
+                      Subjects are required
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="form-group mb-3">
+                      <input type="number" class="form-control" id="proBonoClasses" formControlName="proBonoClasses" placeholder="number of Classes">
+                    </div>
+                    <div *ngIf="donorSignupForm.get('teacherData').get('proBonoClasses').invalid && donorSignupForm.get('teacherData').get('proBonoClasses').touched" class="text-danger">
+                      number of Classes must be a positive number
+                    </div>
+                  </div>
+                  <!-- Pro-bono students -->
+                  <div class="form-group">
+                    <div class="form-group mb-3">
+                      <input type="number" class="form-control" id="proBonoStudents" formControlName="proBonoStudents" placeholder="number of Students">
+                    </div>
+                    <div *ngIf="donorSignupForm.get('teacherData').get('proBonoStudents').invalid && donorSignupForm.get('teacherData').get('proBonoStudents').touched" class="text-danger">
+                      number of Students must be a positive number
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label style="color: #0a3622" >Teacher Licence</label>
+                    <app-file-upload></app-file-upload>
+                  </div>
+               </div>
+            </section>
           </div>
-          <button type="submit" class="btn btn-primary">Signup</button>
+          <button type="submit" class="btn btn-primary" [disabled]="false">Signup</button>
         </form>
       </div>
       <div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -135,5 +198,4 @@
       </div>
     </div>
   </div>
-
 </section>

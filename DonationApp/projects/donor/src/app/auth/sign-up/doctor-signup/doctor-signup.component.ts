@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-doctor-signup',
   templateUrl: './doctor-signup.component.html',
   styleUrl: './doctor-signup.component.css'
 })
-export class DoctorSignupComponent implements OnInit {
-  donorForm: FormGroup;
+export class DoctorSignupComponent implements OnInit{
+  @Output() formSubmit = new EventEmitter<any>();
+  doctorForm: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    this.donorForm = this.fb.group({
+    this.doctorForm = this.fb.group({
       clinicAddress: ['', Validators.required],
       clinicArea: ['', Validators.required],
       clinicGovernorate: ['', Validators.required],
@@ -19,13 +20,15 @@ export class DoctorSignupComponent implements OnInit {
       proBonoCases: ['', [Validators.required, Validators.min(0)]]
     });
   }
-
-  submitDonorInfo() {
-    if (this.donorForm.valid) {
-      console.log(this.donorForm.value); // You can handle form submission logic here
+  submitDoctorInfo() {
+    if (this.doctorForm.valid) {
+      this.formSubmit.emit(this.doctorForm.value);
     } else {
-      // Mark all fields as touched to show validation errors
-      this.donorForm.markAllAsTouched();
+      // Handle form validation errors
+      this.validateAllFormFields(this.doctorForm);
     }
+  }
+  validateAllFormFields(formGroup: FormGroup): void {
+    // Validation logic
   }
 }
