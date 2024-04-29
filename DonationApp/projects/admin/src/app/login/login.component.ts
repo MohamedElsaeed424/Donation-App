@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit{
   }
 
   redirectToDashboard(){
-    console.log(this.signInFrom)
     this.router.navigate(['/Dashboard'] , {queryParams:{username:this.signInFrom.get('username').value}})
   }
 

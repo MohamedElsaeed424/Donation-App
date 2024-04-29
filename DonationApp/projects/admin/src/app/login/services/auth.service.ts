@@ -13,7 +13,8 @@ export class AuthService {
   ];
 
   public isMatchingPasswords(username:string , password:string): boolean {
-    return this.users[username].password==password ;
+    const index = this.users.findIndex(user => user.username === username);
+    return this.users[index].password==password ;
   }
 
   constructor() { }
@@ -23,6 +24,7 @@ export class AuthService {
     if (user) {
       this.username = username ;
       this.isLoggedIn = true ;
+      console.log(this.username)
       return true;
     } else {
       // Authentication failed
