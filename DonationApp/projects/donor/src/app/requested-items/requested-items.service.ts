@@ -1,14 +1,15 @@
 import {RequestedItem} from "./RequestedItem.model";
+import {Injectable} from "@angular/core";
 
-
+@Injectable({providedIn: 'root'})
 export class RequestedItemsService{
     requestedItems: RequestedItem[] = [
-        new RequestedItem(1, 'Laptop', 'I need a laptop for my online classes', 1, 'Requested', '2021-09-20', 'Lahore', 'assets/images/laptop.jpg', 'Electronics', 'Ali'),
-        new RequestedItem(2, 'Books', 'I need books for my studies', 5, 'Requested', '2021-09-21', 'Karachi', 'assets/images/books.jpg', 'Books', 'Ahmed'),
-        new RequestedItem(3, 'Clothes', 'I need clothes for my family', 10, 'Requested', '2021-09-22', 'Islamabad', 'assets/images/clothes.jpg', 'Clothes', 'Sara'),
-        new RequestedItem(4, 'Furniture', 'I need furniture for my home', 1, 'Requested', '2021-09-23', 'Lahore', 'assets/images/furniture.jpg', 'Furniture', 'Ali'),
-        new RequestedItem(5, 'Shoes', 'I need shoes for my family', 5, 'Requested', '2021-09-24', 'Karachi', 'assets/images/shoes.jpg', 'Shoes', 'Ahmed'),
-        new RequestedItem(6, 'Mobile', 'I need a mobile for my online classes', 1, 'Requested', '2021-09-25', 'Islamabad', 'assets/images/mobile.jpg', 'Electronics', 'Sara'),
+        new RequestedItem(1, 'Laptop', 'I need a laptop for my online classes', 1, 'Requested', '2021-09-20', 'Lahore', 'assets/laptop.jpg', 'Electronics', 'Ali','01020069006'),
+        new RequestedItem(2, 'Books', 'I need books for my studies', 5, 'Requested', '2021-09-21', 'Karachi', 'assets/books.jpg', 'Books', 'Ahmed' ,'01020069006'),
+        new RequestedItem(3, 'Clothes', 'I need clothes for my family', 10, 'Requested', '2021-09-22', 'Islamabad', 'assets/clothes.jpg', 'Clothes', 'Sara' ,'01020069006'),
+        new RequestedItem(4, 'Furniture', 'I need furniture for my home', 1, 'Requested', '2021-09-23', 'Lahore', 'assets/furniture.jpg', 'Furniture', 'Ali' ,'01020069006'),
+        new RequestedItem(5, 'Shoes', 'I need shoes for my family', 5, 'Requested', '2021-09-24', 'Karachi', 'assets/shoes.jpg', 'Shoes', 'Ahmed' ,'01020069006'),
+        new RequestedItem(6, 'Mobile', 'I need a mobile for my online classes', 1, 'Requested', '2021-09-25', 'Islamabad', 'assets/mobile.jpg', 'Electronics', 'Sara','01020069006'),
     ];
 
 

@@ -16,13 +16,19 @@ export class AuthService {
   login(username: string, password: string): boolean {
     const user = this.users.find(u => u.username === username && u.password === password);
     if (user) {
-      this.isLoggedIn = true ;
+      localStorage.setItem('token', 'your_token_here');
+      this.isLoggedIn = true;
       return true;
     } else {
-      // Authentication failed
       return false;
     }
   }
+  logout(): void {
 
-  // Other authentication-related methods like logout, change password, etc.
+    localStorage.removeItem('token');
+    this.isLoggedIn = false;
+  }
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('token');
+  }
 }

@@ -1,7 +1,6 @@
-import {Component, ElementRef, HostListener} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../auth/login/services/auth.service";
-
 
 @Component({
   selector: 'app-navbar',
@@ -9,34 +8,12 @@ import {AuthService} from "../../auth/login/services/auth.service";
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  public constructor(private route:Router , private elementRef:ElementRef ,private authservice:AuthService) {
-  }
-  organizationsDropdownOpen = false;
-  donorsDropdownOpen = false;
-  settingsDropdownOpen = false;
-
-  toggleOrganizationsDropdown() {
-    this.organizationsDropdownOpen = !this.organizationsDropdownOpen;
+  public constructor(private route: ActivatedRoute, private  router : Router,private authService: AuthService) {
   }
 
-  toggleDonorsDropdown() {
-    this.donorsDropdownOpen = !this.donorsDropdownOpen;
+  Logout() {
+   this.authService.logout();
+   this.router.navigate(['/auth/login']);
   }
 
-  toggleSettingsDropdown() {
-    this.settingsDropdownOpen = !this.settingsDropdownOpen;
-  }
-
-  @HostListener('document:click', ['$event'])
-  closeDropdownOnClickOutside(event: MouseEvent) {
-    if (!this.elementRef.nativeElement.contains(event.target)) {
-      this.elementRef.nativeElement.close();
-    }
-  }
-  Logout(){
-    this.authservice.isLoggedIn = false ;
-  }
-
-  NaviagteToChnagePassword(){
-    this.route.navigate(["/changePassword"],{queryParams:{username:this.authservice.username}})
-  }}
+}

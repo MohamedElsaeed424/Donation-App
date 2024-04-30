@@ -19,8 +19,9 @@ import {LoginComponent} from "./auth/login/login.component";
 import { RequestedItemsComponent } from './requested-items/requested-items.component';
 import { RequestedItemsListComponent } from './requested-items/requested-items-list/requested-items-list.component';
 import { RequestedItemComponent } from './requested-items/requested-items-list/requested-item/requested-item.component';
-import { RequestedItemDetailsComponent } from './requested-items/requested-items-list/requested-item/requested-item-details/requested-item-details.component';
 import {NavbarComponent} from "./shared/navbar/navbar.component";
+import { RequestBodyComponent } from './request-body/request-body.component';
+import {DropdownDirective} from "./shared/dropdown.directive";
 
 
 
@@ -39,7 +40,8 @@ import {NavbarComponent} from "./shared/navbar/navbar.component";
     RequestedItemsComponent,
     RequestedItemsListComponent,
     RequestedItemComponent,
-    RequestedItemDetailsComponent,
+    RequestBodyComponent,
+    DropdownDirective
 
   ],
   imports: [
