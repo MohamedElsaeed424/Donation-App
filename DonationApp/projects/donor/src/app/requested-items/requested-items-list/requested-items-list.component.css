@@ -1,0 +1,8 @@
+.requested-items-grid {
+  display: grid;
+  grid-template-columns:  repeat(auto-fill, minmax(350px,auto)); /* Set the grid to have a minimum width of 300px and take up the whole row */
+}
+
+.requested-items-grid > div {
+  margin-bottom: 20px; /* Add some bottom margin to each item */
+}

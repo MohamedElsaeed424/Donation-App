@@ -1,1 +1,18 @@
-<p>requested-items-list works!</p>
+<div class="row requested-items-grid">
+  <div class="requested-items-grid">
+    <ng-container *ngFor="let requestedItem of requestedItems.slice(0, requestedItems.length / 2); let i = index">
+      <app-requested-item
+        [currentRequestedItem]="requestedItem"
+        [currentRequestedItemId]="i"
+      ></app-requested-item>
+    </ng-container>
+  </div>
+  <div class="requested-items-grid">
+    <ng-container *ngFor="let requestedItem of requestedItems.slice(requestedItems.length / 2); let i = index">
+      <app-requested-item
+        [currentRequestedItem]="requestedItem"
+        [currentRequestedItemId]="i + requestedItems.length / 2"
+      ></app-requested-item>
+    </ng-container>
+  </div>
+</div>

@@ -1,7 +1,6 @@
-import {Component, ElementRef, HostListener} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {Component, HostListener} from '@angular/core';
+import {Router} from "@angular/router";
 import {AuthService} from "../../auth/login/services/auth.service";
-
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +8,7 @@ import {AuthService} from "../../auth/login/services/auth.service";
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  public constructor(private route:Router , private elementRef:ElementRef ,private authservice:AuthService) {
+  public constructor(private route:Router  ,private authservice:AuthService) {
   }
   organizationsDropdownOpen = false;
   donorsDropdownOpen = false;
@@ -17,22 +16,24 @@ export class NavbarComponent {
 
   toggleOrganizationsDropdown() {
     this.organizationsDropdownOpen = !this.organizationsDropdownOpen;
+    this.donorsDropdownOpen = false ;
+    this.settingsDropdownOpen = false ;
   }
 
   toggleDonorsDropdown() {
     this.donorsDropdownOpen = !this.donorsDropdownOpen;
+    this.organizationsDropdownOpen = false ;
+    this.settingsDropdownOpen = false ;
   }
 
   toggleSettingsDropdown() {
     this.settingsDropdownOpen = !this.settingsDropdownOpen;
+    this.organizationsDropdownOpen = false ;
+    this.donorsDropdownOpen = false ;
   }
 
-  @HostListener('document:click', ['$event'])
-  closeDropdownOnClickOutside(event: MouseEvent) {
-    if (!this.elementRef.nativeElement.contains(event.target)) {
-      this.elementRef.nativeElement.close();
-    }
-  }
+
+
   Logout(){
     this.authservice.isLoggedIn = false ;
   }
