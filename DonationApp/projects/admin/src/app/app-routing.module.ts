@@ -1,16 +1,29 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./login/login.component" ;
 import {ChangePasswordComponent} from "./change-password/change-password.component";
-import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
-import {ErrorComponent} from "./shared/error-component/error-component.component";
+import {
+  RegisteredOrganizationComponent
+} from "./Organization/registered-organization/registered-organization.component";
+import {RegisteredDonorsComponent} from "./Donor/registered-donors/registered-donors.component";
+
 const routes: Routes = [
 
-  {path: '', redirectTo: 'login', pathMatch: 'full'} ,
-  {path: 'login' , component: LoginComponent} ,
-  {path:'Dashboard' , component:DashboardComponent} ,
-  {path:'changePassword' , component : ChangePasswordComponent } ,
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent},
+  {path: 'Dashboard', component: DashboardComponent},
+  {path: 'changePassword', component: ChangePasswordComponent},
+  {
+    path: 'Donor', children: [
+      {path: 'Registered', component: RegisteredDonorsComponent}
+    ]
+  },
+  {
+    path: 'Organizations', children: [
+      {path: 'Registered', component: RegisteredOrganizationComponent},
+    ]
+  }
   // { path: '**',  redirectTo:'pageNotFound' ,component:ErrorComponent } ,
 
 ];
@@ -19,4 +32,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

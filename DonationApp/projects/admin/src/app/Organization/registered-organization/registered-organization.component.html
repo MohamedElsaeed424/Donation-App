@@ -1,0 +1,32 @@
+
+
+<div class="container">
+  <!-- Search bar container -->
+  <div class="search-container mb-3">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by organization name" class="form-control search-input">
+  </div>
+
+  <!-- Organizations list -->
+  <div class="row">
+    <div class="col-md-4" *ngFor="let organization of Organizations | organizationFilterPipe: searchTerm ; let i = index">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ organization.name }}</h5>
+          <p class="card-text">Type: {{ organization.type }}</p>
+          <p class="card-text">Address: {{ organization.address }}</p>
+          <!-- Add more details as needed -->
+          <a (click)="deleteOrganization(i)" class="btn btn-primary">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No organizations found message -->
+  <div *ngIf="isFilteredEmpty">
+    <div class="card">
+      <div class="card-body">
+        No organizations found.
+      </div>
+    </div>
+  </div>
+</div>

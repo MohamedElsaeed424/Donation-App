@@ -9,6 +9,12 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ErrorComponent } from './shared/error-component/error-component.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisteredOrganizationComponent } from './Organization/registered-organization/registered-organization.component';
+import {OrganizationService} from "./Organization/RegisteredOrganization.service";
+import { OrganizationFilterPipe } from './Organization/organization-filter-pipe';
+import { RegisteredDonorsComponent } from './Donor/registered-donors/registered-donors.component';
+import { DonorFilterPipePipe } from './Donor/donor-filter-pipe.pipe';
+import {RegisteredDonorService} from "./Donor/RegisteredDonor.service";
 
 @NgModule({
   declarations: [
@@ -18,7 +24,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavbarComponent,
     ErrorComponent,
     ChangePasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisteredOrganizationComponent,
+    OrganizationFilterPipe,
+    RegisteredDonorsComponent,
+    DonorFilterPipePipe
   ],
   imports: [
     BrowserModule,
@@ -27,7 +37,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [OrganizationService , RegisteredDonorService],
   exports: [
     LoginComponent
   ],

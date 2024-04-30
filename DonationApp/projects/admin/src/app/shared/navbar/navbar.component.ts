@@ -8,36 +8,45 @@ import {AuthService} from "../../login/services/auth.service";
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  public constructor(private route:Router  ,private authservice:AuthService) {
+  public constructor(private route: Router, private authservice: AuthService) {
   }
+
   organizationsDropdownOpen = false;
   donorsDropdownOpen = false;
   settingsDropdownOpen = false;
 
   toggleOrganizationsDropdown() {
     this.organizationsDropdownOpen = !this.organizationsDropdownOpen;
-    this.donorsDropdownOpen = false ;
-    this.settingsDropdownOpen = false ;
+    this.donorsDropdownOpen = false;
+    this.settingsDropdownOpen = false;
   }
 
   toggleDonorsDropdown() {
     this.donorsDropdownOpen = !this.donorsDropdownOpen;
-    this.organizationsDropdownOpen = false ;
-    this.settingsDropdownOpen = false ;
+    this.organizationsDropdownOpen = false;
+    this.settingsDropdownOpen = false;
   }
 
   toggleSettingsDropdown() {
     this.settingsDropdownOpen = !this.settingsDropdownOpen;
-    this.organizationsDropdownOpen = false ;
-    this.donorsDropdownOpen = false ;
+    this.organizationsDropdownOpen = false;
+    this.donorsDropdownOpen = false;
   }
 
 
-
-  Logout(){
-    this.authservice.isLoggedIn = false ;
+  Logout() {
+    this.authservice.isLoggedIn = false;
   }
 
-  NaviagteToChnagePassword(){
-    this.route.navigate(["/changePassword"],{queryParams:{username:this.authservice.username}})
-  }}
+  NaviagteToChnagePassword() {
+    this.route.navigate(["/changePassword"], {queryParams: {username: this.authservice.username}})
+  }
+
+  LoadRegisteredOrganizations(){
+    this.route.navigate(['/Organizations/Registered'],{queryParams: {username: this.authservice.username}})
+  }
+
+  NavigateToRegisteredDonors(){
+    this.route.navigate(['/Donor/Registered'],{queryParams: {username: this.authservice.username}})
+  }
+}
