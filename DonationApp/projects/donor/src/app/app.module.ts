@@ -20,6 +20,8 @@ import { RequestedItemsComponent } from './requested-items/requested-items.compo
 import { RequestedItemsListComponent } from './requested-items/requested-items-list/requested-items-list.component';
 import { RequestedItemComponent } from './requested-items/requested-items-list/requested-item/requested-item.component';
 import {NavbarComponent} from "./shared/navbar/navbar.component";
+import { RequestBodyComponent } from './request-body/request-body.component';
+import {DropdownDirective} from "./shared/dropdown.directive";
 
 
 
@@ -38,6 +40,8 @@ import {NavbarComponent} from "./shared/navbar/navbar.component";
     RequestedItemsComponent,
     RequestedItemsListComponent,
     RequestedItemComponent,
+    RequestBodyComponent,
+    DropdownDirective
 
   ],
   imports: [

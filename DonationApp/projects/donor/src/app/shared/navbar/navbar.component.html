@@ -1,56 +1,35 @@
-<html data-bs-theme="light" lang="en">
-
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
-  <title>Untitled</title>
-</head>
-
 <body style="--bs-secondary: #000000;--bs-secondary-rgb: 68,167,255;--bs-primary: #842020;--bs-primary-rgb: 132,32,32;">
 <nav id="app-navbar" class="navbar navbar-expand-md bg-body navbar-dark"
      style="--bs-info: #204b54;--bs-info-rgb: 32,75,84;">
-  <div class="container-fluid"><a class="navbar-brand"><i id="brand-logo" class="icon ion-ios-infinite"
-                                                          style="margin-right: 10px;padding-top: 0px;margin-top: 6px;margin-left: 11px;margin-bottom: 10px;"><img
-          ngSrc="../../../assets/DonationApplicationTransperant.png" width="70" height="70" alt=""></i></a><span></span>
-    <button class="btn btn-primary" type="button"
-            style="background: #13786a;border-color: rgb(62,18,18);margin-right: 10px;margin-left: 10px;">Dashboard
-    </button>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"></li>
-          <li class="nav-item"></li>
-
-          <li class="nav-item dropdown" [ngClass]="{ 'show': organizationsDropdownOpen }">
-            <a class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()"
-               href="#" style="margin-right: 6px;margin-left: 30px;">Organizations</a>
-            <div class="dropdown-menu" [ngClass]="{ 'show': organizationsDropdownOpen }">
-              <a class="dropdown-item" href="#">registered organizations</a>
-              <a class="dropdown-item" href="#">pending request</a>
-              <a class="dropdown-item" href="#">Third Item</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown"  [ngClass]="{ 'show': donorsDropdownOpen }">
-            <a class="dropdown-toggle nav-link" (click)="toggleDonorsDropdown()"
-               href="#" style="margin-left: 40px;margin-right: 6px;">Donors</a>
-            <div class="dropdown-menu" [ngClass]="{ 'show': donorsDropdownOpen }">
-              <a class="dropdown-item" href="#">First Item</a>
-              <a class="dropdown-item" href="#">Second Item</a>
-              <a class="dropdown-item" href="#">Third Item</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown"  [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 220px;">
-            <a class="dropdown-toggle nav-link" (click)="toggleSettingsDropdown()" href="#" style="margin-left: 530px;">Settings</a>
-            <div class="dropdown-menu" [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 480px; max-width: 50px;">
-              <a class="dropdown-item" (click)="NaviagteToChnagePassword()" style="padding: 5px 10px;">change password</a>
-              <a class="dropdown-item" routerLink="" (click)="Logout()" style="padding: 5px 10px; color: red;">Logout</a>
-            </div>
-          </li>
-        </ul>
-
-
-
-
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <i
+        id="brand-logo"
+        class="icon ion-ios-infinite"
+        style="margin-right: 10px;padding-top: 0px;margin-top: 6px;margin-left: 11px;margin-bottom: 10px;">
+        <img
+          src="../../../assets/DonationApplicationTransperant.png"
+          width="70"
+          height="70"
+          alt="Logo"
+        >
+      </i>
+    </a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link"
+           style="margin-right: 6px;margin-left: 30px;"
+           routerLink="/requested-items"
+        >
+        Requested Items
+      </a>
+      </li>
+      <li class="nav-item " routerLinkActive="active" style="margin-left: 220px;">
+          <a class="nav-link" routerLink="" (click)="Logout()"  style="background-color: #144c4a ; border-radius: 10px ">
+            Logout
+          </a>
+      </li>
+    </ul>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1"><span
       class="visually-hidden">Toggle navigation</span><span
       class="navbar-toggler-icon"></span></button>
@@ -58,5 +37,3 @@
   </div>
 </nav>
 </body>
-
-</html>
