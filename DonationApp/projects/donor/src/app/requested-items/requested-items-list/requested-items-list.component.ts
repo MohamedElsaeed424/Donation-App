@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RequestedItem} from "../RequestedItem.model";
 import {RequestedItemsService} from "../requested-items.service";
 

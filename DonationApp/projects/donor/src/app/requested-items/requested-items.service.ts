@@ -17,8 +17,11 @@ export class RequestedItemsService{
         return this.requestedItems;
     }
 
-    getRequestedItem(id: number){
+    getRequestedItemByItemId(id: number){
         return this.requestedItems.find(item => item.id === id);
+    }
+    getRequestedItem(id: number){
+      return this.requestedItems[id];
     }
 
     addRequestedItem(item: RequestedItem){

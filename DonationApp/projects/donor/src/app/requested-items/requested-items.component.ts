@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {RequestedItem} from "./RequestedItem.model";
+import {RequestedItemsService} from "./requested-items.service";
 
 @Component({
   selector: 'app-requested-items',

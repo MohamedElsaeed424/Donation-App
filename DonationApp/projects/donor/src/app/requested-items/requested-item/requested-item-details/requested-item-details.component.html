@@ -11,8 +11,9 @@
         <p class="text-muted">User: {{currentRequestedItem.userName}}</p>
         <p class="text-muted">User Contact: {{currentRequestedItem.userContact}}</p>
         <p class="text-muted">Location: {{currentRequestedItem.location}}</p>
-        <a class="btn btn-primary btn-lg me-2" role="button" href="">Let's Donate</a>
+        <button class="btn btn-primary" (click)="onDonate()">Let's Donate</button>
       </div>
     </div>
   </div>
 </div>
+
