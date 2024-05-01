@@ -25,7 +25,8 @@ export class OrganizationsPendingRequestsComponent implements OnInit{
 
   deleteOrganization(i:number){this.OrganizationsPendingRequests.deleteOrganization(i)}
 
-  acceptOrganization(org:Organization , i:number){this.OrganizationsPendingRequests.acceptrganization(org)
+  acceptOrganization(org:Organization , i:number){
+    this.OrganizationsPendingRequests.acceptrganization(org)
     this.OrganizationsPendingRequests.deleteOrganization(i)}
 
   NavigateToOrganizationDetails(i:number){

@@ -53,6 +53,10 @@ export class NavbarComponent {
     this.route.navigate(['/Organizations/PendingRequest'],{queryParams: {username: this.authservice.username}})
   }
   NavigateToPendingDonorRequest(){
-    this.route.navigate(['Donor/PendingRequest'],{queryParams: {username: this.authservice.username}})
+    this.route.navigate(['/Donor/PendingRequest'],{queryParams: {username: this.authservice.username}})
   }
+  NavigateToDashboard(){
+    this.route.navigate(['/Dashboard'],{queryParams: {username: this.authservice.username}})
+  }
+ 
 }
