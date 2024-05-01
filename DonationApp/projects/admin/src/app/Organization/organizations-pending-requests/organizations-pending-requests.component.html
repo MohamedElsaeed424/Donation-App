@@ -1,0 +1,20 @@
+<div class="container">
+  <!-- Organizations list -->
+  <div class="row">
+    <div class="col-md-4" *ngFor="let organization of Organiztions ; let i = index">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ organization.name }}</h5>
+          <p class="card-text">Type: {{ organization.type }}</p>
+          <p class="card-text">Address: {{ organization.address }}</p>
+          <!-- Add more details as needed -->
+          <div class="button-row">
+            <a (click)="acceptOrganization(organization,i)" class="btn btn-primary-acc">Accept</a>
+            <a  (click)="NavigateToOrganizationDetails(i)" class="btn btn-primary-view">View Details</a>
+            <a (click)="deleteOrganization(i)" class="btn btn-primary">Reject</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

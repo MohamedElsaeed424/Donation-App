@@ -1,0 +1,22 @@
+/* Custom CSS for Organization Details */
+
+/* Style for the container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Style for the heading */
+h1 {
+  text-align: center;
+}
+
+/* Style for form labels */
+.form-label {
+  font-weight: bold;
+}
+
+/* Style for form control plaintext */
+.form-control-plaintext {
+  margin-bottom: 0; /* Remove default bottom margin */
+}
