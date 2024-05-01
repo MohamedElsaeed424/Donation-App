@@ -1,0 +1,19 @@
+<div class="container">
+<!-- Organizations list -->
+<div class="row">
+  <div class="col-md-4" *ngFor="let donor of Donors ; let i = index">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ donor.name }}</h5>
+        <p class="card-text">Type: {{ donor.type }}</p>
+        <p class="card-text">Address: {{ donor.address }}</p>
+        <!-- Add more details as needed -->
+        <div class="button-row">
+        <a (click)="acceptDonor(donor,i)" class="btn btn-primary-acc">Accept</a>
+        <a (click)="rejectDonor(i)" class="btn btn-primary">Reject</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
