@@ -49,4 +49,10 @@ export class NavbarComponent {
   NavigateToRegisteredDonors(){
     this.route.navigate(['/Donor/Registered'],{queryParams: {username: this.authservice.username}})
   }
+  navigateToPendingOrganizationsRequest(){
+    this.route.navigate(['/Organizations/PendingRequest'],{queryParams: {username: this.authservice.username}})
+  }
+  NavigateToPendingDonorRequest(){
+    this.route.navigate(['Donor/PendingRequest'],{queryParams: {username: this.authservice.username}})
+  }
 }

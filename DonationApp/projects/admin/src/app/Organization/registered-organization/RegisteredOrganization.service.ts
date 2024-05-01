@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Organization} from './Organization.model';
-import {OrganizationRepresentitve} from "./OrganizationRepresentitve";
+import {Organization} from '../Organization.model';
+import {OrganizationRepresentitve} from "../OrganizationRepresentitve";
 
 @Injectable({providedIn: 'root'})
 export class OrganizationService {

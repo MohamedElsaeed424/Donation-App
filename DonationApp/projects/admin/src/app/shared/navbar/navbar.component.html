@@ -21,20 +21,20 @@
 
           <li class="nav-item dropdown" [ngClass]="{ 'show': organizationsDropdownOpen }">
             <a class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()"
-               href="#" style="margin-right: 6px;margin-left: 30px;">Organizations</a>
+                style="margin-right: 6px;margin-left: 30px;">Organizations</a>
             <div class="dropdown-menu" [ngClass]="{ 'show': organizationsDropdownOpen }">
               <a class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</a>
-              <a class="dropdown-item" href="#">pending request</a>
+              <a class="dropdown-item" (click)="navigateToPendingOrganizationsRequest()">pending request</a>
               <a class="dropdown-item" href="#">Third Item</a>
             </div>
           </li>
 
           <li class="nav-item dropdown"  [ngClass]="{ 'show': donorsDropdownOpen }">
             <a class="dropdown-toggle nav-link" (click)="toggleDonorsDropdown()"
-               href="#" style="margin-left: 40px;margin-right: 6px;">Donors</a>
+                style="margin-left: 40px;margin-right: 6px;">Donors</a>
             <div class="dropdown-menu" [ngClass]="{ 'show': donorsDropdownOpen }">
               <a class="dropdown-item" (click)="NavigateToRegisteredDonors()">Registered Donors</a>
-              <a class="dropdown-item" href="#">Second Item</a>
+              <a class="dropdown-item" (click)="NavigateToPendingDonorRequest()">Pending requests</a>
               <a class="dropdown-item" href="#">Third Item</a>
             </div>
           </li>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {OrganizationService }  from "../RegisteredOrganization.service"
+import {OrganizationService }  from "./RegisteredOrganization.service"
 import {Organization} from "../Organization.model";
 import {OrganizationFilterPipe} from "../organization-filter-pipe";
 

@@ -1,4 +1,4 @@
-import {Donor, DonorType} from "./Donor.model";
+import {Donor, DonorType} from "../Donor.model";
 
 export class RegisteredDonorService {
   private donors : Donor[] = [

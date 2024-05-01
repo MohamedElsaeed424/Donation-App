@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Donor} from "../Donor.model";
-import {RegisteredDonorService} from "../RegisteredDonor.service";
+import {RegisteredDonorService} from "./RegisteredDonor.service";
 
 @Component({
   selector: 'app-registered-donors',
