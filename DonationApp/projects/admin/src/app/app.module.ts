@@ -21,10 +21,13 @@ import {
   OrganizationsPendingRequestsComponent
 } from './Organization/organizations-pending-requests/organizations-pending-requests.component';
 import {
-  OrganizationPendinRequestService
-} from "./Organization/organizations-pending-requests/OrganizationPendinRequest.service";
+  OrganizationPendingRequestService
+} from "./Organization/organizations-pending-requests/organization-pending-request.service";
 import {DonorsPendingRequestsComponent} from './Donor/donorss-pending-requests/donors-pending-requests.component';
 import {DonorsPendingRequestService} from "./Donor/donorss-pending-requests/DonorsPendingRequest.service";
+import { OrganizationDetailsComponent } from './Organization/organizations-pending-requests/pending-organization-details/organization-details.component';
+import { DonorDetailsComponent } from './Donor/donor-details/donor-details.component';
+import { RegisteredOrganizationDetailsComponent } from './Organization/registered-organization/registered-organization-details/registered-organization-details.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import {DonorsPendingRequestService} from "./Donor/donorss-pending-requests/Dono
     RegisteredDonorsComponent,
     DonorFilterPipePipe,
     OrganizationsPendingRequestsComponent,
-    DonorsPendingRequestsComponent
+    DonorsPendingRequestsComponent,
+    OrganizationDetailsComponent,
+    DonorDetailsComponent,
+    RegisteredOrganizationDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,7 @@ import {DonorsPendingRequestService} from "./Donor/donorss-pending-requests/Dono
   ],
   providers: [OrganizationService,
     RegisteredDonorService,
-    OrganizationPendinRequestService,
+    OrganizationPendingRequestService,
     DonorsPendingRequestService],
   exports: [
     LoginComponent

@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {OrganizationService }  from "./RegisteredOrganization.service"
 import {Organization} from "../Organization.model";
 import {OrganizationFilterPipe} from "../organization-filter-pipe";
+import {Router} from "@angular/router";
+import {AuthService} from "../../login/services/auth.service";
 
 @Component({
   selector: 'app-registered-organization',
@@ -11,7 +13,7 @@ import {OrganizationFilterPipe} from "../organization-filter-pipe";
 export class RegisteredOrganizationComponent implements OnInit{
   Organizations  : Organization[];
   searchTerm: string = '';
-  constructor(private OrganizationService : OrganizationService ) {
+  constructor(private OrganizationService : OrganizationService , private route:Router , private authservice:AuthService ) {
   }
 
   ngOnInit(): void {
@@ -24,5 +26,8 @@ export class RegisteredOrganizationComponent implements OnInit{
 
   deleteOrganization(i:number){
     this.OrganizationService.deleteOrganization(i)
+  }
+  NavigateToOrganizationDetails(i:number){
+    this.route.navigate(['/Organizations/Registered' ,i] ,{queryParams: {username: this.authservice.username}})
   }
 }

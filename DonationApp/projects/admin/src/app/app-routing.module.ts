@@ -11,6 +11,13 @@ import {
   OrganizationsPendingRequestsComponent
 } from "./Organization/organizations-pending-requests/organizations-pending-requests.component";
 import {DonorsPendingRequestsComponent} from "./Donor/donorss-pending-requests/donors-pending-requests.component";
+import {
+  OrganizationDetailsComponent
+} from "./Organization/organizations-pending-requests/pending-organization-details/organization-details.component";
+import {DonorDetailsComponent} from "./Donor/donor-details/donor-details.component";
+import {
+  RegisteredOrganizationDetailsComponent
+} from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
 
 const routes: Routes = [
 
@@ -20,14 +27,29 @@ const routes: Routes = [
   {path: 'changePassword', component: ChangePasswordComponent},
   {
     path: 'Donor', children: [
-      {path: 'Registered', component: RegisteredDonorsComponent} ,
-      {path: 'PendingRequest', component: DonorsPendingRequestsComponent}
+      {path: 'Registered', component: RegisteredDonorsComponent},
+      {path: 'PendingRequest', component: DonorsPendingRequestsComponent},
+      {path: ':id', component: DonorDetailsComponent}
     ]
   },
   {
     path: 'Organizations', children: [
-      {path: 'Registered', component: RegisteredOrganizationComponent},
-      {path:'PendingRequest',component: OrganizationsPendingRequestsComponent}
+      {
+        path: 'Registered', children: [{
+          path: '', component: RegisteredOrganizationComponent
+        }, {
+          path: ':id', component: RegisteredOrganizationDetailsComponent
+        }]
+      },
+      {
+        path: 'PendingRequest',
+        children: [
+          {path: '', component: OrganizationsPendingRequestsComponent}, {
+            path: ':id',
+            component: OrganizationDetailsComponent
+          }]
+      },
+
     ]
   }
   // { path: '**',  redirectTo:'pageNotFound' ,component:ErrorComponent } ,

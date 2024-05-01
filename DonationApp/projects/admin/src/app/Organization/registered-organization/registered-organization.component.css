@@ -27,3 +27,10 @@
   background-color: #ff0000;
   border-color: #ff0000;
 }
+.btn-primary-view {
+  color: #fff;
+  background-color: #808080;
+  border-color: #000000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
