@@ -26,7 +26,6 @@
             <div class="dropdown-menu" [ngClass]="{ 'show': organizationsDropdownOpen }">
               <button class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</button>
               <button class="dropdown-item" (click)="navigateToPendingOrganizationsRequest()">pending request</button>
-              <button class="dropdown-item" href="#">Third Item</button>
             </div>
           </li>
 
@@ -36,13 +35,20 @@
             <div class="dropdown-menu" [ngClass]="{ 'show': donorsDropdownOpen }">
               <button class="dropdown-item" (click)="NavigateToRegisteredDonors()">Registered Donors</button>
               <button class="dropdown-item" (click)="NavigateToPendingDonorRequest()">Pending requests</button>
-              <button class="dropdown-item" href="#">Third Item</button>
+            </div>
+          </li>
+          <li class="nav-item dropdown" [ngClass]="{ 'show': accountManagement }">
+            <button class="dropdown-toggle nav-link" (click)="toggleAccountManagement()" 
+            style="margin-left: 45px;">Accounts Management</button>
+            <div class="dropdown-menu" style="margin-left: 45px; max-width: 10px;" [ngClass]="{ 'show': accountManagement }">
+              <button class="dropdown-item" href="#">Organizations Accounts</button>
+              <button class="dropdown-item" href="#">Donors Accounts</button>
             </div>
           </li>
 
-          <li class="nav-item dropdown"  [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 220px;">
+          <li class="nav-item dropdown"  [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 125px;">
             <button class="dropdown-toggle nav-link" (click)="toggleSettingsDropdown()" href="#" style="margin-left: 530px;">Settings</button>
-            <div class="dropdown-menu" [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 480px; max-width: 50px;">
+            <div class="dropdown-menu" [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 485px; max-width: 50px;">
               <button class="dropdown-item" (click)="NaviagteToChnagePassword()" style="padding: 5px 10px;">change password</button>
               <button class="dropdown-item" routerLink="" (click)="Logout()" style="padding: 5px 10px; color: red;">Logout</button>
             </div>
