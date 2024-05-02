@@ -71,32 +71,8 @@
     border: 1px solid #e2e2eb;
     font-size: 24px;
   }
-  .f_social_icon a {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    font-size: 14px;
-    line-height: 45px;
-    color: #858da8;
-    display: inline-block;
-    background: #ebeef5;
-    text-align: center;
-    -webkit-transition: all 0.2s linear;
-    -o-transition: all 0.2s linear;
-    transition: all 0.2s linear;
-  }
-  .ti-facebook:before {
-    content: "\e741";
-  }
-  .ti-twitter-alt:before {
-    content: "\e74b";
-  }
-  .ti-vimeo-alt:before {
-    content: "\e74a";
-  }
-  .ti-pinterest:before {
-    content: "\e731";
-  }
+  
+  
   
   .btn_get_two {
     -webkit-box-shadow: none;
@@ -265,10 +241,7 @@ section h2 {
   font-size: 16px;
 }
 
-.statistic-item p span {
-  font-weight: bold;
-  color: #007bff;
-}
+
 
 /* Donations styles */
 .donations ul {
@@ -314,4 +287,29 @@ footer {
   padding: 1.5rem;
   margin-top: 4rem;
   text-align: center;
+}
+
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section{
+  border-radius: 15px;
+  background-color: #1C9B8E;
+  animation: slideIn 2s ease forwards; /* Apply the animation */
+}
+section h1{
+  color: white;
+}
+#uu{
+  background-color: #333;
+  
 }
