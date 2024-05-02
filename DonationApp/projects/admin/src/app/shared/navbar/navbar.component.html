@@ -20,30 +20,30 @@
           <li class="nav-item"></li>
 
           <li class="nav-item dropdown" [ngClass]="{ 'show': organizationsDropdownOpen }">
-            <a class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()"
-                style="margin-right: 6px;margin-left: 30px;">Organizations</a>
+            <button class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()"
+                style="margin-right: 6px;margin-left: 30px;">Organizations</button>
             <div class="dropdown-menu" [ngClass]="{ 'show': organizationsDropdownOpen }">
-              <a class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</a>
-              <a class="dropdown-item" (click)="navigateToPendingOrganizationsRequest()">pending request</a>
-              <a class="dropdown-item" href="#">Third Item</a>
+              <button class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</button>
+              <button class="dropdown-item" (click)="navigateToPendingOrganizationsRequest()">pending request</button>
+              <button class="dropdown-item" href="#">Third Item</button>
             </div>
           </li>
 
           <li class="nav-item dropdown"  [ngClass]="{ 'show': donorsDropdownOpen }">
-            <a class="dropdown-toggle nav-link" (click)="toggleDonorsDropdown()"
-                style="margin-left: 40px;margin-right: 6px;">Donors</a>
+            <button class="dropdown-toggle nav-link" (click)="toggleDonorsDropdown()"
+                style="margin-left: 40px;margin-right: 6px;">Donors</button>
             <div class="dropdown-menu" [ngClass]="{ 'show': donorsDropdownOpen }">
-              <a class="dropdown-item" (click)="NavigateToRegisteredDonors()">Registered Donors</a>
-              <a class="dropdown-item" (click)="NavigateToPendingDonorRequest()">Pending requests</a>
-              <a class="dropdown-item" href="#">Third Item</a>
+              <button class="dropdown-item" (click)="NavigateToRegisteredDonors()">Registered Donors</button>
+              <button class="dropdown-item" (click)="NavigateToPendingDonorRequest()">Pending requests</button>
+              <button class="dropdown-item" href="#">Third Item</button>
             </div>
           </li>
 
           <li class="nav-item dropdown"  [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 220px;">
-            <a class="dropdown-toggle nav-link" (click)="toggleSettingsDropdown()" href="#" style="margin-left: 530px;">Settings</a>
+            <button class="dropdown-toggle nav-link" (click)="toggleSettingsDropdown()" href="#" style="margin-left: 530px;">Settings</button>
             <div class="dropdown-menu" [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 480px; max-width: 50px;">
-              <a class="dropdown-item" (click)="NaviagteToChnagePassword()" style="padding: 5px 10px;">change password</a>
-              <a class="dropdown-item" routerLink="" (click)="Logout()" style="padding: 5px 10px; color: red;">Logout</a>
+              <button class="dropdown-item" (click)="NaviagteToChnagePassword()" style="padding: 5px 10px;">change password</button>
+              <button class="dropdown-item" routerLink="" (click)="Logout()" style="padding: 5px 10px; color: red;">Logout</button>
             </div>
           </li>
         </ul>

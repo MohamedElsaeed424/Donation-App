@@ -4,6 +4,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {NgOptimizedImage} from "@angular/common";
+//import { IonicModule } from '@ionic/angular';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NavbarComponent} from './shared/navbar/navbar.component';
 import {ErrorComponent} from './shared/error-component/error-component.component';
@@ -53,7 +54,8 @@ import { RegisteredOrganizationDetailsComponent } from './Organization/registere
     AppRoutingModule,
     NgOptimizedImage,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    //IonicModule
   ],
   providers: [OrganizationService,
     RegisteredDonorService,
