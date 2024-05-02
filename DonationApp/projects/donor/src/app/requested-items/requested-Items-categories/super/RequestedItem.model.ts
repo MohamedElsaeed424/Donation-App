@@ -10,7 +10,7 @@ export class RequestedItem{
         public location: string,
         public image: string,
         public category: string,
-        public userName: string, // who requested the item
+        public userName: string,
         public userContact: string,
     ){}
 }

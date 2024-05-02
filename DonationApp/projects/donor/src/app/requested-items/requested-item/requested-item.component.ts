@@ -1,7 +1,7 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {RequestedItem} from "../../RequestedItem.model";
-import {RequestedItemsService} from "../../requested-items.service";
-import {ActivatedRoute, Params, Router} from "@angular/router";
+import {RequestedItem} from "../requested-Items-categories/super/RequestedItem.model";
+
+
 
 @Component({
   selector: 'app-requested-item',
@@ -11,4 +11,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
 export class RequestedItemComponent {
   @Input() currentRequestedItem : RequestedItem;
   @Input() currentRequestedItemId : number;
+  constructor() {
+    console.log('RequestedItemComponent  constructor');
+  }
 }
