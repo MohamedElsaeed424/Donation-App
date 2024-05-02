@@ -1,12 +1,14 @@
-<div *ngIf="school.schoolBooks && school.schoolBooks.length > 0">
-  <h3>Books</h3>
-  <ul>
-    <li *ngFor="let book of school.schoolBooks">{{ book.title }} - Grade: {{ book.grade }}, Subject: {{ book.subject }}, Year: {{ book.year }}</li>
-  </ul>
-</div>
-<div *ngIf="school.stationaryItems && school.stationaryItems.length > 0">
-  <h3>Stationary Items</h3>
-  <ul>
-    <li *ngFor="let item of school.stationaryItems">{{ item.type }} - Amount Requested: {{ item.amountRequested }}</li>
-  </ul>
+<div *ngIf="school && school.schoolBooks && school.stationaryItems">
+  <div *ngIf="school.schoolBooks.length > 0">
+    <h3>Books</h3>
+    <ul>
+      <li *ngFor="let book of school.schoolBooks">{{ book.title }} - Grade: {{ book.grade }}, Subject: {{ book.subject }}, Year: {{ book.year }}</li>
+    </ul>
+  </div>
+  <div *ngIf="school.stationaryItems.length > 0">
+    <h3>Stationary Items</h3>
+    <ul>
+      <li *ngFor="let item of school.stationaryItems">{{ item.type }} - Amount Requested: {{ item.amountRequested }}</li>
+    </ul>
+  </div>
 </div>

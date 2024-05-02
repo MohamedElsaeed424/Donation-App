@@ -11,13 +11,15 @@
         <p class="text-muted">User: {{currentRequestedItem.userName}}</p>
         <p class="text-muted">User Contact: {{currentRequestedItem.userContact}}</p>
         <p class="text-muted">Location: {{currentRequestedItem.location}}</p>
-        <!-- Conditionally render component based on category -->
-        <app-books-details *ngIf="currentRequestedItem.category === 'Books'" [book]="currentRequestedItem"></app-books-details>
-        <app-clothes-details *ngIf="currentRequestedItem.category === 'Clothes'" [clothes]="currentRequestedItem"></app-clothes-details>
-        <app-food-details *ngIf="currentRequestedItem.category === 'Food'" [food]="currentRequestedItem"></app-food-details>
-        <app-medical-supplies-details *ngIf="currentRequestedItem.category === 'Medical Supplies'" [medicalSupply]="currentRequestedItem"></app-medical-supplies-details>
-        <app-school-supplies-details *ngIf="currentRequestedItem.category === 'School'" [school]="currentRequestedItem"></app-school-supplies-details>
-        <app-toys-details *ngIf="currentRequestedItem.category === 'Toys'" [toy]="currentRequestedItem"></app-toys-details>
+        <ng-container *ngIf="currentRequestedItem">
+          <app-books-details *ngIf="currentRequestedItem.category === ItemCategory.Books" [book]="currentRequestedItem"></app-books-details>
+          <app-clothes-details *ngIf="currentRequestedItem.category === ItemCategory.Clothes" [clothes]="currentRequestedItem"></app-clothes-details>
+          <app-food-details *ngIf="currentRequestedItem.category === ItemCategory.Food" [food]="currentRequestedItem"></app-food-details>
+          <app-medical-supplies-details *ngIf="currentRequestedItem.category === ItemCategory.MedicalSupplies" [medicalSupply]="currentRequestedItem"></app-medical-supplies-details>
+          <app-blood-donation-details *ngIf="currentRequestedItem.category === ItemCategory.BloodDonation" [bloodDonation]="currentRequestedItem"></app-blood-donation-details>
+          <app-school-supplies-details *ngIf="currentRequestedItem.category === ItemCategory.SchoolSupplies" [school]="currentRequestedItem"></app-school-supplies-details>
+          <app-toys-details *ngIf="currentRequestedItem.category === ItemCategory.Toys" [toy]="currentRequestedItem"></app-toys-details>
+        </ng-container>
         <button class="btn btn-primary" (click)="onDonate()">Let's Donate</button>
       </div>
     </div>

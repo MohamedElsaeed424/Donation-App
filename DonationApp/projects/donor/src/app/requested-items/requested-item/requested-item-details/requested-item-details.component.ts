@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Injector, Input, OnInit } from '@angular/core';
 import { RequestedItem } from "../../requested-Items-categories/super/RequestedItem.model";
 import { RequestedItemsService } from "../../requested-items.service";
 import { ActivatedRoute, Params, Router } from "@angular/router";
@@ -7,7 +7,8 @@ import { Clothes } from "../../requested-Items-categories/categories/clothes.mod
 import { Food } from "../../requested-Items-categories/categories/food.model";
 import { School } from "../../requested-Items-categories/categories/school.model";
 import { Toy } from "../../requested-Items-categories/categories/toy.model";
-import {MedicalSupply} from "../../requested-Items-categories/categories/medical-supplies.model";
+import { MedicalSupply } from "../../requested-Items-categories/categories/medical-supplies.model";
+import {ItemCategory} from "../../requested-Items-categories/categories/all-categories.enum";
 
 @Component({
   selector: 'app-requested-item-details',
@@ -15,13 +16,13 @@ import {MedicalSupply} from "../../requested-Items-categories/categories/medical
   styleUrls: ['./requested-item-details.component.css']
 })
 export class RequestedItemDetailsComponent implements OnInit {
-  currentRequestedItem: Book | Clothes | Food | MedicalSupply | School | Toy |RequestedItem; // Union type
+  currentRequestedItem: RequestedItem; // Union type
   currentRequestedItemId: number;
 
   constructor(
     private requestItemService: RequestedItemsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
   ) {
     console.log('RequestedItemDetailsComponent constructor');
   }
@@ -34,7 +35,10 @@ export class RequestedItemDetailsComponent implements OnInit {
     });
   }
 
+
   onDonate() {
     // Implement your functionality here
   }
+
+  protected readonly ItemCategory = ItemCategory;
 }
