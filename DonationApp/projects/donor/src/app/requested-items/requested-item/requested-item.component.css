@@ -1,3 +1,54 @@
+a {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Change the background color on hover */
+a:hover {
+  background-color: #45a049;
+}
+.requested-item-container {
+  max-width: 350px;
+  padding: 20px;
+  border: 1px solid #dee2e6; /* Light gray border color */
+  border-radius: 10px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.requested-item-container:hover {
+  border-color: #007bff; /* Blue border color on hover */
+  transform: scale(1.05);
+}
+
+.list-group-item {
+  background-color: #f8f9fa; /* Light gray background color */
+}
+
+.list-group-item h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem; /* Smaller font size for headings */
+  color: #343a40; /* Dark font color */
+}
+
+.list-group-item p,
+.list-group-item h3 {
+  margin-bottom: 5px;
+  font-size: 1rem; /* Smaller font size for paragraphs and subheadings */
+  color: #6c757d; /* Medium gray font color */
+}
+
+
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family), serif;

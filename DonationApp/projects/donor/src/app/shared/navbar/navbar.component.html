@@ -1,39 +1,18 @@
-<body style="--bs-secondary: #000000;--bs-secondary-rgb: 68,167,255;--bs-primary: #842020;--bs-primary-rgb: 132,32,32;">
-<nav id="app-navbar" class="navbar navbar-expand-md bg-body navbar-dark"
-     style="--bs-info: #204b54;--bs-info-rgb: 32,75,84;">
+<!-- navbar.component.html -->
+<nav class="navbar navbar-expand-md bg-body navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand">
-      <i
-        id="brand-logo"
-        class="icon ion-ios-infinite"
-        style="margin-right: 10px;padding-top: 0px;margin-top: 6px;margin-left: 11px;margin-bottom: 10px;">
-        <img
-          src="../../../assets/DonationApplicationTransperant.png"
-          width="70"
-          height="70"
-          alt="Logo"
-        >
-      </i>
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/DonationApplicationTransperant.png" width="70" height="70" alt="Logo">
     </a>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item " routerLinkActive="active">
-        <a class="nav-link"
-           style="margin-right: 6px;margin-left: 30px;"
-           routerLink="/requested-items"
-        >
-        Requested Items
-      </a>
-      </li>
-      <li class="nav-item " routerLinkActive="active" style="margin-left: 220px;">
-          <a class="nav-link" routerLink="" (click)="Logout()"  style="background-color: #144c4a ; border-radius: 10px ">
-            Logout
-          </a>
-      </li>
-    </ul>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1"><span
-      class="visually-hidden">Toggle navigation</span><span
-      class="navbar-toggler-icon"></span></button>
-    <div id="navcol-1" class="collapse navbar-collapse"></div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="/requested-items" routerLinkActive="active">Requested Items</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" style="margin-left:35cm;color: #3a8c7d;" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
-</body>
