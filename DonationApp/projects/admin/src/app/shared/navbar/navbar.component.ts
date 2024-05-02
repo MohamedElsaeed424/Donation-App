@@ -14,6 +14,7 @@ export class NavbarComponent {
   organizationsDropdownOpen = false;
   donorsDropdownOpen = false;
   settingsDropdownOpen = false;
+  dashboardButton = false;
 
   toggleOrganizationsDropdown() {
     this.organizationsDropdownOpen = !this.organizationsDropdownOpen;
@@ -29,6 +30,12 @@ export class NavbarComponent {
 
   toggleSettingsDropdown() {
     this.settingsDropdownOpen = !this.settingsDropdownOpen;
+    this.organizationsDropdownOpen = false;
+    this.donorsDropdownOpen = false;
+  }
+  toggledashboardButton(){
+    this.dashboardButton =! this.dashboardButton;
+    this.settingsDropdownOpen = false;
     this.organizationsDropdownOpen = false;
     this.donorsDropdownOpen = false;
   }

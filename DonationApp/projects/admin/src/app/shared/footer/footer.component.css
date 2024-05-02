@@ -257,7 +257,9 @@ h1, h2, h3, h4, h5, h6 {
   top: -80px;
   right: -100px;
 }
-
+a {
+  text-decoration: none; 
+}
 
 
 
