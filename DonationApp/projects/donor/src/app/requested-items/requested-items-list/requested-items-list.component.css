@@ -1,8 +1,29 @@
 .requested-items-grid {
   display: grid;
-  grid-template-columns:  repeat(auto-fill, minmax(350px,auto)); /* Set the grid to have a minimum width of 300px and take up the whole row */
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Set the grid to have a minimum width of 350px and take up the available space */
+  gap: 20px; /* Add some gap between grid items */
 }
 
 .requested-items-grid > div {
   margin-bottom: 20px; /* Add some bottom margin to each item */
+}
+
+/* Style the <a> tag */
+.requested-items-grid app-requested-item a {
+  width: 100%;
+  display: block; /* Change to block level to take up the full width */
+  padding: 20px; /* Increase padding for better spacing */
+  text-decoration: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border-radius: 8px; /* Make the corners slightly rounded */
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center; /* Center the text */
+}
+
+/* Hover effect */
+.requested-items-grid app-requested-item a:hover {
+  background-color: #45a049;
 }
