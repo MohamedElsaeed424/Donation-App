@@ -1,23 +1,52 @@
 #container0 {
-  background-color: #22b6a7;
-  border-radius: 0.25rem;
+  background-color: #1C9B8E;
+  border-radius: 40px;
   padding: 1.5rem;
   margin-top: 4rem;
   text-align: center;
 }
 
-.search-container {
-  margin-bottom: 1rem;
-  max-width: 300px;
-  margin-left: 470px;
+.custom-search-card {
+  /* Add specific styles for the search bar card */
+  background-color: #f0f0f0;
+  /* Add any other custom styles */
 }
 
-.search-input {
-  width: 100%;
+.custom-search-card .form-control {
+  /* Add styles for the input field inside the search bar card */
+  border-color: #ced4da;
+  /* Add any other custom styles */
+}
+
+.custom-search-card .input-group-text {
+  /* Add styles for the search icon inside the search bar card */
+  color: #6c757d;
+  /* Add any other custom styles */
 }
 
 .card {
   margin-bottom: 1rem;
+  border-radius: 40px;
+  background-color: #AFF0F2; /* Red background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Black shadow */
+}
+
+.search-container {
+  max-width: 300px;
+  margin-left: 450px;
+  border-radius: 40px;
+}
+
+.search-input {
+  /* Remove border radius on input field */
+  /* Remove border radius on input field */
+  border-radius:  20px;
+}
+
+.input-group-text {
+  background-color: transparent; /* Make the background of the icon transparent */
+  border-top-left-radius: 0; /* Remove border radius on icon container */
+  border-bottom-left-radius: 0; /* Remove border radius on icon container */
 }
 
 .card-title {

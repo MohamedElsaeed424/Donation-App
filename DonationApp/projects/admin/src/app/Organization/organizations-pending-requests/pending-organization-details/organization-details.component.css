@@ -1,5 +1,7 @@
 /* styles.css */
 
+/* styles.css */
+
 #container0 {
   margin-top: 20px;
 }
@@ -7,9 +9,6 @@
 .card {
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .card-header {
@@ -17,13 +16,12 @@
   color: #fff;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-
 }
 
 .card-body {
   padding: 20px;
-  text-align: center;
 }
+
 .form-label {
   font-weight: bold;
 }
@@ -37,16 +35,18 @@
 }
 
 .card.representative {
-  margin-top: 0;
+  border: 1px solid #dee2e6;
+  border-radius: 15px;
+  margin-top: 20px;
 }
 
 .card.representative .card-header {
   background-color: #343a40;
   color: #fff;
 }
+
 .card.representative .card-body {
   padding: 20px;
-  text-align: center;
 }
 .new_footer_area {
   background: #fbfbfd;

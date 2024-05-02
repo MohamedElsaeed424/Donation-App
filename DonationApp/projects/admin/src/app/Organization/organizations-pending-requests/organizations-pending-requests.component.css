@@ -1,9 +1,16 @@
 #container0 {
-  background-color: #22b6a7;
-  border-radius: 0.25rem;
+  background-color: #1C9B8E;
+  border-radius: 40px;
   padding: 1.5rem;
   margin-top: 4rem;
   text-align: center;
+}
+
+.card {
+  margin-bottom: 1rem;
+  border-radius: 40px;
+  background-color: #AFF0F2; /* Red background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Black shadow */
 }
 
 .search-container {
@@ -14,9 +21,6 @@
   width: 100%;
 }
 
-.card {
-  margin-bottom: 1rem;
-}
 
 .card-title {
   margin-bottom: 0.5rem;
@@ -32,7 +36,7 @@
 }
 
 .btn-primary-acc{
-  color: #fff;
+  color: #000000;
   background-color: #2eff00;
   border-color: #2eff00;
   margin-left: 10px;

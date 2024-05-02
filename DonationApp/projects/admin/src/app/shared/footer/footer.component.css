@@ -1,3 +1,5 @@
+/* styles.css */
+
 #container0 {
   margin-top: 20px;
 }
@@ -47,6 +49,16 @@
 .new_footer_area {
   background: #fbfbfd;
 }
+
+.new_footer_area img {
+  position: relative;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 100; /* Ensure images appear on top of other content */
+}
+
 
 
 .new_footer_top {
@@ -215,10 +227,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .new_footer_top .footer_bg .footer_bg_two {
-  background-image: url("ambulance-car.svg");
-  /*background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif") no-repeat center center;*/
-  width: 150px;
-  height: 200px;
+  background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif") no-repeat center center;
+  width: 88px;
+  height: 100px;
   background-size:100%;
   bottom: 0;
   left: 38%;
@@ -255,4 +266,5 @@ h1, h2, h3, h4, h5, h6 {
     left: 100%;
   }
 }
+
 
