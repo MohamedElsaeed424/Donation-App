@@ -36,7 +36,7 @@
 .login-clean form .btn-primary {
   background: #0a3622;
   border: none;
-  border-radius: 4px;
+  border-radius: 70px;
   padding: 11px;
   box-shadow: none;
   margin-top: 26px;
@@ -73,6 +73,7 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 input[type="text"], input[type="email"], input[type="tel"], textarea {
   border-radius: 8px !important;
 }
+
 
 .btn-primary:hover {
   color: #fff;

@@ -29,6 +29,7 @@ import {DonorsPendingRequestService} from "./Donor/donorss-pending-requests/Dono
 import { OrganizationDetailsComponent } from './Organization/organizations-pending-requests/pending-organization-details/organization-details.component';
 import { DonorDetailsComponent } from './Donor/donor-details/donor-details.component';
 import { RegisteredOrganizationDetailsComponent } from './Organization/registered-organization/registered-organization-details/registered-organization-details.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { RegisteredOrganizationDetailsComponent } from './Organization/registere
     DonorsPendingRequestsComponent,
     OrganizationDetailsComponent,
     DonorDetailsComponent,
-    RegisteredOrganizationDetailsComponent
+    RegisteredOrganizationDetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

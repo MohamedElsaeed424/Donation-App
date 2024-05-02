@@ -7,6 +7,9 @@
 .card {
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-header {
@@ -14,12 +17,13 @@
   color: #fff;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
+
 }
 
 .card-body {
   padding: 20px;
+  text-align: center;
 }
-
 .form-label {
   font-weight: bold;
 }
@@ -33,18 +37,16 @@
 }
 
 .card.representative {
-  border: 1px solid #dee2e6;
-  border-radius: 15px;
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .card.representative .card-header {
   background-color: #343a40;
   color: #fff;
 }
-
 .card.representative .card-body {
   padding: 20px;
+  text-align: center;
 }
 .new_footer_area {
   background: #fbfbfd;
@@ -54,7 +56,10 @@
 .new_footer_top {
   padding: 120px 0px 270px;
   position: relative;
-    overflow-x: hidden;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .new_footer_area .footer_bottom {
   padding-top: 5px;
@@ -153,14 +158,13 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   border-color: #5e2ced;
   color: #fff;
 }
-#kk{
+#kk {
   margin-top: 20px;
-  margin-left: 220px;
-  list-style: none; /* Remove default list styles */
-  padding: 0; /* Remove default padding */
+  list-style: none;
+  padding: 0;
+  display: flex;
 }
-#kk li{
-  display: inline; /* Display list items inline */
+#kk li {
   margin-right: 20px;
   font-size: 20px;
 }
@@ -206,9 +210,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .new_footer_top .footer_bg .footer_bg_one {
   background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia0PYPxwT5ifToyP3SNZeQWfJEWrUENYA5IXM6sN5vLwAKvaJS1pQVu8mOFFUa_ET4JuHNTFAxKURFerJYHDUWXLXl1vDofYXuij45JZelYOjEFoCOn7E6Vxu0fwV7ACPzArcno1rYuVxGB7JY6G7__e4_KZW4lTYIaHSLVaVLzklZBLZnQw047oq5-Q/s16000/volks.gif") no-repeat center center;
+  background-size:100%;
   width: 330px;
   height: 105px;
-background-size:100%;
+
   position: absolute;
   bottom: 0;
   left: 30%;
@@ -218,15 +223,16 @@ background-size:100%;
 
 .new_footer_top .footer_bg .footer_bg_two {
   background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif") no-repeat center center;
+  background-size:100%;
   width: 88px;
   height: 100px;
-background-size:100%;
   bottom: 0;
   left: 38%;
   position: absolute;
   -webkit-animation: myfirst 30s linear infinite;
   animation: myfirst 30s linear infinite;
 }
+
 
 
 
