@@ -24,6 +24,13 @@ import { RequestBodyComponent } from './request-body/request-body.component';
 import {DropdownDirective} from "./shared/dropdown.directive";
 import { RequestedItemDetailsComponent } from './requested-items/requested-item/requested-item-details/requested-item-details.component';
 import { RequestedItemsListComponent } from './requested-items/requested-items-list/requested-items-list.component';
+import { ClothesDetailsComponent } from './requested-items/requested-item/requested-item-details/clothes-details/clothes-details.component';
+import { BooksDetailsComponent } from './requested-items/requested-item/requested-item-details/books-details/books-details.component';
+import { SchoolSuppliesDetailsComponent } from './requested-items/requested-item/requested-item-details/school-supplies-details/school-supplies-details.component';
+import { ToysDetailsComponent } from './requested-items/requested-item/requested-item-details/toys-details/toys-details.component';
+import { FoodDetailsComponent } from './requested-items/requested-item/requested-item-details/food-details/food-details.component';
+import { MedicalSuppliesDetailsComponent } from './requested-items/requested-item/requested-item-details/medical-supplies-details/medical-supplies-details.component';
+import { BloodDonationDetailsComponent } from './requested-items/requested-item/requested-item-details/blood-donation-details/blood-donation-details.component';
 
 
 
@@ -44,7 +51,14 @@ import { RequestedItemsListComponent } from './requested-items/requested-items-l
     RequestBodyComponent,
     DropdownDirective,
     RequestedItemDetailsComponent,
-    RequestedItemsListComponent
+    RequestedItemsListComponent,
+    ClothesDetailsComponent,
+    BooksDetailsComponent,
+    SchoolSuppliesDetailsComponent,
+    ToysDetailsComponent,
+    FoodDetailsComponent,
+    MedicalSuppliesDetailsComponent,
+    BloodDonationDetailsComponent
 
   ],
   imports: [

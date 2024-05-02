@@ -1,35 +1,40 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {RequestedItem} from "../../RequestedItem.model";
-import {RequestedItemsService} from "../../requested-items.service";
-import {ActivatedRoute, Params, Router} from "@angular/router";
+import { Component, Input, OnInit } from '@angular/core';
+import { RequestedItem } from "../../requested-Items-categories/super/RequestedItem.model";
+import { RequestedItemsService } from "../../requested-items.service";
+import { ActivatedRoute, Params, Router } from "@angular/router";
+import { Book } from "../../requested-Items-categories/categories/book.model";
+import { Clothes } from "../../requested-Items-categories/categories/clothes.model";
+import { Food } from "../../requested-Items-categories/categories/food.model";
+import { School } from "../../requested-Items-categories/categories/school.model";
+import { Toy } from "../../requested-Items-categories/categories/toy.model";
+import {MedicalSupply} from "../../requested-Items-categories/categories/medical-supplies.model";
 
 @Component({
   selector: 'app-requested-item-details',
   templateUrl: './requested-item-details.component.html',
-  styleUrl: './requested-item-details.component.css'
+  styleUrls: ['./requested-item-details.component.css']
 })
-export class RequestedItemDetailsComponent implements OnInit{
-  currentRequestedItem : RequestedItem;
-  currentRequestedItemId : number;
+export class RequestedItemDetailsComponent implements OnInit {
+  currentRequestedItem: Book | Clothes | Food | MedicalSupply | School | Toy |RequestedItem; // Union type
+  currentRequestedItemId: number;
+
   constructor(
-    private requestItemService : RequestedItemsService,
+    private requestItemService: RequestedItemsService,
     private route: ActivatedRoute,
-    private router:Router) {
+    private router: Router
+  ) {
     console.log('RequestedItemDetailsComponent constructor');
   }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.currentRequestedItemId = +params['id'];
-      this.currentRequestedItem =this.requestItemService.getRequestedItem(this.currentRequestedItemId);
+      this.currentRequestedItem = this.requestItemService.getRequestedItem(this.currentRequestedItemId);
       console.log(this.currentRequestedItem);
     });
   }
 
-  onDonate(){
-
+  onDonate() {
+    // Implement your functionality here
   }
-
-
-
 }

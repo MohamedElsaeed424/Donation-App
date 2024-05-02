@@ -1,5 +1,5 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {RequestedItem} from "../RequestedItem.model";
+import {RequestedItem} from "../requested-Items-categories/super/RequestedItem.model";
 
 
 
