@@ -1,0 +1,13 @@
+.custom-search-bar {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.custom-search-bar:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
