@@ -60,6 +60,11 @@ export class OrganizationService {
         777888999))
   ];
 
+  //getting random organization to be used in the submissions
+  getRandomOrganization(): Organization {
+    const randomIndex = Math.floor(Math.random() * this.organizations.length);
+    return this.organizations[randomIndex];
+  }
 
   // Method to add organization
   addOrganization(organization: Organization) {

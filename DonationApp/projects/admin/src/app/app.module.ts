@@ -26,10 +26,21 @@ import {
 } from "./Organization/organizations-pending-requests/organization-pending-request.service";
 import {DonorsPendingRequestsComponent} from './Donor/donorss-pending-requests/donors-pending-requests.component';
 import {DonorsPendingRequestService} from "./Donor/donorss-pending-requests/DonorsPendingRequest.service";
-import { OrganizationDetailsComponent } from './Organization/organizations-pending-requests/pending-organization-details/organization-details.component';
-import { DonorDetailsComponent } from './Donor/donor-details/donor-details.component';
-import { RegisteredOrganizationDetailsComponent } from './Organization/registered-organization/registered-organization-details/registered-organization-details.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import {
+  OrganizationDetailsComponent
+} from './Organization/organizations-pending-requests/pending-organization-details/organization-details.component';
+import {
+  RegisteredOrganizationDetailsComponent
+} from './Organization/registered-organization/registered-organization-details/registered-organization-details.component';
+import {FooterComponent} from './shared/footer/footer.component';
+import {SubmissionsComponent} from './Organization/OrganizationSubmissions/submissions.component';
+import {OrganizationSubmissionService} from "./Organization/OrganizationSubmissions/OrganizationSubmission.service";
+import {
+  OrganizationSubmissionDetailsComponent
+} from './Organization/OrganizationSubmissions/organization-submission-details/organization-submission-details.component';
+import {DonorSubmissionsComponent} from './Donor/donor-submissions/donor-submissions.component';
+import {DonorSubmissionsService} from "./Donor/donor-submissions/services/DonorSubmissions.service";
+import { DonorsSubmissionDetailsComponent } from './Donor/donor-submissions/donors-submission-details/donors-submission-details.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +58,12 @@ import { FooterComponent } from './shared/footer/footer.component';
     OrganizationsPendingRequestsComponent,
     DonorsPendingRequestsComponent,
     OrganizationDetailsComponent,
-    DonorDetailsComponent,
     RegisteredOrganizationDetailsComponent,
-    FooterComponent
+    FooterComponent,
+    SubmissionsComponent,
+    OrganizationSubmissionDetailsComponent,
+    DonorSubmissionsComponent,
+    DonorsSubmissionDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,12 +71,14 @@ import { FooterComponent } from './shared/footer/footer.component';
     NgOptimizedImage,
     FormsModule,
     ReactiveFormsModule,
-    //IonicModule
   ],
   providers: [OrganizationService,
     RegisteredDonorService,
     OrganizationPendingRequestService,
-    DonorsPendingRequestService],
+    DonorsPendingRequestService,
+    OrganizationSubmissionService,
+    DonorSubmissionsService,
+  ],
   exports: [
     LoginComponent
   ],

@@ -52,17 +52,21 @@
 
 .new_footer_area img {
   position: relative;
-  top: 20px; 
-  right: 20px; 
-  width: 100px; 
-  height: auto; 
-  z-index: 100; 
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  height: auto;
+  z-index: 100;
 }
 
-
+.hr {
+  height: 5px; /* Adjust the height to make it thicker */
+  background-color: black; /* Color of the line */
+  border: none; /* Remove the default border */
+}
 
 .new_footer_top {
-  padding: 120px 0px 270px;
+  padding: 40px 0px 270px;
   position: relative;
   overflow-x: hidden;
 }
@@ -166,11 +170,11 @@ a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
 #kk{
   margin-top: 20px;
   margin-left: 220px;
-  list-style: none; 
-  padding: 0; 
+  list-style: none;
+  padding: 0;
 }
 #kk li{
-  display: inline; 
+  display: inline;
   margin-right: 20px;
   font-size: 20px;
 }
@@ -240,25 +244,25 @@ h1, h2, h3, h4, h5, h6 {
 
 .image-section {
   display: flex;
-  justify-content:center;  
+  justify-content:center;
 }
 
 .image-container {
-  width: 200px; 
-  margin-bottom: 20px; 
+  width: 200px;
+  margin-bottom: 20px;
   gap: 20px;
 }
 
 .image-container img {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
   max-width: 100px;
   border-radius: 10px;
   top: -80px;
   right: -100px;
 }
 a {
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 

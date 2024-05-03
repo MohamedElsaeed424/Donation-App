@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Donor} from "../Donor.model";
+import {Donor, DonorTypeString} from "../Donor.model";
 import {DonorsPendingRequestService} from "./DonorsPendingRequest.service";
 import {RegisteredDonorService} from "../registered-donors/RegisteredDonor.service";
 
@@ -26,4 +26,6 @@ export class DonorsPendingRequestsComponent {
   rejectDonor(i:number){
     this.DonorsPendingRequests.deleteDonor(i) ;
   }
+
+  protected readonly DonorTypeString = DonorTypeString;
 }

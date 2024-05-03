@@ -27,5 +27,12 @@ export class Donor {
 
 export enum DonorType{
   doctor ,
-  teacher
+  teacher ,
+  donor
 }
+
+export const DonorTypeString = {
+  [DonorType.doctor]: 'doctor',
+  [DonorType.teacher]: 'teacher',
+  [DonorType.donor]: 'donor',
+};

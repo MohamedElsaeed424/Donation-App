@@ -14,10 +14,18 @@ import {DonorsPendingRequestsComponent} from "./Donor/donorss-pending-requests/d
 import {
   OrganizationDetailsComponent
 } from "./Organization/organizations-pending-requests/pending-organization-details/organization-details.component";
-import {DonorDetailsComponent} from "./Donor/donor-details/donor-details.component";
 import {
   RegisteredOrganizationDetailsComponent
 } from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
+import {OrganizationSubmissions} from "./Organization/OrganizationSubmissions/OrganiztionSubmission.model";
+import {SubmissionsComponent} from "./Organization/OrganizationSubmissions/submissions.component";
+import {
+  OrganizationSubmissionDetailsComponent
+} from "./Organization/OrganizationSubmissions/organization-submission-details/organization-submission-details.component";
+import {DonorSubmissionsComponent} from "./Donor/donor-submissions/donor-submissions.component";
+import {
+  DonorsSubmissionDetailsComponent
+} from "./Donor/donor-submissions/donors-submission-details/donors-submission-details.component";
 
 const routes: Routes = [
 
@@ -29,7 +37,10 @@ const routes: Routes = [
     path: 'Donor', children: [
       {path: 'Registered', component: RegisteredDonorsComponent},
       {path: 'PendingRequest', component: DonorsPendingRequestsComponent},
-      {path: ':id', component: DonorDetailsComponent}
+      {path: 'Submissions',children: [
+          {path:'' ,component:DonorSubmissionsComponent},
+          {path:':id' , component:DonorsSubmissionDetailsComponent }
+        ]}
     ]
   },
   {
@@ -39,7 +50,7 @@ const routes: Routes = [
           path: '', component: RegisteredOrganizationComponent
         }, {
           path: ':id', component: RegisteredOrganizationDetailsComponent
-        }]
+        } ]
       },
       {
         path: 'PendingRequest',
@@ -48,8 +59,12 @@ const routes: Routes = [
             path: ':id',
             component: OrganizationDetailsComponent
           }]
-      },
-
+      }, {
+      path: 'Submissions' ,children:[
+          {path : '' , component: SubmissionsComponent} ,
+          {path:':id' , component: OrganizationSubmissionDetailsComponent}
+        ]
+      }
     ]
   }
   // { path: '**',  redirectTo:'pageNotFound' ,component:ErrorComponent } ,

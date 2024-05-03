@@ -5,7 +5,7 @@
     <div class="card mb-3">
       <div class="card-body">
         <h5 class="card-title"><strong>{{ donor.name }}</strong></h5>
-        <p class="card-text"><b>Type:</b> {{ donor.type }}</p>
+        <p class="card-text"><b>Type:</b> {{DonorTypeString[donor.type]}}</p>
         <p class="card-text"><b>Address:</b> {{ donor.address }}</p>
         <!-- Add more details as needed -->
         <div class="button-row">

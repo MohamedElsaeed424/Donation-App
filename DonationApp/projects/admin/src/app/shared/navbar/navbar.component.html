@@ -26,6 +26,7 @@
             <div class="dropdown-menu" [ngClass]="{ 'show': organizationsDropdownOpen }">
               <button class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</button>
               <button class="dropdown-item" (click)="navigateToPendingOrganizationsRequest()">pending request</button>
+              <button class="dropdown-item" (click)="naviagteToOranizationSubmissions()">submissions</button>
             </div>
           </li>
 
@@ -35,14 +36,7 @@
             <div class="dropdown-menu" [ngClass]="{ 'show': donorsDropdownOpen }">
               <button class="dropdown-item" (click)="NavigateToRegisteredDonors()">Registered Donors</button>
               <button class="dropdown-item" (click)="NavigateToPendingDonorRequest()">Pending requests</button>
-            </div>
-          </li>
-          <li class="nav-item dropdown" [ngClass]="{ 'show': accountManagement }">
-            <button class="dropdown-toggle nav-link" (click)="toggleAccountManagement()" 
-            style="margin-left: 45px;">Accounts Management</button>
-            <div class="dropdown-menu" style="margin-left: 45px; max-width: 10px;" [ngClass]="{ 'show': accountManagement }">
-              <button class="dropdown-item" href="#">Organizations Accounts</button>
-              <button class="dropdown-item" href="#">Donors Accounts</button>
+              <button class="dropdown-item" (click)="naviagteToDonorsSubmissions()" >Submissions</button>
             </div>
           </li>
 
