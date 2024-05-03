@@ -1,6 +1,7 @@
 import {Component, HostListener} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "../../login/services/auth.service";
+import { DashboardComponent } from '../../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-navbar',
@@ -15,30 +16,46 @@ export class NavbarComponent {
   donorsDropdownOpen = false;
   settingsDropdownOpen = false;
   dashboardButton = false;
+  accountManagement = false;
 
   toggleOrganizationsDropdown() {
     this.organizationsDropdownOpen = !this.organizationsDropdownOpen;
     this.donorsDropdownOpen = false;
     this.settingsDropdownOpen = false;
+    this.dashboardButton = false;
+    this.accountManagement = false;
+  }
+  toggleAccountManagement(){
+    this.accountManagement = !this.accountManagement;
+    this.organizationsDropdownOpen = false;
+    this.donorsDropdownOpen = false;
+    this.settingsDropdownOpen = false;
+    this.dashboardButton = false;
   }
 
   toggleDonorsDropdown() {
     this.donorsDropdownOpen = !this.donorsDropdownOpen;
     this.organizationsDropdownOpen = false;
     this.settingsDropdownOpen = false;
+    this.dashboardButton = false;
+    this.accountManagement = false;
   }
 
   toggleSettingsDropdown() {
     this.settingsDropdownOpen = !this.settingsDropdownOpen;
     this.organizationsDropdownOpen = false;
     this.donorsDropdownOpen = false;
+    this.dashboardButton = false;
+    this.accountManagement = false;
   }
   toggledashboardButton(){
     this.dashboardButton =! this.dashboardButton;
     this.settingsDropdownOpen = false;
     this.organizationsDropdownOpen = false;
     this.donorsDropdownOpen = false;
+    this.accountManagement = false;
   }
+  
 
 
   Logout() {
