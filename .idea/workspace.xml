@@ -4,38 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="Initializing the app">
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/models/DonorSubmission.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2024_10_46_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2024_10_46_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2024_7_37_PM_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_25_2024_7_37_PM__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="Organization and admin submissions added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/Donor.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/Donor.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-details/donor-details.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-details/donor-details.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-details/donor-details.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-details/donor-details.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donorss-pending-requests/DonorsPendingRequest.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donorss-pending-requests/DonorsPendingRequest.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donorss-pending-requests/donors-pending-requests.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donorss-pending-requests/donors-pending-requests.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donorss-pending-requests/donors-pending-requests.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donorss-pending-requests/donors-pending-requests.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/registered-donors/RegisteredDonor.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/registered-donors/RegisteredDonor.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/Organization.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/Organization.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organization-pending-request.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organization-pending-request.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/pending-organization-details/organization-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/pending-organization-details/organization-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/pending-organization-details/organization-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/pending-organization-details/organization-details.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/RegisteredOrganization.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/RegisteredOrganization.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization-details/registered-organization-details.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization-details/registered-organization-details.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/account-management/account-management.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/account-management/account-management.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/account-management/account-management.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/footer/footer.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/navbar/navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization-details/registered-organization-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization-details/registered-organization-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization-details/registered-organization-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization-details/registered-organization-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +124,7 @@
       <workItem from="1714741822445" duration="680000" />
       <workItem from="1714744895727" duration="2848000" />
       <workItem from="1714754907832" duration="3960000" />
-      <workItem from="1714759731717" duration="8456000" />
+      <workItem from="1714759731717" duration="12525000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing the app">
       <option name="closed" value="true" />
@@ -172,7 +150,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714062220281</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Organization and admin submissions added">
+      <option name="closed" value="true" />
+      <created>1714770892775</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714770892775</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Organization and admin submissions added">
+      <option name="closed" value="true" />
+      <created>1714770916268</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714770916268</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +185,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initializing the app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initializing the app" />
+    <MESSAGE value="Organization and admin submissions added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Organization and admin submissions added" />
   </component>
 </project>

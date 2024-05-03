@@ -29,6 +29,10 @@
             <label class="form-label">Address, Area, Government:</label>
             <p class="form-control-plaintext" id="orgAddressAreaGovernment">{{Organization.address}}, {{Organization.area}}, {{Organization.government}}</p>
           </div>
+          <iframe
+            [src]="OrganizationGoogelMarker"
+            width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="col-md-6">
           <div class="card">

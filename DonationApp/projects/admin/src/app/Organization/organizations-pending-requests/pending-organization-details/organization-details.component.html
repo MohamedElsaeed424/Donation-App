@@ -19,16 +19,21 @@
         <div class="col-md-6">
           <div class="mb-3">
             <label class="form-label">Name: </label>
-            <p class="form-control-plaintext" id="orgName">{{Organization.name}}</p>
+            <p class="form-control-plaintext" id="orgName">{{ Organization.name }}</p>
           </div>
           <div class="mb-3">
             <label class="form-label">Type:</label>
-            <p class="form-control-plaintext" id="orgType">{{Organization.type}}</p>
+            <p class="form-control-plaintext" id="orgType">{{ Organization.type }}</p>
           </div>
           <div class="mb-3">
             <label class="form-label">Address, Area, Government:</label>
-            <p class="form-control-plaintext" id="orgAddressAreaGovernment">{{Organization.address}}, {{Organization.area}}, {{Organization.government}}</p>
+            <p class="form-control-plaintext" id="orgAddressAreaGovernment">{{ Organization.address }}
+              , {{ Organization.area }}, {{ Organization.government }}</p>
           </div>
+          <iframe
+            [src]="OrganizationGoogelMarker"
+            width="500" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="col-md-6">
           <div class="card">
@@ -36,19 +41,22 @@
             <div class="card-body">
               <div class="mb-3">
                 <label class="form-label">Name:</label>
-                <p class="form-control-plaintext" id="repName">{{Organization.OrganizationRepresentative.firstName}} {{Organization.OrganizationRepresentative.lastName}}</p>
+                <p class="form-control-plaintext"
+                   id="repName">{{ Organization.OrganizationRepresentative.firstName }} {{ Organization.OrganizationRepresentative.lastName }}</p>
               </div>
               <div class="mb-3">
                 <label class="form-label">Gender:</label>
-                <p class="form-control-plaintext" id="repGender">{{Organization.OrganizationRepresentative.gender}}</p>
+                <p class="form-control-plaintext"
+                   id="repGender">{{ Organization.OrganizationRepresentative.gender }}</p>
               </div>
               <div class="mb-3">
                 <label class="form-label">Email:</label>
-                <p class="form-control-plaintext" id="repEmail">{{Organization.OrganizationRepresentative.email}}</p>
+                <p class="form-control-plaintext" id="repEmail">{{ Organization.OrganizationRepresentative.email }}</p>
               </div>
               <div class="mb-3">
                 <label class="form-label">Contact Number:</label>
-                <p class="form-control-plaintext" id="repContactNumber">{{Organization.OrganizationRepresentative.contactNumber}}</p>
+                <p class="form-control-plaintext"
+                   id="repContactNumber">{{ Organization.OrganizationRepresentative.contactNumber }}</p>
               </div>
             </div>
           </div>
@@ -57,7 +65,7 @@
     </div>
   </div>
 
-  
+
 </div>
 </body>
 </html>
