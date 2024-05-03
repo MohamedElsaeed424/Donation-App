@@ -20,7 +20,6 @@ import { Directive, ElementRef, HostBinding, HostListener, Renderer2 } from "@an
 // To make the drop down closed when written on any place on the page
 export class DropdownDirective {
   constructor(private elRef: ElementRef) {}
-
   @HostBinding('class.open') isOpen = false;
   @HostListener('document:click', ['$event']) openDropDown(event: Event) {
     this.isOpen = this.elRef.nativeElement.contains(event.target) ? !this.isOpen : false;

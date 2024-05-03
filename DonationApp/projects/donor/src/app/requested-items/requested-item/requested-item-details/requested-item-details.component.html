@@ -21,7 +21,11 @@
             <app-school-supplies-details *ngIf="currentRequestedItem.category === ItemCategory.SchoolSupplies" [school]="currentRequestedItem"></app-school-supplies-details>
             <app-toys-details *ngIf="currentRequestedItem.category === ItemCategory.Toys" [toy]="currentRequestedItem"></app-toys-details>
           </ng-container>
-          <button class="btn btn-primary mt-4" (click)="onDonate()">Donate Now</button>
+          <div class="quantity-selection" style="margin-top: 1cm; margin-left: 3cm ;">
+            <label for="quantity" class="label card-text"><strong>Donation Quantity:</strong></label>
+            <input type="number" id="quantity" [(ngModel)]="selectedQuantity" class="input" min="1">
+            <button (click)="submitDonation()" class="button" style="margin-left: 5px">Donate</button>
+          </div>
         </div>
       </div>
     </div>

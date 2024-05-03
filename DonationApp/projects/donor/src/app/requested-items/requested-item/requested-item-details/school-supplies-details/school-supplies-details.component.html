@@ -1,14 +1,14 @@
 <div class=" request-card">
 <div *ngIf="school && school.schoolBooks && school.stationaryItems">
   <div *ngIf="school.schoolBooks.length > 0">
-    <h3><strong>Books</strong></h3>
-    <ul>
+    <h4 class="card-text"><strong>Books</strong></h4>
+    <ul class="card-text">
       <li *ngFor="let book of school.schoolBooks">{{ book.title }} - Grade: {{ book.grade }}, Subject: {{ book.subject }}, Year: {{ book.year }}</li>
     </ul>
   </div>
   <div *ngIf="school.stationaryItems.length > 0">
-    <h3><strong>Stationary Items</strong></h3>
-    <ul>
+    <h4 class="card-text"><strong>Stationary Items</strong></h4>
+    <ul class="card-text">
       <li *ngFor="let item of school.stationaryItems">{{ item.type }} - Amount Requested: {{ item.amountRequested }}</li>
     </ul>
   </div>

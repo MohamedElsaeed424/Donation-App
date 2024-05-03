@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {AuthService} from "./auth/login/services/auth.service";
+import {Component, Input, OnInit} from '@angular/core';
+import {AuthService} from "./auth/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,10 @@ import {AuthService} from "./auth/login/services/auth.service";
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-
   constructor(protected authService: AuthService) {}
 
   ngOnInit(): void {
+    console.log(this.authService.isAuthenticated());
     if (!this.authService.isAuthenticated()) {
       this.authService.logout();
     }

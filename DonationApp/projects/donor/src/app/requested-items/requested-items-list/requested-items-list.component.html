@@ -1,18 +1,24 @@
-<div class="row requested-items-grid">
-  <div class="requested-items-grid">
-    <ng-container *ngFor="let requestedItem of requestedItems.slice(0, requestedItems.length / 2); let i = index">
-      <app-requested-item
-        [currentRequestedItem]="requestedItem"
-        [currentRequestedItemId]="i"
-      ></app-requested-item>
-    </ng-container>
-  </div>
-  <div class="requested-items-grid">
-    <ng-container *ngFor="let requestedItem of requestedItems.slice(requestedItems.length / 2); let i = index">
-      <app-requested-item
-        [currentRequestedItem]="requestedItem"
-        [currentRequestedItemId]="i + requestedItems.length / 2"
-      ></app-requested-item>
-    </ng-container>
+<div class="row requested-items-grid" style="margin-top: 50px;margin-left: 3cm">
+  <div class="row-cols-lg-auto">
+    <div class="row" style="margin-bottom: 20px;margin-left: 2cm">
+      <app-search-bar (searchQuery)="searchQuery = $event" [thing]="'Category'"></app-search-bar>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="requested-items-grid">
+          <div class="row">
+            <ng-container *ngFor="let requestedItem of requestedItems | categoryFilter: searchQuery; let i = index">
+              <div class="col-lg-8 mb-3"> <!-- Three items per row with margin bottom -->
+                <app-requested-item
+                  [currentRequestedItem]="requestedItem"
+                  [currentRequestedItemId]="requestedItem.id  "
+                ></app-requested-item>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

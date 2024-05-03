@@ -75,6 +75,13 @@ export class RequestedItemsService{
       return this.requestedItems[id];
     }
 
+    filterRequestedItemsByCategory(category: string){
+        return this.requestedItems
+          .filter(item =>
+            item.category.toLowerCase().includes(category.toLowerCase())
+          );
+    }
+
     addRequestedItem(item: RequestedItem){
         this.requestedItems.push(item);
     }

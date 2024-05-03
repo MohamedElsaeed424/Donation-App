@@ -49,3 +49,33 @@
   background-color: #1C9B8E; /* Blue Green */
   border-color: #1C9B8E;
 }
+.quantity-selection {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.input {
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}

@@ -1,6 +1,7 @@
 import {Component, HostListener} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {AuthService} from "../../auth/login/services/auth.service";
+import {AuthService} from "../../auth/auth.service";
+import {ItemCategory} from "../../requested-items/requested-Items-categories/categories/all-categories.enum";
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,18 @@ import {AuthService} from "../../auth/login/services/auth.service";
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  public constructor(private route: ActivatedRoute, private  router : Router,private authService: AuthService) {
+  itemCategory : ItemCategory ;
+  categoriesDropdownOpen :boolean = false ;
+
+  public constructor(private route: ActivatedRoute, private  router : Router,private authService: AuthService) {}
+
+  toggleCategoriesDropdown() {
+    this.categoriesDropdownOpen = !this.categoriesDropdownOpen;
+    console.log(this.categoriesDropdownOpen);
+  }
+
+  closeAllDropdowns(){
+    this.categoriesDropdownOpen = false;
   }
 
   logout() {
@@ -16,4 +28,5 @@ export class NavbarComponent {
    this.router.navigate(['/auth/login']);
   }
 
+  protected readonly ItemCategory = ItemCategory;
 }

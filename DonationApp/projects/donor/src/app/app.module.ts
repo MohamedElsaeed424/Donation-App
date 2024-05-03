@@ -8,7 +8,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { DoctorSignupComponent } from './auth/sign-up/doctor-signup/doctor-signup.component';
 import { TeacherSignupComponent } from './auth/sign-up/teacher-signup/teacher-signup.component';
 
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { GoogleMapComponent } from './shared/google-map/google-map.component';
 import {GoogleMapsModule} from "@angular/google-maps";
 import {NgOptimizedImage} from "@angular/common";
@@ -20,7 +20,6 @@ import { RequestedItemsComponent } from './requested-items/requested-items.compo
 
 import { RequestedItemComponent } from './requested-items/requested-item/requested-item.component';
 import {NavbarComponent} from "./shared/navbar/navbar.component";
-import { RequestBodyComponent } from './request-body/request-body.component';
 import {DropdownDirective} from "./shared/dropdown.directive";
 import { RequestedItemDetailsComponent } from './requested-items/requested-item/requested-item-details/requested-item-details.component';
 import { RequestedItemsListComponent } from './requested-items/requested-items-list/requested-items-list.component';
@@ -31,9 +30,27 @@ import { ToysDetailsComponent } from './requested-items/requested-item/requested
 import { FoodDetailsComponent } from './requested-items/requested-item/requested-item-details/food-details/food-details.component';
 import { MedicalSuppliesDetailsComponent } from './requested-items/requested-item/requested-item-details/medical-supplies-details/medical-supplies-details.component';
 import { BloodDonationDetailsComponent } from './requested-items/requested-item/requested-item-details/blood-donation-details/blood-donation-details.component';
-
-
-
+import {CategoryFilterPipe} from "./requested-items/categoryFilter.pipe";
+import {RequestedItemCategoryComponent} from "./requested-items/requested-Items-categories/requested-item-category/requested-item-category.component";
+import { SearchBarComponent } from './shared/search-bar/search-bar.component';
+import {
+  BloodDonationFilterPipe
+} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/blood-donationFilter.pipe";
+import {
+  ClothesFilterPipe
+} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/clothesFilter.pipe";
+import {
+  FoodFilterPipe
+} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/foodFilter.pipe";
+import {
+  MedicalSupplyFilterPipe
+} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/medical-suppliesFilter.pipe";
+import {
+  SchoolSuppliesFilterPipe
+} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/school-suppliesFilter.pipe";
+import {
+  ToyFilterPipe
+} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/toysFilter.pipe";
 
 @NgModule({
   declarations: [
@@ -48,8 +65,6 @@ import { BloodDonationDetailsComponent } from './requested-items/requested-item/
     NavbarComponent,
     RequestedItemsComponent,
     RequestedItemComponent,
-    RequestBodyComponent,
-    DropdownDirective,
     RequestedItemDetailsComponent,
     RequestedItemsListComponent,
     ClothesDetailsComponent,
@@ -58,17 +73,27 @@ import { BloodDonationDetailsComponent } from './requested-items/requested-item/
     ToysDetailsComponent,
     FoodDetailsComponent,
     MedicalSuppliesDetailsComponent,
-    BloodDonationDetailsComponent
-
+    BloodDonationDetailsComponent ,
+    RequestedItemCategoryComponent,
+    SearchBarComponent,
+    DropdownDirective,
+    CategoryFilterPipe ,
+    BloodDonationFilterPipe,
+    ClothesFilterPipe,
+    FoodFilterPipe,
+    MedicalSupplyFilterPipe,
+    SchoolSuppliesFilterPipe,
+    ToyFilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     GoogleMapsModule,
-    NgOptimizedImage ,
-    HttpClientModule ,
-    AppRoutingModule
+    NgOptimizedImage,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

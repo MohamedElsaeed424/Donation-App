@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "./services/auth.service";
+import {AuthService} from "../auth.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit{
     let password = this.signInFrom.get('password').value
     const isAuthenticated = this.authService.login(username,password);
     if (isAuthenticated) {
-      this.redirectTo('/') ;
+      this.redirectTo('/requested-items') ;
     } else {
       this.isValid = false ;
       this.redirectTo('/login') ;

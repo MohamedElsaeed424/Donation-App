@@ -24,11 +24,11 @@ export class AuthService {
     }
   }
   logout(): void {
-
     localStorage.removeItem('token');
     this.isLoggedIn = false;
   }
   isAuthenticated(): boolean {
+    console.log(localStorage.getItem('token'));
     return !!localStorage.getItem('token');
   }
 }

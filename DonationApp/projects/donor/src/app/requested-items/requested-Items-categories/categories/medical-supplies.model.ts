@@ -3,7 +3,6 @@ import { RequestedItem } from "../super/RequestedItem.model";
 export class MedicalSupply extends RequestedItem {
   type: MedicalType; // Medical devices, medical equipment, medication, etc.
   medicalUse: string; // For what purpose the medical supply is needed
-
   constructor(
     id: number,
     name: string,

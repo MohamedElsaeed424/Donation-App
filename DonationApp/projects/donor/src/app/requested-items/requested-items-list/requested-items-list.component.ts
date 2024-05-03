@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {RequestedItem} from "../requested-Items-categories/super/RequestedItem.model";
 import {RequestedItemsService} from "../requested-items.service";
 
@@ -9,7 +9,7 @@ import {RequestedItemsService} from "../requested-items.service";
 })
 export class RequestedItemsListComponent implements OnInit {
   requestedItems : RequestedItem[] ;
-
+   searchQuery: string = '';
   constructor(private requestItemService : RequestedItemsService) { }
   ngOnInit(): void {
     this.requestedItems = this.requestItemService.getRequestedItems();
