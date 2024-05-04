@@ -1,0 +1,122 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #043B38; /* Forest Green */
+  font-family: 'Arial', sans-serif;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+input.form-control:focus {
+  border-color: #30D9C8; /* Spearmint */
+}
+
+button.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary {
+  background-color: #30D9C8; /* Spearmint */
+  border-color: #30D9C8;
+  color: white;
+}
+
+button.btn-primary:hover {
+  background-color: #1C9B8E; /* Blue Green */
+  border-color: #1C9B8E;
+}
+
+button.btn-danger {
+  background-color: #FF4136; /* Red */
+  border-color: #FF4136;
+  color: white;
+}
+
+button.btn-danger:hover {
+  background-color: #E70000; /* Darker Red */
+  border-color: #E70000;
+}
+
+.request-card {
+  background-color: #AFF0F2; /* Baby Blue */
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.31);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.request-card::before {
+  content: "";
+  background-image: url('/assets/istockphoto-1063346420-612x612.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.7; /* Adjust opacity as needed */
+  z-index: -1;
+  animation: fadeIn 2s ease-in-out forwards; /* Animation properties */
+  border-radius: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.request-card .card-title {
+  color: #043B38; /* Forest Green */
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.request-card .card-text {
+  color: #1C9B8E; /* Blue Green */
+}
+
+.request-card button {
+  background-color: #30D9C8; /* Spearmint */
+  border-color: #30D9C8;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.request-card button:hover {
+  background-color: #1C9B8E; /* Blue Green */
+  border-color: #1C9B8E;
+}
+

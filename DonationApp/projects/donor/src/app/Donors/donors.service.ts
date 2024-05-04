@@ -39,7 +39,8 @@ export class DonorService {
     "County",
     DonorType.Teacher,
     ["Mathematics", "Science"],
-    3
+    3,
+    30
   );
 
   donor = new Donor(
@@ -79,9 +80,10 @@ export class DonorService {
     return this.donors.find(donor => donor.userName === userName);
   }
 
-  updateDonor(updatedDonor: Donor): void {
-    const index = this.donors.findIndex(donor => donor.userName === updatedDonor.userName);
+  updateDonor(updatedDonor: Donor , oldusername:string): void {
+    const index = this.donors.findIndex(donor => donor.userName === oldusername);
     if (index !== -1) {
+      console.log(updatedDonor);
       this.donors[index] = updatedDonor;
       this.donorsSubject.next(this.donors);
     }
