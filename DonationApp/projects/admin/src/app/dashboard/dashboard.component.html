@@ -24,12 +24,51 @@
                 </div>
                 <div class="statistic-item">
                     <p>Top country contributing to donation: Egypt</p>
-                
                 </div>
             </header>
             </section>
         </div>
     </div>
-
-
+    <div class="container" id="container2">
+        <h1>Quick Access</h1>
+            <div class="row">
+              <!-- Organization related cards -->
+              <section>
+                <header><h5>Registered Organizations</h5></header>
+                <div  *ngFor="let organization of Organizations | organizationFilterPipe: searchTerm ; let i = index">
+                    <h5 class="card-title"><strong>{{ organization.name }}</strong></h5>
+                    <a (click)="NavigateToOrganizationDetails(i)" class="btn btn-primary-view">View Details</a>
+                </div>
+              </section>
+            
+              <section>
+            <header>
+                <h5>Organization Requests</h5>
+            </header>
+              </section>
+              <section>
+            <header>
+                <h5>Organization Submissions</h5>
+            </header>
+              </section>
+            </div>
+            <div class="row">
+              <!-- Donor related cards -->
+              <section>
+            <header>
+                <h5>Registered Donors</h5>
+            </header>
+              </section>
+              <section>
+            <header>
+                <h5>Donor Requests</h5>
+            </header>
+              </section>
+              <section>
+            <header>
+                <h5>Donor Submissions</h5>
+            </header>
+              </section>
+            </div> 
+    </div>
 </body>

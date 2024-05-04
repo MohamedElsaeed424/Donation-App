@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../login/services/auth.service";
+import { Organization } from '../Organization/Organization.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +10,14 @@ import {AuthService} from "../login/services/auth.service";
 })
 export class DashboardComponent implements OnInit {
   userName:string ;
-  constructor(private authSerbice :AuthService) {
+  Organizations  : Organization[];
+  searchTerm: string = '';
+  constructor( private route:Router , private authservice:AuthService ) {
+  }
+  NavigateToOrganizationDetails(i:number){
+    this.route.navigate(['/Organizations/Registered' ,i] ,{queryParams: {username: this.authservice.username}})
   }
   ngOnInit(){
-    this.userName=this.authSerbice.username;
+    this.userName=this.authservice.username;
   }
 }
