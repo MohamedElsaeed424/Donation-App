@@ -10,7 +10,7 @@ export class OrganizationPendingRequestService {
       'Type 6',
       '223 Maple St',
       'Area 6',
-      'Government 6',
+      'Government 6',"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d85308.60515504004!2d30.725363274699787!3d29.969488020849363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'Sarah',
         'Wilson',
@@ -25,7 +25,7 @@ export class OrganizationPendingRequestService {
       'Type 7',
       '334 Birch St',
       'Area 7',
-      'Government 7',
+      'Government 7', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d340746.8231979895!2d31.228757806193005!3d30.035247345129776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'Thomas',
         'Anderson',
@@ -40,7 +40,7 @@ export class OrganizationPendingRequestService {
       'Type 8',
       '445 Oak St',
       'Area 8',
-      'Government 8',
+      'Government 8',  "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d102301.62060189652!2d31.828288757168067!3d30.979341509606014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Jessica',
         'Wilson',
@@ -55,7 +55,7 @@ export class OrganizationPendingRequestService {
       'Type 9',
       '556 Pine St',
       'Area 9',
-      'Government 9',
+      'Government 9', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d503779.9865172232!2d31.816396299466573!3d26.72231825936015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Matthew',
         'Robinson',
@@ -70,7 +70,7 @@ export class OrganizationPendingRequestService {
       'Type 10',
       '667 Elm St',
       'Area 10',
-      'Government 10',
+      'Government 10', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d862939.1307577865!2d31.526837269463244!3d26.343388289429054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Olivia',
         'Johnson',
@@ -85,7 +85,7 @@ export class OrganizationPendingRequestService {
       'Type 11',
       '778 Cedar St',
       'Area 11',
-      'Government 11',
+      'Government 11', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d102299.13492910508!2d31.772907522750476!3d30.9992542410608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'William',
         'Martinez',
@@ -100,7 +100,7 @@ export class OrganizationPendingRequestService {
       'Type 12',
       '889 Maple St',
       'Area 12',
-      'Government 12',
+      'Government 12', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d862959.4855104281!2d30.48427472672764!3d26.36570460965092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Sophia',
         'Garcia',
@@ -115,7 +115,7 @@ export class OrganizationPendingRequestService {
       'Type 13',
       '990 Birch St',
       'Area 13',
-      'Government 13',
+      'Government 13', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d68642.23114421111!2d31.269522469155937!3d29.734152780228256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'James',
         'Taylor',
@@ -130,7 +130,7 @@ export class OrganizationPendingRequestService {
       'Type 14',
       '1101 Oak St',
       'Area 14',
-      'Government 14',
+      'Government 14', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d342369.1861767999!2d32.87926481926543!3d24.089680998792703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'Mia',
         'Hernandez',
@@ -145,7 +145,7 @@ export class OrganizationPendingRequestService {
       'Type 15',
       '1212 Pine St',
       'Area 15',
-      'Government 15',
+      'Government 15', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d514367.84043893215!2d30.2174019782394!3d29.40689533263558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Benjamin',
         'Lopez',
@@ -160,7 +160,7 @@ export class OrganizationPendingRequestService {
       'Type 16',
       '1323 Elm St',
       'Area 16',
-      'Government 16',
+      'Government 16', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d342369.1861767999!2d32.87926481926543!3d24.089680998792703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Ava',
         'Gonzalez',
@@ -175,7 +175,7 @@ export class OrganizationPendingRequestService {
       'Type 17',
       '1434 Cedar St',
       'Area 17',
-      'Government 17',
+      'Government 17',"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d342369.1861767999!2d32.87926481926543!3d24.089680998792703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'Daniel',
         'Rodriguez',
@@ -190,7 +190,7 @@ export class OrganizationPendingRequestService {
       'Type 18',
       '1545 Maple St',
       'Area 18',
-      'Government 18',
+      'Government 18', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d514367.84043893215!2d30.2174019782394!3d29.40689533263558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Sofia',
         'Perez',
@@ -205,7 +205,7 @@ export class OrganizationPendingRequestService {
       'Type 19',
       '1656 Birch St',
       'Area 19',
-      'Government 19',
+      'Government 19', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d173166.2740015707!2d31.76166680808322!3d30.700706372076055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Joseph',
         'Sanchez',
@@ -220,7 +220,7 @@ export class OrganizationPendingRequestService {
       'Type 20',
       '1767 Oak St',
       'Area 20',
-      'Government 20',
+      'Government 20', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1018751.1236325349!2d31.707649106610584!3d30.04367750746763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Charlotte',
         'Rivera',
@@ -235,7 +235,7 @@ export class OrganizationPendingRequestService {
       'Type 21',
       '1878 Pine St',
       'Area 21',
-      'Government 21',
+      'Government 21', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d172994.82704916636!2d31.29473952330886!3d30.029363803509383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Ethan',
         'Mitchell',
@@ -250,7 +250,7 @@ export class OrganizationPendingRequestService {
       'Type 22',
       '1989 Elm St',
       'Area 22',
-      'Government 22',
+      'Government 22',"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51413.161543213055!2d29.917289631518095!3d31.261798387129013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'Amelia',
         'Cruz',
@@ -265,7 +265,7 @@ export class OrganizationPendingRequestService {
       'Type 23',
       '2000 Cedar St',
       'Area 23',
-      'Government 23',
+      'Government 23', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d258862.71522333116!2d31.344500173308675!3d30.040222799101583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen",
       new OrganizationRepresentitve(
         'Mason',
         'Edwards',
@@ -280,7 +280,7 @@ export class OrganizationPendingRequestService {
       'Type 24',
       '2111 Maple St',
       'Area 24',
-      'Government 24',
+      'Government 24', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d137150.33511134457!2d31.22418519618729!3d30.04441904329484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145838d94a29db6f%3A0xac60bf5d8e55a853!2sCairo%2C%20Egypt!5e0!3m2!1sen!2s!4v1647597581557!5m2!1sen!2s",
       new OrganizationRepresentitve(
         'Harper',
         'Reed',
@@ -295,7 +295,7 @@ export class OrganizationPendingRequestService {
       'Type 25',
       '2222 Birch St',
       'Area 25',
-      'Government 25',
+      'Government 25', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d344881.6526541043!2d31.22418519618729!3d30.04441904329484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145838d94a29db6f%3A0xac60bf5d8e55a853!2sCairo%2C%20Egypt!5e0!3m2!1sen!2s!4v1647597581557!5m2!1sen!2s",
       new OrganizationRepresentitve(
         'Alexander',
         'Cook',

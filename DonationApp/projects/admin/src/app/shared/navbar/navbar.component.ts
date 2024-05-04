@@ -16,29 +16,25 @@ export class NavbarComponent {
   donorsDropdownOpen = false;
   settingsDropdownOpen = false;
   dashboardButton = false;
-  accountManagement = false;
+
+  closeAllDropDown(){
+    this.organizationsDropdownOpen = false;
+    this.donorsDropdownOpen = false;
+    this.settingsDropdownOpen = false;
+    this.dashboardButton = false;
+  }
 
   toggleOrganizationsDropdown() {
     this.organizationsDropdownOpen = !this.organizationsDropdownOpen;
     this.donorsDropdownOpen = false;
     this.settingsDropdownOpen = false;
     this.dashboardButton = false;
-    this.accountManagement = false;
   }
-  toggleAccountManagement(){
-    this.accountManagement = !this.accountManagement;
-    this.organizationsDropdownOpen = false;
-    this.donorsDropdownOpen = false;
-    this.settingsDropdownOpen = false;
-    this.dashboardButton = false;
-  }
-
   toggleDonorsDropdown() {
     this.donorsDropdownOpen = !this.donorsDropdownOpen;
     this.organizationsDropdownOpen = false;
     this.settingsDropdownOpen = false;
     this.dashboardButton = false;
-    this.accountManagement = false;
   }
 
   toggleSettingsDropdown() {
@@ -46,16 +42,14 @@ export class NavbarComponent {
     this.organizationsDropdownOpen = false;
     this.donorsDropdownOpen = false;
     this.dashboardButton = false;
-    this.accountManagement = false;
   }
   toggledashboardButton(){
     this.dashboardButton =! this.dashboardButton;
     this.settingsDropdownOpen = false;
     this.organizationsDropdownOpen = false;
     this.donorsDropdownOpen = false;
-    this.accountManagement = false;
   }
-  
+
 
 
   Logout() {
@@ -64,23 +58,39 @@ export class NavbarComponent {
 
   NaviagteToChnagePassword() {
     this.route.navigate(["/changePassword"], {queryParams: {username: this.authservice.username}})
+    this.closeAllDropDown()
   }
 
   LoadRegisteredOrganizations(){
     this.route.navigate(['/Organizations/Registered'],{queryParams: {username: this.authservice.username}})
+    this.closeAllDropDown()
   }
 
   NavigateToRegisteredDonors(){
     this.route.navigate(['/Donor/Registered'],{queryParams: {username: this.authservice.username}})
+    this.closeAllDropDown()
   }
   navigateToPendingOrganizationsRequest(){
     this.route.navigate(['/Organizations/PendingRequest'],{queryParams: {username: this.authservice.username}})
+    this.closeAllDropDown()
   }
   NavigateToPendingDonorRequest(){
     this.route.navigate(['/Donor/PendingRequest'],{queryParams: {username: this.authservice.username}})
+    this.closeAllDropDown()
   }
   NavigateToDashboard(){
     this.route.navigate(['/Dashboard'],{queryParams: {username: this.authservice.username}})
+    this.closeAllDropDown()
   }
- 
+
+  naviagteToOranizationSubmissions(){
+    this.route.navigate(['/Organizations/Submissions'],{queryParams: {username: this.authservice.username}})
+    this.closeAllDropDown()
+  }
+
+  naviagteToDonorsSubmissions(){
+    this.route.navigate(['/Donor/Submissions'],{queryParams: {username: this.authservice.username}})
+    this.closeAllDropDown()
+  }
+
 }
