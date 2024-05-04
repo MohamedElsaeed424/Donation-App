@@ -20,7 +20,7 @@ export class DonorService {
     "123 Main St",
     "Downtown",
     "City",
-    DonorType.doctor,
+    DonorType.Doctor,
     "Cardiology",
     5,
     this.clinicLocation
@@ -37,7 +37,7 @@ export class DonorService {
     "456 Oak St",
     "Suburb",
     "County",
-    DonorType.teacher,
+    DonorType.Teacher,
     ["Mathematics", "Science"],
     3
   );
@@ -53,7 +53,7 @@ export class DonorService {
     "789 Elm St",
     "Urban",
     "Metropolis",
-    DonorType.donor
+    DonorType.Donor
   );
   private donors : Donor[] = [this.donor, this.teacher, this.doctor];
 
