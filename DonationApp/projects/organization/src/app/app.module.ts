@@ -7,7 +7,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
-import { FileUploadComponent } from './shared/postdonations/postdonations.component';
+import { FileUploadComponent } from './shared/shared/file-upload/file-upload.component';
 import {NgOptimizedImage} from "@angular/common";
 import { PostdonationsComponent } from './shared/postdonations/postdonations.component';
 

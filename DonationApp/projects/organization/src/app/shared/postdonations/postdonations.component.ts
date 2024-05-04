@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./postdonations.component.css']
 })
 export class PostdonationsComponent {
-
+  donation: any = {};
   constructor() { }
 
   // Define the submitForm method
