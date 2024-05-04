@@ -1,8 +1,8 @@
 import { Component, Injector, Input, OnInit } from '@angular/core';
-import { RequestedItem } from "../../requested-Items-categories/super/RequestedItem.model";
+import { RequestedItem } from "../../categories/super/RequestedItem.model";
 import { RequestedItemsService } from "../../requested-items.service";
 import { ActivatedRoute, Params, Router } from "@angular/router";
-import {ItemCategory} from "../../requested-Items-categories/categories/all-categories.enum";
+import {ItemCategory} from "../../categories/categories-models/all-categories.enum";
 
 @Component({
   selector: 'app-requested-item-details',

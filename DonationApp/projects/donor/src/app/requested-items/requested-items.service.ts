@@ -1,13 +1,13 @@
-import {RequestedItem} from "./requested-Items-categories/super/RequestedItem.model";
-import {Book} from "./requested-Items-categories/categories/book.model";
-import {Clothes} from "./requested-Items-categories/categories/clothes.model";
-import {MedicalSupply, MedicalType} from "./requested-Items-categories/categories/medical-supplies.model";
-import {School, SchoolBook, StationaryItem} from "./requested-Items-categories/categories/school.model";
-import {Toy} from "./requested-Items-categories/categories/toy.model";
-import {Food, FoodCategory} from "./requested-Items-categories/categories/food.model";
+import {RequestedItem} from "./categories/super/RequestedItem.model";
 
 import {Injectable} from "@angular/core";
-import {ItemCategory} from "./requested-Items-categories/categories/all-categories.enum";
+import {School, SchoolBook, StationaryItem} from "./categories/categories-models/school.model";
+import {MedicalSupply, MedicalType} from "./categories/categories-models/medical-supplies.model";
+import {Food, FoodCategory} from "./categories/categories-models/food.model";
+import {ItemCategory} from "./categories/categories-models/all-categories.enum";
+import {Book} from "./categories/categories-models/book.model";
+import {Clothes} from "./categories/categories-models/clothes.model";
+import {Toy} from "./categories/categories-models/toy.model";
 
 @Injectable({providedIn: 'root'})
 export class RequestedItemsService{
@@ -21,7 +21,6 @@ export class RequestedItemsService{
       { title: 'Mathematics Textbook', grade: 'Grade 5', subject: 'Mathematics', year: 2022 },
       { title: 'Science Workbook', grade: 'Grade 5', subject: 'Science', year: 2022 }
     ];
-
     stationaryItems: StationaryItem[] = [
       { type: 'Pencil', amountRequested: 10 },
       { type: 'Notebook', amountRequested: 5 }
@@ -40,8 +39,22 @@ export class RequestedItemsService{
        ItemCategory.MedicalSupplies, // category
        'Sample Medical Use',
        'Sample User',
-       MedicalType.MedicalEquipment,
+       MedicalType.Medication,
         'Medical use',
+     ),
+     new MedicalSupply(12,
+       'Medical Supply',
+       'I need medical supplies',
+       2,
+       'Requested',
+       '2021-09-27',
+       'Karachi',
+       'assets/medical-supplies.jpg',
+       ItemCategory.MedicalSupplies, // category
+       'Sample Medical Use',
+       'Sample User',
+       MedicalType.MedicalEquipment,
+       'moot',
      ),
     new School(
       9,
@@ -58,8 +71,10 @@ export class RequestedItemsService{
       this.schoolBooks,
       this.stationaryItems
     ),
-    new Toy(10, 'Toy', 'I need a toy for my child', 1, 'Requested', '2021-09-29', 'Lahore', 'assets/toy.jpg', ItemCategory.Toys, 'Sample User', '01020069006', 'Sample Type', 'Sample Age', 'Sample Gender')
-  ];
+    new Toy(10, 'Toy', 'I need a toy for my child', 1, 'Requested', '2021-09-29', 'Lahore', 'assets/toy.jpg', ItemCategory.Toys, 'Mohamed', '01020069006', 'good', '3', 'male'),
+     new Toy(11, 'Toy', 'I need a toy for my child', 1, 'Requested', '2021-09-29', 'Lahore', 'assets/toy.jpg', ItemCategory.Toys, 'habiba ', '01020069006', 'bad', '20', 'female')
+
+   ];
 
 // Combine all samples into the requestedItems array
    requestedItems: RequestedItem[] = [this.laptop, this.book, this.clothes, this.furniture, this.shoes, this.mobile, ...this.additionalSamples];

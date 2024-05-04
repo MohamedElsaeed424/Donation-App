@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { School } from "../../categories/school.model";
-import { RequestedItem } from "../../super/RequestedItem.model";
+import { School } from "../categories-models/school.model";
+import { RequestedItem } from "../super/RequestedItem.model";
 
 @Pipe({
   name: 'schoolSuppliesFilter',

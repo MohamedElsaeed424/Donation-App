@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RequestedItem} from "./requested-Items-categories/super/RequestedItem.model";
+import {RequestedItem} from "./categories/super/RequestedItem.model";
 import {RequestedItemsService} from "./requested-items.service";
 
 @Component({

@@ -1,0 +1,30 @@
+<div class="row-cols-lg-auto">
+  <div>
+    <app-search-bar (searchQuery)="searchQuery1=$event" [thing]="''" class="custom-search-bar"></app-search-bar>
+  </div>
+  <div>
+    <app-search-bar (searchQuery)="searchQuery2=$event" [thing]="'Gender'" class="custom-search-bar"></app-search-bar>
+  </div>
+  <div>
+    <app-search-bar (searchQuery)="searchQuery3=$event" [thing]="'Season'" class="custom-search-bar"></app-search-bar>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12">
+    <div class="requested-items-grid">
+      <div class="row">
+        <ng-container
+          *ngFor="let requestedItem of requestedItemsCategory |
+                      bookFilter : searchQuery1 : searchQuery2:searchQuery3
+                      let i = index">
+          <div class="col-lg-8 mb-3">
+            <app-requested-item
+              [currentRequestedItem]="requestedItem"
+              [currentRequestedItemId]="requestedItem.id"
+            ></app-requested-item>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

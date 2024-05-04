@@ -1,0 +1,32 @@
+<div class="row requested-items-grid" style="margin-top: 50px;margin-left: 10cm">
+    <div class="row">
+      <div *ngIf="category === ItemCategory.Clothes" style="width: 10cm">
+          <app-clothes-items-category [requestedItemsCategory]="requestedItemsCategory">
+          </app-clothes-items-category>
+      </div>
+      <div *ngIf="category === ItemCategory.Books" style="width: 10cm">
+          <app-books-items-category [requestedItemsCategory]="requestedItemsCategory">
+          </app-books-items-category>
+      </div>
+      <div *ngIf="category === ItemCategory.SchoolSupplies" style="width: 10cm">
+        <app-school-supplies-items-category [requestedItemsCategory]="requestedItemsCategory">
+        </app-school-supplies-items-category>
+      </div>
+      <div *ngIf="category === ItemCategory.Toys" style="width: 10cm">
+          <app-toys-supplies-items-category [requestedItemsCategory]="requestedItemsCategory">
+          </app-toys-supplies-items-category>
+      </div>
+      <div *ngIf="category === ItemCategory.Food" style="width: 10cm">
+          <app-food-items-category [requestedItemsCategory]="requestedItemsCategory">
+          </app-food-items-category>
+      </div>
+      <div *ngIf="category === ItemCategory.MedicalSupplies" style="width: 10cm" >
+          <app-medical-supplies-items-category [requestedItemsCategory]="requestedItemsCategory" >
+          </app-medical-supplies-items-category>
+      </div>
+      <div *ngIf="category === ItemCategory.BloodDonation" style="width: 10cm">
+        <app-blood-donation-items-category [requestedItemsCategory]="requestedItemsCategory">
+        </app-blood-donation-items-category>
+      </div>
+    </div>
+</div>

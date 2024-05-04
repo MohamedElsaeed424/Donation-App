@@ -31,26 +31,50 @@ import { FoodDetailsComponent } from './requested-items/requested-item/requested
 import { MedicalSuppliesDetailsComponent } from './requested-items/requested-item/requested-item-details/medical-supplies-details/medical-supplies-details.component';
 import { BloodDonationDetailsComponent } from './requested-items/requested-item/requested-item-details/blood-donation-details/blood-donation-details.component';
 import {CategoryFilterPipe} from "./requested-items/categoryFilter.pipe";
-import {RequestedItemCategoryComponent} from "./requested-items/requested-Items-categories/requested-item-category/requested-item-category.component";
+import {RequestedItemCategoryComponent} from "./requested-items/categories/requested-item-category/requested-item-category.component";
 import { SearchBarComponent } from './shared/search-bar/search-bar.component';
 import {
+  BloodDonationItemsCategoryComponent
+} from "./requested-items/categories/requested-item-category/blood-donation-items-category/blood-donation-items-category.component";
+import {
+  BooksItemsCategoryComponent
+} from "./requested-items/categories/requested-item-category/books-items-category/books-items-category.component";
+import {
+  ClothesItemsCategoryComponent
+} from "./requested-items/categories/requested-item-category/clothes-items-category/clothes-items-category.component";
+import {
+  FoodItemsCategoryComponent
+} from "./requested-items/categories/requested-item-category/food-items-category/food-items-category.component";
+import {
+  MedicalSuppliesItemsCategoryComponent
+} from "./requested-items/categories/requested-item-category/medical-supplies-items-category/medical-supplies-items-category.component";
+import {
+  SchoolSuppliesItemsCategoryComponent
+} from "./requested-items/categories/requested-item-category/school-supplies-items-category/school-supplies-items-category.component";
+import {
+  ToysSuppliesItemsCategoryComponent
+} from "./requested-items/categories/requested-item-category/toys-supplies-items-category/toys-supplies-items-category.component";
+import {
   BloodDonationFilterPipe
-} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/blood-donationFilter.pipe";
+} from "./requested-items/categories/category-filter-pipes/blood-donationFilter.pipe";
 import {
   ClothesFilterPipe
-} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/clothesFilter.pipe";
+} from "./requested-items/categories/category-filter-pipes/clothesFilter.pipe";
 import {
   FoodFilterPipe
-} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/foodFilter.pipe";
+} from "./requested-items/categories/category-filter-pipes/foodFilter.pipe";
 import {
   MedicalSupplyFilterPipe
-} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/medical-suppliesFilter.pipe";
+} from "./requested-items/categories/category-filter-pipes/medical-suppliesFilter.pipe";
 import {
   SchoolSuppliesFilterPipe
-} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/school-suppliesFilter.pipe";
+} from "./requested-items/categories/category-filter-pipes/school-suppliesFilter.pipe";
 import {
   ToyFilterPipe
-} from "./requested-items/requested-Items-categories/requested-item-category/category-filter-pipes/toysFilter.pipe";
+} from "./requested-items/categories/category-filter-pipes/toysFilter.pipe";
+import {
+  BookFilterPipe
+} from "./requested-items/categories/category-filter-pipes/booksFilter.pipe";
 
 @NgModule({
   declarations: [
@@ -76,6 +100,13 @@ import {
     BloodDonationDetailsComponent ,
     RequestedItemCategoryComponent,
     SearchBarComponent,
+    BloodDonationItemsCategoryComponent,
+    BooksItemsCategoryComponent,
+    ClothesItemsCategoryComponent,
+    FoodItemsCategoryComponent,
+    MedicalSuppliesItemsCategoryComponent,
+    SchoolSuppliesItemsCategoryComponent,
+    ToysSuppliesItemsCategoryComponent,
     DropdownDirective,
     CategoryFilterPipe ,
     BloodDonationFilterPipe,
@@ -83,7 +114,8 @@ import {
     FoodFilterPipe,
     MedicalSupplyFilterPipe,
     SchoolSuppliesFilterPipe,
-    ToyFilterPipe
+    ToyFilterPipe,
+    BookFilterPipe,
   ],
   imports: [
     BrowserModule,

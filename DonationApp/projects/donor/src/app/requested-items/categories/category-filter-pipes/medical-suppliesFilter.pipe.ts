@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { RequestedItem } from "../../super/RequestedItem.model";
-import {MedicalSupply} from "../../categories/medical-supplies.model";
+import { RequestedItem } from "../super/RequestedItem.model";
+import {MedicalSupply} from "../categories-models/medical-supplies.model";
 
 
 @Pipe({
