@@ -25,7 +25,12 @@
             <li><a class="dropdown-item " (click)="closeAllDropdowns()" routerLinkActive="active-link" [routerLink]="['/requested-items','requested-item-category',ItemCategory.MedicalSupplies]">Medical Supplies</a></li>
           </ul>
         </li>
-
+        <li class="nav-item" *ngIf="authService.isTeacher()">
+          <a class="nav-link" routerLink="/teaching-posts" routerLinkActive="active">Teaching Posts</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.isDoctor()">
+          <a class="nav-link" routerLink="/medical-cases" routerLinkActive="active">Medical Cases</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="" style="color: #3a8c7d;" (click)="logout()">Logout</a>
         </li>

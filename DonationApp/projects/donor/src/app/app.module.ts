@@ -75,6 +75,17 @@ import {
 import {
   BookFilterPipe
 } from "./requested-items/categories/category-filter-pipes/booksFilter.pipe";
+import { TeachingPostsComponent } from './teaching-posts/teaching-posts.component';
+import { TeachingPostComponent } from './teaching-posts/teaching-post/teaching-post.component';
+import { TeachingPostsListComponent } from './teaching-posts/teaching-posts-list/teaching-posts-list.component';
+import { TeachingPostDetailsComponent } from './teaching-posts/teaching-post/teaching-post-details/teaching-post-details.component';
+import {TeachingPostFilterPipe} from "./teaching-posts/teaching-postsFilter.pipe";
+import { MedicalCasesComponent } from './medical-cases/medical-cases.component';
+
+import { MedicalCasesListComponent } from './medical-cases/medical-cases-list/medical-cases-list.component';
+import { MedicalCaseDetailsComponent } from './medical-cases/medical-case/medical-case-details/medical-case-details.component';
+import {MedicalCaseComponent} from "./medical-cases/medical-case/medical-case.component";
+import {MedicalCaseFilterPipe} from "./medical-cases/medical-casesFilter.pipe";
 
 @NgModule({
   declarations: [
@@ -116,6 +127,16 @@ import {
     SchoolSuppliesFilterPipe,
     ToyFilterPipe,
     BookFilterPipe,
+    TeachingPostFilterPipe,
+    MedicalCaseFilterPipe,
+    TeachingPostsComponent,
+    TeachingPostComponent,
+    TeachingPostsListComponent,
+    TeachingPostDetailsComponent,
+    MedicalCasesComponent,
+    MedicalCaseComponent,
+    MedicalCasesListComponent,
+    MedicalCaseDetailsComponent,
   ],
   imports: [
     BrowserModule,

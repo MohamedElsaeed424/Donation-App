@@ -1,0 +1,81 @@
+.request-card {
+  background-color: #AFF0F2; /* Baby Blue */
+  border: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.31);
+}
+
+.request-card::before {
+  content: "";
+  background-image: url('/assets/istockphoto-1063346420-612x612.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.9; /* Adjust opacity as needed */
+  z-index: -1;
+  animation: fadeIn 2s ease-in-out forwards; /* Animation properties */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.request-card .card-title {
+  color: #043B38; /* Forest Green */
+}
+
+.request-card .card-text {
+  color: #1C9B8E; /* Blue Green */
+}
+
+.request-card button {
+  background-color: #30D9C8; /* Spearmint */
+  border-color: #30D9C8;
+}
+
+.request-card button:hover {
+  background-color: #1C9B8E; /* Blue Green */
+  border-color: #1C9B8E;
+}
+.quantity-selection {
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.input {
+  width: 60px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}

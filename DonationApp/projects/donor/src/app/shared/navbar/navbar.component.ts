@@ -13,7 +13,10 @@ export class NavbarComponent {
   itemCategory : ItemCategory ;
   categoriesDropdownOpen :boolean = false ;
 
-  public constructor(private route: ActivatedRoute, private  router : Router,private authService: AuthService) {}
+  public constructor(
+    private route: ActivatedRoute,
+    private  router : Router,
+    protected authService: AuthService) {}
 
   toggleCategoriesDropdown() {
     this.categoriesDropdownOpen = !this.categoriesDropdownOpen;

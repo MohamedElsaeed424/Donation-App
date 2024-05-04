@@ -1,0 +1,29 @@
+<div class="row requested-items-grid" style="margin-top: 50px; margin-left: 3cm;">
+  <div class="row-cols-lg-auto">
+    <div class="row" style="margin-bottom: 20px; margin-left: 2cm;">
+      <app-search-bar (searchQuery)="searchQuery1 = $event" [thing]="'Subject'"></app-search-bar>
+    </div>
+    <div class="row" style="margin-bottom: 20px; margin-left: 2cm;">
+      <app-search-bar (searchQuery)="searchQuery2 = $event" [thing]="'Area'"></app-search-bar>
+    </div>
+    <div class="row" style="margin-bottom: 20px; margin-left: 2cm;">
+      <app-search-bar (searchQuery)="searchQuery3 = $event" [thing]="'Governorate'"></app-search-bar>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="requested-items-grid">
+          <div class="row">
+            <ng-container *ngFor="let teachingPost of teachingPosts | teachingPostFilter: searchQuery1:searchQuery2:searchQuery3; let i = index">
+              <div class="col-lg-8 mb-3"> <!-- Three items per row with margin bottom -->
+                <app-teaching-post
+                  [currentTeachingPost]="teachingPost"
+                  [currentTeachingPostId]="teachingPost.id"
+                ></app-teaching-post>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container py-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card rounded-3 shadow-lg request-card">
+        <div class="card-body">
+          <h2 class="card-title mb-3">{{currentTeachingPost.organization}}</h2>
+          <p class="card-text"><strong>Requested At:</strong> {{currentTeachingPost.subject}}</p>
+          <p class="card-text"><strong>Requested At:</strong> {{currentTeachingPost.date}}</p>
+          <p class="card-text">{{currentTeachingPost.description}}</p>
+          <p class="card-text"><strong>Area:</strong> {{currentTeachingPost.area}}</p>
+          <p class="card-text"><strong>Governorate:</strong> {{currentTeachingPost.governorate}}</p>
+          <p class="card-text"><strong>Number of Students:</strong> {{currentTeachingPost.numberOfStudents}}</p>
+          <p class="card-text"><strong>Address:</strong> {{currentTeachingPost.address}}</p>
+          <!-- Other properties of TeachingPost can be displayed similarly -->
+          <div class="quantity-selection" style="margin-top: 1cm; margin-left: 3cm;">
+            <button (click)="submitDonation()" class="button" style="margin-left: 5px">Let's Fulfill</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
