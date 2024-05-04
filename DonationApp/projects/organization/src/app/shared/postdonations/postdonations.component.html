@@ -1,0 +1,21 @@
+<div class="postdonations">
+    <h2>Create Donation Post</h2>
+    <form (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <select id="category" name="category" [(ngModel)]="donation.category" required>
+          <option value="clothes">Clothes</option>
+          <option value="toys">Toys</option>
+          <option value="food">Food</option>
+          <option value="medical-supplies">Medical Supplies</option>
+          <option value="school-supplies">School Supplies</option>
+          <option value="blood-donations">Blood Donations</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Details:</label>
+        <textarea id="description" name="description" [(ngModel)]="donation.description" required></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
