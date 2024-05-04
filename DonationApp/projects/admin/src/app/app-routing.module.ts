@@ -26,6 +26,7 @@ import {DonorSubmissionsComponent} from "./Donor/donor-submissions/donor-submiss
 import {
   DonorsSubmissionDetailsComponent
 } from "./Donor/donor-submissions/donors-submission-details/donors-submission-details.component";
+import {ErrorComponent} from "./shared/error-component/error-component.component";
 
 const routes: Routes = [
 
@@ -66,8 +67,9 @@ const routes: Routes = [
         ]
       }
     ]
-  }
-  // { path: '**',  redirectTo:'pageNotFound' ,component:ErrorComponent } ,
+  },
+  { path: '**', redirectTo: 'pageNotFound', pathMatch: 'full' }, // Wildcard route for unmatched routes
+  { path: 'pageNotFound', component: ErrorComponent }
 
 ];
 

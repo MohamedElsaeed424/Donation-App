@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="Admin Dashboard logic completed">
+    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="Icon and title added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/error-component/error-component.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/error-component/error-component.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/error-component/error-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/error-component/error-component.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/error-component/error-component.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/shared/error-component/error-component.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,6 +123,7 @@
       <workItem from="1714754907832" duration="3960000" />
       <workItem from="1714759731717" duration="12525000" />
       <workItem from="1714816033893" duration="8010000" />
+      <workItem from="1714829459786" duration="755000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing the app">
       <option name="closed" value="true" />
@@ -169,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714827951087</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Icon and title added">
+      <option name="closed" value="true" />
+      <created>1714829480692</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1714829480692</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +202,7 @@
     <MESSAGE value="Initializing the app" />
     <MESSAGE value="Organization and admin submissions added" />
     <MESSAGE value="Admin Dashboard logic completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin Dashboard logic completed" />
+    <MESSAGE value="Icon and title added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Icon and title added" />
   </component>
 </project>
