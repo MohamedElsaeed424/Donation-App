@@ -6,12 +6,7 @@
   text-align: center;
 }
 
-.card {
-  margin-bottom: 1rem;
-  border-radius: 40px;
-  background-color: #AFF0F2; /* Red background color */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Black shadow */
-}
+
 
 .search-container {
   margin-bottom: 1rem;
@@ -23,6 +18,12 @@
   width: 100%;
 }
 
+.card {
+  margin-bottom: 1rem;
+  border-radius: 40px;
+  background-color: #AFF0F2; /* Red background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Black shadow */
+}
 
 .card-title {
   margin-bottom: 0.5rem;

@@ -50,6 +50,8 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+
 .button-row {
   display: flex; /* Use Flexbox layout */
   margin-left: 30px;
