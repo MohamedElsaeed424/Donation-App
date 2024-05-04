@@ -185,9 +185,12 @@ section h1 {
   color: white;
 }
 
-section h5 {
+section h4 {
   color: white;
   margin-top: -30px;
+}
+section h5 {
+  color: white;
 }
 
 #container2 h1 {
@@ -211,6 +214,7 @@ section h5 {
 #container2 section {
   max-height: 100px; /* Set a maximum height */
   overflow-y: auto;
+  min-height: 200px;
 }
 
 #container2 section::-webkit-scrollbar {
@@ -253,9 +257,9 @@ body {
   flex-direction: column;
   align-items: center;
   animation: slideIn 2s ease forwards;
-  margin-left: 600px;
-  margin-bottom: -250px;
-  margin-top: -700px;
+  margin-left: 370px;
+  margin-top: 700px;
+  
 }
 
 #container0 {
@@ -288,6 +292,13 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+#container2 .card-body{
+  text-align: center; 
+  
+}
+
+
+
 
 
 

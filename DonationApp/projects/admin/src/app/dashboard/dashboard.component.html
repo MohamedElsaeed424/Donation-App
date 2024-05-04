@@ -4,34 +4,36 @@
 </header>
 
 <div class="container full-height" id="container0">
+  <div class="column">
   <div class="card-body">
-    <section class="Organizations" id="nn">
+    <section class="Organizations" id="nn" style="margin-left: 100px;">
       <header><p><b>Number Of Registered Organizations</b></p></header>
       <h1>{{ RegisteredOrganizations.length }}</h1>
     </section>
-    <section class="donations" id="nn">
-      <header><p><b>Number Of Registered Donors</b></p></header>
-      <h1>{{ RegisteredDonors.length }}</h1>
-    </section>
-    <section class="donations" id="nn">
-      <header><p><b>Number Of Pending Donors</b></p></header>
-      <h1>{{ DonorsPendingRequests.length }}</h1>
-    </section>
-    <section class="donations" id="nn">
+    <section class="donations" id="nn" style="margin-left: 100px;">
       <header><p><b>Number Of Pending Organization</b></p></header>
       <h1>{{ OrganizationPendingRequests.length }}</h1>
     </section>
-    <section class="donations" id="nn">
-      <header><p><b>Number Of Donors submissions</b></p></header>
-      <h1>{{ DonorsSubmissions.length }}</h1>
-    </section>
-    <section class="donations" id="nn">
+    <section class="donations" id="nn" style="margin-left: 100px;">
       <header><p><b>Number Of organizations submissions</b></p></header>
       <h1>{{ OrganizationSubmissions.length }}</h1>
     </section>
-
-
-    <section class="statistics">
+  </div>
+    <div class="column">
+    <section class="donations" id="nn" style="margin-left: 800px; margin-top: -730px;">
+      <header><p><b>Number Of Registered Donors</b></p></header>
+      <h1>{{ RegisteredDonors.length }}</h1>  
+    </section>
+    <section class="donations" id="nn" style="margin-left: 800px;">
+      <header><p><b>Number Of Pending Donors</b></p></header>
+      <h1>{{ DonorsPendingRequests.length }}</h1>
+    </section>
+    <section class="donations" id="nn" style="margin-left: 800px;">
+      <header><p><b>Number Of Donors submissions</b></p></header>
+      <h1>{{ DonorsSubmissions.length }}</h1>
+    </section>
+  </div>
+    <!-- <section class="statistics" style="margin-top: 300px;">
       <header>
         <p><b>Statistics</b></p>
         <div class="statistic-item">
@@ -44,15 +46,15 @@
           <p>Top country contributing to donation: Egypt</p>
         </div>
       </header>
-    </section>
+    </section> -->
   </div>
 </div>
-<div class="container full-height" id="container2">
+<div class="container" id="container2">
   <h1>Quick Access</h1>
   <div class="row">
     <!-- Organization related cards -->
     <section>
-      <header><h5>Registered Organizations</h5></header>
+      <header><h4>Registered Organizations</h4></header>
 
       <div class="card mb-3" *ngFor="let RegisteredOrganization of RegisteredOrganizations ; let i = index">
         <div class="card-body">
@@ -70,7 +72,7 @@
 
     <section>
       <header>
-        <h5>Organization Requests</h5>
+        <h4>Organization Requests</h4>
       </header>
       <div class="card mb-3" *ngFor="let organizationPendingRequest of OrganizationPendingRequests ; let i = index">
         <div class="card-body">
@@ -88,7 +90,7 @@
     </section>
     <section>
       <header>
-        <h5>Organization Submissions</h5>
+        <h4>Organization Submissions</h4>
       </header>
       <div class="card mb-3" *ngFor="let organizationSubmission of OrganizationSubmissions ; let i = index">
         <div class="card-body">
@@ -108,7 +110,7 @@
   <div class="row">
     <section>
       <header>
-        <h5>Registered Donors</h5>
+        <h4>Registered Donors</h4>
       </header>
       <div class="card mb-3" *ngFor="let RegisteredDonor of RegisteredDonors  ; let i = index">
         <div class="card-body">
@@ -122,7 +124,7 @@
     </section>
     <section>
       <header>
-        <h5>Donor Requests</h5>
+        <h4>Donor Requests</h4>
       </header>
       <div class="card mb-3" *ngFor="let DonorRequest of DonorsPendingRequests  ; let i = index">
         <div class="card-body">
@@ -137,7 +139,7 @@
     </section>
     <section>
       <header>
-        <h5>Donor Submissions</h5>
+        <h4>Donor Submissions</h4>
       </header>
       <div class="card mb-3" *ngFor="let DonorSubmission of DonorsSubmissions  ; let i = index">
         <div class="card-body">
