@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ItemCategory} from "../categories/all-categories.enum";
+import {ItemCategory} from "../categories-models/all-categories.enum";
 import {RequestedItem} from "../super/RequestedItem.model";
 import {ActivatedRoute, Router} from "@angular/router";
 import {RequestedItemsService} from "../../requested-items.service";
@@ -12,14 +12,10 @@ import {RequestedItemsService} from "../../requested-items.service";
 export class RequestedItemCategoryComponent  implements OnInit{
   category : ItemCategory ;
   requestedItemsCategory : RequestedItem [] ;
-  searchQuery1: string = '';
-  searchQuery2: string = '';
-  searchQuery3: string = '';
 
   constructor(
     private requestedItemsService : RequestedItemsService ,
-    private route : ActivatedRoute ,
-    private router : Router)
+    private route : ActivatedRoute)
   {
     console.log("Constructor of category component")
   }

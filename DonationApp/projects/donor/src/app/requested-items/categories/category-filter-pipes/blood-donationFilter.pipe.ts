@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { RequestedItem } from "../../super/RequestedItem.model";
-import { BloodDonation } from "../../categories/blood-donation.model";
+import { RequestedItem } from "../super/RequestedItem.model";
+import { BloodDonation } from "../categories-models/blood-donation.model";
 
 @Pipe({
   name: 'bloodDonationFilter',

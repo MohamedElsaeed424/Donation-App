@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { RequestedItem } from "../../../requested-Items-categories/super/RequestedItem.model";
-import { BloodDonation } from "../../../requested-Items-categories/categories/blood-donation.model";
+import { RequestedItem } from "../../../categories/super/RequestedItem.model";
+import {BloodDonation} from "../../../categories/categories-models/blood-donation.model";
 
 @Component({
   selector: 'app-blood-donation-details',

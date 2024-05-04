@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { RequestedItem } from "../../super/RequestedItem.model";
-import { Toy } from "../../categories/toy.model";
+import { RequestedItem } from "../super/RequestedItem.model";
+import { Toy } from "../categories-models/toy.model";
 
 @Pipe({
   name: 'toyFilter',

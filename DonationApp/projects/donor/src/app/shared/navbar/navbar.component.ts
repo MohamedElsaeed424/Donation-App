@@ -1,7 +1,8 @@
 import {Component, HostListener} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../auth/auth.service";
-import {ItemCategory} from "../../requested-items/requested-Items-categories/categories/all-categories.enum";
+
+import {ItemCategory} from "../../requested-items/categories/categories-models/all-categories.enum";
 
 @Component({
   selector: 'app-navbar',

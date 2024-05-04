@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Clothes } from "../../../requested-Items-categories/categories/clothes.model";
-import { RequestedItem } from "../../../requested-Items-categories/super/RequestedItem.model";
+
+import { RequestedItem } from "../../../categories/super/RequestedItem.model";
+import {Clothes} from "../../../categories/categories-models/clothes.model";
 
 @Component({
   selector: 'app-clothes-details',

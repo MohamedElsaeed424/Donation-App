@@ -9,7 +9,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { RequestedItemDetailsComponent} from "./requested-items/requested-item/requested-item-details/requested-item-details.component";
 import {RequestedItemsComponent} from "./requested-items/requested-items.component";
 import {RequestedItemsListComponent} from "./requested-items/requested-items-list/requested-items-list.component";
-import {RequestedItemCategoryComponent} from "./requested-items/requested-Items-categories/requested-item-category/requested-item-category.component"; // Import the AuthGuard
+import {RequestedItemCategoryComponent} from "./requested-items/categories/requested-item-category/requested-item-category.component"; // Import the AuthGuard
 
 const routes: Routes = [
   { path:'',  redirectTo:'auth/login', pathMatch : 'full' },

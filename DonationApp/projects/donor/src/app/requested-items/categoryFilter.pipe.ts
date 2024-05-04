@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {RequestedItem} from "./requested-Items-categories/super/RequestedItem.model";
-import {ItemCategory} from "./requested-Items-categories/categories/all-categories.enum";
+import {RequestedItem} from "./categories/super/RequestedItem.model";
 
 @Pipe({
   name: 'categoryFilter',

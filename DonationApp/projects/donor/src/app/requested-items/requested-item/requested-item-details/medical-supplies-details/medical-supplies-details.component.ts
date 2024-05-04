@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { MedicalSupply } from "../../../requested-Items-categories/categories/medical-supplies.model";
-import { RequestedItem } from "../../../requested-Items-categories/super/RequestedItem.model";
+
+import { RequestedItem } from "../../../categories/super/RequestedItem.model";
+import {MedicalSupply} from "../../../categories/categories-models/medical-supplies.model";
 
 @Component({
   selector: 'app-medical-supplies-details',

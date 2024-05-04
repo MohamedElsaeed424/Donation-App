@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Toy } from "../../../requested-Items-categories/categories/toy.model";
-import { RequestedItem } from "../../../requested-Items-categories/super/RequestedItem.model";
+
+import { RequestedItem } from "../../../categories/super/RequestedItem.model";
+import {Toy} from "../../../categories/categories-models/toy.model";
 
 @Component({
   selector: 'app-toys-details',
