@@ -1,7 +1,5 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {Donor, DonorType} from "../Donors/models/donor.model";
-import {Teacher} from "../Donors/models/pro-bonoTeacher.model";
-import {ClinicLocationSpecification, Doctor} from "../Donors/models/pro-bonoDoctor.model";
 import {DonorService} from "../Donors/donors.service";
 
 @Injectable({
@@ -10,12 +8,17 @@ import {DonorService} from "../Donors/donors.service";
 export class AuthService {
   public currentUser: Donor | null = null;
   public isLoggedIn: boolean = false;
+  public users: Donor[] =[] ;
 
-  constructor(private donorService : DonorService) { }
-  public users: Donor[] = this.donorService.getAllDonors();
+  constructor(private donorService : DonorService) {
+    this.users = this.donorService.getAllDonors();
+    console.log(this.users);
+  }
 
   login(username: string, password: string): boolean {
+    console.log(this.users);
     const user = this.users.find(u => u.userName === username && u.password === password);
+    console.log(user);
     if (user) {
       localStorage.setItem('token', 'your_token_here');
       localStorage.setItem('userType', user.type.toString());
@@ -31,8 +34,6 @@ export class AuthService {
     this.isLoggedIn = false;
   }
   isAuthenticated(): boolean {
-    console.log(!!localStorage.getItem('token'));
-    console.log(localStorage.getItem('token'));
     return !!localStorage.getItem('token');
   }
   isTeacher(): boolean {
@@ -41,4 +42,5 @@ export class AuthService {
   isDoctor(): boolean {
     return localStorage.getItem('userType') === 'doctor';
   }
+
 }
