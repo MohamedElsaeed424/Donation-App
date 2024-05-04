@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../auth.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
+import {DonorService} from "../../Donors/donors.service";
 
 @Component({
   selector: 'app-login',
@@ -19,13 +20,18 @@ export class LoginComponent implements OnInit{
     })
   }
 
-  constructor(private authService: AuthService ,  private router : Router , private route : ActivatedRoute) { }
+  constructor(
+    private authService: AuthService ,
+    private donorService :DonorService,
+    private router : Router ,
+    private route : ActivatedRoute) { }
 
   login() {
     let username = this.signInFrom.get('username').value
     let password = this.signInFrom.get('password').value
     const isAuthenticated = this.authService.login(username,password);
     if (isAuthenticated) {
+      this.authService.currentUser = this.donorService.getDonorById(username);
       this.redirectTo('/requested-items') ;
     } else {
       this.isValid = false ;

@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
+import {Donor, DonorType} from "../Donors/models/donor.model";
+import {Teacher} from "../Donors/models/pro-bonoTeacher.model";
+import {ClinicLocationSpecification, Doctor} from "../Donors/models/pro-bonoDoctor.model";
+import {DonorService} from "../Donors/donors.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  public username: string ;
+  public currentUser: Donor | null = null;
   public isLoggedIn: boolean = false;
-  private users: { username: string, password: string  ,type:string}[] = [
-    { username: 'donor1', password: '1'  , type: 'donor'},
-    { username: 'donor2', password: '2' ,type: 'teacher' },
-    { username: 'donor3', password: '3' ,type: 'doctor' },
-  ];
 
-  constructor() { }
+  constructor(private donorService : DonorService) { }
+  public users: Donor[] = this.donorService.getAllDonors();
 
   login(username: string, password: string): boolean {
-    const user = this.users.find(u => u.username === username && u.password === password);
+    const user = this.users.find(u => u.userName === username && u.password === password);
     if (user) {
       localStorage.setItem('token', 'your_token_here');
-      localStorage.setItem('userType', user.type);
+      localStorage.setItem('userType', user.type.toString());
       this.isLoggedIn = true;
       return true;
     } else {

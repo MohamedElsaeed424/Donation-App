@@ -20,7 +20,8 @@ import {MedicalCasesComponent} from "./medical-cases/medical-cases.component";
 import {MedicalCasesListComponent} from "./medical-cases/medical-cases-list/medical-cases-list.component";
 import {
   MedicalCaseDetailsComponent
-} from "./medical-cases/medical-case/medical-case-details/medical-case-details.component"; // Import the AuthGuard
+} from "./medical-cases/medical-case/medical-case-details/medical-case-details.component";
+import {ManageAccountComponent} from "./manage-account/manage-account.component"; // Import the AuthGuard
 
 const routes: Routes = [
   { path:'',  redirectTo:'auth/login', pathMatch : 'full' },
@@ -40,7 +41,7 @@ const routes: Routes = [
       { path: '', component: RequestedItemsListComponent ,canActivate:[AuthGuard]},
       { path: 'requested-item-details/:id', component: RequestedItemDetailsComponent ,canActivate:[AuthGuard] },
       { path: 'requested-item-details/:id/request-to-donate', component: RequestedItemComponent,canActivate: [AuthGuard] },
-        { path: 'requested-item-category/:category', component: RequestedItemCategoryComponent,canActivate:[AuthGuard]}
+      { path: 'requested-item-category/:category', component: RequestedItemCategoryComponent,canActivate:[AuthGuard]}
     ]
   },
   {
@@ -61,6 +62,7 @@ const routes: Routes = [
       { path: 'medical-case-details/:id', component: MedicalCaseDetailsComponent,canActivate:[AuthGuard] },
     ]
   },
+  {path: 'manage-account', component: ManageAccountComponent,canActivate:[AuthGuard]},
   { path: '**', redirectTo: '/requested-items' }
 ];
 

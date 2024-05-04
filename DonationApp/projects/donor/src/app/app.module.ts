@@ -86,6 +86,8 @@ import { MedicalCasesListComponent } from './medical-cases/medical-cases-list/me
 import { MedicalCaseDetailsComponent } from './medical-cases/medical-case/medical-case-details/medical-case-details.component';
 import {MedicalCaseComponent} from "./medical-cases/medical-case/medical-case.component";
 import {MedicalCaseFilterPipe} from "./medical-cases/medical-casesFilter.pipe";
+import { ManageAccountComponent } from './manage-account/manage-account.component';
+import {DonorService} from "./Donors/donors.service";
 
 @NgModule({
   declarations: [
@@ -137,6 +139,7 @@ import {MedicalCaseFilterPipe} from "./medical-cases/medical-casesFilter.pipe";
     MedicalCaseComponent,
     MedicalCasesListComponent,
     MedicalCaseDetailsComponent,
+    ManageAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -148,7 +151,10 @@ import {MedicalCaseFilterPipe} from "./medical-cases/medical-casesFilter.pipe";
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    DonorService,
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
