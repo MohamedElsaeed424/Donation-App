@@ -43,6 +43,7 @@ export class AuthService{
     localStorage.removeItem('token');
     localStorage.removeItem('userType');
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('isItemRequested');
     this.currentUser = null; // Reset the currentUser
     this.isLoggedIn = false;
   }

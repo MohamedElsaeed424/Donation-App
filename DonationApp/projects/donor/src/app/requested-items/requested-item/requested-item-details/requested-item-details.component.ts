@@ -29,10 +29,8 @@ export class RequestedItemDetailsComponent implements OnInit {
       console.log(this.currentRequestedItem);
     });
   }
-
-
   submitDonation() {
-    // Implement your functionality here
+    this.router.navigate(['./pick-up-details'], {relativeTo: this.route});
   }
 
   protected readonly ItemCategory = ItemCategory;

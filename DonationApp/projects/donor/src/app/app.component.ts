@@ -14,4 +14,6 @@ export class AppComponent implements OnInit {
       this.authService.logout();
     }
   }
+
+  protected readonly localStorage = localStorage;
 }

@@ -1,0 +1,30 @@
+<div class="container">
+  <h2 class="title">Pick-Up Details</h2>
+  <form [formGroup]="pickUpForm" class="form">
+    <div class="form-group">
+      <label for="pickUpDate">Pick-Up Date</label>
+      <input type="date" id="pickUpDate" formControlName="pickUpDate" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="pickUpTime">Pick-Up Time</label>
+      <input type="time" id="pickUpTime" formControlName="pickUpTime" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="pickUpAddress">Pick-Up Address</label>
+      <input type="text" id="pickUpAddress" formControlName="pickUpAddress" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="transportation">Transportation</label>
+      <div class="select-wrapper">
+        <select id="transportation" formControlName="transportation" class="form-control">
+          <option value="truck">Truck</option>
+          <option value="car">Car</option>
+          <option value="motorcycle">Motorcycle</option>
+        </select>
+      </div>
+    </div>
+    <button type="button" (click)="submitPickUpDetails()" class="btn">Submit</button>
+  </form>
+</div>
+
+

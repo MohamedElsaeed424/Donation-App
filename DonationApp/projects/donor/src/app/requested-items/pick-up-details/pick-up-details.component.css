@@ -1,0 +1,115 @@
+/* Dropdown list */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: '\25BC'; /* Downward arrow */
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #9eeaf9; /* Blue Green */
+}
+.select-wrapper select {
+  width: calc(100% - 25px); /* Adjust width for arrow */
+  padding: 10px;
+  border: 1px solid #ffffff; /* White border */
+  border-radius: 5px;
+  background-color: transparent; /* Transparent background */
+  color: #ffffff; /* White text */
+  appearance: none; /* Remove default arrow */
+  cursor: pointer;
+}
+
+/* Style options */
+.select-wrapper select option {
+  background-color: #278c77; /* Blue Green */
+  color: #ffffff; /* White text */
+  border: none;
+  padding: 10px;
+}
+
+/* Hover effect on options */
+.select-wrapper select option:hover {
+  background-color: #30D9C8; /* Spearmint */
+}
+
+
+.container {
+  max-width: 400px;
+  margin: 2cm auto;
+  padding: 20px;
+  background-color: #043B38; /* Blue Green */
+  border-radius: 10px;
+  color: #ffffff; /* White text */
+  align-content: center;
+  animation: scaleIn 0.5s ease-in-out; /* Scale in animation */
+}
+
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ffffff; /* White border */
+  border-radius: 5px;
+  background-color: transparent; /* Transparent background */
+  color: #ffffff; /* White text */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.form-control:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 0 10px #30D9C8; /* Neon effect on hover */
+}
+
+/* Time and date inputs */
+.input-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-group .form-control {
+  width: 48%; /* Adjust width */
+}
+
+/* Button */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #AFF0F2; /* Baby Blue */
+  color: #043B38; /* Blue Green text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.btn:hover {
+  background-color: #30D9C8; /* Spearmint */
+}
+
+/* Animation keyframes */
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
