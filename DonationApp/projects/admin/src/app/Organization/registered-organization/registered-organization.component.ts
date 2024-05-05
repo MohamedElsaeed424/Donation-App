@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {OrganizationService }  from "./RegisteredOrganization.service"
 import {Organization} from "../Organization.model";
 import {OrganizationFilterPipe} from "../organization-filter-pipe";
+import { OrganizationAddressesFilterPipe } from '../organizationAddress-filter-pipe';
 import {Router} from "@angular/router";
 import {AuthService} from "../../login/services/auth.service";
 
@@ -13,21 +14,22 @@ import {AuthService} from "../../login/services/auth.service";
 export class RegisteredOrganizationComponent implements OnInit{
   Organizations  : Organization[];
   searchTerm: string = '';
+  filterDropdownOpen = false;
   constructor(private OrganizationService : OrganizationService , private route:Router , private authservice:AuthService ) {
   }
-
   ngOnInit(): void {
     this.Organizations = this.OrganizationService.getOrganizations();
   }
-
+  toggleFilterDropdown(){
+    this.filterDropdownOpen = !this.filterDropdownOpen;
+  }
   get isFilteredEmpty(): boolean {
     return this.Organizations.filter(org => org.name.toLowerCase().includes(this.searchTerm.toLowerCase())).length === 0;
   }
-
   deleteOrganization(i:number){
-    this.OrganizationService.deleteOrganization(i)
+    this.OrganizationService.deleteOrganization(i);
   }
   NavigateToOrganizationDetails(i:number){
-    this.route.navigate(['/Organizations/Registered' ,i] ,{queryParams: {username: this.authservice.username}})
+    this.route.navigate(['/Organizations/Registered' ,i] ,{queryParams: {username: this.authservice.username}});
   }
 }

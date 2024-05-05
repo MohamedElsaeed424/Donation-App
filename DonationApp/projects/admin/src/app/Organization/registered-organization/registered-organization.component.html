@@ -5,6 +5,13 @@
            class="form-control search-input">
   </div>
 
+  <button class="dropdown-toggle nav-link" (click)="toggleFilterDropdown()"
+                style="margin-left: 300px;margin-bottom: 150px; background-color: aliceblue; border-radius: 5px;">Filter</button>
+            <div class="dropdown-menu" [ngClass]="{ 'show': filterDropdownOpen }"
+            *ngFor="let organization of Organizations | organizationFilterPipe : searchTerm; let i = index" 
+            style="margin-left: 270px;margin-bottom: 150px;margin-top: -150px;">
+              <button class="dropdown-item" (click)="NavigateToOrganizationDetails(i)">{{ organization.address }} </button>
+            </div>
   <!-- Organizations list -->
   <div class="row">
     <div class="col-md-4"
