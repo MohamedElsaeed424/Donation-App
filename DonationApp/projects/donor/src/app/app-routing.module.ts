@@ -21,7 +21,8 @@ import {MedicalCasesListComponent} from "./medical-cases/medical-cases-list/medi
 import {
   MedicalCaseDetailsComponent
 } from "./medical-cases/medical-case/medical-case-details/medical-case-details.component";
-import {ManageAccountComponent} from "./manage-account/manage-account.component"; // Import the AuthGuard
+import {ManageAccountComponent} from "./manage-account/manage-account.component";
+import {PickUpDetailsComponent} from "./requested-items/pick-up-details/pick-up-details.component"; // Import the AuthGuard
 
 const routes: Routes = [
   { path:'',  redirectTo:'auth/login', pathMatch : 'full' },
@@ -39,8 +40,10 @@ const routes: Routes = [
     canActivate:[AuthGuard] ,
     children: [
       { path: '', component: RequestedItemsListComponent ,canActivate:[AuthGuard]},
-      { path: 'requested-item-details/:id', component: RequestedItemDetailsComponent ,canActivate:[AuthGuard] },
-      { path: 'requested-item-details/:id/request-to-donate', component: RequestedItemComponent,canActivate: [AuthGuard] },
+      { path: 'requested-item-details/:id', component: RequestedItemDetailsComponent ,canActivate:[AuthGuard] , children :[
+        { path: 'pick-up-details', component: PickUpDetailsComponent ,canActivate:[AuthGuard]}
+        ]
+      },
       { path: 'requested-item-category/:category', component: RequestedItemCategoryComponent,canActivate:[AuthGuard]}
     ]
   },

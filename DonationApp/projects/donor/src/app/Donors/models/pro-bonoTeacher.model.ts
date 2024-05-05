@@ -18,11 +18,13 @@ class Teacher extends Donor {
     government: string,
     type: DonorType,
     subjects: string[],
-    proBonoClasses: number
+    proBonoClasses: number,
+    proBonostudents: number
   ) {
     super(firstName, lastName,userName, gender, email, phoneNumber, password, address, area, government, type);
     this.subjects = subjects;
     this.proBonoClasses = proBonoClasses;
+    this.proBonoStudents = proBonostudents;
   }
 }
 

@@ -88,6 +88,8 @@ import {MedicalCaseComponent} from "./medical-cases/medical-case/medical-case.co
 import {MedicalCaseFilterPipe} from "./medical-cases/medical-casesFilter.pipe";
 import { ManageAccountComponent } from './manage-account/manage-account.component';
 import {DonorService} from "./Donors/donors.service";
+import { PickUpDetailsComponent } from './requested-items/pick-up-details/pick-up-details.component';
+import { EstimatedTimeComponent } from './shared/estimated-time/estimated-time.component';
 
 @NgModule({
   declarations: [
@@ -140,6 +142,8 @@ import {DonorService} from "./Donors/donors.service";
     MedicalCasesListComponent,
     MedicalCaseDetailsComponent,
     ManageAccountComponent,
+    PickUpDetailsComponent,
+    EstimatedTimeComponent,
   ],
   imports: [
     BrowserModule,

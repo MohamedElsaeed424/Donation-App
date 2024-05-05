@@ -1,0 +1,17 @@
+<!-- eta-view.component.html -->
+<div class="eta-container" [class.delete-animation]="deleted" [@slideInOut]>
+  <h2>Delivery arrives at</h2>
+  <div class="progress-container">
+    <div class="progress" [style.width.%]="progressValue">
+      <span class="progress-text">{{ progressValue.toFixed(0) }}%</span>
+    </div>
+  </div>
+  <p *ngIf="progressValue === 100">Delivery arrived!</p>
+  <div class="eta-container" *ngIf="progressValue == 100" >
+    <div class="progress-bar">
+      <div class="progress" [style.width.%]="progressValue"></div>
+    </div>
+    <button class="cancel-button" (click)="cancel()">Cancel</button>
+  </div>
+</div>
+

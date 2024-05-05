@@ -27,14 +27,8 @@
     }
   }
 
-  export enum DonorType{
-    doctor ,
-    teacher ,
-    donor
+  export enum DonorType {
+    Donor = "donor",
+    Doctor = "doctor",
+    Teacher = "teacher"
   }
-
-  export const DonorTypeString = {
-    [DonorType.doctor]: 'doctor',
-    [DonorType.teacher]: 'teacher',
-    [DonorType.donor]: 'donor',
-  };

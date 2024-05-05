@@ -1,0 +1,91 @@
+/* eta-view.component.css */
+
+/* Container styles */
+.eta-container {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Progress bar styles */
+.progress-container {
+  width: 300px;
+  height: 30px;
+  background-color: #f0f0f0; /* Light gray background */
+  border-radius: 15px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background-color: #1C9B8E; /* Blue Green */
+  border-radius: 15px;
+  transition: width 0.5s ease-in-out; /* Smooth width transition */
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff; /* White text */
+}
+
+/* eta-view.component.css */
+
+/* Arrival message animation */
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.arrival-message {
+  margin-top: 20px;
+  font-weight: bold;
+  animation: fadeInOut 2s linear infinite; /* Fade in and out animation */
+}
+
+/* Cancel button styles */
+.cancel-button {
+  display: block;
+  width: 80px;
+  padding: 5px;
+  background-color: #30D9C8; /* Spearmint */
+  color: #043B38; /* Forest Green text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+  margin: 0 auto;
+}
+
+.cancel-button:hover {
+  background-color: #AFF0F2; /* Blue Green */
+}
+
+/* Slide out animation for deletion */
+.delete-animation {
+  animation: slideOutToLeft 1s ease-in-out; /* Apply slide out animation */
+}

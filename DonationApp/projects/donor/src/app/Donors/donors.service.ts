@@ -12,15 +12,15 @@ export class DonorService {
   doctor = new Doctor(
     "John",
     "Doe",
-    "Donor3",
+    "donor3",
     "Male",
     "john@example.com",
     "1234567890",
-    "password123",
+    "13",
     "123 Main St",
     "Downtown",
     "City",
-    DonorType.doctor,
+    DonorType.Doctor,
     "Cardiology",
     5,
     this.clinicLocation
@@ -29,31 +29,32 @@ export class DonorService {
   teacher = new Teacher(
     "Alice",
     "Smith",
-    "Donor2",
+    "donor2",
     "Female",
     "alice@example.com",
     "9876543210",
-    "password456",
+    "2",
     "456 Oak St",
     "Suburb",
     "County",
-    DonorType.teacher,
+    DonorType.Teacher,
     ["Mathematics", "Science"],
-    3
+    3,
+    30
   );
 
   donor = new Donor(
     "Bob",
     "Johnson",
-    "Donor1",
+    "donor1",
     "Male",
     "bob@example.com",
     "5678901234",
-    "password789",
+    "1",
     "789 Elm St",
     "Urban",
     "Metropolis",
-    DonorType.donor
+    DonorType.Donor
   );
   private donors : Donor[] = [this.donor, this.teacher, this.doctor];
 
@@ -79,9 +80,10 @@ export class DonorService {
     return this.donors.find(donor => donor.userName === userName);
   }
 
-  updateDonor(updatedDonor: Donor): void {
-    const index = this.donors.findIndex(donor => donor.userName === updatedDonor.userName);
+  updateDonor(updatedDonor: Donor , oldusername:string): void {
+    const index = this.donors.findIndex(donor => donor.userName === oldusername);
     if (index !== -1) {
+      console.log(updatedDonor);
       this.donors[index] = updatedDonor;
       this.donorsSubject.next(this.donors);
     }

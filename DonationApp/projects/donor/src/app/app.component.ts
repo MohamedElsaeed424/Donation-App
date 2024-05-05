@@ -10,9 +10,10 @@ export class AppComponent implements OnInit {
   constructor(protected authService: AuthService) {}
 
   ngOnInit(): void {
-    console.log(this.authService.isAuthenticated());
     if (!this.authService.isAuthenticated()) {
       this.authService.logout();
     }
   }
+
+  protected readonly localStorage = localStorage;
 }

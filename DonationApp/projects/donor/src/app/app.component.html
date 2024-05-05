@@ -1,4 +1,7 @@
 <div *ngIf="authService.isAuthenticated()">
   <app-navbar ></app-navbar>
 </div>
+<div *ngIf="localStorage.getItem('isItemRequested') == 'true'">
+  <app-estimated-time></app-estimated-time>
+</div>
 <router-outlet></router-outlet>
