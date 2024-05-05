@@ -5,6 +5,7 @@ import {
   OrganizationPendingRequestService
 } from "../../organizations-pending-requests/organization-pending-request.service";
 import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
+import {OrganizationService} from "../RegisteredOrganization.service";
 
 @Component({
   selector: 'app-registered-organization-details',
@@ -15,13 +16,13 @@ export class RegisteredOrganizationDetailsComponent {
   id:number ;
   Organization : Organization ;
   OrganizationGoogelMarker:SafeResourceUrl;
-  constructor(private route:ActivatedRoute , private OrganizationPendingRequestService :OrganizationPendingRequestService,private sanitizer: DomSanitizer) {
+  constructor(private route:ActivatedRoute , private RegisteredOrganization:OrganizationService,private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(){
     this.route.params.subscribe(params => {
       this.id = +params['id'];
-      this.Organization = this.OrganizationPendingRequestService.getOrganizationByID(this.id) ;
+      this.Organization = this.RegisteredOrganization.getOrganizationByIndex(this.id) ;
       this.OrganizationGoogelMarker = this.sanitizer.bypassSecurityTrustResourceUrl(this.Organization.GoogleMarkersrc)
 
     })

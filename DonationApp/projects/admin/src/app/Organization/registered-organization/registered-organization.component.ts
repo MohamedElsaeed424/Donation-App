@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {OrganizationService }  from "./RegisteredOrganization.service"
+import {OrganizationService} from "./RegisteredOrganization.service"
 import {Organization} from "../Organization.model";
-import {OrganizationFilterPipe} from "../organization-filter-pipe";
+import {OrganizationFilterPipe} from "../organization-filter.pipe";
 import {Router} from "@angular/router";
 import {AuthService} from "../../login/services/auth.service";
 
@@ -10,10 +10,16 @@ import {AuthService} from "../../login/services/auth.service";
   templateUrl: './registered-organization.component.html',
   styleUrl: './registered-organization.component.css'
 })
-export class RegisteredOrganizationComponent implements OnInit{
-  Organizations  : Organization[];
+export class RegisteredOrganizationComponent implements OnInit {
+  Organizations: Organization[];
   searchTerm: string = '';
-  constructor(private OrganizationService : OrganizationService , private route:Router , private authservice:AuthService ) {
+  area: string = '';
+  government: string = '';
+  type: string = '';
+
+  constructor(private OrganizationService: OrganizationService,
+              private route: Router,
+              private authservice: AuthService) {
   }
 
   ngOnInit(): void {
@@ -21,13 +27,20 @@ export class RegisteredOrganizationComponent implements OnInit{
   }
 
   get isFilteredEmpty(): boolean {
-    return this.Organizations.filter(org => org.name.toLowerCase().includes(this.searchTerm.toLowerCase())).length === 0;
+    const filteredOrganizations = this.Organizations.filter(org =>
+      org.name.toLowerCase().includes(this.searchTerm.toLowerCase()) &&
+      org.area.toLowerCase().includes(this.area.toLowerCase()) &&
+      org.type.toLowerCase().includes(this.type.toLowerCase()) &&
+      org.government.toLowerCase().includes(this.government.toLowerCase())
+    );
+    return filteredOrganizations.length === 0;
   }
 
-  deleteOrganization(i:number){
+  deleteOrganization(i: number) {
     this.OrganizationService.deleteOrganization(i)
   }
-  NavigateToOrganizationDetails(i:number){
-    this.route.navigate(['/Organizations/Registered' ,i] ,{queryParams: {username: this.authservice.username}})
+
+  NavigateToOrganizationDetails(i: number) {
+    this.route.navigate(['/Organizations/Registered', i], {queryParams: {username: this.authservice.username}})
   }
 }

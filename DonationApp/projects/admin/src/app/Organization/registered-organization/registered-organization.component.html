@@ -3,17 +3,45 @@
   <div class="search-container mb-3">
     <input type="text" [(ngModel)]="searchTerm" placeholder="Search by organization name"
            class="form-control search-input">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="search-container">
+          <input type="text" [(ngModel)]="area" placeholder="Search by area"
+                 class="form-control search-input">
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="search-container">
+          <input type="text" [(ngModel)]="government" placeholder="Search by government"
+                 class="form-control search-input">
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="search-container">
+          <input type="text" [(ngModel)]="type" placeholder="Search by type"
+                 class="form-control search-input">
+        </div>
+      </div>
+    </div>
   </div>
+
+
 
   <!-- Organizations list -->
   <div class="row">
     <div class="col-md-4"
-         *ngFor="let organization of Organizations | organizationFilterPipe: searchTerm ; let i = index">
+         *ngFor="let organization of Organizations |
+         organizationFilterPipe: searchTerm:area:type:government; let i = index">
       <div class="card mb-3">
         <div class="card-body">
           <h5 class="card-title"><strong>{{ organization.name }}</strong></h5>
           <p class="card-text"><b>Type:</b> {{ organization.type }}</p>
-          <p class="card-text"><b>Address:</b> {{ organization.address }}</p>
+          <p class="card-text"><b>Address:</b> {{ organization.address}}</p>
+          <p class="card-text"><b>Government:</b> {{ organization.government}}</p>
+          <p class="card-text"><b>Area:</b> {{ organization.area}}</p>
+
+
+          <!--          <p class="card-text"><b>Government:</b> {{organization.government}}</p>-->
           <!-- Add more details as needed -->
           <div class="button-row">
             <a (click)="deleteOrganization(i)" class="btn btn-primary">Delete</a>
