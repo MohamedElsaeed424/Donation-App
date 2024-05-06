@@ -1,0 +1,53 @@
+<html data-bs-theme="light" lang="en">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+  <title>Untitled</title>
+</head>
+
+<body style="--bs-secondary: #000000;--bs-secondary-rgb: 68,167,255;--bs-primary: #842020;--bs-primary-rgb: 132,32,32;">
+<nav id="app-navbar" class="navbar navbar-expand-md bg-body navbar-dark"
+     style="--bs-info: #204b54;--bs-info-rgb: 32,75,84;">
+  <div class="container-fluid"><a class="navbar-brand"><i id="brand-logo" class="icon ion-ios-infinite"
+                                                          style="margin-right: 10px;padding-top: 0px;margin-top: 6px;margin-left: 11px;margin-bottom: 10px;"><img
+    src="../../../assets/DonationApplicationTransperant.png" width="70" height="70" alt=""></i></a><span></span>
+    <button class="btn btn-primary" type="button" (click)="NavigateToDashboard()"
+            (click)="toggledashboardButton()"
+            style="background: #13786a;border-color: rgb(62,18,18);margin-right: 10px;margin-left: 10px;">Dashboard
+    </button>
+    <ul class="navbar-nav ml-auto">
+      <button type="button" class="btn btn-outline-info"
+              style="margin-left: 30px;margin-right: 6px; background-color: #1c9b8e; text-decoration-color: black">Add post
+      </button>
+      <button type="button" class="btn btn-outline-info"
+              style="margin-left: 30px;margin-right: 6px ;  background-color: #1c9b8e; text-decoration-color: black">My posts
+      </button>
+
+
+      <li class="nav-item dropdown" [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 125px;">
+        <button class="dropdown-toggle nav-link" (click)="toggleSettingsDropdown()" href="#"
+                style="margin-left: 530px;">Settings
+        </button>
+        <div class="dropdown-menu" [ngClass]="{ 'show': settingsDropdownOpen }"
+             style="margin-left: 485px; max-width: 50px;">
+          <button class="dropdown-item" (click)="NaviagteToChnagePassword()" style="padding: 5px 10px;">change
+            password
+          </button>
+          <button class="dropdown-item" style="padding: 5px 10px;">edit profile</button>
+          <button class="dropdown-item" routerLink="" (click)="Logout()" style="padding: 5px 10px; color: red;">Logout
+          </button>
+        </div>
+      </li>
+    </ul>
+
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1"><span
+      class="visually-hidden">Toggle navigation</span><span
+      class="navbar-toggler-icon"></span></button>
+    <div id="navcol-1" class="collapse navbar-collapse"></div>
+  </div>
+</nav>
+</body>
+
+</html>

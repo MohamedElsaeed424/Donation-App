@@ -36,7 +36,7 @@
 .login-clean form .btn-primary {
   background: #0a3622;
   border: none;
-  border-radius: 8px; /* Adjusted border-radius to match the rounded form */
+  border-radius: 70px; /* Adjusted border-radius to match the rounded form */
   padding: 11px 20px; /* Adjusted padding for better appearance */
   box-shadow: none;
   margin-top: 26px;

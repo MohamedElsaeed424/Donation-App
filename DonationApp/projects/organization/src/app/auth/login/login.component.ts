@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from "./services/auth.service";
+import {AuthService} from "../auth.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -19,14 +19,18 @@ export class LoginComponent implements OnInit{
     })
   }
 
-  constructor(private authService: AuthService ,  private router : Router , private route : ActivatedRoute) { }
+  constructor(
+    private authService: AuthService ,
+    private router : Router ,
+    private route : ActivatedRoute) { }
 
   login() {
     let username = this.signInFrom.get('username').value
     let password = this.signInFrom.get('password').value
     const isAuthenticated = this.authService.login(username,password);
     if (isAuthenticated) {
-      this.redirectTo('/') ;
+      console.log('login correct')
+      this.router.navigate( ['/Dashboard'], {queryParams:{username:this.signInFrom.get('username').value}});
     } else {
       this.isValid = false ;
       this.redirectTo('/login') ;
@@ -35,7 +39,7 @@ export class LoginComponent implements OnInit{
 
   redirectTo(path : string){
     console.log(this.signInFrom)
-    this.router.navigate([path] , {relativeTo : this.route});
+
   }
 
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 @Component({
@@ -8,44 +8,58 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class SignUpComponent implements OnInit {
   selectedRole: string;
-  donorSignupForm: FormGroup;
+  OrganizationSignupForm: FormGroup;
 
-  constructor(private fb: FormBuilder , private route : ActivatedRoute , private router : Router) { }
+  constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.createDonorSignupForm();
+    this.createOrganizaitonForm();
   }
 
-  createDonorSignupForm(): void {
-    this.donorSignupForm = this.fb.group({
+  createOrganizaitonForm(): void {
+    this.OrganizationSignupForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       gender: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       contactNumber: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      address: ['', Validators.required],
-      area: ['', Validators.required],
-      governorate: ['', Validators.required],
-      role: ['donor'] // Default role is donor
+      OrganizationName: ['', Validators.required],
+      OrganizationType: ['', Validators.required],
+      OrganizationAddress: ['', Validators.required],
+      OrganizationArea: ['', Validators.required],
+      OrganizationGovernment: ['', Validators.required],
     });
   }
 
-  submitDonorSignupInfo(): void {
-    if (this.donorSignupForm.valid) {
-      this.router.navigate(['login'] , {relativeTo : this.route});
-      console.log(this.donorSignupForm.value);
-    } else {
-      // Handle form validation errors
-      this.validateAllFormFields(this.donorSignupForm);
-    }
+
+  logOrganizationFormAttributes(): void {
+    const formValue = this.OrganizationSignupForm.value;
+    console.log("First Name:", formValue.firstName);
+    console.log("Last Name:", formValue.lastName);
+    console.log("Gender:", formValue.gender);
+    console.log("Email:", formValue.email);
+    console.log("Contact Number:", formValue.contactNumber);
+    console.log("Password:", formValue.password);
+    console.log("Organization Name:", formValue.OrganizationName);
+    console.log("Organization Type:", formValue.OrganizationType);
+    console.log("Organization Address:", formValue.OrganizationAddress);
+    console.log("Organization Area:", formValue.OrganizationArea);
+    console.log("Organization Government:", formValue.OrganizationGovernment);
   }
 
-  validateAllFormFields(formGroup: FormGroup): void {
-    // Validation logic
+  isSignUpFormValid(): boolean {
+    console.log(this.OrganizationSignupForm.valid)
+    return this.OrganizationSignupForm.valid;
   }
 
-  selectRole(role: string): void {
-    this.selectedRole = role;
+  submitOrgnanizationSignupInfo(): void {
+    this.logOrganizationFormAttributes()
+    this.router.navigate(['../login'] , {relativeTo : this.route}) ;
+
   }
+
+
+
 }
+
