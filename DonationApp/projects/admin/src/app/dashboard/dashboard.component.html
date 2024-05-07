@@ -3,9 +3,8 @@
   <h1 id="haeding">Welcome {{ userName }}</h1>
 </header>
 
-<div class="container full-height" id="container0">
+<div class="container" id="container0">
   <div class="column">
-  <div class="card-body">
     <section class="Organizations" id="nn" style="margin-left: 100px;">
       <header><p><b>Number Of Registered Organizations</b></p></header>
       <h1>{{ RegisteredOrganizations.length }}</h1>
@@ -19,10 +18,10 @@
       <h1>{{ OrganizationSubmissions.length }}</h1>
     </section>
   </div>
-    <div class="column">
+  <div class="column">
     <section class="donations" id="nn" style="margin-left: 800px; margin-top: -730px;">
       <header><p><b>Number Of Registered Donors</b></p></header>
-      <h1>{{ RegisteredDonors.length }}</h1>  
+      <h1>{{ RegisteredDonors.length }}</h1>
     </section>
     <section class="donations" id="nn" style="margin-left: 800px;">
       <header><p><b>Number Of Pending Donors</b></p></header>
@@ -32,21 +31,6 @@
       <header><p><b>Number Of Donors submissions</b></p></header>
       <h1>{{ DonorsSubmissions.length }}</h1>
     </section>
-  </div>
-    <!-- <section class="statistics" style="margin-top: 300px;">
-      <header>
-        <p><b>Statistics</b></p>
-        <div class="statistic-item">
-          <p>Total Donations: 100</p>
-        </div>
-        <div class="statistic-item">
-          <p>Total Amount: $5000</p>
-        </div>
-        <div class="statistic-item">
-          <p>Top country contributing to donation: Egypt</p>
-        </div>
-      </header>
-    </section> -->
   </div>
 </div>
 <div class="container" id="container2">
