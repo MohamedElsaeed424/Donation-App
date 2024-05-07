@@ -1,17 +1,20 @@
-<div class="row requested-items-grid" style="margin-top: 50px;margin-left: 3cm">
+<div class="row requested-items-grid" style="margin-top: 50px; margin-left: auto; margin-right: auto; max-width: 1200px;">
   <div class="row-cols-lg-auto">
-    <div class="row" style="margin-bottom: 20px;margin-left: 2cm">
-      <app-search-bar (searchQuery)="searchQuery = $event" [thing]="'Category'"></app-search-bar>
+    <div class="row" style="margin-bottom: 20px; max-width: 400px; margin-left: 310px;border-radius: 15px;">
+      <div class="col-lg-12 text-center">
+        <app-search-bar (searchQuery)="searchQuery = $event" [thing]="'Category'"></app-search-bar>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-lg-12">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
         <div class="requested-items-grid">
           <div class="row">
             <ng-container *ngFor="let requestedItem of requestedItems | categoryFilter: searchQuery; let i = index">
-              <div class="col-lg-8 mb-3"> <!-- Three items per row with margin bottom -->
+              <div class="col-lg-6 mb-3"> <!-- Two items per row with margin bottom -->
                 <app-requested-item
                   [currentRequestedItem]="requestedItem"
-                  [currentRequestedItemId]="requestedItem.id  "
+                  [currentRequestedItemId]="requestedItem.id"
+                  style="width: 100%;"
                 ></app-requested-item>
               </div>
             </ng-container>
@@ -19,6 +22,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>

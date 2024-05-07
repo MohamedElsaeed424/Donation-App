@@ -5,3 +5,4 @@
   <app-estimated-time></app-estimated-time>
 </div>
 <router-outlet></router-outlet>
+<div  *ngIf="authService.isAuthenticated()"><app-footer></app-footer></div>
