@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
-
-import {AuthService} from "../../auth/auth.service";
-// import {MailerService} from "../mailer.service";
+import { Notificationn } from '../notifications/notification.model';
+import { NotificationService } from '../notifications/notification.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-estimated-time',
@@ -16,8 +16,8 @@ export class EstimatedTimeComponent implements OnInit, OnDestroy {
   currentUser = this.authService.currentUser;
 
   constructor(
-    private authService :AuthService ,
-    // private mailerService : MailerService
+    private authService: AuthService,
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit(): void {
@@ -39,19 +39,24 @@ export class EstimatedTimeComponent implements OnInit, OnDestroy {
       } else {
         this.progressValue = 100;
         this.progressInterval.unsubscribe(); // Stop the timer when progress reaches 100%
-        // this.sendEmailAfterInterval(); // Call function to send email after interval is finished
+        this.createNotification(); // Call function to create new notification
+        this.notificationService.toggleNotifications(true);
       }
     });
   }
-
-  // sendEmailAfterInterval(): void {
-  //   this.mailerService.sendEmail().then(r => console.log("Email Sent successfully"));
-  // }
-
+  createNotification(): void {
+    const newNotification = new Notificationn(
+      this.notificationService.getNotifications().length+1, // Assuming the ID starts from 1 and increments
+      'Delivery Arrived',
+      'Please meet the delivery person.',
+      new Date().toLocaleTimeString(),
+      new Date().toLocaleDateString() === new Date().toLocaleDateString() ? 'Today' : new Date().toLocaleDateString(),
+    );
+    this.notificationService.addNotification(newNotification);
+  }
   ngOnDestroy(): void {
     this.progressInterval.unsubscribe();
   }
-
   cancel(): void {
     // Remove the component from the DOM
     this.deleted = true;

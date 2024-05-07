@@ -16,8 +16,9 @@ export class NotificationService {
     new Notificationn(5, 'Donation Received', 'You have received a donation of clothes from Jane Smith', '3 days ago', '2024-04-29')
   ];
 
+  private showNotificationsSource = new BehaviorSubject<boolean>(false);
   private notificationsSubject = new BehaviorSubject<Notificationn[]>(this.notifications);
-
+  showNotifications$ = this.showNotificationsSource.asObservable();
   constructor() { }
 
   getNotifications(): Notificationn[] {
@@ -31,6 +32,9 @@ export class NotificationService {
   deleteNotification(id: number): void {
     this.notifications = this.notifications.filter(notification => notification.id !== id);
     this.notificationsSubject.next(this.notifications);
+  }
+  toggleNotifications(show: boolean): void {
+    this.showNotificationsSource.next(show);
   }
 
   clearNotifications(): void {
