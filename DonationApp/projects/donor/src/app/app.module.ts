@@ -94,6 +94,7 @@ import {
   RegisteredOrganizationComponent
 } from "./Organization/registered-organization/registered-organization.component";
 import {OrganizationFilterPipe} from "./Organization/organizationFilter.pipe";
+import { FooterComponent } from './shared/footer/footer.component';
 import {
   RegisteredOrganizationDetailsComponent
 } from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
@@ -117,6 +118,7 @@ import { NotificationDetailsComponent } from './shared/notifications/notificatio
     RequestedItemsListComponent,
     ClothesDetailsComponent,
     BooksDetailsComponent,
+    FooterComponent,
     SchoolSuppliesDetailsComponent,
     ToysDetailsComponent,
     FoodDetailsComponent,

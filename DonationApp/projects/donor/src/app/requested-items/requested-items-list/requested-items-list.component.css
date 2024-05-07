@@ -1,7 +1,7 @@
 .requested-items-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* Set the grid to have a minimum width of 350px and take up the available space */
-  gap: 20px; /* Add some gap between grid items */
+  gap: 500px; /* Add some gap between grid items */
 }
 
 .requested-items-grid > div {

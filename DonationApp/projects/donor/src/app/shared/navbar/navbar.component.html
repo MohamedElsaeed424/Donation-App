@@ -8,10 +8,10 @@
     <ul class="collapse navbar-collapse">
       <ul class="navbar-nav">
         <li class="nav-item" >
-          <a class="nav-link" routerLink="/requested-items" routerLinkActive="active">Requested Items</a>
+          <a class="nav-link" routerLink="/requested-items" routerLinkActive="active"><strong>Requested Items</strong></a>
         </li>
         <li class="nav-item dropdown" [ngClass]="{ 'show': categoriesDropdownOpen }">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="toggleCategoriesDropdown()">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="toggleCategoriesDropdown()" style="margin-left: 25px;">
             Categories
             <i class="fas fa-caret-down ml-2"></i> <!-- Font Awesome caret down icon -->
           </a>
@@ -27,23 +27,23 @@
         </li>
         <li class="nav-item dropdown" [ngClass]="{ 'show': organizationsDropdownOpen }">
           <button class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()"
-                  style="margin-right: 6px;margin-left: 30px;">Organizations</button>
+                  style="margin-right: 6px;margin-left: 20px;">Organizations</button>
           <div class="dropdown-menu" [ngClass]="{ 'show': organizationsDropdownOpen }">
             <button class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</button>
           </div>
         </li>
 
         <li class="nav-item" *ngIf="authService.isTeacher()">
-          <a class="nav-link" routerLink="/teaching-posts" routerLinkActive="active">Teaching Posts</a>
+          <a class="nav-link" routerLink="/teaching-posts" routerLinkActive="active"><strong>Teaching Posts</strong></a>
         </li>
         <li class="nav-item" *ngIf="authService.isDoctor()">
-          <a class="nav-link" routerLink="/medical-cases" routerLinkActive="active">Medical Cases</a>
+          <a class="nav-link" routerLink="/medical-cases" routerLinkActive="active"><strong>Medical Cases</strong></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/manage-account" routerLinkActive="active">Manage Account</a>
+          <a class="nav-link" routerLink="/manage-account" routerLinkActive="active" style="margin-left: 10px;"><strong>Manage Account</strong></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="" style="color: #3a8c7d;" (click)="logout()">Logout</a>
+          <a class="nav-link" routerLink="" style="color: #3a8c7d; margin-left: 600px;" (click)="logout()"><strong>Logout</strong></a>
         </li>
       </ul>
     </ul>
