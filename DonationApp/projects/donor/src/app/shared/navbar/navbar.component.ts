@@ -10,21 +10,32 @@ import {ItemCategory} from "../../requested-items/categories/categories-models/a
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  itemCategory : ItemCategory ;
   categoriesDropdownOpen :boolean = false ;
+  organizationsDropdownOpen = false;
+
 
   public constructor(
     private route: ActivatedRoute,
     private  router : Router,
     protected authService: AuthService) {}
 
+
   toggleCategoriesDropdown() {
     this.categoriesDropdownOpen = !this.categoriesDropdownOpen;
-    console.log(this.categoriesDropdownOpen);
+    this.organizationsDropdownOpen = false;
+  }
+  toggleOrganizationsDropdown() {
+    this.organizationsDropdownOpen = !this.organizationsDropdownOpen;
+    this.categoriesDropdownOpen = false;
+  }
+  LoadRegisteredOrganizations(){
+    this.router.navigate(['/Organizations/Registered'],{queryParams: {username: this.authService.currentUser.userName}})
+    this.closeAllDropdowns()
   }
 
   closeAllDropdowns(){
     this.categoriesDropdownOpen = false;
+    this.organizationsDropdownOpen = false;
   }
 
   logout() {

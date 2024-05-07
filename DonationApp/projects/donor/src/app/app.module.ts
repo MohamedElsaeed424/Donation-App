@@ -90,6 +90,16 @@ import { ManageAccountComponent } from './manage-account/manage-account.componen
 import {DonorService} from "./Donors/donors.service";
 import { PickUpDetailsComponent } from './requested-items/pick-up-details/pick-up-details.component';
 import { EstimatedTimeComponent } from './shared/estimated-time/estimated-time.component';
+import {
+  RegisteredOrganizationComponent
+} from "./Organization/registered-organization/registered-organization.component";
+import {OrganizationFilterPipe} from "./Organization/organizationFilter.pipe";
+import { FooterComponent } from './shared/footer/footer.component';
+import {
+  RegisteredOrganizationDetailsComponent
+} from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
+import {NotificationsComponent} from "./shared/notifications/notifications.component";
+import { NotificationDetailsComponent } from './shared/notifications/notification-details/notification-details.component';
 
 @NgModule({
   declarations: [
@@ -108,6 +118,7 @@ import { EstimatedTimeComponent } from './shared/estimated-time/estimated-time.c
     RequestedItemsListComponent,
     ClothesDetailsComponent,
     BooksDetailsComponent,
+    FooterComponent,
     SchoolSuppliesDetailsComponent,
     ToysDetailsComponent,
     FoodDetailsComponent,
@@ -133,6 +144,7 @@ import { EstimatedTimeComponent } from './shared/estimated-time/estimated-time.c
     BookFilterPipe,
     TeachingPostFilterPipe,
     MedicalCaseFilterPipe,
+    OrganizationFilterPipe,
     TeachingPostsComponent,
     TeachingPostComponent,
     TeachingPostsListComponent,
@@ -144,6 +156,10 @@ import { EstimatedTimeComponent } from './shared/estimated-time/estimated-time.c
     ManageAccountComponent,
     PickUpDetailsComponent,
     EstimatedTimeComponent,
+    RegisteredOrganizationComponent ,
+    RegisteredOrganizationDetailsComponent,
+    NotificationsComponent,
+    NotificationDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -155,10 +171,7 @@ import { EstimatedTimeComponent } from './shared/estimated-time/estimated-time.c
     AppRoutingModule,
     FormsModule
   ],
-  providers: [
-    DonorService,
-
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

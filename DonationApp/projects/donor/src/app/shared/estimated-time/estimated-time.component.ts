@@ -1,8 +1,8 @@
-// estimated-time.component.ts
-
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
-import { animate, style, transition, trigger } from '@angular/animations';
+
+import {AuthService} from "../../auth/auth.service";
+// import {MailerService} from "../mailer.service";
 
 @Component({
   selector: 'app-estimated-time',
@@ -13,8 +13,12 @@ export class EstimatedTimeComponent implements OnInit, OnDestroy {
   progressValue: number = 0;
   progressInterval: Subscription;
   deleted: boolean = false;
+  currentUser = this.authService.currentUser;
 
-  constructor() {}
+  constructor(
+    private authService :AuthService ,
+    // private mailerService : MailerService
+  ) {}
 
   ngOnInit(): void {
     // Start the progress timer
@@ -35,9 +39,14 @@ export class EstimatedTimeComponent implements OnInit, OnDestroy {
       } else {
         this.progressValue = 100;
         this.progressInterval.unsubscribe(); // Stop the timer when progress reaches 100%
+        // this.sendEmailAfterInterval(); // Call function to send email after interval is finished
       }
     });
   }
+
+  // sendEmailAfterInterval(): void {
+  //   this.mailerService.sendEmail().then(r => console.log("Email Sent successfully"));
+  // }
 
   ngOnDestroy(): void {
     this.progressInterval.unsubscribe();

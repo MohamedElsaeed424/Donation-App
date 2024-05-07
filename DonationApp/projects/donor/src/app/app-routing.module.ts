@@ -22,7 +22,13 @@ import {
   MedicalCaseDetailsComponent
 } from "./medical-cases/medical-case/medical-case-details/medical-case-details.component";
 import {ManageAccountComponent} from "./manage-account/manage-account.component";
-import {PickUpDetailsComponent} from "./requested-items/pick-up-details/pick-up-details.component"; // Import the AuthGuard
+import {PickUpDetailsComponent} from "./requested-items/pick-up-details/pick-up-details.component";
+import {
+  RegisteredOrganizationComponent
+} from "./Organization/registered-organization/registered-organization.component";
+import {
+  RegisteredOrganizationDetailsComponent
+} from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
 
 const routes: Routes = [
   { path:'',  redirectTo:'auth/login', pathMatch : 'full' },
@@ -63,6 +69,16 @@ const routes: Routes = [
     children:[
       { path: '', component: MedicalCasesListComponent,canActivate:[AuthGuard] },
       { path: 'medical-case-details/:id', component: MedicalCaseDetailsComponent,canActivate:[AuthGuard] },
+    ]
+  },  {
+    path: 'Organizations', children: [
+      {
+        path: 'Registered', children: [{
+          path: '', component: RegisteredOrganizationComponent
+        }, {
+          path: ':id', component: RegisteredOrganizationDetailsComponent
+        } ]
+      },
     ]
   },
   {path: 'manage-account', component: ManageAccountComponent,canActivate:[AuthGuard]},

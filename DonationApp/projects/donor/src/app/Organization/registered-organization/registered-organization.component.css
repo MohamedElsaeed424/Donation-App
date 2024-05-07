@@ -1,0 +1,83 @@
+#container0 {
+  background-color: #1C9B8E;
+  border-radius: 40px;
+  padding: 1.5rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+
+.search-container {
+  margin-bottom: 1rem;
+  max-width: 600px; /* Adjust the max-width to control the overall width of the search bars */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px; /* Increase the padding to provide more space horizontally */
+  font-size: 16px; /* Increase the font-size to make the input text more visible */
+}
+
+.card {
+  margin-bottom: 1rem;
+  border-radius: 40px;
+  background-color: #AFF0F2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+}
+
+.btn-primary,
+.btn-primary-view {
+  color: #fff;
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #ff0000;
+  border-color: #ff0000;
+}
+
+.btn-primary-view {
+  background-color: #808080;
+  border-color: #000000;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary-view:hover,
+.btn-primary-view:focus {
+  background-color: #cc0000;
+  border-color: #cc0000;
+}
+
+#kk {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  list-style: none;
+  padding: 0;
+}
+
+#kk li {
+  display: inline;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
