@@ -1,0 +1,24 @@
+<div class="container" id="container0">
+
+<div class="row">
+  <div class="col-md-4"
+       *ngFor="let submissions of OrganizationSubmissions; let i = index">
+    <div class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title"><strong>{{ submissions.Organization.username }}</strong></h5>
+        <p class="card-text"><b>Type:</b> {{ submissions.itemCategory }}</p>
+        <p class="card-text"><b>Type:</b> {{ submissions.Organization.type }}</p>
+        <p class="card-text"><b>Address:</b> {{ submissions.Organization.address }}</p>
+        <!-- Add more details as needed -->
+        <div class="column">
+        <div class="button-row">
+          <a (click)="rejectSubmission(i)" class="btn btn-primary">Delete</a>
+          <a (click)="ViewSubmission(i)" class="btn btn-primary-details">View details</a>
+          <a (click)="editPost(i)" class="btn btn-primary-acc">edit</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

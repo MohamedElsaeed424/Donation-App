@@ -34,41 +34,22 @@ export class NavbarComponent {
     this.authservice.isLoggedIn = false;
   }
 
-  NaviagteToChnagePassword() {
-    this.route.navigate(["/changePassword"], {queryParams: {username: this.authservice.username}})
-    this.closeAllDropDown()
-  }
 
-  LoadRegisteredOrganizations(){
-    this.route.navigate(['/Organizations/Registered'],{queryParams: {username: this.authservice.username}})
-    this.closeAllDropDown()
-  }
-
-  NavigateToRegisteredDonors(){
-    this.route.navigate(['/Donor/Registered'],{queryParams: {username: this.authservice.username}})
-    this.closeAllDropDown()
-  }
-  navigateToPendingOrganizationsRequest(){
-    this.route.navigate(['/Organizations/PendingRequest'],{queryParams: {username: this.authservice.username}})
-    this.closeAllDropDown()
-  }
-  NavigateToPendingDonorRequest(){
-    this.route.navigate(['/Donor/PendingRequest'],{queryParams: {username: this.authservice.username}})
-    this.closeAllDropDown()
-  }
   NavigateToDashboard(){
     this.route.navigate(['/Dashboard'],{queryParams: {username: this.authservice.username}})
     this.closeAllDropDown()
   }
 
-  naviagteToOranizationSubmissions(){
-    this.route.navigate(['/Organizations/Submissions'],{queryParams: {username: this.authservice.username}})
-    this.closeAllDropDown()
+  NavigateToEditProfile(){
+    this.route.navigate(['/editProfile'],{queryParams: {username: this.authservice.username}})
   }
 
-  naviagteToDonorsSubmissions(){
-    this.route.navigate(['/Donor/Submissions'],{queryParams: {username: this.authservice.username}})
-    this.closeAllDropDown()
+  NavigateToAddPost(){
+    this.route.navigate(['/posts/createPost'],{queryParams: {username: this.authservice.username}})
+  }
+
+  navigateToAllPosts(){
+    this.route.navigate(['/posts/allPosts',{queryParams: {username: this.authservice.username}}])
   }
 
 }

@@ -17,10 +17,10 @@
             style="background: #13786a;border-color: rgb(62,18,18);margin-right: 10px;margin-left: 10px;">Dashboard
     </button>
     <ul class="navbar-nav ml-auto">
-      <button type="button" class="btn btn-outline-info"
+      <button type="button" class="btn btn-outline-info" (click)="NavigateToAddPost()"
               style="margin-left: 30px;margin-right: 6px; background-color: #1c9b8e; text-decoration-color: black">Add post
       </button>
-      <button type="button" class="btn btn-outline-info"
+      <button type="button" class="btn btn-outline-info" (click)="navigateToAllPosts()"
               style="margin-left: 30px;margin-right: 6px ;  background-color: #1c9b8e; text-decoration-color: black">My posts
       </button>
 
@@ -31,12 +31,8 @@
         </button>
         <div class="dropdown-menu" [ngClass]="{ 'show': settingsDropdownOpen }"
              style="margin-left: 485px; max-width: 50px;">
-          <button class="dropdown-item" (click)="NaviagteToChnagePassword()" style="padding: 5px 10px;">change
-            password
-          </button>
-          <button class="dropdown-item" style="padding: 5px 10px;">edit profile</button>
-          <button class="dropdown-item" routerLink="" (click)="Logout()" style="padding: 5px 10px; color: red;">Logout
-          </button>
+          <button class="dropdown-item" (click)="NavigateToEditProfile()" style="padding: 5px 10px;">edit profile</button>
+          <button class="dropdown-item" (click)="Logout()" style="padding: 5px 10px; color: red;">Logout</button>
         </div>
       </li>
     </ul>

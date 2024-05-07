@@ -2,15 +2,15 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <form [formGroup]="OrganizationSignupForm" (ngSubmit)="submitOrgnanizationSignupInfo()" class="rounded-form">
-          <h2 class="text-center form-title">Organization Signup</h2>
+        <form [formGroup]="OrganizationProfile" (ngSubmit)="EditProfile()"  class="rounded-form">
+          <h2 class="text-center form-title">Profile details</h2>
           <div class="form-group">
             <div class="row-cols-2">
               <label for="firstName" style="color: #333;">First Name:</label>
               <input type="text" id="firstName" formControlName="firstName" class="form-control"
                      placeholder="Enter your first name">
               <div
-                *ngIf="OrganizationSignupForm.get('firstName').invalid && OrganizationSignupForm.get('firstName').touched"
+                *ngIf="OrganizationProfile.get('firstName').invalid && OrganizationProfile.get('firstName').touched"
                 class="text-danger">
                 First Name is required
               </div>
@@ -21,7 +21,7 @@
             <input type="text" id="lastName" formControlName="lastName" class="form-control"
                    placeholder="Enter your last name">
             <div
-              *ngIf="OrganizationSignupForm.get('lastName').invalid && OrganizationSignupForm.get('lastName').touched"
+              *ngIf="OrganizationProfile.get('lastName').invalid && OrganizationProfile.get('lastName').touched"
               class="text-danger">
               Last Name is required
             </div>
@@ -34,7 +34,7 @@
               <option value="male" style="color: #333;">Male</option>
               <option value="female" style="color: #333;">Female</option>
             </select>
-            <div *ngIf="OrganizationSignupForm.get('gender').invalid && OrganizationSignupForm.get('gender').touched"
+            <div *ngIf="OrganizationProfile.get('gender').invalid && OrganizationProfile.get('gender').touched"
                  class="text-danger">
               Gender is required
             </div>
@@ -43,7 +43,7 @@
             <label for="email" style="color:
               #0a3622;">Email:</label>
             <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email">
-            <div *ngIf="OrganizationSignupForm.get('email').invalid && OrganizationSignupForm.get('email').touched"
+            <div *ngIf="OrganizationProfile.get('email').invalid && OrganizationProfile.get('email').touched"
                  class="text-danger">
               Valid email is required
             </div>
@@ -54,7 +54,7 @@
             <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control"
                    placeholder="Enter your contact number">
             <div
-              *ngIf="OrganizationSignupForm.get('contactNumber').invalid && OrganizationSignupForm.get('contactNumber').touched"
+              *ngIf="OrganizationProfile.get('contactNumber').invalid && OrganizationProfile.get('contactNumber').touched"
               class="text-danger">
               Contact Number is required
             </div>
@@ -64,7 +64,7 @@
               <input type="password" id="password" formControlName="password" class="form-control"
                      placeholder="Enter your password">
               <div
-                *ngIf="OrganizationSignupForm.get('password').invalid && OrganizationSignupForm.get('password').touched"
+                *ngIf="OrganizationProfile.get('password').invalid && OrganizationProfile.get('password').touched"
                 class="text-danger">
                 Enter a valid password
               </div>
@@ -77,7 +77,7 @@
               #0a3622;">Name:</label>
             <input type="text" formControlName="OrganizationName" class="form-control" placeholder="Enter your address">
             <div
-              *ngIf="OrganizationSignupForm.get('OrganizationName').invalid && OrganizationSignupForm.get('OrganizationName').touched"
+              *ngIf="OrganizationProfile.get('OrganizationName').invalid && OrganizationProfile.get('OrganizationName').touched"
               class="text-danger">
               name is required
             </div>
@@ -88,7 +88,7 @@
               #0a3622;">Type:</label>
             <input type="text" formControlName="OrganizationType" class="form-control" placeholder="Enter Organization type">
             <div
-              *ngIf="OrganizationSignupForm.get('OrganizationType').invalid && OrganizationSignupForm.get('OrganizationType').touched"
+              *ngIf="OrganizationProfile.get('OrganizationType').invalid && OrganizationProfile.get('OrganizationType').touched"
               class="text-danger">
               Type is required
             </div>
@@ -100,7 +100,7 @@
             <input type="text" id="address" formControlName="OrganizationAddress" class="form-control"
                    placeholder="Enter Organization address">
             <div
-              *ngIf="OrganizationSignupForm.get('OrganizationAddress').invalid && OrganizationSignupForm.get('OrganizationAddress').touched"
+              *ngIf="OrganizationProfile.get('OrganizationAddress').invalid && OrganizationProfile.get('OrganizationAddress').touched"
               class="text-danger">
               Address is required
             </div>
@@ -111,7 +111,7 @@
             <input type="text" id="area" formControlName="OrganizationArea" class="form-control"
                    placeholder="Enter Organization area">
             <div
-              *ngIf="OrganizationSignupForm.get('OrganizationArea').invalid && OrganizationSignupForm.get('OrganizationArea').touched"
+              *ngIf="OrganizationProfile.get('OrganizationArea').invalid && OrganizationProfile.get('OrganizationArea').touched"
               class="text-danger">
               Area is required
             </div>
@@ -122,15 +122,17 @@
             <input type="text" id="governorate" formControlName="OrganizationGovernment" class="form-control"
                    placeholder="Enter Organization governorate">
             <div
-              *ngIf="OrganizationSignupForm.get('OrganizationGovernment').invalid && OrganizationSignupForm.get('OrganizationGovernment').touched"
+              *ngIf="OrganizationProfile.get('OrganizationGovernment').invalid && OrganizationProfile.get('OrganizationGovernment').touched"
               class="text-danger">
               Governorate is required
             </div>
           </div>
           <div class="form-group text-center">
-            <button [disabled]="!isSignUpFormValid()" type="submit" class="btn btn-primary">Signup</button>
+            <button [disabled]="!isProfileFormValid()" type="submit" class="btn btn-primary">Update</button>
+            <button (click)="NavigateToLogin()" class="btn btn-primary-rej">Delete</button>
+
           </div>
-          <a routerLink="../login" style="font-family: 'Harlow Solid Italic',serif">Back to login</a>
+
         </form>
       </div>
       <div class="col-md-6 d-flex justify-content-center align-items-center">

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Donation Post Form</title>
+</head>
+<body>
+<h1>Create Donation Post</h1>
+<div class="form-container fade-in">
+  <form [formGroup]="postDetails" (submit)="submitForm()">
+    <div class="form-group">
+      <label for="category">Category:</label>
+      <select formControlName="category" id="category">
+        <option value="">Select category</option>
+        <option value="clothes">Clothes</option>
+        <option value="toys">Toys</option>
+        <option value="food">Food</option>
+        <option value="medical supplies">Medical Supplies</option>
+        <option value="school supplies">School Supplies</option>
+        <option value="blood donation">Blood Donation</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="details">Details:</label>
+      <input type="text" formControlName="details" id="details">
+    </div>
+    <div class="form-group">
+      <button [disabled]="!postDetails.valid"  type="submit">edit</button>
+    </div>
+  </form>
+  <!--  <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>-->
+  <!--  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>-->
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular-animate.min.js"></script>
+
+</body>
+</html>
