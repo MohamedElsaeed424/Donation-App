@@ -1,0 +1,52 @@
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 500px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.clear-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-button:hover {
+  background-color: #e74c3c;
+}
+
+
+.notification-item:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.notification-item:nth-child(even) {
+  background-color: #eaeaea;
+}
+
+
+.notification-container::-webkit-scrollbar {
+  width: 20px;
+}
+
+.notification-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.notification-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.notification-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

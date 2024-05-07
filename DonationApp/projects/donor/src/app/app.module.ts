@@ -97,6 +97,8 @@ import {OrganizationFilterPipe} from "./Organization/organizationFilter.pipe";
 import {
   RegisteredOrganizationDetailsComponent
 } from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
+import {NotificationsComponent} from "./shared/notifications/notifications.component";
+import { NotificationDetailsComponent } from './shared/notifications/notification-details/notification-details.component';
 
 @NgModule({
   declarations: [
@@ -153,7 +155,9 @@ import {
     PickUpDetailsComponent,
     EstimatedTimeComponent,
     RegisteredOrganizationComponent ,
-    RegisteredOrganizationDetailsComponent
+    RegisteredOrganizationDetailsComponent,
+    NotificationsComponent,
+    NotificationDetailsComponent
   ],
   imports: [
     BrowserModule,

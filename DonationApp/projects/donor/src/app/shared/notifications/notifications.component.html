@@ -1,0 +1,11 @@
+<div class="notification-container ">
+  <div class="main-content">
+    <app-notification-details
+      *ngFor="let notification of notifications; index as i"
+      [notification]="notification"
+      (remove)="removeNotification($event)"
+      class="notification-item"
+    ></app-notification-details>
+    <button (click)="clearNotifications()" class="clear-button">Clear Notifications</button>
+  </div>
+</div>

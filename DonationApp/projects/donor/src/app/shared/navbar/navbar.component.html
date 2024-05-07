@@ -32,6 +32,7 @@
             <button class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</button>
           </div>
         </li>
+
         <li class="nav-item" *ngIf="authService.isTeacher()">
           <a class="nav-link" routerLink="/teaching-posts" routerLinkActive="active">Teaching Posts</a>
         </li>

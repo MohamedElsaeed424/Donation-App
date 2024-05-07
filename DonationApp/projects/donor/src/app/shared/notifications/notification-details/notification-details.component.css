@@ -1,0 +1,26 @@
+.notification-details {
+  width: 100%; /* Adjusted width for the details component */
+  padding: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.notification-details:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  font-weight: bold;
+}
+
+.time {
+  font-size: 0.8em;
+  color: #666;
+}
+
+/* Adjust colors and styles as needed */
