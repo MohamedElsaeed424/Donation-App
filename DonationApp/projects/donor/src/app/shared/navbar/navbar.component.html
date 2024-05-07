@@ -25,6 +25,13 @@
             <li><a class="dropdown-item " (click)="closeAllDropdowns()" routerLinkActive="active-link" [routerLink]="['/requested-items','requested-item-category',ItemCategory.MedicalSupplies]">Medical Supplies</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown" [ngClass]="{ 'show': organizationsDropdownOpen }">
+          <button class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()"
+                  style="margin-right: 6px;margin-left: 30px;">Organizations</button>
+          <div class="dropdown-menu" [ngClass]="{ 'show': organizationsDropdownOpen }">
+            <button class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</button>
+          </div>
+        </li>
         <li class="nav-item" *ngIf="authService.isTeacher()">
           <a class="nav-link" routerLink="/teaching-posts" routerLinkActive="active">Teaching Posts</a>
         </li>

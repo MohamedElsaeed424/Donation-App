@@ -25,20 +25,10 @@ import {ManageAccountComponent} from "./manage-account/manage-account.component"
 import {PickUpDetailsComponent} from "./requested-items/pick-up-details/pick-up-details.component";
 import {
   RegisteredOrganizationComponent
-} from "../../../admin/src/app/Organization/registered-organization/registered-organization.component";
+} from "./Organization/registered-organization/registered-organization.component";
 import {
   RegisteredOrganizationDetailsComponent
-} from "../../../admin/src/app/Organization/registered-organization/registered-organization-details/registered-organization-details.component";
-import {
-  OrganizationsPendingRequestsComponent
-} from "../../../admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component";
-import {
-  OrganizationDetailsComponent
-} from "../../../admin/src/app/Organization/organizations-pending-requests/pending-organization-details/organization-details.component";
-import {SubmissionsComponent} from "../../../admin/src/app/Organization/OrganizationSubmissions/submissions.component";
-import {
-  OrganizationSubmissionDetailsComponent
-} from "../../../admin/src/app/Organization/OrganizationSubmissions/organization-submission-details/organization-submission-details.component"; // Import the AuthGuard
+} from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
 
 const routes: Routes = [
   { path:'',  redirectTo:'auth/login', pathMatch : 'full' },
