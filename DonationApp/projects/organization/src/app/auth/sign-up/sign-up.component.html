@@ -2,127 +2,141 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <form [formGroup]="donorSignupForm" (ngSubmit)="submitDonorSignupInfo()" class="rounded-form">
+        <form [formGroup]="OrganizationSignupForm" (ngSubmit)="submitOrgnanizationSignupInfo()" class="rounded-form">
           <h2 class="text-center form-title">Organization Signup</h2>
           <div class="form-group">
             <div class="row-cols-2">
               <label for="firstName" style="color: #333;">First Name:</label>
-              <input type="text" id="firstName" formControlName="firstName" class="form-control" placeholder="Enter your first name">
-              <div *ngIf="donorSignupForm.get('firstName').invalid && donorSignupForm.get('firstName').touched" class="text-danger">
+              <input type="text" id="firstName" formControlName="firstName" class="form-control"
+                     placeholder="Enter your first name">
+              <div
+                *ngIf="OrganizationSignupForm.get('firstName').invalid && OrganizationSignupForm.get('firstName').touched"
+                class="text-danger">
                 First Name is required
               </div>
             </div>
-
           </div>
           <div class="form-group">
             <label for="lastName" style="color: #333;">Last Name:</label>
-            <input type="text" id="lastName" formControlName="lastName" class="form-control" placeholder="Enter your last name">
-            <div *ngIf="donorSignupForm.get('lastName').invalid && donorSignupForm.get('lastName').touched" class="text-danger">
+            <input type="text" id="lastName" formControlName="lastName" class="form-control"
+                   placeholder="Enter your last name">
+            <div
+              *ngIf="OrganizationSignupForm.get('lastName').invalid && OrganizationSignupForm.get('lastName').touched"
+              class="text-danger">
               Last Name is required
             </div>
           </div>
           <div class="form-group">
-            <div class="row-cols-2">
-              <label for="Organization name" style="color: #333;">Organization Name:</label>
-              <input type="text" id="Organization name" formControlName="Organization name" class="form-control" placeholder="Enter your Organization name">
-              <div *ngIf="donorSignupForm.get('Organization').invalid && donorSignupForm.get('Organization name').touched" class="text-danger">
-                Organization name is required
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="row-cols-2">
-              <label for="organization type" style="color: #333;">Organization type:</label>
-              <input type="text" id="organization type" formControlName="organization type" class="form-control" placeholder="Enter your Organization type">
-              <div *ngIf="donorSignupForm.get('organization type').invalid && donorSignupForm.get('organization type').touched" class="text-danger">
-                Organization type is required
-              </div>
-            </div>
-
-          </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="gender" style="color:
+            <label for="gender" style="color:
               #0a3622;">Gender:</label>
-              <select id="gender" formControlName="gender" class="form-control">
-                <option value="" disabled selected>Select your gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-              </select>
-              <div *ngIf="donorSignupForm.get('gender').invalid && donorSignupForm.get('gender').touched" class="text-danger">
-                Gender is required
-              </div>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="email" style="color:
-              #0a3622;">Email:</label>
-              <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email">
-              <div *ngIf="donorSignupForm.get('email').invalid && donorSignupForm.get('email').touched" class="text-danger">
-                Valid email is required
-              </div>
+            <select id="gender" formControlName="gender" class="form-control">
+              <option value="" disabled selected style="color: #333;">Select your gender</option>
+              <option value="male" style="color: #333;">Male</option>
+              <option value="female" style="color: #333;">Female</option>
+            </select>
+            <div *ngIf="OrganizationSignupForm.get('gender').invalid && OrganizationSignupForm.get('gender').touched"
+                 class="text-danger">
+              Gender is required
             </div>
           </div>
-
-          <!-- Other form fields (contactNumber, password, address, area, governorate) go here -->
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="contactNumber" style="color:
-              #0a3622;">Contact Number:</label>
-              <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control" placeholder="Enter your contact number">
-              <div *ngIf="donorSignupForm.get('contactNumber').invalid && donorSignupForm.get('contactNumber').touched" class="text-danger">
-                Contact Number is required
-              </div>
+          <div class="form-group ">
+            <label for="email" style="color:
+              #0a3622;">Email:</label>
+            <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email">
+            <div *ngIf="OrganizationSignupForm.get('email').invalid && OrganizationSignupForm.get('email').touched"
+                 class="text-danger">
+              Valid email is required
             </div>
-            <div class="form-group col-md-6">
+          </div>
+          <div class="form-group ">
+            <label for="contactNumber" style="color:
+              #0a3622;">Contact Number:</label>
+            <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control"
+                   placeholder="Enter your contact number">
+            <div
+              *ngIf="OrganizationSignupForm.get('contactNumber').invalid && OrganizationSignupForm.get('contactNumber').touched"
+              class="text-danger">
+              Contact Number is required
+            </div>
+            <div class="form-group ">
               <label for="password" style="color:
               #0a3622;">Password:</label>
-              <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
-              <div *ngIf="donorSignupForm.get('password').invalid && donorSignupForm.get('password').touched" class="text-danger">
-                Password is required
+              <input type="password" id="password" formControlName="password" class="form-control"
+                     placeholder="Enter your password">
+              <div
+                *ngIf="OrganizationSignupForm.get('password').invalid && OrganizationSignupForm.get('password').touched"
+                class="text-danger">
+                Enter a valid password
               </div>
             </div>
           </div>
 
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="address" style="color:
+
+          <div class="form-group ">
+            <label for="address" style="color:
+              #0a3622;">Name:</label>
+            <input type="text" formControlName="OrganizationName" class="form-control" placeholder="Enter your address">
+            <div
+              *ngIf="OrganizationSignupForm.get('OrganizationName').invalid && OrganizationSignupForm.get('OrganizationName').touched"
+              class="text-danger">
+              Address is required
+            </div>
+          </div>
+
+          <div class="form-group ">
+            <label for="address" style="color:
+              #0a3622;">Type:</label>
+            <input type="text" formControlName="OrganizationType" class="form-control" placeholder="Enter Organization type">
+            <div
+              *ngIf="OrganizationSignupForm.get('OrganizationType').invalid && OrganizationSignupForm.get('OrganizationType').touched"
+              class="text-danger">
+              Type is required
+            </div>
+          </div>
+
+          <div class="form-group ">
+            <label for="address" style="color:
               #0a3622;">Address:</label>
-              <input type="text" id="address" formControlName="address" class="form-control" placeholder="Enter your address">
-              <div *ngIf="donorSignupForm.get('address').invalid && donorSignupForm.get('address').touched" class="text-danger">
-                Address is required
-              </div>
+            <input type="text" id="address" formControlName="OrganizationAddress" class="form-control"
+                   placeholder="Enter Organization address">
+            <div
+              *ngIf="OrganizationSignupForm.get('OrganizationAddress').invalid && OrganizationSignupForm.get('OrganizationAddress').touched"
+              class="text-danger">
+              Address is required
             </div>
-            <div class="form-group col-md-6">
-              <label for="area" style="color:
+          </div>
+          <div class="form-group ">
+            <label for="area" style="color:
               #0a3622;">Area:</label>
-              <input type="text" id="area" formControlName="area" class="form-control" placeholder="Enter your area">
-              <div *ngIf="donorSignupForm.get('area').invalid && donorSignupForm.get('area').touched" class="text-danger">
-                Area is required
-              </div>
+            <input type="text" id="area" formControlName="OrganizationArea" class="form-control"
+                   placeholder="Enter Organization area">
+            <div
+              *ngIf="OrganizationSignupForm.get('OrganizationArea').invalid && OrganizationSignupForm.get('OrganizationArea').touched"
+              class="text-danger">
+              Area is required
             </div>
           </div>
-
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="governorate" style="color:
+          <div class="form-group ">
+            <label for="governorate" style="color:
               #0a3622;">Governorate:</label>
-              <input type="text" id="governorate" formControlName="governorate" class="form-control" placeholder="Enter your governorate">
-              <div *ngIf="donorSignupForm.get('governorate').invalid && donorSignupForm.get('governorate').touched" class="text-danger">
-                Governorate is required
-              </div>
+            <input type="text" id="governorate" formControlName="OrganizationGovernment" class="form-control"
+                   placeholder="Enter Organization governorate">
+            <div
+              *ngIf="OrganizationSignupForm.get('OrganizationGovernment').invalid && OrganizationSignupForm.get('OrganizationGovernment').touched"
+              class="text-danger">
+              Governorate is required
             </div>
-            
           </div>
-
-                 <button type="submit" class="btn btn-primary">Signup</button>
+          <div class="form-group text-center">
+            <button [disabled]="!isSignUpFormValid()" type="submit" class="btn btn-primary">Signup</button>
+          </div>
+          <a routerLink="../login" style="font-family: 'Harlow Solid Italic',serif">Back to login</a>
         </form>
       </div>
       <div class="col-md-6 d-flex justify-content-center align-items-center">
-        <img src="assets/istockphoto-1063346420-612x612.jpg" alt="Your Photo" class="img-fluid rounded-circle" style="max-width: 300px; height: auto;">
+        <img src="../../../assets/istockphoto-1063346420-612x612.jpg" alt="Your Photo" class="img-fluid rounded-circle"
+             style="max-width: 300px; height: auto;">
       </div>
     </div>
   </div>
-
 </section>

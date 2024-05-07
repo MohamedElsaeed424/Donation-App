@@ -4,7 +4,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {NgOptimizedImage} from "@angular/common";
-//import { IonicModule } from '@ionic/angular';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NavbarComponent} from './shared/navbar/navbar.component';
 import {ErrorComponent} from './shared/error-component/error-component.component';
@@ -14,7 +13,7 @@ import {
   RegisteredOrganizationComponent
 } from './Organization/registered-organization/registered-organization.component';
 import {OrganizationService} from "./Organization/registered-organization/RegisteredOrganization.service";
-import {OrganizationFilterPipe} from './Organization/organization-filter-pipe';
+import {OrganizationFilterPipe} from './Organization/organization-filter.pipe';
 import {RegisteredDonorsComponent} from './Donor/registered-donors/registered-donors.component';
 import {DonorFilterPipePipe} from './Donor/donor-filter-pipe.pipe';
 import {RegisteredDonorService} from "./Donor/registered-donors/RegisteredDonor.service";
@@ -63,7 +62,7 @@ import { DonorsSubmissionDetailsComponent } from './Donor/donor-submissions/dono
     SubmissionsComponent,
     OrganizationSubmissionDetailsComponent,
     DonorSubmissionsComponent,
-    DonorsSubmissionDetailsComponent
+    DonorsSubmissionDetailsComponent,
   ],
   imports: [
     BrowserModule,
