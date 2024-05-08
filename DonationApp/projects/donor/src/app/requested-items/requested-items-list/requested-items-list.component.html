@@ -10,13 +10,13 @@
         <div class="requested-items-grid">
           <div class="row">
             <ng-container *ngFor="let requestedItem of requestedItems | categoryFilter: searchQuery; let i = index">
-              <div class="col-lg-6 mb-3"> <!-- Two items per row with margin bottom -->
+              <div class="col-lg-4 mb-3"> <!-- Three items per row with margin bottom -->
                 <app-requested-item
-                  [currentRequestedItem]="requestedItem"
-                  [currentRequestedItemId]="requestedItem.id"
-                  style="width: 100%;"
+                    [currentRequestedItem]="requestedItem"
+                    [currentRequestedItemId]="requestedItem.id"
+                    style="width: 100%;"
                 ></app-requested-item>
-              </div>
+            </div>            
             </ng-container>
           </div>
         </div>
