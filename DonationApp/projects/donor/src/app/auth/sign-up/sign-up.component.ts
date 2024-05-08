@@ -1,6 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
+import {Donor, DonorType} from "../../Donors/models/donor.model";
+import {Teacher} from "../../Donors/models/pro-bonoTeacher.model";
+import {ClinicLocationSpecification, Doctor} from "../../Donors/models/pro-bonoDoctor.model";
+import {DonorService} from "../../Donors/donors.service";
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,7 +14,11 @@ export class SignUpComponent implements OnInit {
   selectedRole: string;
   donorSignupForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router ,
+    private donorService : DonorService) { }
 
   ngOnInit(): void {
     this.createDonorSignupForm();
@@ -87,14 +95,78 @@ export class SignUpComponent implements OnInit {
   }
 
   submitDonorSignupInfo(): void {
-    this.router.navigate(['../login'] , {relativeTo : this.route}) ;
     if (this.donorSignupForm.valid) {
-      console.log(this.donorSignupForm.value);
+      const formData = this.donorSignupForm.value;
+      let newDonor: Donor;
+
+      switch (this.selectedRole) {
+        case 'donor':
+          newDonor = new Donor(
+            formData.firstName,
+            formData.lastName,
+            formData.userName,
+            formData.gender,
+            formData.email,
+            formData.contactNumber,
+            formData.password,
+            formData.address,
+            formData.area,
+            formData.governorate,
+            DonorType.Donor
+          );
+          break;
+        case 'teacher':
+          newDonor = new Teacher(
+            formData.firstName,
+            formData.lastName,
+            formData.userName,
+            formData.gender,
+            formData.email,
+            formData.contactNumber,
+            formData.password,
+            formData.address,
+            formData.area,
+            formData.governorate,
+            DonorType.Teacher,
+            formData.teacherData.subjects,
+            formData.teacherData.proBonoClasses,
+            formData.teacherData.proBonoStudents
+          );
+          break;
+        case 'doctor':
+          newDonor = new Doctor(
+            formData.firstName,
+            formData.lastName,
+            formData.userName,
+            formData.gender,
+            formData.email,
+            formData.contactNumber,
+            formData.password,
+            formData.address,
+            formData.area,
+            formData.governorate,
+            DonorType.Doctor,
+            formData.doctorData.specialty,
+            formData.doctorData.proBonoCases,
+            new ClinicLocationSpecification(
+              formData.doctorData.clinicAddress,
+              formData.doctorData.clinicArea,
+              formData.doctorData.clinicGovernorate,
+              'google_marker_url' // You can set the Google marker URL here
+            )
+          );
+          break;
+        default:
+          break;
+      }
+      if (newDonor) {
+        this.donorService.addDonor(newDonor);
+        this.router.navigate(['../login'], { relativeTo: this.route });
+      }
     } else {
       this.validateAllFormFields(this.donorSignupForm);
     }
   }
-
   validateAllFormFields(formGroup: FormGroup): void {
     // Validation logic
   }

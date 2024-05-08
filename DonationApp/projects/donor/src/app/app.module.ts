@@ -100,6 +100,8 @@ import {
 } from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
 import {NotificationsComponent} from "./shared/notifications/notifications.component";
 import { NotificationDetailsComponent } from './shared/notifications/notification-details/notification-details.component';
+import {NgbAlertModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import { NgbdAlertCloseableComponent } from './shared/ngbd-alert-closeable/ngbd-alert-closeable.component';
 
 @NgModule({
   declarations: [
@@ -159,7 +161,8 @@ import { NotificationDetailsComponent } from './shared/notifications/notificatio
     RegisteredOrganizationComponent ,
     RegisteredOrganizationDetailsComponent,
     NotificationsComponent,
-    NotificationDetailsComponent
+    NotificationDetailsComponent,
+    NgbdAlertCloseableComponent,
   ],
   imports: [
     BrowserModule,
@@ -169,7 +172,9 @@ import { NotificationDetailsComponent } from './shared/notifications/notificatio
     NgOptimizedImage,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbAlertModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
