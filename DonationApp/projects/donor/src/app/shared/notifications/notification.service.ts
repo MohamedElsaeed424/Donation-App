@@ -22,7 +22,7 @@ export class NotificationService {
   ];
 
   private showNotificationsSource = new BehaviorSubject<boolean>(false);
-  private notificationsSubject = new BehaviorSubject<Notificationn[]>(this.notifications);
+  public notificationsSubject = new BehaviorSubject<Notificationn[]>(this.notifications);
   showNotifications$ = this.showNotificationsSource.asObservable();
   constructor() { }
 
