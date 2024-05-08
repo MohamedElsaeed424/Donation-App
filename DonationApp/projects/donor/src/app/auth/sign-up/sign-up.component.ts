@@ -28,6 +28,7 @@ export class SignUpComponent implements OnInit {
     this.donorSignupForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
+      userName: ['', Validators.required],
       gender: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       contactNumber: ['', Validators.required],
@@ -93,12 +94,10 @@ export class SignUpComponent implements OnInit {
     teacherData.updateValueAndValidity();
     doctorData.updateValueAndValidity();
   }
-
   submitDonorSignupInfo(): void {
     if (this.donorSignupForm.valid) {
       const formData = this.donorSignupForm.value;
       let newDonor: Donor;
-
       switch (this.selectedRole) {
         case 'donor':
           newDonor = new Donor(
@@ -156,19 +155,19 @@ export class SignUpComponent implements OnInit {
             )
           );
           break;
-        default:
+        default: console.log("22")
           break;
       }
       if (newDonor) {
         this.donorService.addDonor(newDonor);
-        this.router.navigate(['../login'], { relativeTo: this.route });
+        this.router.navigate(['/auth/login'], { relativeTo: this.route });
       }
     } else {
       this.validateAllFormFields(this.donorSignupForm);
     }
   }
   validateAllFormFields(formGroup: FormGroup): void {
-    // Validation logic
+    console.log(formGroup);
   }
 
 }

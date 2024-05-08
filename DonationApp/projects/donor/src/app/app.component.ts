@@ -10,7 +10,6 @@ import { Notificationn } from './shared/notifications/notification.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  notifications: Notificationn[];
   showNotificationDetails: boolean = false;
   notificationSubscription: Subscription;
   notificationLength : number ;
@@ -34,6 +33,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.showNotificationDetails = !this.showNotificationDetails;
   }
   ngOnDestroy(): void {
+    this.notificationSubscription.unsubscribe();
     this.notificationSubscription.unsubscribe();
   }
 
