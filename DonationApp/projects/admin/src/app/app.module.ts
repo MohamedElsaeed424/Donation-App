@@ -78,9 +78,10 @@ import { DonorsSubmissionDetailsComponent } from './Donor/donor-submissions/dono
     OrganizationSubmissionService,
     DonorSubmissionsService,
   ],
-  exports: [
-    LoginComponent
-  ],
+    exports: [
+        LoginComponent,
+        SubmissionsComponent
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

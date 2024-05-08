@@ -1,0 +1,597 @@
+Index: DonationApp/projects/organization/src/app/app.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { LoginComponent } from './auth/login/login.component';\r\nimport { SignUpComponent } from './auth/sign-up/sign-up.component';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms'\r\nimport { HttpClientModule } from '@angular/common/http';\r\nimport {NgOptimizedImage} from \"@angular/common\";\r\nimport {NavbarComponent} from \"./shared/navbar/navbar.component\";\r\nimport {FooterComponent} from \"./shared/footer/footer.component\";\r\nimport { DashboardComponent } from './dashboard/dashboard.component';\r\nimport { CreatePostComponent } from './OrganizationPosts/create-post/create-post.component';\r\nimport { EditProfileComponent } from './edit-profile/edit-profile.component';\r\nimport {OrganizationSubmissionService} from \"./OrganizationPosts/OrganizationSubmission.service\";\r\nimport {SubmissionsComponent} from \"./OrganizationPosts/OrganizationSubmissions/submissions.component\";\r\nimport {OrganizationSubmissionDetailsComponent} from \"./OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component\";\r\nimport { EditPostComponent } from './OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    LoginComponent,\r\n    SignUpComponent,\r\n    NavbarComponent,\r\n    FooterComponent,\r\n    DashboardComponent,\r\n    CreatePostComponent,\r\n    EditProfileComponent,\r\n    SubmissionsComponent,\r\n    OrganizationSubmissionDetailsComponent,\r\n    EditPostComponent\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    ReactiveFormsModule,\r\n    HttpClientModule,\r\n    NgOptimizedImage,\r\n    FormsModule\r\n  ],\r\n  providers: [OrganizationSubmissionService],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/app.module.ts b/DonationApp/projects/organization/src/app/app.module.ts
+--- a/DonationApp/projects/organization/src/app/app.module.ts	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/DonationApp/projects/organization/src/app/app.module.ts	(date 1715193876481)
+@@ -11,11 +11,16 @@
+ import {FooterComponent} from "./shared/footer/footer.component";
+ import { DashboardComponent } from './dashboard/dashboard.component';
+ import { CreatePostComponent } from './OrganizationPosts/create-post/create-post.component';
+-import { EditProfileComponent } from './edit-profile/edit-profile.component';
++import { EditProfileComponent } from './Account-management/edit-profile.component';
+ import {OrganizationSubmissionService} from "./OrganizationPosts/OrganizationSubmission.service";
+ import {SubmissionsComponent} from "./OrganizationPosts/OrganizationSubmissions/submissions.component";
+ import {OrganizationSubmissionDetailsComponent} from "./OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component";
+ import { EditPostComponent } from './OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component';
++import { FulfilledDonorsComponent } from './OrganizationPosts/OrganizationSubmissions/fulfilled-donors/fulfilled-donors.component';
++import {
++  RegisteredDonorService
++} from "./OrganizationPosts/OrganizationSubmissions/fulfilled-donors/Services/RegisteredDonor.service";
++import { DonorDetailsComponent } from './OrganizationPosts/OrganizationSubmissions/fulfilled-donors/donor-details/donor-details.component';
+ 
+ @NgModule({
+   declarations: [
+@@ -29,7 +34,9 @@
+     EditProfileComponent,
+     SubmissionsComponent,
+     OrganizationSubmissionDetailsComponent,
+-    EditPostComponent
++    EditPostComponent,
++    FulfilledDonorsComponent,
++    DonorDetailsComponent
+   ],
+   imports: [
+     BrowserModule,
+@@ -39,7 +46,8 @@
+     NgOptimizedImage,
+     FormsModule
+   ],
+-  providers: [OrganizationSubmissionService],
++  providers: [OrganizationSubmissionService,
++              RegisteredDonorService],
+   bootstrap: [AppComponent]
+ })
+ export class AppModule { }
+Index: DonationApp/projects/organization/src/app/app-routing.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {NgModule} from '@angular/core';\r\nimport {RouterModule, Routes} from '@angular/router';\r\nimport {LoginComponent} from \"./auth/login/login.component\";\r\nimport {SignUpComponent} from \"./auth/sign-up/sign-up.component\";\r\nimport {DashboardComponent} from \"./dashboard/dashboard.component\";\r\nimport {EditProfileComponent} from \"./edit-profile/edit-profile.component\";\r\nimport {CreatePostComponent} from \"./OrganizationPosts/create-post/create-post.component\";\r\nimport {SubmissionsComponent} from \"./OrganizationPosts/OrganizationSubmissions/submissions.component\";\r\nimport {\r\n  OrganizationSubmissionDetailsComponent\r\n} from \"./OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component\";\r\nimport {EditPostComponent} from \"./OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component\";\r\n\r\nconst routes: Routes = [\r\n  {path: '', redirectTo: '/auth/login', pathMatch: 'full'},\r\n  {\r\n    path: 'auth', children: [\r\n      {path: 'signup', component: SignUpComponent},\r\n      {path: 'login', component: LoginComponent}\r\n    ]\r\n  }, {path: 'Dashboard', component: DashboardComponent}, {\r\n    path: 'editProfile', component: EditProfileComponent\r\n  }\r\n  , {\r\n    path: 'posts', children: [\r\n      {path: 'createPost', component: CreatePostComponent},\r\n      {\r\n        path: 'allPosts', children: [\r\n          {path: '', component: SubmissionsComponent},\r\n          {path:'details/:id',component:OrganizationSubmissionDetailsComponent} ,\r\n          {path:'edit/:id' , component:EditPostComponent}\r\n        ]\r\n      }]\r\n  }];\r\n\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\n\r\nexport class AppRoutingModule {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/app-routing.module.ts b/DonationApp/projects/organization/src/app/app-routing.module.ts
+--- a/DonationApp/projects/organization/src/app/app-routing.module.ts	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/DonationApp/projects/organization/src/app/app-routing.module.ts	(date 1715194346870)
+@@ -3,13 +3,19 @@
+ import {LoginComponent} from "./auth/login/login.component";
+ import {SignUpComponent} from "./auth/sign-up/sign-up.component";
+ import {DashboardComponent} from "./dashboard/dashboard.component";
+-import {EditProfileComponent} from "./edit-profile/edit-profile.component";
++import {EditProfileComponent} from "./Account-management/edit-profile.component";
+ import {CreatePostComponent} from "./OrganizationPosts/create-post/create-post.component";
+ import {SubmissionsComponent} from "./OrganizationPosts/OrganizationSubmissions/submissions.component";
+ import {
+   OrganizationSubmissionDetailsComponent
+ } from "./OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component";
+ import {EditPostComponent} from "./OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component";
++import {
++  FulfilledDonorsComponent
++} from "./OrganizationPosts/OrganizationSubmissions/fulfilled-donors/fulfilled-donors.component";
++import {
++  DonorDetailsComponent
++} from "./OrganizationPosts/OrganizationSubmissions/fulfilled-donors/donor-details/donor-details.component";
+ 
+ const routes: Routes = [
+   {path: '', redirectTo: '/auth/login', pathMatch: 'full'},
+@@ -28,7 +34,11 @@
+         path: 'allPosts', children: [
+           {path: '', component: SubmissionsComponent},
+           {path:'details/:id',component:OrganizationSubmissionDetailsComponent} ,
+-          {path:'edit/:id' , component:EditPostComponent}
++          {path:'edit/:id' , component:EditPostComponent} ,
++          {path:'Fulfilled-Donors/:id',children:[
++              {path:'',component:FulfilledDonorsComponent} ,
++              {path:'donor-details/:name',component:DonorDetailsComponent}
++            ]}
+         ]
+       }]
+   }];
+Index: DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/Donor.model.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/Donor.model.ts b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/Donor.model.ts
+new file mode 100644
+--- /dev/null	(date 1714767368018)
++++ b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/Donor.model.ts	(date 1714767368018)
+@@ -0,0 +1,38 @@
++export class Donor {
++  firstName: string;
++  lastName: string;
++  name : string ;
++  gender: string;
++  email: string;
++  phoneNumber: string;
++  password: string;
++  address:string ;
++  area:string;
++  government:string;
++  type:DonorType ;
++  constructor(firstName: string, lastName: string, gender: string, email: string, phoneNumber: string, password: string, address:string,area:string,government:string , type:DonorType) {
++    this.firstName = firstName;
++    this.lastName = lastName;
++    this.name = firstName + " " + lastName
++    this.gender = gender;
++    this.email = email;
++    this.phoneNumber = phoneNumber;
++    this.password = password;
++    this.address = address;
++    this.area = area;
++    this.government = government ;
++    this.type = type;
++  }
++}
++
++export enum DonorType{
++  doctor ,
++  teacher ,
++  donor
++}
++
++export const DonorTypeString = {
++  [DonorType.doctor]: 'doctor',
++  [DonorType.teacher]: 'teacher',
++  [DonorType.donor]: 'donor',
++};
+Index: DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {Component, OnInit} from '@angular/core';\r\nimport {OrganizationSubmissions} from \"../../OrganiztionSubmission.model\";\r\nimport {ActivatedRoute} from \"@angular/router\";\r\nimport {OrganizationSubmissionService} from \"../../OrganizationSubmission.service\";\r\nimport {FormBuilder, FormGroup, Validators} from \"@angular/forms\";\r\nimport {AuthService} from \"../../../auth/auth.service\";\r\n\r\n@Component({\r\n  selector: 'app-edit-post',\r\n  templateUrl: './edit-post.component.html',\r\n  styleUrl: './edit-post.component.css'\r\n})\r\nexport class EditPostComponent implements OnInit {\r\n  id: number\r\n  OrganizationSubmission: OrganizationSubmissions\r\n  postDetails: FormGroup\r\n\r\n  constructor(private route: ActivatedRoute,\r\n              private OrganizationSubmissionService: OrganizationSubmissionService,\r\n              private fb: FormBuilder,\r\n              private authService: AuthService,) {\r\n  }\r\n\r\n  ngOnInit() {\r\n    this.route.params.subscribe(params => {\r\n      this.id = +params['id'];\r\n      this.OrganizationSubmission = this.OrganizationSubmissionService.getPostById(this.id);\r\n    })\r\n    this.postDetails = this.fb.group({\r\n      category: ['', Validators.required],\r\n      details: ['', Validators.required]\r\n    })\r\n    this.populateFromOldValues()\r\n  }\r\n\r\n  populateFromOldValues(){\r\n    this.postDetails.patchValue({\r\n      category: this.OrganizationSubmission.itemCategory,\r\n      details: this.OrganizationSubmission.details\r\n    })\r\n  }\r\n\r\n  submitForm (){\r\n    this.OrganizationSubmissionService.deletePost(this.id)\r\n    const OrganizationSubmission= new OrganizationSubmissions(\r\n      this.authService.currentOrganization,\r\n      this.postDetails.get('category').value,\r\n      this.postDetails.get('details').value) ;\r\n    this.OrganizationSubmissionService.addPost(OrganizationSubmission)\r\n    console.log('form submitted successfully')\r\n  }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component.ts b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component.ts
+--- a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component.ts	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component.ts	(date 1715163727854)
+@@ -41,13 +41,11 @@
+   }
+ 
+   submitForm (){
+-    this.OrganizationSubmissionService.deletePost(this.id)
+     const OrganizationSubmission= new OrganizationSubmissions(
+       this.authService.currentOrganization,
+       this.postDetails.get('category').value,
+       this.postDetails.get('details').value) ;
+-    this.OrganizationSubmissionService.addPost(OrganizationSubmission)
+-    console.log('form submitted successfully')
++    this.OrganizationSubmissionService.editPost(this.id,OrganizationSubmission)
+   }
+ 
+ }
+Index: DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.ts b/DonationApp/projects/organization/src/app/Account-management/edit-profile.component.ts
+rename from DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.ts
+rename to DonationApp/projects/organization/src/app/Account-management/edit-profile.component.ts
+--- a/DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.ts	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/DonationApp/projects/organization/src/app/Account-management/edit-profile.component.ts	(date 1715161992470)
+@@ -6,7 +6,7 @@
+ import {Router} from "@angular/router";
+ 
+ @Component({
+-  selector: 'app-edit-profile',
++  selector: 'app-Account-management',
+   templateUrl: './edit-profile.component.html',
+   styleUrl: './edit-profile.component.css'
+ })
+Index: DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><div class=\"container\" id=\"container0\">\r\n  <!-- Organizations list -->\r\n  <div class=\"row\">\r\n    <div class=\"col-md-4\" *ngFor=\"let organization of Organiztions ; let i = index\">\r\n      <div class=\"card mb-3\">\r\n        <div class=\"card-body\">\r\n          <h5 class=\"card-title\"><strong>{{ organization.name }}</strong></h5>\r\n          <p class=\"card-text\"><b>Type:</b> {{ organization.type }}</p>\r\n          <p class=\"card-text\"><b>Address:</b> {{ organization.address }}</p>\r\n          <!-- Add more details as needed -->\r\n          <div class=\"button-row\">\r\n            <a (click)=\"acceptOrganization(organization,i)\" class=\"btn btn-primary-acc\">Accept</a>\r\n            <a  (click)=\"NavigateToOrganizationDetails(i)\" class=\"btn btn-primary-view\">View Details</a>\r\n            <a (click)=\"deleteOrganization(i)\" class=\"btn btn-primary\">Reject</a>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component.html b/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component.html
+--- a/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component.html	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component.html	(date 1715162943578)
+@@ -8,6 +8,8 @@
+           <p class="card-text"><b>Type:</b> {{ organization.type }}</p>
+           <p class="card-text"><b>Address:</b> {{ organization.address }}</p>
+           <!-- Add more details as needed -->
++
++
+           <div class="button-row">
+             <a (click)="acceptOrganization(organization,i)" class="btn btn-primary-acc">Accept</a>
+             <a  (click)="NavigateToOrganizationDetails(i)" class="btn btn-primary-view">View Details</a>
+Index: DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmission.service.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {Injectable} from \"@angular/core\";\r\nimport {OrganizationSubmissions} from \"./OrganiztionSubmission.model\";import {AuthService} from \"../auth/auth.service\";\r\n\r\n@Injectable({providedIn: 'root'})\r\n\r\nexport class OrganizationSubmissionService {\r\n\r\n  constructor(\r\n              private authService: AuthService,) {\r\n  }\r\n\r\n  private OrganizationSubmissions :OrganizationSubmissions[] =[\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"clothes\", \"10 shirts, cotton, L size\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"toys\", \"20 toys, various types\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"medical supplies\", \"50 boxes of masks\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"school supplies\", \"100 notebooks, 50 pens\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"blood donation\", \"10 units of blood\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"clothes\", \"5 dresses, polyester, M size\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"toys\", \"30 action figures\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"medical supplies\", \"200 gloves\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"school supplies\", \"50 backpacks, 200 pencils\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"blood donation\", \"5 units of blood\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"clothes\", \"15 pairs of pants, denim, XL size\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"toys\", \"40 stuffed animals\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"medical supplies\", \"100 bandages\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"school supplies\", \"150 textbooks\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"blood donation\", \"8 units of blood\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"clothes\", \"20 t-shirts, cotton, S size\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"toys\", \"50 board games\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"medical supplies\", \"50 syringes\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"school supplies\", \"200 folders\"),\r\n    new OrganizationSubmissions(this.authService.currentOrganization, \"blood donation\", \"15 units of blood\"),\r\n  ];\r\n\r\n\r\n  addPost(OrganizationSubmission:OrganizationSubmissions){\r\n    this.OrganizationSubmissions.push(OrganizationSubmission);\r\n  }\r\n  // Method to delete organization\r\n  deletePost(index: number) {\r\n    this.OrganizationSubmissions.splice(index, 1);\r\n  }\r\n\r\n  // Method to get all organizations\r\n  getPosts() {\r\n    return this.OrganizationSubmissions;\r\n  }\r\n  getPostById(i:number){\r\n    return this.OrganizationSubmissions[i] ;\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmission.service.ts b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmission.service.ts
+--- a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmission.service.ts	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmission.service.ts	(date 1715163727854)
+@@ -48,4 +48,9 @@
+   getPostById(i:number){
+     return this.OrganizationSubmissions[i] ;
+   }
++
++  editPost (i:number,OrganizationSubmission:OrganizationSubmissions){
++    this.OrganizationSubmissions[i]=OrganizationSubmission
++  }
++
+ }
+Index: DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {Component, OnInit} from '@angular/core';\r\nimport {OrganizationSubmissions} from \"../OrganiztionSubmission.model\";\r\nimport {OrganizationSubmissionService} from \"../OrganizationSubmission.service\";\r\nimport {Router} from \"@angular/router\";\r\nimport {AuthService} from \"../../auth/auth.service\";\r\nimport pdfMake from 'pdfmake/build/pdfmake';\r\nimport pdfFonts from 'pdfmake/build/vfs_fonts';\r\n\r\n@Component({\r\n  selector: 'app-OrganizationSubmissions',\r\n  templateUrl: './submissions.component.html',\r\n  styleUrl: './submissions.component.css'\r\n})\r\nexport class SubmissionsComponent implements OnInit {\r\n  OrganizationSubmissions: OrganizationSubmissions[];\r\n\r\n  constructor(private OrganizationSubmissionsService: OrganizationSubmissionService,\r\n              private route: Router,\r\n              private authService: AuthService) {\r\n  }\r\n\r\n  ngOnInit() {\r\n    this.OrganizationSubmissions = this.OrganizationSubmissionsService.getPosts();\r\n  }\r\n\r\n  dele\r\n\r\n  rejectSubmission(i: number) {\r\n    this.OrganizationSubmissionsService.deletePost(i)\r\n  }\r\n\r\n\r\n  ViewSubmission(i: number) {\r\n    this.route.navigate(['/posts/allPosts/details', i], {queryParams: {username: this.authService.username}})\r\n  }\r\n\r\n  editPost(i:number){\r\n    this.route.navigate(['/posts/allPosts/edit',i],{queryParams: {username: this.authService.username}})\r\n  }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.ts b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.ts
+--- a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.ts	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.ts	(date 1715192295888)
+@@ -34,8 +34,17 @@
+     this.route.navigate(['/posts/allPosts/details', i], {queryParams: {username: this.authService.username}})
+   }
+ 
+-  editPost(i:number){
+-    this.route.navigate(['/posts/allPosts/edit',i],{queryParams: {username: this.authService.username}})
++  editPost(i: number) {
++    this.route.navigate(['/posts/allPosts/edit', i], {queryParams: {username: this.authService.username}})
+   }
+ 
++  MedicalOrTeachingActivity(i: number) {
++    const itemCategory = this.OrganizationSubmissions[i].itemCategory;
++    return itemCategory === 'medical supplies' || itemCategory === 'school supplies' || itemCategory === 'blood donation';
++  }
++
++  NavigateToDonors(i:number){
++    this.route.navigate(['/posts/allPosts/Fulfilled-Donors', i], {queryParams: {username: this.authService.username}})
++  }
++
+ }
+Index: DonationApp/projects/admin/src/app/Donor/registered-donors/RegisteredDonor.service.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import {Donor, DonorType} from \"../Donor.model\";\r\n\r\nexport class RegisteredDonorService {\r\n  private donors: Donor[] = [\r\n    new Donor('John', 'Doe', 'Male', 'john@example.com', '1234567890', 'password123', '123 Street', 'Area 1', 'Government 1', DonorType.doctor),\r\n    new Donor('Jane', 'Doe', 'Female', 'jane@example.com', '9876543210', 'password456', '456 Avenue', 'Area 2', 'Government 2', DonorType.doctor),\r\n    new Donor('Alice', 'Smith', 'Female', 'alice@example.com', '5551234567', 'password789', '789 Road', 'Area 3', 'Government 3', DonorType.teacher),\r\n    new Donor('Bob', 'Johnson', 'Male', 'bob@example.com', '4449876543', 'passwordabc', '987 Boulevard', 'Area 1', 'Government 1', DonorType.donor),\r\n    new Donor('Emma', 'Brown', 'Female', 'emma@example.com', '3334567890', 'passworddef', '654 Lane', 'Area 2', 'Government 2', DonorType.doctor),\r\n    new Donor('James', 'Wilson', 'Male', 'james@example.com', '2227894561', 'passwordghi', '321 Drive', 'Area 3', 'Government 3', DonorType.doctor),\r\n    new Donor('Sophia', 'Martinez', 'Female', 'sophia@example.com', '1116547890', 'passwordjkl', '1234 Court', 'Area 1', 'Government 1', DonorType.teacher),\r\n    new Donor('William', 'Anderson', 'Male', 'william@example.com', '9991234567', 'passwordmno', '567 Way', 'Area 2', 'Government 2', DonorType.doctor),\r\n    new Donor('Olivia', 'Garcia', 'Female', 'olivia@example.com', '8889876543', 'passwordpqr', '890 Loop', 'Area 3', 'Government 3', DonorType.teacher),\r\n    new Donor('Michael', 'Taylor', 'Male', 'michael@example.com', '7774567890', 'passwordstu', '765 Place', 'Area 1', 'Government 1', DonorType.donor),\r\n    new Donor('Emily', 'Thomas', 'Female', 'emily@example.com', '6667891234', 'passwordvwx', '432 Way', 'Area 2', 'Government 2', DonorType.doctor),\r\n    new Donor('Alexander', 'Hernandez', 'Male', 'alexander@example.com', '5559876543', 'passwordyz1', '876 Court', 'Area 3', 'Government 3', DonorType.doctor),\r\n    new Donor('Ella', 'Lopez', 'Female', 'ella@example.com', '4441234567', 'password234', '543 Avenue', 'Area 1', 'Government 1', DonorType.doctor),\r\n    new Donor('Daniel', 'Perez', 'Male', 'daniel@example.com', '3336547890', 'password567', '901 Drive', 'Area 2', 'Government 2', DonorType.donor),\r\n    new Donor('Mia', 'Sanchez', 'Female', 'mia@example.com', '2227891234', 'password890', '234 Road', 'Area 3', 'Government 3', DonorType.teacher),\r\n  ];\r\n\r\n  getRandomDonor(): Donor {\r\n    // Generate a random index within the range of the donors array\r\n    const randomIndex = Math.floor(Math.random() * this.donors.length);\r\n    // Retrieve the donor object at the random index\r\n    return this.donors[randomIndex];\r\n  }\r\n\r\n  //method to add donor\r\n  addDonor(donor: Donor) {\r\n    this.donors.push(donor);\r\n  }\r\n\r\n  //method to delete donor\r\n  deleteDonor(index: number) {\r\n    this.donors.splice(index, 1);\r\n  }\r\n\r\n  //method to get all donors\r\n  getDonors() {\r\n    return this.donors;\r\n  }\r\n\r\n  getDonorByIndex(index: number) {\r\n    return this.donors[index];\r\n  }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/admin/src/app/Donor/registered-donors/RegisteredDonor.service.ts b/DonationApp/projects/admin/src/app/Donor/registered-donors/RegisteredDonor.service.ts
+--- a/DonationApp/projects/admin/src/app/Donor/registered-donors/RegisteredDonor.service.ts	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/DonationApp/projects/admin/src/app/Donor/registered-donors/RegisteredDonor.service.ts	(date 1715162943480)
+@@ -5,17 +5,17 @@
+     new Donor('John', 'Doe', 'Male', 'john@example.com', '1234567890', 'password123', '123 Street', 'Area 1', 'Government 1', DonorType.doctor),
+     new Donor('Jane', 'Doe', 'Female', 'jane@example.com', '9876543210', 'password456', '456 Avenue', 'Area 2', 'Government 2', DonorType.doctor),
+     new Donor('Alice', 'Smith', 'Female', 'alice@example.com', '5551234567', 'password789', '789 Road', 'Area 3', 'Government 3', DonorType.teacher),
+-    new Donor('Bob', 'Johnson', 'Male', 'bob@example.com', '4449876543', 'passwordabc', '987 Boulevard', 'Area 1', 'Government 1', DonorType.donor),
++    new Donor('Bob', 'Johnson', 'Male', 'bob@example.com', '4449876543', 'passwordabc', '987 Boulevard', 'Area 1', 'Government 1', DonorType.teacher),
+     new Donor('Emma', 'Brown', 'Female', 'emma@example.com', '3334567890', 'passworddef', '654 Lane', 'Area 2', 'Government 2', DonorType.doctor),
+     new Donor('James', 'Wilson', 'Male', 'james@example.com', '2227894561', 'passwordghi', '321 Drive', 'Area 3', 'Government 3', DonorType.doctor),
+     new Donor('Sophia', 'Martinez', 'Female', 'sophia@example.com', '1116547890', 'passwordjkl', '1234 Court', 'Area 1', 'Government 1', DonorType.teacher),
+     new Donor('William', 'Anderson', 'Male', 'william@example.com', '9991234567', 'passwordmno', '567 Way', 'Area 2', 'Government 2', DonorType.doctor),
+     new Donor('Olivia', 'Garcia', 'Female', 'olivia@example.com', '8889876543', 'passwordpqr', '890 Loop', 'Area 3', 'Government 3', DonorType.teacher),
+-    new Donor('Michael', 'Taylor', 'Male', 'michael@example.com', '7774567890', 'passwordstu', '765 Place', 'Area 1', 'Government 1', DonorType.donor),
++    new Donor('Michael', 'Taylor', 'Male', 'michael@example.com', '7774567890', 'passwordstu', '765 Place', 'Area 1', 'Government 1', DonorType.doctor),
+     new Donor('Emily', 'Thomas', 'Female', 'emily@example.com', '6667891234', 'passwordvwx', '432 Way', 'Area 2', 'Government 2', DonorType.doctor),
+     new Donor('Alexander', 'Hernandez', 'Male', 'alexander@example.com', '5559876543', 'passwordyz1', '876 Court', 'Area 3', 'Government 3', DonorType.doctor),
+     new Donor('Ella', 'Lopez', 'Female', 'ella@example.com', '4441234567', 'password234', '543 Avenue', 'Area 1', 'Government 1', DonorType.doctor),
+-    new Donor('Daniel', 'Perez', 'Male', 'daniel@example.com', '3336547890', 'password567', '901 Drive', 'Area 2', 'Government 2', DonorType.donor),
++    new Donor('Daniel', 'Perez', 'Male', 'daniel@example.com', '3336547890', 'password567', '901 Drive', 'Area 2', 'Government 2', DonorType.doctor),
+     new Donor('Mia', 'Sanchez', 'Female', 'mia@example.com', '2227891234', 'password890', '234 Road', 'Area 3', 'Government 3', DonorType.teacher),
+   ];
+ 
+Index: DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><div class=\"container\" id=\"container0\">\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-md-4\"\r\n       *ngFor=\"let submissions of OrganizationSubmissions; let i = index\">\r\n    <div class=\"card mb-3\">\r\n      <div class=\"card-body\">\r\n        <h5 class=\"card-title\"><strong>{{ submissions.Organization.username }}</strong></h5>\r\n        <p class=\"card-text\"><b>Type:</b> {{ submissions.itemCategory }}</p>\r\n        <p class=\"card-text\"><b>Type:</b> {{ submissions.Organization.type }}</p>\r\n        <p class=\"card-text\"><b>Address:</b> {{ submissions.Organization.address }}</p>\r\n        <!-- Add more details as needed -->\r\n        <div class=\"column\">\r\n        <div class=\"button-row\">\r\n          <a (click)=\"rejectSubmission(i)\" class=\"btn btn-primary\">Delete</a>\r\n          <a (click)=\"ViewSubmission(i)\" class=\"btn btn-primary-details\">View details</a>\r\n          <a (click)=\"editPost(i)\" class=\"btn btn-primary-acc\">edit</a>\r\n        </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n</div>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html
+--- a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html	(date 1715192295857)
+@@ -10,12 +10,17 @@
+         <p class="card-text"><b>Type:</b> {{ submissions.Organization.type }}</p>
+         <p class="card-text"><b>Address:</b> {{ submissions.Organization.address }}</p>
+         <!-- Add more details as needed -->
++
++
+         <div class="column">
+-        <div class="button-row">
+-          <a (click)="rejectSubmission(i)" class="btn btn-primary">Delete</a>
+-          <a (click)="ViewSubmission(i)" class="btn btn-primary-details">View details</a>
+-          <a (click)="editPost(i)" class="btn btn-primary-acc">edit</a>
+-        </div>
++          <div class="button-row">
++            <a (click)="editPost(i)" class="btn btn-primary-acc">edit</a>
++            <a (click)="ViewSubmission(i)" class="btn btn-primary-details">View details</a>
++          </div>
++          <div class="button-row">
++            <a (click)="rejectSubmission(i)" class="btn btn-primary">Delete</a>
++            <a (click)="NavigateToDonors(i)" *ngIf="MedicalOrTeachingActivity(i)" class="btn btn-primary-view">View Donors</a>
++          </div>
+         </div>
+       </div>
+     </div>
+Index: DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/donor-filter-pipe.pipe.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/donor-filter-pipe.pipe.ts b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/donor-filter-pipe.pipe.ts
+new file mode 100644
+--- /dev/null	(date 1714516282741)
++++ b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/donor-filter-pipe.pipe.ts	(date 1714516282741)
+@@ -0,0 +1,18 @@
++import { Pipe, PipeTransform } from '@angular/core';
++import {Donor} from "./Donor.model";
++
++@Pipe({
++  name: 'donorFilterPipe'
++})
++export class DonorFilterPipePipe implements PipeTransform {
++
++  transform(donors: Donor[], searchTerm: string): Donor[] {
++    if (!donors || !searchTerm) {
++      return donors;
++    }
++    return donors.filter(donor =>
++      donor.name.toLowerCase().includes(searchTerm.toLowerCase())
++    );
++  }
++
++}
+Index: DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/Services/RegisteredDonor.service.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/Services/RegisteredDonor.service.ts b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/Services/RegisteredDonor.service.ts
+new file mode 100644
+--- /dev/null	(date 1715194346795)
++++ b/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/Services/RegisteredDonor.service.ts	(date 1715194346795)
+@@ -0,0 +1,78 @@
++import{Donor,DonorType} from "../models/Donor.model";
++import {Doctor} from "../../../../../../../donor/src/app/Donors/models/pro-bonoDoctor.model";
++
++export class RegisteredDonorService {
++  private donors: Donor[] = [
++    new Donor('John', 'Doe', 'Male', 'john@example.com', '1234567890', 'password123', '123 Street', 'Area 1', 'Government 1', DonorType.doctor),
++    new Donor('Jane', 'Doe', 'Female', 'jane@example.com', '9876543210', 'password456', '456 Avenue', 'Area 2', 'Government 2', DonorType.doctor),
++    new Donor('Alice', 'Smith', 'Female', 'alice@example.com', '5551234567', 'password789', '789 Road', 'Area 3', 'Government 3', DonorType.teacher),
++    new Donor('Bob', 'Johnson', 'Male', 'bob@example.com', '4449876543', 'passwordabc', '987 Boulevard', 'Area 1', 'Government 1', DonorType.teacher),
++    new Donor('Emma', 'Brown', 'Female', 'emma@example.com', '3334567890', 'passworddef', '654 Lane', 'Area 2', 'Government 2', DonorType.doctor),
++    new Donor('James', 'Wilson', 'Male', 'james@example.com', '2227894561', 'passwordghi', '321 Drive', 'Area 3', 'Government 3', DonorType.doctor),
++    new Donor('Sophia', 'Martinez', 'Female', 'sophia@example.com', '1116547890', 'passwordjkl', '1234 Court', 'Area 1', 'Government 1', DonorType.teacher),
++    new Donor('William', 'Anderson', 'Male', 'william@example.com', '9991234567', 'passwordmno', '567 Way', 'Area 2', 'Government 2', DonorType.doctor),
++    new Donor('Olivia', 'Garcia', 'Female', 'olivia@example.com', '8889876543', 'passwordpqr', '890 Loop', 'Area 3', 'Government 3', DonorType.teacher),
++    new Donor('Michael', 'Taylor', 'Male', 'michael@example.com', '7774567890', 'passwordstu', '765 Place', 'Area 1', 'Government 1', DonorType.doctor),
++    new Donor('Emily', 'Thomas', 'Female', 'emily@example.com', '6667891234', 'passwordvwx', '432 Way', 'Area 2', 'Government 2', DonorType.doctor),
++    new Donor('Alexander', 'Hernandez', 'Male', 'alexander@example.com', '5559876543', 'passwordyz1', '876 Court', 'Area 3', 'Government 3', DonorType.doctor),
++    new Donor('Ella', 'Lopez', 'Female', 'ella@example.com', '4441234567', 'password234', '543 Avenue', 'Area 1', 'Government 1', DonorType.doctor),
++    new Donor('Daniel', 'Perez', 'Male', 'daniel@example.com', '3336547890', 'password567', '901 Drive', 'Area 2', 'Government 2', DonorType.doctor),
++    new Donor('Mia', 'Sanchez', 'Female', 'mia@example.com', '2227891234', 'password890', '234 Road', 'Area 3', 'Government 3', DonorType.teacher),
++  ];
++
++  getRandomDonor(): Donor {
++    // Generate a random index within the range of the donors array
++    const randomIndex = Math.floor(Math.random() * this.donors.length);
++    // Retrieve the donor object at the random index
++    return this.donors[randomIndex];
++  }
++
++  //method to add donor
++  addDonor(donor: Donor) {
++    this.donors.push(donor);
++  }
++
++  //method to delete donor
++  deleteDonor(index: number) {
++    this.donors.splice(index, 1);
++  }
++
++  //method to get all donors
++  getDonors() {
++    return this.donors;
++  }
++
++  getDonorByIndex(index: number) {
++    return this.donors[index];
++  }
++
++  getRandomTeacherDonors(): Donor[] {
++    const teacherDonors = this.donors.filter(donor => donor.type === DonorType.teacher);
++    const numDonors = Math.floor(Math.random() * teacherDonors.length) + 1; // Generate a random number between 1 and the length of the filtered array
++    const randomDonors: Donor[] = [];
++    for (let i = 0; i < numDonors; i++) {
++      const randomIndex = Math.floor(Math.random() * teacherDonors.length);
++      randomDonors.push(teacherDonors[randomIndex]);
++    }
++    return randomDonors;
++  }
++
++
++  getRandomDoctorsDonors(): Donor[] {
++    const DoctorDonors = this.donors.filter(donor => donor.type === DonorType.teacher);
++    const numDonors = Math.floor(Math.random() * DoctorDonors.length) + 1; // Generate a random number between 1 and the length of the filtered array
++    const randomDonors: Donor[] = [];
++    for (let i = 0; i < numDonors; i++) {
++      const randomIndex = Math.floor(Math.random() * DoctorDonors.length);
++      randomDonors.push(DoctorDonors[randomIndex]);
++    }
++    return randomDonors;
++  }
++
++  findDonorByName(name: string): Donor {
++    return  this.donors.find((donor) => donor.name === name);
++  }
++
++
++
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8b8b38ed-2985-4fe9-b2ab-43a0f66835e3\" name=\"Changes\" comment=\"Organization sign up and login and navbar modification\">\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmission.service.ts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component.html\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component.spec.ts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component.ts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.spec.ts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.ts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganiztionSubmission.model.ts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/Organization.model.ts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/OrganizationRepresentitve.ts\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizationAddress-filter-pipe.ts\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizationArea-filter-pipe.ts\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizationGovernment-filter-pipe.ts\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/app-routing.module.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/app-routing.module.ts\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.module.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.module.ts\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/auth.service.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/auth.service.ts\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/sign-up/sign-up.component.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/sign-up/sign-up.component.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.ts\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.ts\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"tsconfig.json\" />\r\n        <option value=\"TypeScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;MahmoudHH1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/MohamedElsaeed424/cody-art-bas-el-judge-broke-my-heart.git&quot;,\r\n    &quot;accountId&quot;: &quot;7ca8c437-d4a5-4823-81fc-cbd431c2e1a3&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2fXb8NjKyHRq3CIwPrD3CqSOwW5\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"last_opened_file_path\": \"E:/cody-art-bas-el-judge-broke-my-heart/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_interpreter_path\": \"node\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"npm.Angular CLI Server.executor\": \"Run\",\r\n    \"npm.comm.executor\": \"Run\",\r\n    \"settings.editor.selected.configurable\": \"editor.preferences.import\",\r\n    \"ts.external.directory.path\": \"E:\\\\cody-art-bas-el-judge-broke-my-heart\\\\DonationApp\\\\node_modules\\\\typescript\\\\lib\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\\app\\OrganizationPosts\" />\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\\app\\auth\" />\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\\app\" />\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\" />\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\\assets\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\\app\\OrganizationPosts\\OrganizationSubmissions\" />\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\\app\\OrganizationPosts\" />\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\\app\" />\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\\app\\auth\\login\" />\r\n      <recent name=\"E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\projects\\organization\\src\\app\\auth\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"npm.Angular CLI Server\">\r\n    <configuration name=\"Angular Application\" type=\"JavascriptDebugType\" uri=\"http://localhost:4200\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"Angular CLI Server\" type=\"js.build_tools.npm\">\r\n      <package-json value=\"$PROJECT_DIR$/donataion-application/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"start\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"JavaScript Debug.Angular Application\" />\r\n      <item itemvalue=\"npm.Angular CLI Server\" />\r\n    </list>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-2e7d6887c066-JavaScript-WS-241.15989.47\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8b8b38ed-2985-4fe9-b2ab-43a0f66835e3\" name=\"Changes\" comment=\"\" />\r\n      <created>1713950210209</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1713950210209</updated>\r\n      <workItem from=\"1713950211404\" duration=\"1127000\" />\r\n      <workItem from=\"1714061490308\" duration=\"5506000\" />\r\n      <workItem from=\"1714067824041\" duration=\"599000\" />\r\n      <workItem from=\"1714070339634\" duration=\"3073000\" />\r\n      <workItem from=\"1714078322234\" duration=\"44000\" />\r\n      <workItem from=\"1714078382731\" duration=\"20000\" />\r\n      <workItem from=\"1714675640073\" duration=\"553000\" />\r\n      <workItem from=\"1714681257952\" duration=\"86000\" />\r\n      <workItem from=\"1714682064729\" duration=\"676000\" />\r\n      <workItem from=\"1714741822445\" duration=\"680000\" />\r\n      <workItem from=\"1714744895727\" duration=\"2848000\" />\r\n      <workItem from=\"1714754907832\" duration=\"3960000\" />\r\n      <workItem from=\"1714759731717\" duration=\"12525000\" />\r\n      <workItem from=\"1714816033893\" duration=\"8010000\" />\r\n      <workItem from=\"1714829459786\" duration=\"1393000\" />\r\n      <workItem from=\"1714849660267\" duration=\"2156000\" />\r\n      <workItem from=\"1714882231811\" duration=\"1253000\" />\r\n      <workItem from=\"1714918296012\" duration=\"151000\" />\r\n      <workItem from=\"1714922831176\" duration=\"19000\" />\r\n      <workItem from=\"1714926654058\" duration=\"2839000\" />\r\n      <workItem from=\"1714997581198\" duration=\"6652000\" />\r\n      <workItem from=\"1715009288027\" duration=\"921000\" />\r\n      <workItem from=\"1715073937423\" duration=\"246000\" />\r\n      <workItem from=\"1715075219402\" duration=\"1497000\" />\r\n      <workItem from=\"1715106391253\" duration=\"1929000\" />\r\n      <workItem from=\"1715109313797\" duration=\"13349000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Initializing the app\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1713950554147</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1713950554147</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Initializing the app\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714061503437</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714061503437</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Initializing the app\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714062220281</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714062220281</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Organization and admin submissions added\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714770892775</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714770892775</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Organization and admin submissions added\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714770916268</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714770916268</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Admin Dashboard logic completed\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714827951087</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714827951087</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Icon and title added\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714829480692</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714829480692</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Error component added and Routing completed\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1714830446332</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1714830446332</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Organization sign up and login and navbar modification\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715010186716</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715010186716</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Organization sign up and login and navbar modification\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1715010205361</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1715010205361</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Initializing the app\" />\r\n    <MESSAGE value=\"Organization and admin submissions added\" />\r\n    <MESSAGE value=\"Admin Dashboard logic completed\" />\r\n    <MESSAGE value=\"Icon and title added\" />\r\n    <MESSAGE value=\"Error component added and Routing completed\" />\r\n    <MESSAGE value=\"Organization sign up and login and navbar modification\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Organization sign up and login and navbar modification\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision df486253e32f1b7159e76fa2ad1c0ee297e24ade)
++++ b/.idea/workspace.xml	(date 1715194579879)
+@@ -4,32 +4,23 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="Organization sign up and login and navbar modification">
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmission.service.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component.html" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component.spec.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.spec.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganiztionSubmission.model.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/Organization.model.ts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/OrganizationRepresentitve.ts" afterDir="false" />
++    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="Organization posts creation and all posts and account edit added">
++      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/Services/RegisteredDonor.service.ts" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/Donor.model.ts" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/models/donor-filter-pipe.pipe.ts" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizationAddress-filter-pipe.ts" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizationArea-filter-pipe.ts" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizationGovernment-filter-pipe.ts" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/registered-donors/RegisteredDonor.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/registered-donors/RegisteredDonor.service.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmission.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmission.service.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.ts" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app-routing.module.ts" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.module.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/auth.service.ts" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/sign-up/sign-up.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/auth/sign-up/sign-up.component.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/Account-management/edit-profile.component.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/Account-management/edit-profile.component.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/Account-management/edit-profile.component.spec.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/Account-management/edit-profile.component.ts" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -67,38 +58,38 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "main",
+-    "last_opened_file_path": "E:/cody-art-bas-el-judge-broke-my-heart/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_interpreter_path": "node",
+-    "nodejs_package_manager_path": "npm",
+-    "npm.Angular CLI Server.executor": "Run",
+-    "npm.comm.executor": "Run",
+-    "settings.editor.selected.configurable": "editor.preferences.import",
+-    "ts.external.directory.path": "E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\node_modules\\typescript\\lib",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;last_opened_file_path&quot;: &quot;E:/cody-art-bas-el-judge-broke-my-heart/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
++    &quot;npm.comm.executor&quot;: &quot;Run&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\node_modules\\typescript\\lib&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\OrganizationPosts\OrganizationSubmissions\fulfilled-donors\models" />
++      <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\OrganizationPosts\OrganizationSubmissions\fulfilled-donors\Services" />
+       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\OrganizationPosts" />
+       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\auth" />
+       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app" />
+-      <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src" />
+-      <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\assets" />
+     </key>
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\OrganizationPosts\OrganizationSubmissions\fulfilled-donors" />
+       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\OrganizationPosts\OrganizationSubmissions" />
+       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\OrganizationPosts" />
+       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app" />
+       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\auth\login" />
+-      <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\auth" />
+     </key>
+   </component>
+   <component name="RunManager" selected="npm.Angular CLI Server">
+@@ -160,7 +151,9 @@
+       <workItem from="1715073937423" duration="246000" />
+       <workItem from="1715075219402" duration="1497000" />
+       <workItem from="1715106391253" duration="1929000" />
+-      <workItem from="1715109313797" duration="13349000" />
++      <workItem from="1715109313797" duration="13736000" />
++      <workItem from="1715161346624" duration="6478000" />
++      <workItem from="1715193823809" duration="727000" />
+     </task>
+     <task id="LOCAL-00001" summary="Initializing the app">
+       <option name="closed" value="true" />
+@@ -242,7 +235,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1715010205361</updated>
+     </task>
+-    <option name="localTasksCounter" value="11" />
++    <task id="LOCAL-00011" summary="Organization posts creation and all posts and account edit added">
++      <option name="closed" value="true" />
++      <created>1715124066722</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1715124066722</updated>
++    </task>
++    <option name="localTasksCounter" value="12" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -266,6 +267,7 @@
+     <MESSAGE value="Icon and title added" />
+     <MESSAGE value="Error component added and Routing completed" />
+     <MESSAGE value="Organization sign up and login and navbar modification" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Organization sign up and login and navbar modification" />
++    <MESSAGE value="Organization posts creation and all posts and account edit added" />
++    <option name="LAST_COMMIT_MESSAGE" value="Organization posts creation and all posts and account edit added" />
+   </component>
+ </project>
+\ No newline at end of file
+diff --git a/DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.html b/DonationApp/projects/organization/src/app/Account-management/edit-profile.component.html
+rename from DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.html
+rename to DonationApp/projects/organization/src/app/Account-management/edit-profile.component.html
+diff --git a/DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.css b/DonationApp/projects/organization/src/app/Account-management/edit-profile.component.css
+rename from DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.css
+rename to DonationApp/projects/organization/src/app/Account-management/edit-profile.component.css
+diff --git a/DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.spec.ts b/DonationApp/projects/organization/src/app/Account-management/edit-profile.component.spec.ts
+rename from DonationApp/projects/organization/src/app/edit-profile/edit-profile.component.spec.ts
+rename to DonationApp/projects/organization/src/app/Account-management/edit-profile.component.spec.ts

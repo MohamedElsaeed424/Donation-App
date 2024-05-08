@@ -1,7 +1,8 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AuthService} from "./auth/auth.service";
 import {Subscription} from "rxjs";
 import {NotificationService} from "./shared/notifications/notification.service";
+import { Notificationn } from './shared/notifications/notification.model';
 
 @Component({
   selector: 'app-root',
@@ -28,9 +29,6 @@ export class AppComponent implements OnInit , OnDestroy{
 
   toggleNotificationDetails(): void {
     this.showNotificationDetails = !this.showNotificationDetails;
-  }
-  ngOnDestroy(): void {
-    this.notificationSubscription.unsubscribe();
   }
   protected readonly localStorage = localStorage;
 }

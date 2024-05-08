@@ -10,6 +10,17 @@ import {NgOptimizedImage} from "@angular/common";
 import {NavbarComponent} from "./shared/navbar/navbar.component";
 import {FooterComponent} from "./shared/footer/footer.component";
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { CreatePostComponent } from './OrganizationPosts/create-post/create-post.component';
+import { EditProfileComponent } from './Account-management/edit-profile.component';
+import {OrganizationSubmissionService} from "./OrganizationPosts/OrganizationSubmission.service";
+import {SubmissionsComponent} from "./OrganizationPosts/OrganizationSubmissions/submissions.component";
+import {OrganizationSubmissionDetailsComponent} from "./OrganizationPosts/OrganizationSubmissions/organization-submission-details/organization-submission-details.component";
+import { EditPostComponent } from './OrganizationPosts/OrganizationSubmissions/edit-post/edit-post.component';
+import { FulfilledDonorsComponent } from './OrganizationPosts/OrganizationSubmissions/fulfilled-donors/fulfilled-donors.component';
+import {
+  RegisteredDonorService
+} from "./OrganizationPosts/OrganizationSubmissions/fulfilled-donors/Services/RegisteredDonor.service";
+import { DonorDetailsComponent } from './OrganizationPosts/OrganizationSubmissions/fulfilled-donors/donor-details/donor-details.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +30,13 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavbarComponent,
     FooterComponent,
     DashboardComponent,
+    CreatePostComponent,
+    EditProfileComponent,
+    SubmissionsComponent,
+    OrganizationSubmissionDetailsComponent,
+    EditPostComponent,
+    FulfilledDonorsComponent,
+    DonorDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +46,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NgOptimizedImage,
     FormsModule
   ],
-  providers: [],
+  providers: [OrganizationSubmissionService,
+              RegisteredDonorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
