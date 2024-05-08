@@ -1,4 +1,5 @@
-import {Donor, DonorType} from "../Donor.model";
+import{Donor,DonorType} from "../models/Donor.model";
+import {Doctor} from "../../../../../../../donor/src/app/Donors/models/pro-bonoDoctor.model";
 
 export class RegisteredDonorService {
   private donors: Donor[] = [
@@ -44,5 +45,39 @@ export class RegisteredDonorService {
   getDonorByIndex(index: number) {
     return this.donors[index];
   }
+
+  getRandomTeacherDonors(): Donor[] {
+    const teacherDonors = this.donors.filter(donor => donor.type === DonorType.teacher);
+    const numDonors = Math.floor(Math.random() * teacherDonors.length) + 1; // Generate a random number between 1 and the length of the filtered array
+    const randomDonors: Donor[] = [];
+    for (let i = 0; i < numDonors; i++) {
+      const randomIndex = Math.floor(Math.random() * teacherDonors.length);
+      randomDonors.push(teacherDonors[randomIndex]);
+    }
+    return randomDonors;
+  }
+
+
+  getRandomDoctorsDonors(): Donor[] {
+    const DoctorDonors = this.donors.filter(donor => donor.type === DonorType.teacher);
+    const numDonors = Math.floor(Math.random() * DoctorDonors.length) + 1; // Generate a random number between 1 and the length of the filtered array
+    const randomDonors: Donor[] = [];
+    for (let i = 0; i < numDonors; i++) {
+      const randomIndex = Math.floor(Math.random() * DoctorDonors.length);
+      randomDonors.push(DoctorDonors[randomIndex]);
+    }
+    return randomDonors;
+  }
+
+  findDonorByName(name: string): Donor {
+    return  this.donors.find((donor) => donor.name === name);
+  }
+
+  findDonorIndexByName(name: string): number {
+    const donorIndex = this.donors.findIndex(donor => `${donor.firstName} ${donor.lastName}` === name);
+    return donorIndex;
+  }
+
+
 
 }

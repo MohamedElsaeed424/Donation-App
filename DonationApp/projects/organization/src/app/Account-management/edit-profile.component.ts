@@ -6,7 +6,7 @@ import {OrganizationRepresentitve} from "../auth/OrganizationRepresentitve";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-edit-profile',
+  selector: 'app-Account-management',
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css'
 })

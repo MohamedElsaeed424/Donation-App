@@ -1,0 +1,28 @@
+<div class="container" id="container0">
+  <!-- Organizations list -->
+  <div class="row">
+    <div class="col-md-4" *ngFor="let Donor of Donors  ; let i = index">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><strong>{{ Donor.name }}</strong></h5>
+          <p class="card-text"><b>Type: </b>{{ DonorTypeString[Donor.type] }}</p>
+          <p class="card-text"><b>Address: </b>{{ Donor.address }}</p>
+          <p class="card-text"><b>Phone number:</b> {{ Donor.phoneNumber }}</p>
+
+          <!-- Add more details as needed -->
+          <a (click)="viewDetails(Donor.name)" class="btn btn-primary">view</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- No organizations found message -->
+  <div *ngIf="Donors.length==0">
+    <div class="card">
+      <div class="card-body">
+        No Donors found.
+      </div>
+    </div>
+  </div>
+</div>
+

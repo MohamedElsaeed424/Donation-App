@@ -48,4 +48,9 @@ export class OrganizationSubmissionService {
   getPostById(i:number){
     return this.OrganizationSubmissions[i] ;
   }
+
+  editPost (i:number,OrganizationSubmission:OrganizationSubmissions){
+    this.OrganizationSubmissions[i]=OrganizationSubmission
+  }
+
 }

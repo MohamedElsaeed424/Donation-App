@@ -34,8 +34,17 @@ export class SubmissionsComponent implements OnInit {
     this.route.navigate(['/posts/allPosts/details', i], {queryParams: {username: this.authService.username}})
   }
 
-  editPost(i:number){
-    this.route.navigate(['/posts/allPosts/edit',i],{queryParams: {username: this.authService.username}})
+  editPost(i: number) {
+    this.route.navigate(['/posts/allPosts/edit', i], {queryParams: {username: this.authService.username}})
+  }
+
+  MedicalOrTeachingActivity(i: number) {
+    const itemCategory = this.OrganizationSubmissions[i].itemCategory;
+    return itemCategory === 'medical supplies' || itemCategory === 'school supplies' || itemCategory === 'blood donation';
+  }
+
+  NavigateToDonors(i:number){
+    this.route.navigate(['/posts/allPosts/Fulfilled-Donors', i], {queryParams: {username: this.authService.username}})
   }
 
 }

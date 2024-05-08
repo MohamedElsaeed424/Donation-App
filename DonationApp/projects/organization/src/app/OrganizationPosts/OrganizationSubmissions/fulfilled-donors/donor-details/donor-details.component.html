@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="name">{{donor.name}}</h2>
+      <p class="type">{{ DonorTypeString[donor.type] }}</p>
+    </div>
+    <div class="card-content">
+      <p class="gender">Gender: {{ donor.gender }}</p>
+      <p class="email">Email: {{ donor.email }}</p>
+      <p class="phone">Phone: {{ donor.phoneNumber }}</p>
+      <p class="address">Address: {{ donor.address }}</p>
+      <p class="area">Area: {{ donor.area }}</p>
+      <p class="government">Government: {{ donor.government }}</p>
+    </div>
+  </div>
+</div>
+</body>
+
+</html>

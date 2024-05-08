@@ -10,12 +10,17 @@
         <p class="card-text"><b>Type:</b> {{ submissions.Organization.type }}</p>
         <p class="card-text"><b>Address:</b> {{ submissions.Organization.address }}</p>
         <!-- Add more details as needed -->
+
+
         <div class="column">
-        <div class="button-row">
-          <a (click)="rejectSubmission(i)" class="btn btn-primary">Delete</a>
-          <a (click)="ViewSubmission(i)" class="btn btn-primary-details">View details</a>
-          <a (click)="editPost(i)" class="btn btn-primary-acc">edit</a>
-        </div>
+          <div class="button-row">
+            <a (click)="editPost(i)" class="btn btn-primary-acc">edit</a>
+            <a (click)="ViewSubmission(i)" class="btn btn-primary-details">View details</a>
+          </div>
+          <div class="button-row">
+            <a (click)="rejectSubmission(i)" class="btn btn-primary">Delete</a>
+            <a (click)="NavigateToDonors(i)" *ngIf="MedicalOrTeachingActivity(i)" class="btn btn-primary-view">View Donors</a>
+          </div>
         </div>
       </div>
     </div>

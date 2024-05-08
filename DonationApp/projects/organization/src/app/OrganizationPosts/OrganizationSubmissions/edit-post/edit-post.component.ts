@@ -41,13 +41,11 @@ export class EditPostComponent implements OnInit {
   }
 
   submitForm (){
-    this.OrganizationSubmissionService.deletePost(this.id)
     const OrganizationSubmission= new OrganizationSubmissions(
       this.authService.currentOrganization,
       this.postDetails.get('category').value,
       this.postDetails.get('details').value) ;
-    this.OrganizationSubmissionService.addPost(OrganizationSubmission)
-    console.log('form submitted successfully')
+    this.OrganizationSubmissionService.editPost(this.id,OrganizationSubmission)
   }
 
 }

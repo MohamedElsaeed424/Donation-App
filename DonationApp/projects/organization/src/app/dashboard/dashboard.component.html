@@ -1,1 +1,49 @@
-<p>dashboard works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<div class="card-container">
+  <div class="card">
+    <div class="card-header">
+      <h2>{{ organization.username }}</h2>
+      <p>Type: {{ organization.type }}</p>
+    </div>
+    <div class="card-content">
+      <div class="content-item">
+        <label>Address:</label>
+        <p>{{ organization.address }}</p>
+      </div>
+      <div class="content-item">
+        <label>Area:</label>
+        <p>{{ organization.area }}</p>
+      </div>
+      <div class="content-item">
+        <label>Government:</label>
+        <p>{{ organization.government }}</p>
+      </div>
+      <div class="content-item">
+        <label>Representative:</label>
+        <p>{{ organization.OrganizationRepresentative.firstName }} {{ organization.OrganizationRepresentative.lastName }}</p>
+      </div>
+      <div class="content-item">
+        <label>Gender:</label>
+        <p>{{ organization.OrganizationRepresentative.gender }}</p>
+      </div>
+      <div class="content-item">
+        <label>Email:</label>
+        <p>{{ organization.OrganizationRepresentative.email }}</p>
+      </div>
+      <div class="content-item">
+        <label>Contact Number:</label>
+        <p>{{ organization.OrganizationRepresentative.contactNumber }}</p>
+      </div>
+      <div class="content-item">
+        <button class="btn btn-primary-acc" routerLink='/editProfile'>Edit Profile</button>      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <app-create-post></app-create-post>
+  </div>
+</div>
+</body>
+</html>
