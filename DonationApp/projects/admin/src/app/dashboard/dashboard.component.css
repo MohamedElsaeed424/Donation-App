@@ -169,16 +169,7 @@ footer {
   }
 }
 
-section {
-  background-color: #fff;
-  border-radius: 15px;
-  background-color: #1C9B8E;
-  animation: slideIn 2s ease forwards; /* Apply the animation */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 20px;
-  width: calc(33.33% - 40px);
-}
+
 
 
 section h1 {
@@ -267,9 +258,27 @@ body {
   margin-top: 4rem;
   text-align: center;
   margin-bottom: -500px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+section {
+  background-color: #fff;
+  border-radius: 15px;
+  background-color: #1C9B8E;
+  animation: slideIn 2s ease forwards; /* Apply the animation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  width: calc(33.33% - 40px);
+}
 
+#container0 section {
+  flex: 1 1 100px; /* Adjust width as needed */
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
 
 
 .row {
