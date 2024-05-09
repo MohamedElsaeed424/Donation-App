@@ -242,7 +242,10 @@ body {
 
 #container2 {
   min-width: 900px;
-  background-color: #29dac8;
+  background-image: url('https://wallpapercave.com/wp/wp4103000.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -262,7 +265,7 @@ body {
   flex-wrap: wrap;
 }
 
-section {
+#container2 section {
   background-color: #fff;
   border-radius: 15px;
   background-color: #1C9B8E;
@@ -274,6 +277,14 @@ section {
 }
 
 #container0 section {
+  background-color: #fff;
+  border-radius: 15px;
+  background-color: #1C9B8E;
+  animation: slideIn 2s ease forwards; /* Apply the animation */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  width: calc(33.33% - 40px);
   flex: 1 1 100px; /* Adjust width as needed */
   margin: 10px;
   padding: 20px;
