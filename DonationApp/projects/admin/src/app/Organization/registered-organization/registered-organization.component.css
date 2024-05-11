@@ -1,8 +1,8 @@
 #container0 {
-  background-color: #1C9B8E;
+  /*background-color: #1C9B8E;*/
   border-radius: 40px;
-  padding: 1.5rem;
-  margin-top: 4rem;
+  padding: 0.5rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
@@ -24,9 +24,16 @@
 
 .card {
   margin-bottom: 1rem;
-  border-radius: 40px;
+  border-radius: 20px;
   background-color: #AFF0F2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Increase the size of the card on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Add a larger shadow on hover */
+  background-color: #E0F8F9; /* Change the background color on hover */
 }
 
 .card-title {
@@ -51,6 +58,23 @@
   border-color: #000000;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.btn-primary-view:hover {
+  transform: scale(1.1); /* Increase the size of the button */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
+}
+.btn-primary-acc:hover {
+  transform: scale(1.1); /* Increase the size of the button */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
+}
+.btn-primary-details:hover {
+  transform: scale(1.1); /* Increase the size of the button */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
+}
+.btn-primary:hover {
+  transform: scale(1.1); /* Increase the size of the button */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
 }
 
 .btn-primary:hover,

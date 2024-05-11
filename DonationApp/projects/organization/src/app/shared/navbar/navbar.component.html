@@ -23,11 +23,13 @@
       <button type="button" class="btn btn-outline-info" (click)="navigateToAllPosts()"
               style="margin-left: 30px;margin-right: 6px ;  background-color: #1c9b8e; text-decoration-color: black">My posts
       </button>
-
+      <button class="btn btn-primary" type="button" (click)="NavigateToScheduling()"
+              style="background: #13786a;border-color: rgb(62,18,18);margin-right: 10px;margin-left: 10px;">Scheduling
+      </button>
 
       <li class="nav-item dropdown" [ngClass]="{ 'show': settingsDropdownOpen }" style="margin-left: 125px;">
         <button class="dropdown-toggle nav-link" (click)="toggleSettingsDropdown()" href="#"
-                style="margin-left: 530px;">Settings
+                style="margin-left: 510px;">Settings
         </button>
         <div class="dropdown-menu" [ngClass]="{ 'show': settingsDropdownOpen }"
              style="margin-left: 485px; max-width: 50px;">
@@ -36,7 +38,6 @@
         </div>
       </li>
     </ul>
-
 
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-1"><span
       class="visually-hidden">Toggle navigation</span><span

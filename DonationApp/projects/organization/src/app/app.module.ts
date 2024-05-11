@@ -21,6 +21,19 @@ import {
   RegisteredDonorService
 } from "./OrganizationPosts/OrganizationSubmissions/fulfilled-donors/Services/RegisteredDonor.service";
 import { DonorDetailsComponent } from './OrganizationPosts/OrganizationSubmissions/fulfilled-donors/donor-details/donor-details.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ShedulingComponent } from './sheduling/sheduling.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import {
+  MatDatepicker,
+  MatDatepickerInput,
+  MatDatepickerModule,
+  MatDatepickerToggle
+} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatFormField, MatInput, MatInputModule, MatLabel} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatCard, MatCardContent} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -36,7 +49,10 @@ import { DonorDetailsComponent } from './OrganizationPosts/OrganizationSubmissio
     OrganizationSubmissionDetailsComponent,
     EditPostComponent,
     FulfilledDonorsComponent,
-    DonorDetailsComponent
+    DonorDetailsComponent,
+    ShedulingComponent ,
+
+
   ],
   imports: [
     BrowserModule,
@@ -44,10 +60,23 @@ import { DonorDetailsComponent } from './OrganizationPosts/OrganizationSubmissio
     ReactiveFormsModule,
     HttpClientModule,
     NgOptimizedImage,
-    FormsModule
+    FormsModule,
+    NgxMaterialTimepickerModule,
+    MatFormField,
+    MatDatepickerToggle,
+    MatDatepicker,
+    MatDatepickerInput,
+    MatInput,
+    MatFormFieldModule,
+    MatLabel,
+    MatInputModule,
+    MatNativeDateModule,
+    MatCardContent,
+    MatCard
   ],
   providers: [OrganizationSubmissionService,
-              RegisteredDonorService],
+              RegisteredDonorService,
+              provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

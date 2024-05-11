@@ -1,0 +1,13 @@
+<section class="notification-container" style="margin-top: 90px; margin-right: 65px;">
+  <div class="main-content" >
+    <div class="notification-scroll">
+      <app-notification-details
+        *ngFor="let notification of notifications; index as i"
+        [notification]="notification"
+        (remove)="removeNotification($event)"
+        class="notification-item"
+      ></app-notification-details>
+    </div>
+    <button (click)="clearNotifications()" class="clear-button">Clear Notifications</button>
+  </div>
+</section>

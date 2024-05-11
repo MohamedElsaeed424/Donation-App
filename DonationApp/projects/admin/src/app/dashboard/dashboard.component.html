@@ -2,140 +2,135 @@
 <header id="uu">
   <h1 id="haeding">Welcome {{ userName }}</h1>
 </header>
-
-<div class="container" id="container0">
-  <div class="row">
-    <section class="Organizations" id="nn" >
+<div class="card-container">
+    <section class="Organizations" id="nn">
       <header><p><b>Number Of Registered Organizations</b></p></header>
       <h1>{{ RegisteredOrganizations.length }}</h1>
     </section>
-    <section class="donations" id="nn" >
+    <section class="donations" id="nn">
       <header><p><b>Number Of Pending Organization</b></p></header>
       <h1>{{ OrganizationPendingRequests.length }}</h1>
     </section>
-    <section class="donations" id="nn" >
+    <section class="donations" id="nn">
       <header><p><b>Number Of organizations submissions</b></p></header>
       <h1>{{ OrganizationSubmissions.length }}</h1>
     </section>
-  </div>
-  <div class="row">
-    <section class="donations" id="nn" >
+    <section class="donations" id="nn">
       <header><p><b>Number Of Registered Donors</b></p></header>
       <h1>{{ RegisteredDonors.length }}</h1>
     </section>
-    <section class="donations" id="nn" >
-      <header><p><b>Number Of Pending Donors</b></p></header>
+    <section class="donations" id="nn">
+      <header><p><b>Number Of Pending Donors          </b></p></header>
       <h1>{{ DonorsPendingRequests.length }}</h1>
     </section>
-    <section class="donations" id="nn" >
+    <section class="donations" id="nn">
       <header><p><b>Number Of Donors submissions</b></p></header>
       <h1>{{ DonorsSubmissions.length }}</h1>
     </section>
-  </div>
 </div>
-<div class="container" id="container2">
-  <h1>Quick Access</h1>
-  <div class="row">
-    <!-- Organization related cards -->
-    <section>
-      <header><h4>Registered Organizations</h4></header>
+<!--<div class="container" id="container2">-->
+<!--  <h1>Quick Access</h1>-->
+<!--  <div class="row">-->
+<!--    &lt;!&ndash; Organization related cards &ndash;&gt;-->
+<!--    <section>-->
+<!--      <header><h4>Registered Organizations</h4></header>-->
 
-      <div class="card mb-3" *ngFor="let RegisteredOrganization of RegisteredOrganizations ; let i = index">
-        <div class="card-body">
-          <h5 class="card-title"><strong>{{ RegisteredOrganization.name }}</strong></h5>
-          <p class="card-text"><b>Type:</b> {{ RegisteredOrganization.type }}</p>
-          <p class="card-text"><b>Address:</b> {{ RegisteredOrganization.address }}</p>
-          <!-- Add more details as needed -->
-          <div class="button-row">
-            <a (click)="deleteRegisteredOrganization(i)" class="btn btn-primary-rej">Delete</a>
-            <a (click)="NavigateToRegisteredOrganizationDetails(i)" class="btn btn-primary-details">View Details</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<!--      <div class="card mb-3" *ngFor="let RegisteredOrganization of RegisteredOrganizations ; let i = index">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title"><strong>{{ RegisteredOrganization.name }}</strong></h5>-->
+<!--          <p class="card-text"><b>Type:</b> {{ RegisteredOrganization.type }}</p>-->
+<!--          <p class="card-text"><b>Address:</b> {{ RegisteredOrganization.address }}</p>-->
+<!--          &lt;!&ndash; Add more details as needed &ndash;&gt;-->
+<!--          <div class="button-row">-->
+<!--            <a (click)="deleteRegisteredOrganization(i)" class="btn btn-primary-rej">Delete</a>-->
+<!--            <a (click)="NavigateToRegisteredOrganizationDetails(i)" class="btn btn-primary-details">View Details</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
 
-    <section>
-      <header>
-        <h4>Organization Requests</h4>
-      </header>
-      <div class="card mb-3" *ngFor="let organizationPendingRequest of OrganizationPendingRequests ; let i = index">
-        <div class="card-body">
-          <h5 class="card-title"><strong>{{ organizationPendingRequest.name }}</strong></h5>
-          <p class="card-text"><b>Type:</b> {{ organizationPendingRequest.type }}</p>
-          <p class="card-text"><b>Address:</b> {{ organizationPendingRequest.address }}</p>
-          <!-- Add more details as needed -->
-          <div class="button-row">
-            <a (click)="acceptOrganization(organizationPendingRequest,i)" class="btn btn-primary-acc">accept</a>
-            <a (click)="NavigateToPendingOrganizationRequestDetails(i)" class="btn btn-primary-details">View Details</a>
-            <a (click)="deleteOrganizationPendingRequest(i)" class="btn btn-primary-rej">Reject</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <header>
-        <h4>Organization Submissions</h4>
-      </header>
-      <div class="card mb-3" *ngFor="let organizationSubmission of OrganizationSubmissions ; let i = index">
-        <div class="card-body">
-          <h5 class="card-title"><strong>{{ organizationSubmission.Organization.name }}</strong></h5>
-          <p class="card-text"><b>Type:</b> {{ organizationSubmission.itemCategory }}</p>
-          <p class="card-text"><b>Address:</b> {{ organizationSubmission.details }}</p>
-          <!-- Add more details as needed -->
-          <div class="button-row">
-            <a (click)="acceptSubmission(i)" class="btn btn-primary-acc">accept</a>
-            <a (click)="NavigateToOranizationsSumbissionDetails(i)" class="btn btn-primary-details">View Details</a>
-            <a (click)="deleteOrganizationSubmission(i)" class="btn btn-primary-rej">Reject</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-  <div class="row">
-    <section>
-      <header>
-        <h4>Registered Donors</h4>
-      </header>
-      <div class="card mb-3" *ngFor="let RegisteredDonor of RegisteredDonors  ; let i = index">
-        <div class="card-body">
-          <h5 class="card-title"><strong>{{ RegisteredDonor.name }}</strong></h5>
-          <p class="card-text"><b>Address: </b>{{ RegisteredDonor.address }}</p>
-          <p class="card-text"><b>Phone number:</b> {{ RegisteredDonor.phoneNumber }}</p>
-          <!-- Add more details as needed -->
-          <a (click)="deleteRegisteredDonor(i)" class="btn btn-primary-rej">Delete</a>
-        </div>
-      </div>
-    </section>
-    <section>
-      <header>
-        <h4>Donor Requests</h4>
-      </header>
-      <div class="card mb-3" *ngFor="let DonorRequest of DonorsPendingRequests  ; let i = index">
-        <div class="card-body">
-          <h5 class="card-title"><strong>{{ DonorRequest.name }}</strong></h5>
-          <p class="card-text"><b>Address: </b>{{ DonorRequest.address }}</p>
-          <p class="card-text"><b>Phone number:</b> {{ DonorRequest.phoneNumber }}</p>
-          <!-- Add more details as needed -->
-          <a (click)="acceptDonor(DonorRequest,i)" class="btn btn-primary-acc">Accept</a>
-          <a (click)="deleteDonorPendingRequest(i)" class="btn btn-primary-rej">Reject</a>
-        </div>
-      </div>
-    </section>
-    <section>
-      <header>
-        <h4>Donor Submissions</h4>
-      </header>
-      <div class="card mb-3" *ngFor="let DonorSubmission of DonorsSubmissions  ; let i = index">
-        <div class="card-body">
-          <h5 class="card-title"><strong>{{ DonorSubmission.Donor.name }}</strong></h5>
-          <p class="card-text"><b>Address: </b>{{ DonorSubmission.DonationItem.name }}</p>
-          <p class="card-text"><b>Phone number:</b> {{ DonorSubmission.DonationItem.description }}</p>
-          <!-- Add more details as needed -->
-          <a (click)="DeleteDonorSubmission(i)" class="btn btn-primary-rej">Reject</a>
-          <a (click)="ViewSubmission(i)" class="btn btn-primary-details">View details</a>
-        </div>
-      </div>
-    </section>
-  </div>
-</div>
+<!--    <section>-->
+<!--      <header>-->
+<!--        <h4>Organization Requests</h4>-->
+<!--      </header>-->
+<!--      <div class="card mb-3" *ngFor="let organizationPendingRequest of OrganizationPendingRequests ; let i = index">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title"><strong>{{ organizationPendingRequest.name }}</strong></h5>-->
+<!--          <p class="card-text"><b>Type:</b> {{ organizationPendingRequest.type }}</p>-->
+<!--          <p class="card-text"><b>Address:</b> {{ organizationPendingRequest.address }}</p>-->
+<!--          &lt;!&ndash; Add more details as needed &ndash;&gt;-->
+<!--          <div class="button-row">-->
+<!--            <a (click)="acceptOrganization(organizationPendingRequest,i)" class="btn btn-primary-acc">accept</a>-->
+<!--            <a (click)="NavigateToPendingOrganizationRequestDetails(i)" class="btn btn-primary-details">View Details</a>-->
+<!--            <a (click)="deleteOrganizationPendingRequest(i)" class="btn btn-primary-rej">Reject</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--    <section>-->
+<!--      <header>-->
+<!--        <h4>Organization Submissions</h4>-->
+<!--      </header>-->
+<!--      <div class="card mb-3" *ngFor="let organizationSubmission of OrganizationSubmissions ; let i = index">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title"><strong>{{ organizationSubmission.Organization.name }}</strong></h5>-->
+<!--          <p class="card-text"><b>Type:</b> {{ organizationSubmission.itemCategory }}</p>-->
+<!--          <p class="card-text"><b>Address:</b> {{ organizationSubmission.details }}</p>-->
+<!--          &lt;!&ndash; Add more details as needed &ndash;&gt;-->
+<!--          <div class="button-row">-->
+<!--            <a (click)="acceptSubmission(i)" class="btn btn-primary-acc">accept</a>-->
+<!--            <a (click)="NavigateToOranizationsSumbissionDetails(i)" class="btn btn-primary-details">View Details</a>-->
+<!--            <a (click)="deleteOrganizationSubmission(i)" class="btn btn-primary-rej">Reject</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    <section>-->
+<!--      <header>-->
+<!--        <h4>Registered Donors</h4>-->
+<!--      </header>-->
+<!--      <div class="card mb-3" *ngFor="let RegisteredDonor of RegisteredDonors  ; let i = index">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title"><strong>{{ RegisteredDonor.name }}</strong></h5>-->
+<!--          <p class="card-text"><b>Address: </b>{{ RegisteredDonor.address }}</p>-->
+<!--          <p class="card-text"><b>Phone number:</b> {{ RegisteredDonor.phoneNumber }}</p>-->
+<!--          &lt;!&ndash; Add more details as needed &ndash;&gt;-->
+<!--          <a (click)="deleteRegisteredDonor(i)" class="btn btn-primary-rej">Delete</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--    <section>-->
+<!--      <header>-->
+<!--        <h4>Donor Requests</h4>-->
+<!--      </header>-->
+<!--      <div class="card mb-3" *ngFor="let DonorRequest of DonorsPendingRequests  ; let i = index">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title"><strong>{{ DonorRequest.name }}</strong></h5>-->
+<!--          <p class="card-text"><b>Address: </b>{{ DonorRequest.address }}</p>-->
+<!--          <p class="card-text"><b>Phone number:</b> {{ DonorRequest.phoneNumber }}</p>-->
+<!--          &lt;!&ndash; Add more details as needed &ndash;&gt;-->
+<!--          <a (click)="acceptDonor(DonorRequest,i)" class="btn btn-primary-acc">Accept</a>-->
+<!--          <a (click)="deleteDonorPendingRequest(i)" class="btn btn-primary-rej">Reject</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--    <section>-->
+<!--      <header>-->
+<!--        <h4>Donor Submissions</h4>-->
+<!--      </header>-->
+<!--      <div class="card mb-3" *ngFor="let DonorSubmission of DonorsSubmissions  ; let i = index">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title"><strong>{{ DonorSubmission.Donor.name }}</strong></h5>-->
+<!--          <p class="card-text"><b>Address: </b>{{ DonorSubmission.DonationItem.name }}</p>-->
+<!--          <p class="card-text"><b>Phone number:</b> {{ DonorSubmission.DonationItem.description }}</p>-->
+<!--          &lt;!&ndash; Add more details as needed &ndash;&gt;-->
+<!--          <a (click)="DeleteDonorSubmission(i)" class="btn btn-primary-rej">Reject</a>-->
+<!--          <a (click)="ViewSubmission(i)" class="btn btn-primary-details">View details</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+<!--  </div>-->
+<!--</div>-->
 </body>

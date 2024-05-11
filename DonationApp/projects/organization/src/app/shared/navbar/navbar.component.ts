@@ -52,4 +52,7 @@ export class NavbarComponent {
     this.route.navigate(['/posts/allPosts',{queryParams: {username: this.authservice.username}}])
   }
 
+  NavigateToScheduling(){
+    this.route.navigate(['/Scheduling'],{queryParams: {username: this.authservice.username}})
+  }
 }
