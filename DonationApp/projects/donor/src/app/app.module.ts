@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
@@ -101,7 +103,8 @@ import {
 import {NotificationsComponent} from "./shared/notifications/notifications.component";
 import { NotificationDetailsComponent } from './shared/notifications/notification-details/notification-details.component';
 import {NgbAlertModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
-import { NgbdAlertCloseableComponent } from './shared/ngbd-alert-closeable/ngbd-alert-closeable.component';
+import { ToastrComponent } from './shared/toastr/toastr.component';
+import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "@abacritt/angularx-social-login";
 
 @NgModule({
   declarations: [
@@ -162,7 +165,7 @@ import { NgbdAlertCloseableComponent } from './shared/ngbd-alert-closeable/ngbd-
     RegisteredOrganizationDetailsComponent,
     NotificationsComponent,
     NotificationDetailsComponent,
-    NgbdAlertCloseableComponent,
+    ToastrComponent,
   ],
   imports: [
     BrowserModule,
@@ -174,9 +177,25 @@ import { NgbdAlertCloseableComponent } from './shared/ngbd-alert-closeable/ngbd-
     AppRoutingModule,
     FormsModule,
     NgbAlertModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('37414551093-po0bi5aqq3ttnc5153sf7b80squqci7o.apps.googleusercontent.com'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

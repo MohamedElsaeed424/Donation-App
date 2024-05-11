@@ -4,32 +4,31 @@
       <div class="col-md-6">
         <form [formGroup]="donorSignupForm" (ngSubmit)="submitDonorSignupInfo()" class="rounded-form">
           <h2 class="text-center form-title">Donor Signup</h2>
-          <div class="form-group">
+          <div class="form-group"  >
             <div class="row-cols-2">
-              <label for="firstName" style="color: #333;">First Name:</label>
-              <input type="text" id="firstName" formControlName="firstName" class="form-control" placeholder="Enter your first name">
+              <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">First Name</label>
+              <input type="text" id="firstName" formControlName="firstName" class="form-control" >
               <div *ngIf="donorSignupForm.get('firstName').invalid && donorSignupForm.get('firstName').touched" class="text-danger">
                 First Name is required
               </div>
             </div>
           </div>
-          <div class="form-group">
-            <label for="lastName" style="color: #333;">Last Name:</label>
-            <input type="text" id="lastName" formControlName="lastName" class="form-control" placeholder="Enter your last name">
+          <div class="form-group" style="margin-top: 10px;">
+            <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Last Name</label>
+            <input type="text" id="lastName" formControlName="lastName" class="form-control">
             <div *ngIf="donorSignupForm.get('lastName').invalid && donorSignupForm.get('lastName').touched" class="text-danger">
               Last Name is required
             </div>
           </div>
-          <div class="form-group">
-            <label for="lastName" style="color: #333;">User Name:</label>
-            <input type="text" id="userName" formControlName="userName" class="form-control" placeholder="Enter your user name">
+          <div class="form-group" style="margin-top: 10px;">
+            <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">User Name</label>
+            <input type="text" id="userName" formControlName="userName" class="form-control" >
             <div *ngIf="donorSignupForm.get('userName').invalid && donorSignupForm.get('userName').touched" class="text-danger">
-              Last Name is required
+              User Name is required
             </div>
           </div>
-            <div class="form-group">
-              <label for="gender" style="color:
-              #0a3622;">Gender:</label>
+            <div class="form-group" style="margin-top: 10px;">
+              <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Gender</label>
               <select id="gender" formControlName="gender" class="form-control">
                 <option value="" disabled selected style="color: #333;">Select your gender</option>
                 <option value="male" style="color: #333;">Male</option>
@@ -39,57 +38,51 @@
                 Gender is required
               </div>
             </div>
-            <div class="form-group ">
-              <label for="email" style="color:
-              #0a3622;">Email:</label>
-              <input type="email" id="email" formControlName="email" class="form-control" placeholder="Enter your email">
+            <div class="form-group "style="margin-top: 10px;">
+              <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Email</label>
+              <input type="email" id="email" formControlName="email" class="form-control" >
               <div *ngIf="donorSignupForm.get('email').invalid && donorSignupForm.get('email').touched" class="text-danger">
                 Valid email is required
               </div>
             </div>
-            <div class="form-group ">
-              <label for="contactNumber" style="color:
-              #0a3622;">Contact Number:</label>
-              <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control" placeholder="Enter your contact number">
+            <div class="form-group "style="margin-top: 10px;">
+              <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Phone Number</label>
+              <input type="text" id="contactNumber" formControlName="contactNumber" class="form-control" >
               <div *ngIf="donorSignupForm.get('contactNumber').invalid && donorSignupForm.get('contactNumber').touched" class="text-danger">
                 Contact Number is required
               </div>
-            <div class="form-group ">
-              <label for="password" style="color:
-              #0a3622;">Password:</label>
-              <input type="password" id="password" formControlName="password" class="form-control" placeholder="Enter your password">
+            <div class="form-group "style="margin-top: 10px;">
+              <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Password</label>
+              <input type="password" id="password" formControlName="password" class="form-control" >
               <div *ngIf="donorSignupForm.get('password').invalid && donorSignupForm.get('password').touched" class="text-danger">
-                Password is required
+                Password is min 6 characters
               </div>
             </div>
           </div>
-            <div class="form-group ">
-              <label for="address" style="color:
-              #0a3622;">Address:</label>
-              <input type="text" id="address" formControlName="address" class="form-control" placeholder="Enter your address">
+            <div class="form-group "style="margin-top: 10px;">
+              <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Address</label>
+              <input type="text" id="address" formControlName="address" class="form-control">
               <div *ngIf="donorSignupForm.get('address').invalid && donorSignupForm.get('address').touched" class="text-danger">
                 Address is required
               </div>
             </div>
-            <div class="form-group ">
-              <label for="area" style="color:
-              #0a3622;">Area:</label>
-              <input type="text" id="area" formControlName="area" class="form-control" placeholder="Enter your area">
+            <div class="form-group "style="margin-top: 10px;">
+              <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Area</label>
+              <input type="text" id="area" formControlName="area" class="form-control">
               <div *ngIf="donorSignupForm.get('area').invalid && donorSignupForm.get('area').touched" class="text-danger">
                 Area is required
               </div>
             </div>
-            <div class="form-group ">
-              <label for="governorate" style="color:
-              #0a3622;">Governorate:</label>
-              <input type="text" id="governorate" formControlName="governorate" class="form-control" placeholder="Enter your governorate">
+            <div class="form-group "style="margin-top: 10px;">
+              <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Governorate</label>
+              <input type="text" id="governorate" formControlName="governorate" class="form-control" >
               <div *ngIf="donorSignupForm.get('governorate').invalid && donorSignupForm.get('governorate').touched" class="text-danger">
                 Governorate is required
               </div>
             </div>
-            <div class="form-group ">
+            <div class="form-group "style="margin-top: 10px;">
               <div class="radio-group">
-                <label style="color:#0a3622;">Role:</label>
+                <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Role</label>
                 <div class="row">
                   <div class="col-md-3" style="margin-right: auto">
                     <label class="radio-label">
@@ -115,48 +108,53 @@
           <div *ngIf="selectedRole === 'doctor'">
             <section class=" rounded-form">
               <div formGroupName="doctorData">
-                <div class="form-group">
+                <div class="form-group"style="margin-top: 10px;">
+                  <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Clinic Address</label>
                   <div class="form-group mb-3">
-                    <input type="text" class="form-control" id="clinicAddress" formControlName="clinicAddress" placeholder="Clinic Address">
+                    <input type="text" class="form-control" id="clinicAddress" formControlName="clinicAddress">
                   </div>
                   <div *ngIf="donorSignupForm.get('doctorData').get('clinicAddress').invalid && donorSignupForm.get('doctorData').get('clinicAddress').touched" class="text-danger">
                     Clinic Address is required
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group"style="margin-top: 10px;">
+                  <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Clinic Area</label>
                   <div class="form-group mb-3">
-                    <input type="text" class="form-control" id="clinicArea" formControlName="clinicArea" placeholder="Clinic Area">
+                    <input type="text" class="form-control" id="clinicArea" formControlName="clinicArea">
                   </div>
                   <div *ngIf="donorSignupForm.get('doctorData').get('clinicArea').invalid && donorSignupForm.get('doctorData').get('clinicArea').touched" class="text-danger">
                     Clinic Area is required
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group"style="margin-top: 10px;">
+                  <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Clinic Governorate</label>
                   <div class="form-group mb-3">
-                    <input type="text" class="form-control" id="clinicGovernorate" formControlName="clinicGovernorate" placeholder="Clinic Governorate">
+                    <input type="text" class="form-control" id="clinicGovernorate" formControlName="clinicGovernorate">
                   </div>
                   <div *ngIf="donorSignupForm.get('doctorData').get('clinicGovernorate').invalid && donorSignupForm.get('doctorData').get('clinicGovernorate').touched" class="text-danger">
                     Clinic Governorate is required
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group"style="margin-top: 10px;">
+                  <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Specialty</label>
                   <div class="form-group mb-3">
-                    <input type="text" class="form-control" id="specialty" formControlName="specialty" placeholder="Specialty">
+                    <input type="text" class="form-control" id="specialty" formControlName="specialty">
                   </div>
                   <div *ngIf="donorSignupForm.get('doctorData').get('specialty').invalid && donorSignupForm.get('doctorData').get('specialty').touched" class="text-danger">
                     Specialty is required
                   </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group"style="margin-top: 10px;">
+                  <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Pro-bono Cases</label>
                   <div class="form-group mb-3">
-                    <input type="number" class="form-control" id="proBonoCases" formControlName="proBonoCases" placeholder="Pro-bono Cases">
+                    <input type="number" class="form-control" id="proBonoCases" formControlName="proBonoCases">
                   </div>
                   <div *ngIf="donorSignupForm.get('doctorData').get('proBonoCases').invalid && donorSignupForm.get('doctorData').get('proBonoCases').touched" class="text-danger">
                     Pro-bono Cases is required and must be a positive number
                   </div>
                 </div>
-                <div class="form-group">
-                  <label style="color: #0a3622">Doctor Licence</label>
+                <div class="form-group"style="margin-top: 10px;">
+                  <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Doctor Licence</label>
                   <app-file-upload></app-file-upload>
                 </div>
               </div>
@@ -165,39 +163,42 @@
           <div *ngIf="selectedRole === 'teacher'">
             <section class="rounded-form">
                <div formGroupName="teacherData">
-                  <div class="form-group">
+                  <div class="form-group"style="margin-top: 10px;">
+                    <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Subjects</label>
                     <div class="form-group mb-3">
-                      <input type="text" class="form-control" id="subjects" formControlName="subjects" placeholder="Subjects">
+                      <input type="text" class="form-control" id="subjects" formControlName="subjects">
                     </div>
                     <div *ngIf="donorSignupForm.get('teacherData').get('subjects').invalid && donorSignupForm.get('teacherData').get('subjects').touched" class="text-danger">
                       Subjects are required
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div class="form-group"style="margin-top: 10px;">
+                    <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Pro-bono Classes</label>
                     <div class="form-group mb-3">
-                      <input type="number" class="form-control" id="proBonoClasses" formControlName="proBonoClasses" placeholder="number of Classes">
+                      <input type="number" class="form-control" id="proBonoClasses" formControlName="proBonoClasses">
                     </div>
                     <div *ngIf="donorSignupForm.get('teacherData').get('proBonoClasses').invalid && donorSignupForm.get('teacherData').get('proBonoClasses').touched" class="text-danger">
                       number of Classes must be a positive number
                     </div>
                   </div>
                   <!-- Pro-bono students -->
-                  <div class="form-group">
+                  <div class="form-group"style="margin-top: 10px;">
+                    <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Pro-bono Students</label>
                     <div class="form-group mb-3">
-                      <input type="number" class="form-control" id="proBonoStudents" formControlName="proBonoStudents" placeholder="number of Students">
+                      <input type="number" class="form-control" id="proBonoStudents" formControlName="proBonoStudents">
                     </div>
                     <div *ngIf="donorSignupForm.get('teacherData').get('proBonoStudents').invalid && donorSignupForm.get('teacherData').get('proBonoStudents').touched" class="text-danger">
                       number of Students must be a positive number
                     </div>
                   </div>
-                  <div class="form-group">
-                    <label style="color: #0a3622" >Teacher Licence</label>
+                  <div class="form-group"style="margin-top: 10px;">
+                    <label for="firstName" style="color: #333; font-family: Arial, sans-serif; font-size: 16px; text-transform: uppercase; letter-spacing: 1px;">Teacher Licence</label>
                     <app-file-upload></app-file-upload>
                   </div>
                </div>
             </section>
           </div>
-          <button type="submit" class="btn btn-primary" [disabled]="false">Signup</button>
+          <button type="submit" class="btn btn-primary" [disabled]="donorSignupForm.valid">Signup</button>
         </form>
       </div>
       <div class="col-md-6 d-flex justify-content-center align-items-center">

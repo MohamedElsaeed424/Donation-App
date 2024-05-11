@@ -5,6 +5,7 @@ import {Donor, DonorType} from "../../Donors/models/donor.model";
 import {Teacher} from "../../Donors/models/pro-bonoTeacher.model";
 import {ClinicLocationSpecification, Doctor} from "../../Donors/models/pro-bonoDoctor.model";
 import {DonorService} from "../../Donors/donors.service";
+import {ToastrService} from "ngx-toastr";
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -18,7 +19,8 @@ export class SignUpComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router: Router ,
-    private donorService : DonorService) { }
+    private donorService : DonorService,
+    private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.createDonorSignupForm();
@@ -160,6 +162,7 @@ export class SignUpComponent implements OnInit {
       }
       if (newDonor) {
         this.donorService.addDonor(newDonor);
+        this.toastr.success("Sign up successful!,Success")
         this.router.navigate(['/auth/login'], { relativeTo: this.route });
       }
     } else {
@@ -167,7 +170,7 @@ export class SignUpComponent implements OnInit {
     }
   }
   validateAllFormFields(formGroup: FormGroup): void {
-    console.log(formGroup);
+    this.toastr.error("Please fill in all required fields", "Error")
   }
 
 }
