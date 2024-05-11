@@ -5,10 +5,10 @@
        *ngFor="let submissions of OrganizationSubmissions; let i = index">
     <div class="card mb-3">
       <div class="card-body">
-        <h5 class="card-title"><strong>{{ submissions.Organization.username }}</strong></h5>
-        <p class="card-text"><b>Type:</b> {{ submissions.itemCategory }}</p>
+<!--        <h5 class="card-title"><strong>{{ submissions.Organization.username }}</strong></h5>-->
+        <p class="card-text"><b>Category:</b> {{ submissions.itemCategory }}</p>
         <p class="card-text"><b>Type:</b> {{ submissions.Organization.type }}</p>
-        <p class="card-text"><b>Address:</b> {{ submissions.Organization.address }}</p>
+        <p class="card-text"><b>description:</b> {{ submissions.details }}</p>
         <!-- Add more details as needed -->
 
 

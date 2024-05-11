@@ -1,0 +1,21 @@
+/* Adjusted styles for the icon button */
+.icon-button {
+  position: absolute;
+  right: 15px; /* Adjust the right position as needed */
+  top: 28px; /* Align vertically */
+  transform: translateY(-50%); /* Center vertically */
+  width: 40px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  color: #0a3622;
+  border-radius: 10px;
+  z-index: 1000; /* Ensure the icon button stays above other elements */
+  background-color: #22b6a7;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+  /*background: #; !* Change background color on hover *!*/
+  box-shadow: #20c997 0px 0px 10px;
+  border-radius: 10px; /* Make the button circular */
+}
+

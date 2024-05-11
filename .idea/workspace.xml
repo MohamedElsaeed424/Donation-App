@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="Admin modification and UI/UX">
+    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="organization time slot added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/donor/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/donor/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/donor-details/donor-details.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/donor-details/donor-details.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/fulfilled-donors.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/fulfilled-donors/fulfilled-donors.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/create-post/create-post.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/create-post/create-post.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/create-post/create-post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/create-post/create-post.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notification.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notification.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +150,7 @@
       <workItem from="1715270480191" duration="1427000" />
       <workItem from="1715341802737" duration="315000" />
       <workItem from="1715446838301" duration="8554000" />
-      <workItem from="1715455525461" duration="8212000" />
+      <workItem from="1715455525461" duration="10635000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing the app">
       <option name="closed" value="true" />
@@ -251,7 +256,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715459120161</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="organization time slot added">
+      <option name="closed" value="true" />
+      <created>1715464568479</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715464568479</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +291,7 @@
     <MESSAGE value="Organization posts creation and all posts and account edit added" />
     <MESSAGE value="Donor Fulfilled for submissions added to the organization" />
     <MESSAGE value="Admin modification and UI/UX" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin modification and UI/UX" />
+    <MESSAGE value="organization time slot added" />
+    <option name="LAST_COMMIT_MESSAGE" value="organization time slot added" />
   </component>
 </project>
