@@ -1,43 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FileUploadService } from './file-upload.service';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-file-upload',
   templateUrl: './file-upload.component.html',
   styleUrls: ['./file-upload.component.css']
 })
-export class FileUploadComponent implements OnInit {
+export class FileUploadComponent {
 
-  // Variable to store shortLink from api response
   shortLink: string = "";
-  loading: boolean = false; // Flag variable
-  file: File = null; // Variable to store file
+  loading: boolean = false;
+  file: File = null;
 
-  // Inject service
-  constructor(private fileUploadService: FileUploadService) { }
+  constructor(
+    private fileUploadService: FileUploadService,
+    private toastrService : ToastrService) {    console.log('here'); }
 
-  ngOnInit(): void {
-  }
-
-  // On file Select
   onChange(event) {
     this.file = event.target.files[0];
   }
 
-  // OnClick of button Upload
-  onUpload() {
-    this.loading = !this.loading;
-    console.log(this.file);
-    this.fileUploadService.upload(this.file).subscribe(
-      (event: any) => {
-        if (typeof (event) === 'object') {
-
-          // Short link via api response
-          this.shortLink = event.link;
-
-          this.loading = false; // Flag variable
-        }
-      }
-    );
+  async onUpload() {
+    this.loading = true;
+    // try {
+    //   const response = await this.fileUploadService.uploadToGoogleDrive(this.file);
+    //   this.shortLink = response.link;
+    //   this.toastrService.success('File uploaded successfully' , 'Success');
+    // } catch (error) {
+    //   console.error('Error uploading file', error);
+    // } finally {
+    //   this.loading = false;
+    // }
   }
 }

@@ -7,6 +7,7 @@ import {ClinicLocationSpecification, Doctor} from "../Donors/models/pro-bonoDoct
 import {DonorService} from "../Donors/donors.service";
 import {Router} from "@angular/router";
 import {verifyHostBindings} from "@angular/compiler";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-manage-account',
@@ -20,7 +21,8 @@ export class ManageAccountComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private fb: FormBuilder,
-    private donorService :DonorService) {}
+    private donorService :DonorService ,
+    private toastr : ToastrService) {}
 
   ngOnInit(): void {
     this.currentDonor = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : null;
@@ -158,6 +160,7 @@ export class ManageAccountComponent implements OnInit {
         );
       }
       localStorage.setItem('currentUser', JSON.stringify(updatedDonor));
+      this.toastr.success('Account updated successfully' , 'Success');
       console.log('Updated donor saved to local storage:', updatedDonor);
     }
   }
@@ -167,6 +170,7 @@ export class ManageAccountComponent implements OnInit {
     if (confirm("Are you sure you want to delete your account?")) {
       const userName = this.currentDonor.userName;
       this.donorService.deleteDonor(userName);
+      this.toastr.success('Account deleted successfully' , 'Success');
       this.authService.logout();
       this.router.navigate(['/']); // Navigate to home page
     }
