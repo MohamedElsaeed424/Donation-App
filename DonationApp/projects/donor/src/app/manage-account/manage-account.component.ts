@@ -151,17 +151,19 @@ export class ManageAccountComponent implements OnInit {
           donorData.userName,
           donorData.gender,
           donorData.email,
-          donorData.contactNumber,
+          donorData.phoneNumber,
           donorData.password,
           donorData.address,
           donorData.area,
-          donorData.governorate,
+          donorData.government,
           userType
         );
       }
       localStorage.setItem('currentUser', JSON.stringify(updatedDonor));
       this.toastr.success('Account updated successfully' , 'Success');
       console.log('Updated donor saved to local storage:', updatedDonor);
+    }else{
+      this.toastr.error('Please fill all the required fields' , 'Error');
     }
   }
 

@@ -104,7 +104,6 @@ import {NotificationsComponent} from "./shared/notifications/notifications.compo
 import { NotificationDetailsComponent } from './shared/notifications/notification-details/notification-details.component';
 import {NgbAlertModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { ToastrComponent } from './shared/toastr/toastr.component';
-import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "@abacritt/angularx-social-login";
 
 @NgModule({
   declarations: [
@@ -180,22 +179,8 @@ import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "@
     NgbModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    SocialLoginModule
   ],
-  providers: [
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('37414551093-po0bi5aqq3ttnc5153sf7b80squqci7o.apps.googleusercontent.com'),
-          },
-        ],
-      } as SocialAuthServiceConfig,
-    },
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

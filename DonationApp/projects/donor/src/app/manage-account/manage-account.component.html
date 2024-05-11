@@ -4,14 +4,23 @@
     <div class="form-group">
       <label for="firstName">First Name</label>
       <input type="text" class="form-control" id="firstName" formControlName="firstName">
+      <div *ngIf="donorAccountManagementForm.get('firstName').invalid && donorAccountManagementForm.get('firstName').touched" class="text-danger">
+        First Name is required
+      </div>
     </div>
     <div class="form-group">
       <label for="lastName">Last Name</label>
       <input type="text" class="form-control" id="lastName" formControlName="lastName">
+      <div *ngIf="donorAccountManagementForm.get('lastName').invalid && donorAccountManagementForm.get('lastName').touched" class="text-danger">
+        Last Name is required
+      </div>
     </div>
     <div class="form-group">
       <label for="lastName">User Name</label>
       <input type="text" class="form-control" id="userName" formControlName="userName">
+      <div *ngIf="donorAccountManagementForm.get('userName').invalid && donorAccountManagementForm.get('userName').touched" class="text-danger">
+        User Name is required
+      </div>
     </div>
     <div class="form-group">
       <label for="gender">Gender</label>
@@ -20,31 +29,52 @@
         <option value="male" style="color: #333;">Male</option>
         <option value="female" style="color: #333;">Female</option>
       </select>
+      <div *ngIf="donorAccountManagementForm.get('gender').invalid && donorAccountManagementForm.get('gender').touched" class="text-danger">
+        Gender is required
+      </div>
     </div>
 
     <div class="form-group">
       <label for="email">Email</label>
       <input type="email" class="form-control" id="email" formControlName="email">
+      <div *ngIf="donorAccountManagementForm.get('email').invalid && donorAccountManagementForm.get('email').touched" class="text-danger">
+        Valid email is required
+      </div>
     </div>
     <div class="form-group">
       <label for="contactNumber">Contact Number</label>
       <input type="text" class="form-control" id="contactNumber" formControlName="phoneNumber">
+      <div *ngIf="donorAccountManagementForm.get('phoneNumber').invalid && donorAccountManagementForm.get('phoneNumber').touched" class="text-danger">
+        Contact Number is required
+      </div>
     </div>
     <div class="form-group">
       <label for="password">Password</label>
       <input type="password" class="form-control" id="password" formControlName="password">
+      <div *ngIf="donorAccountManagementForm.get('password').invalid && donorAccountManagementForm.get('password').touched" class="text-danger">
+        Password is min 6 characters
+      </div>
     </div>
     <div class="form-group">
       <label for="address">Address</label>
       <input type="text" class="form-control" id="address" formControlName="address">
+      <div *ngIf="donorAccountManagementForm.get('address').invalid && donorAccountManagementForm.get('address').touched" class="text-danger">
+        Address is required
+      </div>
     </div>
     <div class="form-group">
       <label for="area">Area</label>
       <input type="text" class="form-control" id="area" formControlName="area">
+      <div *ngIf="donorAccountManagementForm.get('area').invalid && donorAccountManagementForm.get('area').touched" class="text-danger">
+        Area is required
+      </div>
     </div>
     <div class="form-group">
       <label for="governorate">Governorate</label>
       <input type="text" class="form-control" id="governorate" formControlName="government">
+      <div *ngIf="donorAccountManagementForm.get('government').invalid && donorAccountManagementForm.get('government').touched" class="text-danger">
+        Governorate is required
+      </div>
     </div>
 
     <!-- Teacher Specific Fields -->
@@ -52,14 +82,23 @@
       <div class="form-group">
         <label for="subjects">Subjects</label>
         <input type="text" class="form-control" id="subjects" formControlName="subjects">
+        <div *ngIf="donorAccountManagementForm.get('teacherData').get('subjects').invalid && donorAccountManagementForm.get('teacherData').get('subjects').touched" class="text-danger">
+          Subjects are required
+        </div>
       </div>
       <div class="form-group">
         <label for="proBonoClasses">Pro Bono Classes</label>
         <input type="number" class="form-control" id="proBonoClasses" formControlName="proBonoClasses">
+        <div *ngIf="donorAccountManagementForm.get('teacherData').get('proBonoClasses').invalid && donorAccountManagementForm.get('teacherData').get('proBonoClasses').touched" class="text-danger">
+          number of Classes must be a positive number
+        </div>
       </div>
       <div class="form-group">
         <label for="proBonoStudents">Pro Bono Students</label>
         <input type="number" class="form-control" id="proBonoStudents" formControlName="proBonoStudents">
+        <div *ngIf="donorAccountManagementForm.get('teacherData').get('proBonoStudents').invalid && donorAccountManagementForm.get('teacherData').get('proBonoStudents').touched" class="text-danger">
+          number of Students must be a positive number
+        </div>
       </div>
     </div>
 
@@ -68,25 +107,39 @@
       <div class="form-group">
         <label for="clinicAddress">Clinic Address</label>
         <input type="text" class="form-control" id="clinicAddress" formControlName="address">
+        <div *ngIf="donorAccountManagementForm.get('doctorData').get('address').invalid && donorAccountManagementForm.get('doctorData').get('address').touched" class="text-danger">
+          Clinic Address is required
+        </div>
       </div>
       <div class="form-group">
         <label for="clinicArea">Clinic Area</label>
         <input type="text" class="form-control" id="clinicArea" formControlName="area">
+        <div *ngIf="donorAccountManagementForm.get('doctorData').get('area').invalid && donorAccountManagementForm.get('doctorData').get('area').touched" class="text-danger">
+          Clinic Area is required
+        </div>
       </div>
       <div class="form-group">
         <label for="clinicGovernorate">Clinic Governorate</label>
         <input type="text" class="form-control" id="clinicGovernorate" formControlName="government">
+        <div *ngIf="donorAccountManagementForm.get('doctorData').get('government').invalid && donorAccountManagementForm.get('doctorData').get('government').touched" class="text-danger">
+          Clinic Governorate is required
+        </div>
       </div>
       <div class="form-group">
         <label for="specialty">Specialty</label>
         <input type="text" class="form-control" id="specialty" formControlName="specialty">
+        <div *ngIf="donorAccountManagementForm.get('doctorData').get('specialty').invalid && donorAccountManagementForm.get('doctorData').get('specialty').touched" class="text-danger">
+          Specialty is required
+        </div>
       </div>
       <div class="form-group">
         <label for="proBonoCases">Pro Bono Cases</label>
         <input type="number" class="form-control" id="proBonoCases" formControlName="proBonoCases">
+        <div *ngIf="donorAccountManagementForm.get('doctorData').get('proBonoCases').invalid && donorAccountManagementForm.get('doctorData').get('proBonoCases').touched" class="text-danger">
+          Pro-bono Cases is required and must be a positive number
+        </div>
       </div>
     </div>
-
     <button type="submit" class="btn btn-primary" style="margin-right: 1cm;">Save Changes</button>
     <button type="button" class="btn btn-danger" (click)="deleteAccount()">Delete Account</button>
   </form>
