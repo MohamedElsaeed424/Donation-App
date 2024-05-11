@@ -16,7 +16,9 @@ export class DonorSubmissionsComponent implements OnInit {
 
   DonorSubmissions: DonorSubmission[];
 
-  constructor(private donorSubmissionsService: DonorSubmissionsService , private route:Router ,private authservice:AuthService) {
+  constructor(private donorSubmissionsService: DonorSubmissionsService ,
+              private route:Router ,
+              private authservice:AuthService) {
   }
 
   ngOnInit(): void {

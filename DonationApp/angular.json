@@ -233,6 +233,7 @@
               "projects/organization/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "projects/organization/src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
@@ -293,6 +294,7 @@
               "projects/organization/src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/purple-green.css",
               "projects/organization/src/styles.css"
             ],
             "scripts": []

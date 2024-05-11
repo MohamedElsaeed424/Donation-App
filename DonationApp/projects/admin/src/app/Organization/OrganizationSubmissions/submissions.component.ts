@@ -14,7 +14,9 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 export class SubmissionsComponent implements OnInit {
   OrganizationSubmissions: OrganizationSubmissions[];
 
-  constructor(private OrganizationSubmissionsService: OrganizationSubmissionService, private route: Router, private authService: AuthService) {
+  constructor(private OrganizationSubmissionsService: OrganizationSubmissionService,
+              private route: Router,
+              private authService: AuthService) {
   }
 
   ngOnInit() {

@@ -122,9 +122,9 @@ export class DonorSubmissionsService {
   }
 
   acceptSubmission(index:number){
-    this.donationItems.splice(index, 1);
+    this.DonorsSubmissions.splice(index, 1);
   }
   rejectSubmission(index:number){
-    this.donationItems.splice(index, 1);
+    this.DonorsSubmissions.splice(index, 1);
   }
 }

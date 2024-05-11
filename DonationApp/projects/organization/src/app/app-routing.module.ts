@@ -16,6 +16,7 @@ import {
 import {
   DonorDetailsComponent
 } from "./OrganizationPosts/OrganizationSubmissions/fulfilled-donors/donor-details/donor-details.component";
+import {ShedulingComponent} from "./sheduling/sheduling.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/auth/login', pathMatch: 'full'},
@@ -33,15 +34,19 @@ const routes: Routes = [
       {
         path: 'allPosts', children: [
           {path: '', component: SubmissionsComponent},
-          {path:'details/:id',component:OrganizationSubmissionDetailsComponent} ,
-          {path:'edit/:id' , component:EditPostComponent} ,
-          {path:'Fulfilled-Donors/:id',children:[
-              {path:'',component:FulfilledDonorsComponent} ,
-              {path:'donor-details/:id',component:DonorDetailsComponent}
-            ]}
+          {path: 'details/:id', component: OrganizationSubmissionDetailsComponent},
+          {path: 'edit/:id', component: EditPostComponent},
+          {
+            path: 'Fulfilled-Donors/:id', children: [
+              {path: '', component: FulfilledDonorsComponent},
+              {path: 'donor-details/:id', component: DonorDetailsComponent}
+            ]
+          }
         ]
       }]
-  }];
+  },
+  {path: 'Scheduling', component: ShedulingComponent},
+];
 
 
 @NgModule({
