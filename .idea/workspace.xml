@@ -4,41 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="Donor Fulfilled for submissions added to the organization">
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notification-details/notification-details.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notification-details/notification-details.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notification-details/notification-details.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notification-details/notification-details.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notification.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notification.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notifications.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notifications.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/notifications/notifications.component.ts" afterDir="false" />
+    <list default="true" id="8b8b38ed-2985-4fe9-b2ab-43a0f66835e3" name="Changes" comment="Admin modification and UI/UX">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/donor-submissions.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/donor-submissions.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/donor-submissions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/donor-submissions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/donors-submission-details/donors-submission-details.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/donors-submission-details/donors-submission-details.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/donors-submission-details/donors-submission-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/donors-submission-details/donors-submission-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/services/DonorSubmissions.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donor-submissions/services/DonorSubmissions.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donorss-pending-requests/donors-pending-requests.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/donorss-pending-requests/donors-pending-requests.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/registered-donors/registered-donors.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Donor/registered-donors/registered-donors.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/OrganizationSubmissions/submissions.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/OrganizationSubmissions/submissions.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/OrganizationSubmissions/submissions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/OrganizationSubmissions/submissions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organization-pending-request.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organization-pending-request.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/organizations-pending-requests/organizations-pending-requests.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/RegisteredOrganization.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/RegisteredOrganization.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/Organization/registered-organization/registered-organization.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/admin/src/app/dashboard/dashboard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/OrganizationPosts/OrganizationSubmissions/submissions.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/dashboard/dashboard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/shared/navbar/navbar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/app/sheduling/sheduling.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DonationApp/projects/organization/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/DonationApp/projects/organization/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,24 +50,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/cody-art-bas-el-judge-broke-my-heart/DonationApp/projects/organization/src/app/shared&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
-    &quot;npm.comm.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "E:/cody-art-bas-el-judge-broke-my-heart/DonationApp/projects/organization/src/app/sheduling",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.Angular CLI Server.executor": "Run",
+    "npm.comm.executor": "Run",
+    "settings.editor.selected.configurable": "editor.preferences.import",
+    "ts.external.directory.path": "E:\\cody-art-bas-el-judge-broke-my-heart\\DonationApp\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\shared" />
@@ -104,11 +77,11 @@
       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\auth" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\sheduling" />
       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\OrganizationPosts\OrganizationSubmissions\fulfilled-donors" />
       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\OrganizationPosts\OrganizationSubmissions" />
       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\OrganizationPosts" />
       <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app" />
-      <recent name="E:\cody-art-bas-el-judge-broke-my-heart\DonationApp\projects\organization\src\app\auth\login" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -172,7 +145,7 @@
       <workItem from="1715270480191" duration="1427000" />
       <workItem from="1715341802737" duration="315000" />
       <workItem from="1715446838301" duration="8554000" />
-      <workItem from="1715455525461" duration="2869000" />
+      <workItem from="1715455525461" duration="8212000" />
     </task>
     <task id="LOCAL-00001" summary="Initializing the app">
       <option name="closed" value="true" />
@@ -270,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715198586088</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Admin modification and UI/UX">
+      <option name="closed" value="true" />
+      <created>1715459120161</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715459120161</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +277,7 @@
     <MESSAGE value="Organization sign up and login and navbar modification" />
     <MESSAGE value="Organization posts creation and all posts and account edit added" />
     <MESSAGE value="Donor Fulfilled for submissions added to the organization" />
-    <option name="LAST_COMMIT_MESSAGE" value="Donor Fulfilled for submissions added to the organization" />
+    <MESSAGE value="Admin modification and UI/UX" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin modification and UI/UX" />
   </component>
 </project>

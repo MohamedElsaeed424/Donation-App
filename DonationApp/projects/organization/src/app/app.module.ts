@@ -34,7 +34,6 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatFormField, MatInput, MatInputModule, MatLabel} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCard, MatCardContent} from "@angular/material/card";
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,9 +49,7 @@ import {MatCard, MatCardContent} from "@angular/material/card";
     EditPostComponent,
     FulfilledDonorsComponent,
     DonorDetailsComponent,
-    ShedulingComponent ,
-
-
+    ShedulingComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +73,8 @@ import {MatCard, MatCardContent} from "@angular/material/card";
   ],
   providers: [OrganizationSubmissionService,
               RegisteredDonorService,
-              provideAnimationsAsync()],
+              provideAnimationsAsync() ,
+              ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

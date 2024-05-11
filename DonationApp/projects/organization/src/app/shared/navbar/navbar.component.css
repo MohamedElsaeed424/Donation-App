@@ -25,8 +25,12 @@ D.apple.logo {
   font-size: 34px;
 }
 
+
 #app-navbar {
   background: linear-gradient(120deg, #144c4a, #38958c);
+}
+.navbar{
+  margin-bottom: 1rem;
 }
 
 .bs-icon {
