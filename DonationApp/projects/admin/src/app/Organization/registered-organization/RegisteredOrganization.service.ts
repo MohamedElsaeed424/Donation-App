@@ -4,62 +4,46 @@ import {OrganizationRepresentitve} from "../OrganizationRepresentitve";
 
 @Injectable({providedIn: 'root'})
 export class OrganizationService {
-  private  organizations: Organization[] = [new Organization('Organization 1',
-    'Type 1',
-    '123 Main St',
-    'Area 1',
-    'Government 1', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d348092.19244772205!2d31.232492791336893!3d29.95416484046617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg&markers=30.0444,31.2357" ,
-    new OrganizationRepresentitve('John',
-      'Doe',
-      'Male',
-      'john@example.com',
-      'password123',
-      123456789)),
-    new Organization('Organization 2',
+
+  private organizations: Organization[] = [
+    new Organization(
+      'Organization 1',
+      'Type 1',
+      '123 Main St',
+      'Area 1',
+      'Government 1',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.510939551825!2d31.379627764998325!3d30.108189828665278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145817a1c0d1be4d%3A0x7593084887c04837!2sProtiviti%20Egypt!5e0!3m2!1sen!2seg!4v1715447122454!5m2!1sen!2seg",
+      new OrganizationRepresentitve('John', 'Doe', 'Male', 'john@example.com', 'password123', 123456789)
+    ),
+    new Organization(
+      'Organization 2',
       'Type 2',
       '456 Elm St',
       'Area 2',
-      'Government 2',  "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d863272.7240879732!2d32.52622001308696!3d26.133168083294733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg&markers=30.0444,31.2357",
-      new OrganizationRepresentitve('Jane',
-        'Smith',
-        'Female',
-        'jane@example.com',
-        'password456',
-        987654321)),
-    new Organization('Organization 3',
+      'Government 2',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3451.7385791140005!2d31.37621318207179!3d30.101672456138722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145816401818892f%3A0xf0810cffd0a37117!2sCoccole!5e0!3m2!1sen!2seg!4v1715447040074!5m2!1sen!2seg",
+      new OrganizationRepresentitve('Jane', 'Smith', 'Female', 'jane@example.com', 'password456', 987654321)
+    ),
+    new Organization(
+      'Organization 3',
       'Type 3',
       '789 Oak St',
       'Area 3',
-      'Government 3', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d82969.53710127728!2d31.197928731076166!3d30.021650568065866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg&markers=30.0444,31.2357",
-      new OrganizationRepresentitve('Michael',
-        'Johnson',
-        'Male',
-        'michael@example.com',
-        'password789',
-        111222333)) ,
-    new Organization('Organization 4',
-      'Type 4',
-      '101 Pine St',
-      'Area 4'
-      , 'Government 4', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d862959.4855104281!2d30.48427472672764!3d26.36570460965092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg&markers=30.0444,31.2357",
-      new OrganizationRepresentitve('Emily',
-        'Davis',
-        'Female',
-        'emily@example.com'
-        , 'passwordabc',
-        444555666)) ,
-    new Organization('Organization 5',
+      'Government 3',
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d863.5294892747653!2d31.45384836941957!3d30.03347360922928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14582302d0bc7ec7%3A0xc47f0b6e65519e8b!2sThe%20Village!5e0!3m2!1sen!2seg!4v1715446984060!5m2!1sen!2seg",      new OrganizationRepresentitve('Michael', 'Johnson', 'Male', 'michael@example.com', 'password789', 111222333)
+    ),
+
+    new Organization(
+      'Organization 5',
       'Type 5',
       '112 Cedar St',
       'Area 5',
-      'Government 5', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d173150.70639027644!2d29.925774456763993!3d31.200092375308864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg&markers=30.0444,31.2357" ,
-      new OrganizationRepresentitve('David',
-        'Brown',
-        'Male',
-        'david@example.com',
-        'passwordxyz',
-        777888999))
+      'Government 5',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d863.5501034950125!2d31.45284555852411!3d30.03110767453918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145822cef0254b75%3A0x850a42814ff0978f!2sFoorera!5e0!3m2!1sen!2seg!4v1715446914860!5m2!1sen!2seg",
+    new OrganizationRepresentitve('David', 'Brown', 'Male', 'david@example.com', 'passwordxyz', 777888999)
+    )
   ];
+
 
   //getting random organization to be used in the submissions
   getRandomOrganization(): Organization {

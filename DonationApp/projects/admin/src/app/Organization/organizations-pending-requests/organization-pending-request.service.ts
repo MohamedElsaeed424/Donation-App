@@ -10,7 +10,8 @@ export class OrganizationPendingRequestService {
       'Type 6',
       '223 Maple St',
       'Area 6',
-      'Government 6',"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d85308.60515504004!2d30.725363274699787!3d29.969488020849363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
+      'Government 6',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.7915905025766!2d31.35767608880997!3d30.12877655812532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14581712acf03161%3A0x930ed1e59aff7702!2sThe%20cave%20Ps!5e0!3m2!1sen!2seg!4v1715447213649!5m2!1sen!2seg"  ,
       new OrganizationRepresentitve(
         'Sarah',
         'Wilson',
@@ -25,7 +26,8 @@ export class OrganizationPendingRequestService {
       'Type 7',
       '334 Birch St',
       'Area 7',
-      'Government 7', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d340746.8231979895!2d31.228757806193005!3d30.035247345129776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
+      'Government 7',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.1283069791334!2d31.32406188088901!3d30.090511488700262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e20d3324d87%3A0xa84e27f0f14e08bd!2sTree%20Trunk!5e0!3m2!1sen!2seg!4v1715447326609!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'Thomas',
         'Anderson',
@@ -40,7 +42,8 @@ export class OrganizationPendingRequestService {
       'Type 8',
       '445 Oak St',
       'Area 8',
-      'Government 8',  "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d102301.62060189652!2d31.828288757168067!3d30.979341509606014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
+      'Government 8',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2386.8614576302894!2d31.33576220719317!3d30.095966901271556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145815eb42857fa5%3A0x25a3cb22ad5a8d49!2sXHALE.EGY!5e0!3m2!1sen!2seg!4v1715447400824!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Jessica',
         'Wilson',
@@ -55,7 +58,8 @@ export class OrganizationPendingRequestService {
       'Type 9',
       '556 Pine St',
       'Area 9',
-      'Government 9', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d503779.9865172232!2d31.816396299466573!3d26.72231825936015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
+      'Government 9',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d862.9503539752369!2d31.344047706118616!3d30.09987319938548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458151c33fe2733%3A0x9b381fbd6f11507d!2sUltra%20Medical%20Cairo!5e0!3m2!1sen!2seg!4v1715447462537!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Matthew',
         'Robinson',
@@ -70,7 +74,8 @@ export class OrganizationPendingRequestService {
       'Type 10',
       '667 Elm St',
       'Area 10',
-      'Government 10', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d862939.1307577865!2d31.526837269463244!3d26.343388289429054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
+      'Government 10',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d862.9247031513977!2d31.345330892135618!3d30.102811072513955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145815e1c9449fc7%3A0x419ddfe17533bee!2sBoxops!5e0!3m2!1sen!2seg!4v1715447502313!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Olivia',
         'Johnson',
@@ -85,7 +90,8 @@ export class OrganizationPendingRequestService {
       'Type 11',
       '778 Cedar St',
       'Area 11',
-      'Government 11', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d102299.13492910508!2d31.772907522750476!3d30.9992542410608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
+      'Government 11',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d496.141731405296!2d31.341976926128627!3d30.105886151769685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145815a3beb16a3d%3A0xdfe7355a09335f27!2sDeeb%20tours!5e0!3m2!1sen!2seg!4v1715447567689!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'William',
         'Martinez',
@@ -95,27 +101,14 @@ export class OrganizationPendingRequestService {
         666666666
       )
     ),
-    new Organization(
-      'Organization 12',
-      'Type 12',
-      '889 Maple St',
-      'Area 12',
-      'Government 12', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d862959.4855104281!2d30.48427472672764!3d26.36570460965092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
-      new OrganizationRepresentitve(
-        'Sophia',
-        'Garcia',
-        'Female',
-        'sophia@example.com',
-        'password456',
-        777777777
-      )
-    ),
+
     new Organization(
       'Organization 13',
       'Type 13',
       '990 Birch St',
       'Area 13',
-      'Government 13', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d68642.23114421111!2d31.269522469155937!3d29.734152780228256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
+      'Government 13',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d862.8730966656567!2d31.34204886853696!3d30.10872094576497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145815e807229ab9%3A0xc29bf843d1dcec74!2sUD%20Crops!5e0!3m2!1sen!2seg!4v1715447639333!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'James',
         'Taylor',
@@ -130,7 +123,8 @@ export class OrganizationPendingRequestService {
       'Type 14',
       '1101 Oak St',
       'Area 14',
-      'Government 14', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d342369.1861767999!2d32.87926481926543!3d24.089680998792703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
+      'Government 14',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1725.6726849534318!2d31.349336890367688!3d30.112929322329716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145815c02e58191b%3A0xe375925a13a5f868!2sAMCO%20Egypt!5e0!3m2!1sen!2seg!4v1715447720363!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'Mia',
         'Hernandez',
@@ -145,7 +139,8 @@ export class OrganizationPendingRequestService {
       'Type 15',
       '1212 Pine St',
       'Area 15',
-      'Government 15', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d514367.84043893215!2d30.2174019782394!3d29.40689533263558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
+      'Government 15',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1725.6134859221784!2d31.359908733275127!3d30.1163180971344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145817b8a87bda1f%3A0xe6c21e9a16bb7b68!2zTSZT!5e0!3m2!1sen!2seg!4v1715447776696!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Benjamin',
         'Lopez',
@@ -160,7 +155,8 @@ export class OrganizationPendingRequestService {
       'Type 16',
       '1323 Elm St',
       'Area 16',
-      'Government 16', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d342369.1861767999!2d32.87926481926543!3d24.089680998792703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
+      'Government 16',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1725.9672334154368!2d31.30746851871562!3d30.096063122317737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583fd5354567b9%3A0xf5cf704a894adead!2sTarget!5e0!3m2!1sen!2seg!4v1715447844109!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Ava',
         'Gonzalez',
@@ -175,7 +171,8 @@ export class OrganizationPendingRequestService {
       'Type 17',
       '1434 Cedar St',
       'Area 17',
-      'Government 17',"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d342369.1861767999!2d32.87926481926543!3d24.089680998792703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
+      'Government 17',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.383643919316!2d31.33217605866825!3d30.05453580378124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583e64205b6b5d%3A0xfef7eadd1a1cfb92!2sVilla%20One%20Eleven!5e0!3m2!1sen!2seg!4v1715447921248!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'Daniel',
         'Rodriguez',
@@ -190,7 +187,8 @@ export class OrganizationPendingRequestService {
       'Type 18',
       '1545 Maple St',
       'Area 18',
-      'Government 18', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d514367.84043893215!2d30.2174019782394!3d29.40689533263558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
+      'Government 18',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2871.6887169430474!2d31.36596804337789!3d30.052161991430584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583dbd3ca1a753%3A0xb96ac16a7ce11eed!2sKPJ%20Mesir!5e0!3m2!1sen!2seg!4v1715448030667!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Sofia',
         'Perez',
@@ -201,26 +199,12 @@ export class OrganizationPendingRequestService {
       )
     ),
     new Organization(
-      'Organization 19',
-      'Type 19',
-      '1656 Birch St',
-      'Area 19',
-      'Government 19', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d173166.2740015707!2d31.76166680808322!3d30.700706372076055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
-      new OrganizationRepresentitve(
-        'Joseph',
-        'Sanchez',
-        'Male',
-        'joseph@example.com',
-        'passwordabc',
-        5678901234
-      )
-    ),
-    new Organization(
       'Organization 20',
       'Type 20',
       '1767 Oak St',
       'Area 20',
-      'Government 20', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1018751.1236325349!2d31.707649106610584!3d30.04367750746763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
+      'Government 20',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1727.3297979914619!2d31.418593378298137!3d30.01792927622921!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583da3443f3099%3A0x3202cdfd4ddf7645!2sSutherland%20Global%20Services!5e0!3m2!1sen!2seg!4v1715448104238!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Charlotte',
         'Rivera',
@@ -235,7 +219,8 @@ export class OrganizationPendingRequestService {
       'Type 21',
       '1878 Pine St',
       'Area 21',
-      'Government 21', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d172994.82704916636!2d31.29473952330886!3d30.029363803509383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg",
+      'Government 21',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1727.344072720327!2d31.41315456479787!3d30.017109741345703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583d0936b2ffa3%3A0xab70b571a06cb20a!2sMapei%20Egypt!5e0!3m2!1sen!2seg!4v1715448188984!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Ethan',
         'Mitchell',
@@ -250,7 +235,8 @@ export class OrganizationPendingRequestService {
       'Type 22',
       '1989 Elm St',
       'Area 22',
-      'Government 22',"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51413.161543213055!2d29.917289631518095!3d31.261798387129013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1714772156263!5m2!1sen!2seg" ,
+      'Government 22',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1727.3438552890989!2d31.424281038343914!3d30.01712222457043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583cdd01d56a41%3A0x1c9dddd68e86df0!2sShell%20Business%20View!5e0!3m2!1sen!2seg!4v1715448260639!5m2!1sen!2seg"  ,
       new OrganizationRepresentitve(
         'Amelia',
         'Cruz',
@@ -265,7 +251,8 @@ export class OrganizationPendingRequestService {
       'Type 23',
       '2000 Cedar St',
       'Area 23',
-      'Government 23', "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d258862.71522333116!2d31.344500173308675!3d30.040222799101583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen",
+      'Government 23',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1727.3239202539614!2d31.431947856404346!3d30.018266720588787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14583d4d0b1f6c91%3A0x3450c2e8d3030ae2!2sBellzee!5e0!3m2!1sen!2seg!4v1715448315653!5m2!1sen!2seg",
       new OrganizationRepresentitve(
         'Mason',
         'Edwards',
@@ -280,7 +267,8 @@ export class OrganizationPendingRequestService {
       'Type 24',
       '2111 Maple St',
       'Area 24',
-      'Government 24', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d137150.33511134457!2d31.22418519618729!3d30.04441904329484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145838d94a29db6f%3A0xac60bf5d8e55a853!2sCairo%2C%20Egypt!5e0!3m2!1sen!2s!4v1647597581557!5m2!1sen!2s",
+      'Government 24',
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1727.5763187413556!2d31.41654214778663!3d30.003773276273282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458392bb0a896b5%3A0x90c8fdb5728d41ef!2sTakwene!5e0!3m2!1sen!2seg!4v1715448407445!5m2!1sen!2seg" ,
       new OrganizationRepresentitve(
         'Harper',
         'Reed',
@@ -288,21 +276,6 @@ export class OrganizationPendingRequestService {
         'harper@example.com',
         'passwordabc',
         1234567809
-      )
-    ),
-    new Organization(
-      'Organization 25',
-      'Type 25',
-      '2222 Birch St',
-      'Area 25',
-      'Government 25', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d344881.6526541043!2d31.22418519618729!3d30.04441904329484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145838d94a29db6f%3A0xac60bf5d8e55a853!2sCairo%2C%20Egypt!5e0!3m2!1sen!2s!4v1647597581557!5m2!1sen!2s",
-      new OrganizationRepresentitve(
-        'Alexander',
-        'Cook',
-        'Male',
-        'alexander@example.com',
-        'passwordxyz',
-        2345678901
       )
     )
   ];
