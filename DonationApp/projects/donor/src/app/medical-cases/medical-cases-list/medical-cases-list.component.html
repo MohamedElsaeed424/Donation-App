@@ -1,31 +1,48 @@
-<div class="row requested-items-grid" style="margin-top: 50px; margin-left: 3cm;">
+<div class="row ">
   <div class="row-cols-lg-auto">
-    <div class="row" style="margin-bottom: 20px; margin-left: 2cm;">
-      <app-search-bar (searchQuery)="searchQuery1 = $event" [thing]="'Medical Specialty'"></app-search-bar>
+    <div class="row" style="margin-bottom: 20px; max-width: 400px; margin-left: 310px;border-radius: 15px;">
+      <div class="col-lg-12 text-center">
+        <app-search-bar (searchQuery)="searchQuery1 = $event" [thing]="'Medical Specialty'"></app-search-bar>
+      </div>
     </div>
-    <div class="row" style="margin-bottom: 20px; margin-left: 2cm;">
-      <app-search-bar (searchQuery)="searchQuery2 = $event" [thing]="'Organization Name'"></app-search-bar>
+    <div class="row" style="margin-bottom: 20px; max-width: 400px; margin-left: 310px;border-radius: 15px;">
+      <div class="col-lg-12 text-center">
+        <app-search-bar (searchQuery)="searchQuery2 = $event" [thing]="'Organization Name'"></app-search-bar>
+      </div>
     </div>
-    <div class="row" style="margin-bottom: 20px; margin-left: 2cm;">
-      <app-search-bar (searchQuery)="searchQuery3 = $event" [thing]="'Area'"></app-search-bar>
+    <div class="row" style="margin-bottom: 20px; max-width: 400px; margin-left: 310px;border-radius: 15px;">
+      <div class="col-lg-12 text-center">
+        <app-search-bar (searchQuery)="searchQuery3 = $event" [thing]="'Area'"></app-search-bar>
+      </div>
     </div>
-    <div class="row" style="margin-bottom: 20px; margin-left: 2cm;">
-      <app-search-bar (searchQuery)="searchQuery4 = $event" [thing]="'Governorate'"></app-search-bar>
-    </div>
+    <div class="row" >
+      <div class="row-cols-lg-auto">
+      <div class="row" style="margin-bottom: 20px; max-width: 400px; margin-left: 310px;border-radius: 15px;">
+        <div class="col-lg-12 text-center">
+          <app-search-bar (searchQuery)="searchQuery4 = $event" [thing]="'Governorate'"></app-search-bar>
+        </div>
+      </div>
     <div class="row">
       <div class="col-lg-12">
-        <div class="requested-items-grid">
-          <div class="row">
-            <ng-container *ngFor="let medicalCase of medicalCases | medicalCaseFilter: searchQuery1:searchQuery2:searchQuery3:searchQuery4">
-              <div class="col-lg-8 mb-3"> <!-- Three items per row with margin bottom -->
-                <app-medical-case
-                  [currentMedicalCase]="medicalCase"
-                  [currentMedicalCaseId]="medicalCase.id"
-                ></app-medical-case>
+        <div class=" row text-center requested-items-grid">
+          <div class="col-lg-10 offset-lg-1">
+            <div class="requested-items-grid">
+              <div class="row">
+                <ng-container *ngFor="let medicalCase of medicalCases | medicalCaseFilter: searchQuery1:searchQuery2:searchQuery3:searchQuery4">
+                  <div class="col-lg-8 mb-3"> <!-- Three items per row with margin bottom -->
+                    <app-medical-case
+                      [currentMedicalCase]="medicalCase"
+                      [currentMedicalCaseId]="medicalCase.id"
+                      style="width: 100%;"
+                    ></app-medical-case>
+                  </div>
+                </ng-container>
               </div>
-            </ng-container>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,84 @@
+<br>
+<br>
+<br>
+<div class="card-container">
+  <section class="personal-info">
+    <img src="assets/DonorAvatar.jpg" alt="" id="profile-pic" height="480" width="480"/>
+    <span id="DName">{{this.title}}{{this.currentDonor.name}} {{this.emoji}}</span>
+    <br>
+    <ul class="list-of-info">
+      <li class="li-info"><b>User Name:</b> {{this.currentDonor.userName}}</li>
+      <hr>
+      <li class="li-info"><b>Full name:</b> {{this.currentDonor.name}}</li>
+      <hr>
+      <li class="li-info"><b>Email:</b> {{this.currentDonor.email}}</li>
+      <hr>
+      <li class="li-info"><b>Phone number:</b> {{this.currentDonor.phoneNumber}}</li>
+      <hr>
+    </ul>
+
+  </section>
+  <section class="right-container">
+    <h1>Quick Access</h1>
+    <section class="quick-container">
+      <a routerLink="/requested-items">
+        <div class="card">
+          <h3>Requested Items</h3>
+        </div>
+      </a>
+      <a routerLink="/Organizations/Registered">
+        <div class="card">
+          <h3>Organizations</h3>
+        </div>
+      </a>
+      <a routerLink="/manage-account">
+        <div class="card">
+          <h3>Manage Account</h3>
+        </div>
+      </a>
+
+
+    </section>
+
+    <h1>All Categories</h1>
+<!--  Food clothes Books Toys School Supplies Blood Donation Medical Supplies-->
+    <section class="quick-container">
+      <a routerLink="/requested-items/requested-item-category/Food">
+        <div class="card">
+          <h3>🍉Food🍖🥩</h3>
+        </div>
+      </a>
+      <a routerLink="/requested-items/requested-item-category/Clothes">
+        <div class="card">
+          <h3>👖Clothes👕</h3>
+        </div>
+      </a>
+      <a routerLink="/requested-items/requested-item-category/Books">
+        <div class="card">
+          <h3>📘Books📗</h3>
+        </div>
+      </a>
+      <a routerLink="/requested-items/requested-item-category/Toys">
+        <div class="card">
+          <h3>🪀Toys🧸</h3>
+        </div>
+      </a>
+      <a routerLink="/requested-items/requested-item-category/School Supplies">
+        <div class="card">
+          <h3>🏫School Supplies🎒✏️</h3>
+        </div>
+      </a>
+      <a routerLink="/requested-items/requested-item-category/Blood Donation">
+        <div class="card">
+          <h3>🩸Blood Donation🩸</h3>
+        </div>
+      </a>
+      <a routerLink="/requested-items/requested-item-category/Medical Supplies">
+        <div class="card">
+          <h3>💊Medical Supplies💉</h3>
+        </div>
+      </a>
+    </section>
+  </section>
+
+</div>

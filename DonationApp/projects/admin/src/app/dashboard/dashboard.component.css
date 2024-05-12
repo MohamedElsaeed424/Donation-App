@@ -116,12 +116,12 @@ section h2 {
 }
 
 
-/* Donations styles */
-.donations ul {
+/* card styles */
+.card ul {
   list-style-type: none;
 }
 
-.donations ul li {
+.card ul li {
   font-size: 16px;
   margin-bottom: 5px;
 }
@@ -168,7 +168,6 @@ footer {
     transform: translateY(0);
   }
 }
-
 
 
 
@@ -343,6 +342,10 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+/*.pie-chart-container{*/
+/*  position: relative;*/
+/*  pos*/
+/*}*/
 #container2 .card-body{
   text-align: center;
 

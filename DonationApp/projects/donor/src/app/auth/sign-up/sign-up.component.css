@@ -4,8 +4,8 @@
 }
 
 .login-clean.login-clean-wide form {
-  max-width: 800px; /* Adjust according to your preference */
-  width: 90%;
+  max-width: 500px; /* Adjust according to your preference */
+  width: 100%;
   margin: 0 auto;
   background-color: #AFF0F2; /* Light Cyan */
   padding: 40px;

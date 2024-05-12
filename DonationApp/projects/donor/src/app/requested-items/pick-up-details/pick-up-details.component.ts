@@ -3,6 +3,7 @@ import {RequestedItemsService} from "../requested-items.service";
 import {ActivatedRoute, Params} from "@angular/router";
 import {RequestedItem} from "../categories/super/RequestedItem.model";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-pick-up-details',
@@ -16,7 +17,8 @@ export class PickUpDetailsComponent implements OnInit{
   constructor(
     private requestedItemsService : RequestedItemsService,
     private route : ActivatedRoute  ,
-    private fb : FormBuilder
+    private fb : FormBuilder ,
+    private toastr : ToastrService
   ) {}
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -40,6 +42,7 @@ export class PickUpDetailsComponent implements OnInit{
   submitPickUpDetails() {
     console.log(this.pickUpForm.value);
     localStorage.setItem("isItemRequested","true");
+    this.toastr.success('Pick up details submitted successfully' , 'Success');
   }
 
 }

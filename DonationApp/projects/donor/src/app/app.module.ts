@@ -104,6 +104,7 @@ import {NotificationsComponent} from "./shared/notifications/notifications.compo
 import { NotificationDetailsComponent } from './shared/notifications/notification-details/notification-details.component';
 import {NgbAlertModule, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { ToastrComponent } from './shared/toastr/toastr.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -165,6 +166,7 @@ import { ToastrComponent } from './shared/toastr/toastr.component';
     NotificationsComponent,
     NotificationDetailsComponent,
     ToastrComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

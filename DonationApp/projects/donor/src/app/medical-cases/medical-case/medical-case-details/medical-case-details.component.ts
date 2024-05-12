@@ -3,6 +3,7 @@ import { MedicalCase } from '../../medical-case.model';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import {MedicalCaseService} from "../../medical-cases.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-medical-case-details',
@@ -17,7 +18,8 @@ export class MedicalCaseDetailsComponent implements OnInit {
   constructor(
     private medicalCaseService: MedicalCaseService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router ,
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class MedicalCaseDetailsComponent implements OnInit {
   }
 
   submitDonation() {
-    // Implement your donation functionality here
+    this.toastr.success('Medical Case fulfilled successfully', 'Success');
+    this.router.navigate(['/medical-cases']);
   }
 }

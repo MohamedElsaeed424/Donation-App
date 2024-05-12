@@ -3,6 +3,8 @@ import Chart, {Color} from 'chart.js/auto';
 import {RegisteredDonorService} from "../Donor/registered-donors/RegisteredDonor.service";
 import {OrganizationService} from "../Organization/registered-organization/RegisteredOrganization.service";
 import {DonorType} from "../Donor/Donor.model";
+import _default from "chart.js/dist/core/core.interaction";
+import x = _default.modes.x;
 
 @Component({
   selector: 'app-pie-chart',
@@ -27,10 +29,11 @@ export class PieChartComponent implements OnInit{
     this.donorService.getDonorsByType(DonorType.donor).length,
     this.orgService.getOrganizations().length
   ];
-  public pieColors: Color[];
-
-  public pieChartBorderWidth: number[] = [1, 1, 1];
-  public pieChartBorderColor: string[] = ['#ffffff', '#ffffff', '#ffffff'];
+  public totalRegistered :number = this.pieChartData.reduce(function (a,b){ return a + b; });
+  public percentages : number[] = this.pieChartData.map((d)=>{
+    return d/this.totalRegistered*100;
+  });
+  public pieChartColors: Color[];
   constructor() {
   }
   ngOnInit(): void {
@@ -43,13 +46,15 @@ export class PieChartComponent implements OnInit{
       data: {
         labels: this.pieChartLabels,
         datasets: [{
-          label: this.pieChartTitle,
-          data: this.pieChartData,
-          backgroundColor: this.pieColors,
+          label: this.pieChartTitle+"%",
+          data: this.percentages,
+          backgroundColor: this.pieChartColors,
           hoverOffset: 4
         }]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: true,
         aspectRatio: 3,
         plugins: {
           title: {
@@ -60,6 +65,7 @@ export class PieChartComponent implements OnInit{
               weight: 'bold',
               family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif"
             },
+
             padding: {
               top: 10,
               bottom: 30
@@ -81,25 +87,6 @@ export class PieChartComponent implements OnInit{
   // Events
   public chartClicked(e: any): void {
     console.log(e);
-  }
-
-  public onChartHover(event: any): void {
-    if (event.active && event.active.length > 0) {
-      // Get the index of the hovered slice
-      const hoveredIndex = event.active[0]._index;
-
-      // Create a copy of the default borderWidth and borderColor arrays to modify only the hovered slice
-      const borderWidthCopy = [...this.pieChartBorderWidth];
-      const borderColorCopy = [...this.pieChartBorderColor];
-
-      // Increase the borderWidth and change borderColor for the hovered slice
-      borderWidthCopy[hoveredIndex] = 5; // Example: Increase the borderWidth
-      borderColorCopy[hoveredIndex] = 'rgba(0, 0, 0, 0.5)'; // Example: Change the borderColor to a darker color
-
-      // Update the borderWidth and borderColor for the hovered slice
-      this.pieChartBorderWidth = borderWidthCopy;
-      this.pieChartBorderColor = borderColorCopy;
-    }
   }
 
 
