@@ -37,6 +37,7 @@ import {MatCard, MatCardContent} from "@angular/material/card";
 import {NotificationsComponent} from "./shared/notifications/notifications.component";
 import {NotificationDetailsComponent} from "./shared/notifications/notification-details/notification-details.component";
 
+import {ToastrModule, ToastrService} from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,10 +76,12 @@ import {NotificationDetailsComponent} from "./shared/notifications/notification-
     MatNativeDateModule,
     MatCardContent,
     MatCard,
+    ToastrModule.forRoot(),
   ],
   providers: [OrganizationSubmissionService,
               RegisteredDonorService,
               provideAnimationsAsync() ,
+
               ],
   bootstrap: [AppComponent]
 })

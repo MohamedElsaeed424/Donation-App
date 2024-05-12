@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {OrganizationSubmissions} from "../../OrganiztionSubmission.model";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {OrganizationSubmissionService} from "../../OrganizationSubmission.service";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../auth/auth.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-edit-post',
@@ -18,7 +19,9 @@ export class EditPostComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private OrganizationSubmissionService: OrganizationSubmissionService,
               private fb: FormBuilder,
-              private authService: AuthService,) {
+              private authService: AuthService,
+              private toaster :ToastrService ,
+              private router : Router) {
   }
 
   ngOnInit() {
@@ -46,6 +49,8 @@ export class EditPostComponent implements OnInit {
       this.postDetails.get('category').value,
       this.postDetails.get('details').value) ;
     this.OrganizationSubmissionService.editPost(this.id,OrganizationSubmission)
+    this.toaster.success('edited successfully.')
   }
+
 
 }

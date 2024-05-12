@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -10,7 +11,10 @@ export class SignUpComponent implements OnInit {
   selectedRole: string;
   OrganizationSignupForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { }
+  constructor(private fb: FormBuilder,
+              private route: ActivatedRoute,
+              private router: Router ,
+              private toaster: ToastrService) { }
 
   ngOnInit(): void {
     this.createOrganizaitonForm();
@@ -55,11 +59,9 @@ export class SignUpComponent implements OnInit {
 
   submitOrgnanizationSignupInfo(): void {
     this.logOrganizationFormAttributes()
+    this.toaster.success('Signed up successfully')
     this.router.navigate(['../login'] , {relativeTo : this.route}) ;
-
   }
-
-
 
 }
 
