@@ -31,6 +31,7 @@
     "@types/nodemailer": "^6.4.15",
     "angular-file-uploader": "^7.1.1",
     "bootstrap": "^5.3.3",
+    "dropbox": "^10.34.0",
     "ngx-material-timepicker": "^13.1.1",
     "ngx-toastr": "^18.0.0",
     "node-fetch": "^3.3.2",
