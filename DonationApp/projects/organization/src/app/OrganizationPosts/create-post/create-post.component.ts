@@ -27,12 +27,15 @@ export class CreatePostComponent implements OnInit{
   @Output() animationTriggered: EventEmitter<any> = new EventEmitter();
 
   triggerAnimation() {
-    this.isAnimating = true;
-    if (this.isAnimating) {
-      // Reset animation when it ends
-      setTimeout(() => this.isAnimating = false, 1300);
+    if(this.postForm.valid){
+      this.isAnimating = true;
+      if (this.isAnimating) {
+        // Reset animation when it ends
+        setTimeout(() => this.isAnimating = false, 1300);
+      }
+      this.animationTriggered.emit();
     }
-    this.animationTriggered.emit();
+
   }
 
   submitForm (){
@@ -40,7 +43,11 @@ export class CreatePostComponent implements OnInit{
       this.authService.currentOrganization,
       this.postForm.get('category').value,
       this.postForm.get('details').value) ;
-    this.toaster.success('post added successfully')
-    this.OrganizationSubmissonService.addPost(OrganizationSubmission)
+    if(this.postForm.valid){
+      this.OrganizationSubmissonService.addPost(OrganizationSubmission) ;
+      this.toaster.success('Post submitted successfully' ,"Success")
+    }else{
+      this.toaster.error('Please fill all the fields' ,"Error")
+    }
   }
 }

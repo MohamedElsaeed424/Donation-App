@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit{
   constructor(private authService :AuthService) {
   }
   ngOnInit() {
-    this.organization = this.authService.currentOrganization
+    this.organization = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')) : null;
   }
   startAnimation() {
     this.isAnimating = true;

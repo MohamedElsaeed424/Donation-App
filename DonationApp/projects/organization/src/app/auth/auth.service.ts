@@ -52,6 +52,7 @@ export class AuthService {
       this.username = username ;
       this.isLoggedIn = true ;
       localStorage.setItem('token', 'your_token_here');
+      localStorage.setItem('currentUser', JSON.stringify(user));
       this.currentOrganization = this.findOrganizationByUsername(this.username)
       console.log(this.username)
       return true;
@@ -60,7 +61,6 @@ export class AuthService {
       return false;
     }
   }
-
   findOrganizationByUsername(username: string): Organization | undefined {
     return this.users.find(org => org.username === username);
   }
@@ -68,6 +68,9 @@ export class AuthService {
   resetPassword(username:string ,password:string){
     const index = this.users.findIndex(user => user.username === username);
     this.users[index].OrganizationRepresentative.password = password;
+  }
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('token');
   }
 
 }

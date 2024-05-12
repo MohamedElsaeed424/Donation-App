@@ -1,5 +1,5 @@
-<app-navbar *ngIf="authService.isLoggedIn"></app-navbar>
-<div style="position: relative;" *ngIf="authService.isLoggedIn">
+<app-navbar *ngIf="authService.isAuthenticated()"></app-navbar>
+<div style="position: relative;" *ngIf="authService.isAuthenticated()">
   <svg xmlns="http://www.w3.org/2000/svg"
        width="30" height="30"
        fill="currentColor"
@@ -19,4 +19,4 @@
   </div>
 </div>
 <router-outlet></router-outlet>
-<app-footer *ngIf="authService.isLoggedIn"></app-footer>
+<app-footer *ngIf="authService.isAuthenticated()"></app-footer>

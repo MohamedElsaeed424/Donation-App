@@ -32,6 +32,8 @@ export class NavbarComponent {
 
   Logout() {
     this.authservice.isLoggedIn = false;
+    localStorage.removeItem('token');
+    localStorage.removeItem('currentUser');
     this.route.navigate(['auth/login'])
   }
 

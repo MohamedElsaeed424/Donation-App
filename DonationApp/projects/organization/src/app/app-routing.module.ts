@@ -17,6 +17,7 @@ import {
   DonorDetailsComponent
 } from "./OrganizationPosts/OrganizationSubmissions/fulfilled-donors/donor-details/donor-details.component";
 import {ShedulingComponent} from "./sheduling/sheduling.component";
+import {AuthGuard} from "./auth/auth.guard";
 
 const routes: Routes = [
   {path: '', redirectTo: '/auth/login', pathMatch: 'full'},
@@ -25,27 +26,28 @@ const routes: Routes = [
       {path: 'signup', component: SignUpComponent},
       {path: 'login', component: LoginComponent}
     ]
-  }, {path: 'Dashboard', component: DashboardComponent}, {
-    path: 'editProfile', component: EditProfileComponent
+  }, {path: 'Dashboard', component: DashboardComponent , canActivate:[AuthGuard]}, {
+    path: 'editProfile', component: EditProfileComponent ,canActivate:[AuthGuard]
   }
   , {
     path: 'posts', children: [
-      {path: 'createPost', component: CreatePostComponent},
+      {path: 'createPost', component: CreatePostComponent ,canActivate:[AuthGuard]},
       {
         path: 'allPosts', children: [
-          {path: '', component: SubmissionsComponent},
-          {path: 'details/:id', component: OrganizationSubmissionDetailsComponent},
-          {path: 'edit/:id', component: EditPostComponent},
+          {path: '', component: SubmissionsComponent ,canActivate:[AuthGuard]},
+          {path: 'details/:id', component: OrganizationSubmissionDetailsComponent ,canActivate:[AuthGuard]},
+          {path: 'edit/:id', component: EditPostComponent,canActivate:[AuthGuard]},
           {
             path: 'Fulfilled-Donors/:id', children: [
-              {path: '', component: FulfilledDonorsComponent},
-              {path: 'donor-details/:id', component: DonorDetailsComponent}
+              {path: '', component: FulfilledDonorsComponent,canActivate:[AuthGuard]},
+              {path: 'donor-details/:id', component: DonorDetailsComponent,canActivate:[AuthGuard]}
             ]
           }
         ]
       }]
   },
-  {path: 'Scheduling', component: ShedulingComponent},
+  {path: 'Scheduling', component: ShedulingComponent,canActivate:[AuthGuard]},
+  {path: '**', redirectTo: 'Dashboard'}
 ];
 
 

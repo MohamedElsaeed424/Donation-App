@@ -41,7 +41,7 @@
           </ul>
         </li>
         <li class="nav-item dropdown" [ngClass]="{ 'show': organizationsDropdownOpen }">
-          <a class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()">Organizations</a>
+          <a class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()" style="cursor: pointer;">Organizations</a>
           <div class="dropdown-menu" [ngClass]="{ 'show': organizationsDropdownOpen }">
             <button class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</button>
           </div>
@@ -61,11 +61,11 @@
               position: absolute;top: 50%;
               transform:translateY(-50%);
               right:10px;
-              background-color: rgba(172,29,22,0.34) ;
+              background-color: rgb(217, 3, 3) ;
               border-radius: 10px;
               padding: 5px;"
             >
-          <a routerLink="" routerLinkActive="active" style="color: #cc0000;" (click)="logout()"><strong>Logout</strong></a>
+          <a routerLink="" routerLinkActive="active" style="color: black; text-decoration: none;" (click)="logout()"><strong>Logout</strong></a>
         </li>
       </ul>
     </ul>

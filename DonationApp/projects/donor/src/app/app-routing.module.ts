@@ -30,6 +30,7 @@ import {
   RegisteredOrganizationDetailsComponent
 } from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {canActivate} from "@angular/fire/auth-guard";
 
 
 const routes: Routes = [
@@ -76,16 +77,15 @@ const routes: Routes = [
   },  {
     path: 'Organizations', children: [
       {
-        path: 'Registered', children: [{
-          path: '', component: RegisteredOrganizationComponent
-        }, {
-          path: ':id', component: RegisteredOrganizationDetailsComponent
-        } ]
+        path: 'Registered', children: [
+          {path: '', component: RegisteredOrganizationComponent, canActivate:[AuthGuard]},
+          {path: ':id', component: RegisteredOrganizationDetailsComponent,canActivate:[AuthGuard]}
+        ]
       },
     ]
   },
   {path: 'manage-account', component: ManageAccountComponent,canActivate:[AuthGuard]},
-  { path: '**', redirectTo: '/Dashboard' }
+  { path: '**', redirectTo: '/Dashboard'}
 ];
 
 @NgModule({

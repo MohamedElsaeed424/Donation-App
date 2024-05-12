@@ -37,10 +37,14 @@
   border-radius: 8px; /* Updated for rounded corners */
   padding: 16px;
   max-width: 250px;
+  max-height: 200px;
   flex-grow: 1; /* Allow cards to fill the space */
   margin-bottom: 16px;
   animation: card-appear 0.5s ease-in-out forwards;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow for better visibility */
+}
+#sched-setter{
+  max-height: none;
 }
 
 .time-slot {
