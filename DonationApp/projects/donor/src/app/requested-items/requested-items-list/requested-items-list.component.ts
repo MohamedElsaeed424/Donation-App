@@ -14,4 +14,10 @@ export class RequestedItemsListComponent implements OnInit {
   ngOnInit(): void {
     this.requestedItems = this.requestItemService.getRequestedItems();
   }
+  get isFilteredEmpty(): boolean {
+    const filteredOrganizations = this.requestedItems.filter(org =>
+      org.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+    return filteredOrganizations.length === 0;
+  }
 }

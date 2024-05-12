@@ -3,6 +3,18 @@
   /*grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); !* Set the grid to have a minimum width of 350px and take up the available space *!*/
   gap: inherit; /* Add some gap between grid items */
 }
+.card{
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  background-color: #AFF0F2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+.card:hover {
+  transform: scale(1.05); /* Increase the size of the card on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Add a larger shadow on hover */
+  background-color: #E0F8F9; /* Change the background color on hover */
+}
 
 .requested-items-grid > div {
   margin-bottom: 20px; /* Add some bottom margin to each item */

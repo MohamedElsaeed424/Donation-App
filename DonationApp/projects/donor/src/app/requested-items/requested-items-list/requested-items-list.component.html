@@ -5,24 +5,31 @@
         <app-search-bar (searchQuery)="searchQuery = $event" [thing]="'Category'"></app-search-bar>
       </div>
     </div>
-    <div class="row text-center requested-items-grid" 
-    style="background-color: #eee; border-radius: 20px; max-width: 1200px; max-height: 900px; margin-left: 200px;">
-  <div class="col-lg-10 offset-lg-1"> <!-- Center content with offset -->
-    <div class="requested-items-grid">
-      <div class="row">
-        <ng-container *ngFor="let requestedItem of requestedItems | categoryFilter: searchQuery; let i = index">
-          <div class="col-lg-4 mb-3" style="transition: all 0.3s ease;"> <!-- Add transition styling -->
-            <app-requested-item
-              [currentRequestedItem]="requestedItem"
-              [currentRequestedItemId]="requestedItem.id"
-              style="width: 100%;"
-            ></app-requested-item>
+    <div class="row text-center requested-items-grid"
+    style="background-color: #eee; border-radius: 20px; max-width: 900px; max-height: 900px; margin-left: 300px;">
+      <div class="col-lg-10 offset-lg-1"> <!-- Center content with offset -->
+        <div class="requested-items-grid">
+          <div class="row">
+            <ng-container *ngFor="let requestedItem of requestedItems | categoryFilter: searchQuery; let i = index">
+              <div class="col-lg-4 mb-3"style="transition: all 0.3s ease;">
+                <app-requested-item
+                  [currentRequestedItem]="requestedItem"
+                  [currentRequestedItemId]="requestedItem.id"
+                  style="width: 100%;"
+                ></app-requested-item>
+              </div>
+            </ng-container>
           </div>
-        </ng-container>
+          <div *ngIf="isFilteredEmpty">
+            <div class="card">
+              <div class="card-body">
+                No organizations found.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
 
   </div>
