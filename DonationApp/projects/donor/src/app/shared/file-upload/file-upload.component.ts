@@ -13,7 +13,7 @@ export class FileUploadComponent {
   loading: boolean = false;
   file: File = null;
   dbx: any; // Dropbox instance
-  accessToken: string = "sl.B1DxJF3hlOxMGC5KyS7xn-j8x2rLul6MjdeInvJr_UVjC4yYiE5m6ZxQqTROqnyCf2DNrhp2CuCGALaKCBrEQHL5ZKhQnhQV9nMmrM7FiBSTbmevE0sGhUaeHFMjUUs6hYf5P94zMLB7VCU"; // Replace with your access token
+  accessToken: string = "sl.B1GKDfRufTGAb-LPXBkJ4sgNEuHBiDDGpLWfMEXmNOV4tMhBHfGV8UzU_F2omwh7vlaT18eh-w_Lnvj9bpD35vJZbp94bhYtek_o102vf5tDf45ulH_scU_OuHrsggzRZPjVG3K59L2DpwJH4AdVaEs"; // Replace with your access token
 
   constructor(
     private toastrService: ToastrService
