@@ -12,6 +12,7 @@ import {ToastrService} from "ngx-toastr";
 })
 export class CreatePostComponent implements OnInit{
   postForm:FormGroup
+  isAnimating: boolean = false;
   constructor(private authService:AuthService,
               private fb:FormBuilder,
               private OrganizationSubmissonService:OrganizationSubmissionService,
@@ -26,6 +27,11 @@ export class CreatePostComponent implements OnInit{
   @Output() animationTriggered: EventEmitter<any> = new EventEmitter();
 
   triggerAnimation() {
+    this.isAnimating = true;
+    if (this.isAnimating) {
+      // Reset animation when it ends
+      setTimeout(() => this.isAnimating = false, 1300);
+    }
     this.animationTriggered.emit();
   }
 
