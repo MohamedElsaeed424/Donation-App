@@ -159,13 +159,24 @@ export class ManageAccountComponent implements OnInit {
           userType
         );
       }
-      localStorage.setItem('currentUser', JSON.stringify(updatedDonor));
-      this.toastr.success('Account updated successfully' , 'Success');
-      console.log('Updated donor saved to local storage:', updatedDonor);
-    }else{
-      this.toastr.error('Please fill all the required fields' , 'Error');
+
+      const originalDonorJson = localStorage.getItem('currentUser');
+      const originalDonor: Donor = originalDonorJson ? JSON.parse(originalDonorJson) : null;
+
+      if (originalDonor && JSON.stringify(originalDonor) === JSON.stringify(updatedDonor)) {
+
+        this.toastr.info('No changes were made to the account.', 'Info');
+      } else {
+        // Changes detected, update localStorage and display success message
+        localStorage.setItem('currentUser', JSON.stringify(updatedDonor));
+        this.toastr.success('Account updated successfully', 'Success');
+        console.log('Updated donor saved to local storage:', updatedDonor);
+      }
+    } else {
+      this.toastr.error('Please fill all the required fields', 'Error');
     }
   }
+
 
 
   deleteAccount(): void {

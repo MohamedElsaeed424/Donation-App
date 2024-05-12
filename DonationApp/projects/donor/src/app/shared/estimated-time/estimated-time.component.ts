@@ -3,6 +3,7 @@ import { interval, Subscription } from 'rxjs';
 import { Notificationn } from '../notifications/notification.model';
 import { NotificationService } from '../notifications/notification.service';
 import { AuthService } from '../../auth/auth.service';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-estimated-time',
@@ -17,7 +18,8 @@ export class EstimatedTimeComponent implements OnInit, OnDestroy {
 
   constructor(
     private authService: AuthService,
-    private notificationService: NotificationService
+    private notificationService: NotificationService ,
+    private toastr : ToastrService ,
   ) {}
 
   ngOnInit(): void {
@@ -41,6 +43,7 @@ export class EstimatedTimeComponent implements OnInit, OnDestroy {
         this.progressInterval.unsubscribe(); // Stop the timer when progress reaches 100%
         this.createNotification(); // Call function to create new notification
         this.notificationService.toggleNotifications(true);
+        this.toastr.info('Delivery Arrived','Info');
       }
     });
   }
