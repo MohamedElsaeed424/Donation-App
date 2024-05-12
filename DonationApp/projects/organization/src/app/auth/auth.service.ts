@@ -40,6 +40,10 @@ export class AuthService {
     return this.users[index].OrganizationRepresentative.password==password ;
   }
 
+  addUser(user:Organization) {
+    this.users.push(user);
+  }
+
   constructor() { }
 
   login(username: string, password: string): boolean {

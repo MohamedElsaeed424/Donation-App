@@ -4,6 +4,7 @@ import {Organization} from "../auth/Organization.model";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {OrganizationRepresentitve} from "../auth/OrganizationRepresentitve";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-Account-management',
@@ -15,7 +16,8 @@ export class EditProfileComponent {
   OrganizationProfile: FormGroup;
   constructor(private authService: AuthService,
               private fb: FormBuilder,
-              private route:Router) {}
+              private route:Router,
+              private toaster :ToastrService ,) {}
 
   ngOnInit(): void {
     this.organization = this.authService.currentOrganization
@@ -75,6 +77,7 @@ export class EditProfileComponent {
         organizationData.contactNumber
       )
     )
+    this.toaster.success('Account updated successfully.');
     this.authService.currentOrganization = updatedOrganization ;
   }
 
