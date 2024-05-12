@@ -56,3 +56,34 @@
 }
 
 
+.notification-item {
+  position: relative; /* Required for absolute positioning */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.notification-item::before {
+  content: "Click to delete"; /* Content to be displayed on hover */
+  position: absolute; /* Position absolutely */
+  top: 0;
+  right: 0%; /* Initially hidden */
+  width: 20%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
+  color: white; /* Text color */
+  display: flex; /* Flex display for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  transition: right 0.3s ease; /* Smooth animation */
+  border-radius: 10px;
+}
+
+.notification-item:hover::before {
+  right: 0; /* Slide in from right on hover */
+}
+
+.notification-item:hover {
+  background-color: #ffcccb; /* Light red background on hover */
+}
+
+
+
