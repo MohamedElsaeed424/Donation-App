@@ -47,6 +47,7 @@ const routes: Routes = [
       }]
   },
   {path: 'Scheduling', component: ShedulingComponent,canActivate:[AuthGuard]},
+  {path: '**', redirectTo: 'Dashboard'}
 ];
 
 
