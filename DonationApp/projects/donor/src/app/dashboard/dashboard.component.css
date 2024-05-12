@@ -153,8 +153,30 @@ body {
   background-color: rgba(28, 155, 142, 0.62)  ;
   animation: slideIn 2s ease forwards;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
+section.personal-info:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+section.right-container:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+/*section:hover{*/
+/*  transform: scale(1.05);*/
+/*  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);*/
+/*  background-color: #E0F8F9;*/
+/*}*/
+
+.right-container:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  background-color: #E0F8F9;
+}
 
 .card-container section h1 {
   text-align: center;
