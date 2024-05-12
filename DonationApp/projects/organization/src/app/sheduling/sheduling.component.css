@@ -7,10 +7,11 @@
 }
 
 .right-cards {
-  flex: 2;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  flex: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust as needed */
+
 }
 
 .card-content {
@@ -32,11 +33,14 @@
 }
 
 .card {
-  background-color: #f2f2f2;
+  background-color: transparent; /* Set background to transparent */
   border-radius: 8px;
   padding: 16px;
-  display: flex;
-  flex-wrap: wrap;
+  max-width: 250px;
+  flex-grow: 1; /* Allow cards to fill the space */
+  margin-bottom: 16px;
+  animation: card-appear 0.5s ease-in-out forwards;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow for better visibility */
 }
 
 .time-slot {
@@ -79,18 +83,4 @@
 .placeholder-button {
   background-color: green;
   color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-  width: 100%;
 }
-
-.placeholder-button:hover {
-  background-color: darkgreen;
-}
-
-

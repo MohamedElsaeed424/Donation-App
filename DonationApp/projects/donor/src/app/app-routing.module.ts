@@ -85,7 +85,7 @@ const routes: Routes = [
     ]
   },
   {path: 'manage-account', component: ManageAccountComponent,canActivate:[AuthGuard]},
-  { path: '**', redirectTo: '/requested-items' }
+  { path: '**', redirectTo: '/Dashboard' }
 ];
 
 @NgModule({
