@@ -1,7 +1,7 @@
-<section class="login-clean rounded-form">
-  <input type="file" (change)="onChange($event)">
-  <button (click)="onUpload()" [disabled]="loading">Upload to Dropbox</button>
-  <div *ngIf="shortLink">
-    <p>Uploaded to: <a [href]="shortLink" target="_blank">{{ shortLink }}</a></p>
+<section class="login-clean rounded-form fancy-login">
+  <input type="file" class="form-control fancy-input" (change)="onChange($event)">
+  <button class="btn-primary fancy-button" (click)="onUpload()" [disabled]="loading">Upload to Dropbox</button>
+  <div *ngIf="shortLink" class="uploaded-link fancy-link">
+    <p style="color: #cff4fc">Uploaded to: <a [href]="shortLink" target="_blank">{{ shortLink }}</a></p>
   </div>
 </section>

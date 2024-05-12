@@ -1,107 +1,52 @@
-.login-clean {
-  background: transparent; /* Dark Teal */
-  padding: 8px 0;
+.fancy-login {
+  background: linear-gradient(145deg, #1c8674, #1c9b8e); /* Gradient between Dark Teal and Dark Cyan */
+  padding: 20px;
+  border-radius: 20px; /* Adjusted border radius */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.login-clean form {
-  max-width: 400px;
-  width: 90%;
-  margin: 0 auto;
-  background-color: #1c8674; /* Light Cyan */
-  padding: 40px;
-  border-radius: 20px;
-  color: #1C9B8E; /* Dark Cyan */
-  box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
-}
-
-.login-clean .illustration {
-  text-align: center;
-  padding: 0 0 20px;
-  font-size: 80px; /* Slightly reduced size */
-  color: #30D9C8; /* Bright Cyan */
-}
-
-.login-clean form .form-control {
-  background: #AFF0F2; /* Light Cyan */
+.fancy-input {
+  background: #f0f0f0; /* Light Gray */
+  text-indent: 12px; /* Slightly increased */
+  border-radius: 12px; /* Reduced border radius */
   border: none;
-  border-bottom: 2px solid #30D9C8; /* Bright Cyan */
-  border-radius: 0;
-  box-shadow: none;
-  outline: none;
-  color: inherit;
-  text-indent: 8px;
-  height: 42px;
+  border-bottom: 2px solid transparent; /* Hide border bottom */
+  transition: all 0.3s ease;
 }
 
-.login-clean form .btn-primary {
-  background: #0a3622; /* Bright Cyan */
+.fancy-input:focus {
+  border-bottom: 2px solid #1c9b8e; /* Dark Cyan */
+}
+
+.fancy-button {
+  background: #1c9b8e; /* Dark Cyan */
   border: none;
-  border-radius: 4px;
-  padding: 10px 20px; /* Reduced padding */
-  box-shadow: none;
-  margin-top: 26px;
-  text-shadow: none;
-  outline: none !important;
+  border-radius: 20px; /* Adjusted border radius */
+  padding: 14px 28px; /* Increased padding */
+  box-shadow: 0px 6px 10px rgba(28, 151, 138, 0.5); /* Soft shadow */
+  margin-top: 20px; /* Reduced margin */
+  color: white; /* Text color */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor */
+  transition: all 0.3s ease;
 }
 
-.login-clean form .btn-primary:hover, .login-clean form .btn-primary:active {
-  background: #043B38; /* Dark Teal */
+.fancy-button:hover {
+  background: #1c8674; /* Dark Teal */
+  transform: translateY(-3px);
 }
 
-.login-clean form .btn-primary:active {
-  transform: translateY(1px);
-}
-
-.login-clean form .forgot {
-  display: block;
+.fancy-link {
   text-align: center;
-  font-size: 12px;
-  color: #1C9B8E; /* Dark Cyan */
-  opacity: 0.9;
+  margin-top: 20px;
+}
+
+.fancy-link a {
+  color: #0a3622; /* Dark Cyan */
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.login-clean form .forgot:hover, .login-clean form .forgot:active {
-  opacity: 1;
-  text-decoration: none;
-}
-
-input[type="text"], input[type="email"], input[type="tel"], textarea {
-  border-radius: 0 !important;
-}
-
-input[type="text"], input[type="email"], input[type="tel"], textarea {
-  border-radius: 8px !important;
-}
-
-.btn-primary:hover {
-  color: #0a3622;
-  background-color: #1C9B8E; /* Dark Cyan */
-  border-color: #1C9B8E; /* Dark Cyan */
-  box-shadow: 0px 10px 15px rgba(0,0,0,0.4);
-}
-
-.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
-  color: #fff;
-  background-color: #1C9B8E; /* Dark Cyan */
-  border-color: #1C9B8E; /* Dark Cyan */
-}
-
-.rounded-image {
-  border-radius: 20px; /* Adjust the value to control the roundness of the corners */
-}
-
-
-.rounded-form {
-  border-radius: 10px; /* Adjust the value to control the roundness of the corners */
-}
-
-*, ::after, ::before {
-  box-sizing: border-box;
-}
-
-@media (max-width: 768px) {
-  .login-clean form {
-    max-width: 100%;
-  }
+.fancy-link a:hover {
+  color: #30d9c8; /* Bright Cyan */
 }
