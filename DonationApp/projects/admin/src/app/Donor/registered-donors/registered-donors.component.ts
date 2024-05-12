@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Donor} from "../Donor.model";
 import {RegisteredDonorService} from "./RegisteredDonor.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-registered-donors',
@@ -10,7 +11,8 @@ import {RegisteredDonorService} from "./RegisteredDonor.service";
 export class RegisteredDonorsComponent implements OnInit{
   Donors : Donor[] ;
   searchTerm : string = '';
-  constructor(private RegisteredDonorService: RegisteredDonorService ) {
+  constructor(private RegisteredDonorService: RegisteredDonorService ,
+              private toaster:ToastrService) {
   }
   ngOnInit(): void {
     this.Donors = this.RegisteredDonorService.getDonors() ;
@@ -21,6 +23,8 @@ export class RegisteredDonorsComponent implements OnInit{
   }
 
   deleteDonor(i:number){
+    const donor = this.RegisteredDonorService.getDonorByIndex(i)
+    this.toaster.success(donor.name + ' has been deleted.');
     this.RegisteredDonorService.deleteDonor(i) ;
   }
 

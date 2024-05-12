@@ -6,6 +6,7 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import {Router} from "@angular/router";
 import {AuthService} from "../../login/services/auth.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-donor-submissions',
@@ -18,7 +19,8 @@ export class DonorSubmissionsComponent implements OnInit {
 
   constructor(private donorSubmissionsService: DonorSubmissionsService ,
               private route:Router ,
-              private authservice:AuthService) {
+              private authservice:AuthService,
+              private  toaster:ToastrService) {
   }
 
   ngOnInit(): void {
@@ -26,10 +28,14 @@ export class DonorSubmissionsComponent implements OnInit {
   }
 
   acceptSubmission(i: number) {
+    const submission = this.donorSubmissionsService.getDonorsSubmissions()[i]
+    this.toaster.success(submission.Donor.name + " submission has been accepted.");
     this.donorSubmissionsService.acceptSubmission(i)
   }
 
   rejectSubmission(i: number) {
+    const submission = this.donorSubmissionsService.getDonorsSubmissions()[i]
+    this.toaster.success(submission.Donor.name +" submission has been rejected.");
     this.donorSubmissionsService.rejectSubmission(i)
   }
 
@@ -80,6 +86,7 @@ export class DonorSubmissionsComponent implements OnInit {
     };
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
     pdfMake.createPdf(documentDefinition).download(Submission.Donor.name + " Submission");
+    this.toaster.success(Submission.Donor.name + " submission has been downloaded successfully.");
   }
 
 }

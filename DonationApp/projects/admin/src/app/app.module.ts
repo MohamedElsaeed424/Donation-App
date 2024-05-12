@@ -39,11 +39,14 @@ import {
 } from './Organization/OrganizationSubmissions/organization-submission-details/organization-submission-details.component';
 import {DonorSubmissionsComponent} from './Donor/donor-submissions/donor-submissions.component';
 import {DonorSubmissionsService} from "./Donor/donor-submissions/services/DonorSubmissions.service";
-import { DonorsSubmissionDetailsComponent } from './Donor/donor-submissions/donors-submission-details/donors-submission-details.component';
-import { PieChartComponent } from './pie-chart/pie-chart.component';
+import {
+  DonorsSubmissionDetailsComponent
+} from './Donor/donor-submissions/donors-submission-details/donors-submission-details.component';
+import {PieChartComponent} from './pie-chart/pie-chart.component';
 // import { ChartsModule } from 'ng2-charts';
 import {BaseChartDirective} from "ng2-charts";
-import {ToastrService} from "ngx-toastr";
+import {ToastrModule, ToastrService} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -69,27 +72,28 @@ import {ToastrService} from "ngx-toastr";
     DonorsSubmissionDetailsComponent,
     PieChartComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        NgOptimizedImage,
-        FormsModule,
-        ReactiveFormsModule,
-        BaseChartDirective,
-        // ChartsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgOptimizedImage,
+    FormsModule,
+    ReactiveFormsModule,
+    BaseChartDirective,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+    // ChartsModule
+  ],
   providers: [OrganizationService,
     RegisteredDonorService,
     OrganizationPendingRequestService,
     DonorsPendingRequestService,
     OrganizationSubmissionService,
     DonorSubmissionsService,
-    ToastrService
   ],
-    exports: [
-        LoginComponent,
-        SubmissionsComponent
-    ],
+  exports: [
+    LoginComponent,
+    SubmissionsComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
