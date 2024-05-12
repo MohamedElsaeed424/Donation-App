@@ -27,6 +27,7 @@
       <button (click)="triggerAnimation()" [disabled]="!postForm.valid"  type="submit">submit</button>
     </div>
   </form>
+    <span id="airplane" *ngIf="isAnimating" class="animate"></span>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.9/angular.min.js"></script>

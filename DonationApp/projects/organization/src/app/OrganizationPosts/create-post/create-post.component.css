@@ -74,4 +74,27 @@ button[type="submit"]:hover {
 .fade-in {
   animation: fadeIn 0.5s;
 }
-
+#airplane{
+  position: absolute;
+  top: 287px;
+  right: 320px;
+  width: 89px;
+  height: 50px;
+  background-image: url("/assets/airplane.png");
+  background-size: cover; /* Cover the entire container */
+  background-position: center;
+}
+.animate{
+  animation: animate 1.3s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(-130deg) translate(-120px);
+  }
+  50%{
+    transform: rotate(-170deg) translate(180px);
+  }
+  100% {
+    transform: rotate(-155deg) translate(800px);
+  }
+}
