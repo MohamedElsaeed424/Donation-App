@@ -4,6 +4,7 @@
 }
 .navbar{
   background: linear-gradient(101deg, #043b38 0%, #30d9c8), rgb(17, 124, 88);
+  width: 1475px;
 }
 .nav-link{
   color: white !important;
