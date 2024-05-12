@@ -38,8 +38,10 @@ export class RegisteredOrganizationComponent implements OnInit {
   }
 
   deleteOrganization(i: number) {
+    const organization =  this.OrganizationService.getOrganizations()[i]
+    this.toaster.success(  organization.name+' has been deleted successfully.');
     this.OrganizationService.deleteOrganization(i)
-    this.toaster.success( 'Organization has been deleted successfully.');
+
   }
 
   NavigateToOrganizationDetails(i: number) {
