@@ -15,7 +15,7 @@
 .icon-button:hover {
   cursor: pointer;
   /*background: #; !* Change background color on hover *!*/
-  box-shadow: #20c997 0px 0px 10px;
+  box-shadow: #000000 0px 0px 10px;
   border-radius: 10px; /* Make the button circular */
 }
 
