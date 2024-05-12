@@ -29,7 +29,7 @@ export class NavbarComponent {
     this.categoriesDropdownOpen = false;
   }
   LoadRegisteredOrganizations(){
-    this.router.navigate(['/Organizations/Registered'],{queryParams: {username: this.authService.currentUser.userName}})
+    this.router.navigate(['/Organizations/Registered'])
     this.closeAllDropdowns()
   }
 

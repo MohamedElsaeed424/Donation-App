@@ -37,11 +37,8 @@ export class RegisteredOrganizationComponent implements OnInit {
     return filteredOrganizations.length === 0;
   }
 
-  deleteOrganization(i: number) {
-    this.OrganizationService.deleteOrganization(i)
-  }
 
   NavigateToOrganizationDetails(i: number) {
-    this.route.navigate(['/Organizations/Registered', i], {queryParams: {username: this.authservice.currentUser.userName}})
+    this.route.navigate(['/Organizations/Registered', i])
   }
 }

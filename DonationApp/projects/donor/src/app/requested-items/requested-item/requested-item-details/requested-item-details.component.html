@@ -3,28 +3,35 @@
     <div class="col-md-6" style="margin-top:1.9cm;">
       <div class="card rounded-3 shadow-lg request-card">
         <div class="card-body">
-          <h2 class="card-title mb-3">{{currentRequestedItem.name}}</h2>
-          <p class="card-text"><strong>Requested At:</strong> {{currentRequestedItem.date}}</p>
-          <p class="card-text">{{currentRequestedItem.description}}</p>
-          <p class="card-text"><strong>Category:</strong> {{currentRequestedItem.category}}</p>
-          <p class="card-text"><strong>Quantity:</strong> {{currentRequestedItem.quantity}}</p>
-          <p class="card-text"><strong>Status:</strong> {{currentRequestedItem.status}}</p>
-          <p class="card-text"><strong>User:</strong> {{currentRequestedItem.userName}}</p>
-          <p class="card-text"><strong>User Contact:</strong> {{currentRequestedItem.userContact}}</p>
-          <p class="card-text"><strong>Location:</strong> {{currentRequestedItem.location}}</p>
-          <ng-container *ngIf="currentRequestedItem">
-            <app-books-details *ngIf="currentRequestedItem.category === ItemCategory.Books" [book]="currentRequestedItem"></app-books-details>
-            <app-clothes-details *ngIf="currentRequestedItem.category === ItemCategory.Clothes" [clothes]="currentRequestedItem"></app-clothes-details>
-            <app-food-details *ngIf="currentRequestedItem.category === ItemCategory.Food" [food]="currentRequestedItem"></app-food-details>
-            <app-medical-supplies-details *ngIf="currentRequestedItem.category === ItemCategory.MedicalSupplies" [medicalSupply]="currentRequestedItem"></app-medical-supplies-details>
-            <app-blood-donation-details *ngIf="currentRequestedItem.category === ItemCategory.BloodDonation" [bloodDonation]="currentRequestedItem"></app-blood-donation-details>
-            <app-school-supplies-details *ngIf="currentRequestedItem.category === ItemCategory.SchoolSupplies" [school]="currentRequestedItem"></app-school-supplies-details>
-            <app-toys-details *ngIf="currentRequestedItem.category === ItemCategory.Toys" [toy]="currentRequestedItem"></app-toys-details>
-          </ng-container>
-          <div class="quantity-selection" style="margin-top: 1cm; margin-left: 3cm ;">
-            <label for="quantity" class="label card-text"><strong>Donation Quantity:</strong></label>
-            <input type="number" id="quantity" [(ngModel)]="selectedQuantity" class="input" min="1">
-            <button (click)="submitDonation()" class="button" style="margin-left: 5px">Donate</button>
+          <div class="row">
+            <div class="col-md-6">
+              <h2 class="card-title mb-3">{{currentRequestedItem.name}}</h2>
+              <p class="card-text"><strong>Requested At:</strong> {{currentRequestedItem.date}}</p>
+              <p class="card-text">{{currentRequestedItem.description}}</p>
+              <p class="card-text"><strong>Category:</strong> {{currentRequestedItem.category}}</p>
+              <p class="card-text"><strong>Quantity:</strong> {{currentRequestedItem.quantity}}</p>
+              <p class="card-text"><strong>Status:</strong> {{currentRequestedItem.status}}</p>
+              <p class="card-text"><strong>User:</strong> {{currentRequestedItem.userName}}</p>
+              <p class="card-text"><strong>User Contact:</strong> {{currentRequestedItem.userContact}}</p>
+              <p class="card-text"><strong>Location:</strong> {{currentRequestedItem.location}}</p>
+              <ng-container *ngIf="currentRequestedItem">
+                <app-books-details *ngIf="currentRequestedItem.category === ItemCategory.Books" [book]="currentRequestedItem"></app-books-details>
+                <app-clothes-details *ngIf="currentRequestedItem.category === ItemCategory.Clothes" [clothes]="currentRequestedItem"></app-clothes-details>
+                <app-food-details *ngIf="currentRequestedItem.category === ItemCategory.Food" [food]="currentRequestedItem"></app-food-details>
+                <app-medical-supplies-details *ngIf="currentRequestedItem.category === ItemCategory.MedicalSupplies" [medicalSupply]="currentRequestedItem"></app-medical-supplies-details>
+                <app-blood-donation-details *ngIf="currentRequestedItem.category === ItemCategory.BloodDonation" [bloodDonation]="currentRequestedItem"></app-blood-donation-details>
+                <app-school-supplies-details *ngIf="currentRequestedItem.category === ItemCategory.SchoolSupplies" [school]="currentRequestedItem"></app-school-supplies-details>
+                <app-toys-details *ngIf="currentRequestedItem.category === ItemCategory.Toys" [toy]="currentRequestedItem"></app-toys-details>
+              </ng-container>
+              <div class="quantity-selection" style="margin-top: 1cm;">
+                <label for="quantity" class="label card-text"><strong>Donation Quantity:</strong></label>
+                <input type="number" id="quantity" [(ngModel)]="selectedQuantity" class="input" min="1">
+                <button (click)="submitDonation()" class="button" style="margin-left: 5px">Donate</button>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <img src="/assets/books.jpg" alt="Your Image" class="card-image">
+            </div>
           </div>
         </div>
       </div>
