@@ -15,16 +15,23 @@
   <div class="col-lg-12">
     <div class="requested-items-grid" >
       <div class="row">
-        <ng-container 
+        <ng-container
           *ngFor="let requestedItem of requestedItemsCategory | clothesFilter: searchQuery1 : searchQuery2 : searchQuery3 ;
           let i = index">
           <div class="col-lg-8 mb-3">
-            <app-requested-item 
+            <app-requested-item
               [currentRequestedItem]="requestedItem"
               [currentRequestedItemId]="requestedItem.id"
             ></app-requested-item>
           </div>
         </ng-container>
+      </div>
+    </div>
+    <div *ngIf="isFilteredEmpty">
+      <div class="card">
+        <div class="card-body">
+          No Clothes found.
+        </div>
       </div>
     </div>
   </div>

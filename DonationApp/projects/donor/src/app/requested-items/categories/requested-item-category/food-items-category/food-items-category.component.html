@@ -18,5 +18,12 @@
         </ng-container>
       </div>
     </div>
+    <div *ngIf="isFilteredEmpty">
+      <div class="card">
+        <div class="card-body">
+          No Food found.
+        </div>
+      </div>
+    </div>
   </div>
 </div>

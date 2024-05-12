@@ -10,4 +10,11 @@ import { RequestedItem } from '../../super/RequestedItem.model';
 export class FoodItemsCategoryComponent {
   @Input()  requestedItemsCategory : RequestedItem [] ;
   searchQuery1: string = '';
+  get isFilteredEmpty(): boolean {
+    const filteredOrganizations = this.requestedItemsCategory.filter(org =>
+      org.name.toLowerCase().includes(this.searchQuery1.toLowerCase()
+        )
+    );
+    return filteredOrganizations.length === 0;
+  }
 }
