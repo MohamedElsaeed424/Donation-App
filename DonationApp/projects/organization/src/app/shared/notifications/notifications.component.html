@@ -8,6 +8,7 @@
         class="notification-item"
       ></app-notification-details>
     </div>
-    <button (click)="clearNotifications()" class="clear-button">Clear Notifications</button>
+    <button *ngIf="notifications.length!=0" (click)="clearNotifications()" class="clear-button">Clear Notifications</button>
+    <h1 style="text-align: center" *ngIf="notifications.length==0"> No Notifications </h1>
   </div>
 </section>

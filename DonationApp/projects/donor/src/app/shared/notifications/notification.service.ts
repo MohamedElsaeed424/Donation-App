@@ -25,7 +25,6 @@ export class NotificationService {
   public notificationsSubject = new BehaviorSubject<Notificationn[]>(this.notifications);
   showNotifications$ = this.showNotificationsSource.asObservable();
   constructor() {
-    this.addRandomNotificationEveryMinute();
   }
 
   getNotifications(): Notificationn[] {
@@ -49,27 +48,4 @@ export class NotificationService {
     this.notificationsSubject.next([]);
   }
 
-  addRandomNotificationEveryMinute(): void {
-    // Use interval to trigger adding a notification every minute
-    interval(60000) // 60000 milliseconds = 1 minute
-      .subscribe(() => {
-        // Create a random notification
-        const randomNotification = this.generateRandomNotification();
-
-        // Add the random notification to the list
-        this.addNotification(randomNotification);
-      });
-  }
-
-  generateRandomNotification(): Notificationn {
-    // Generate random values for the notification
-    const id = this.notifications.length + 1;
-    const titles = ['Donation Received', 'Donation Request Approved', 'post fulfilled'];
-    const details = [ 'Your request for a donation of post has been fulfilled'];
-    const randomIndex = Math.floor(Math.random() * titles.length);
-    const date = new Date();
-
-    // Create a new Notificationn instance with the random values
-    return new Notificationn(id, titles[randomIndex], details[randomIndex], date.toTimeString(), date.toISOString().split('T')[0]);
-  }
 }
