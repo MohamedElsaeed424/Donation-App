@@ -1,14 +1,12 @@
-<div class="row" >
+<div class="row">
   <div class="row-cols-lg-auto">
     <div class="row" style="margin-bottom: 20px; max-width: 400px; margin-left: 450px;border-radius: 15px; margin-top: 20px;">
       <div class="col-lg-12 text-center">
         <app-search-bar (searchQuery)="searchQuery = $event" [thing]="'Category'"></app-search-bar>
       </div>
-    </div>
-    <div class="row text-center requested-items-grid"
-    style="background-color: #eee; border-radius: 20px; max-width: 900px; max-height: 900px; margin-left: 300px;">
+    </div>  
       <div class="col-lg-10 offset-lg-1"> <!-- Center content with offset -->
-        <div class="requested-items-grid">
+        <div class="requested-items-grid" style="margin-left: -150px;">
           <div class="row">
             <ng-container *ngFor="let requestedItem of requestedItems | categoryFilter: searchQuery; let i = index">
               <div class="col-lg-4 mb-3"style="transition: all 0.3s ease;">
@@ -29,7 +27,7 @@
           </div>
         </div>
       </div>
-    </div>
+    
 
 
   </div>
