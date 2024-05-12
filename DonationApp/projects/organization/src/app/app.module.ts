@@ -38,25 +38,27 @@ import {NotificationsComponent} from "./shared/notifications/notifications.compo
 import {NotificationDetailsComponent} from "./shared/notifications/notification-details/notification-details.component";
 
 import {ToastrModule, ToastrService} from 'ngx-toastr';
+import {FileUploadComponent} from "./shared/file-upload/file-upload.component";
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    SignUpComponent,
-    NavbarComponent,
-    FooterComponent,
-    DashboardComponent,
-    CreatePostComponent,
-    EditProfileComponent,
-    SubmissionsComponent,
-    OrganizationSubmissionDetailsComponent,
-    EditPostComponent,
-    FulfilledDonorsComponent,
-    DonorDetailsComponent,
-    ShedulingComponent,
-    NotificationsComponent ,
-    NotificationDetailsComponent
-  ],
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        SignUpComponent,
+        NavbarComponent,
+        FooterComponent,
+        DashboardComponent,
+        CreatePostComponent,
+        EditProfileComponent,
+        SubmissionsComponent,
+        OrganizationSubmissionDetailsComponent,
+        EditPostComponent,
+        FulfilledDonorsComponent,
+        DonorDetailsComponent,
+        ShedulingComponent,
+        NotificationsComponent,
+        NotificationDetailsComponent,
+        FileUploadComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
