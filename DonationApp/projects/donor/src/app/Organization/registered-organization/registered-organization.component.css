@@ -23,9 +23,16 @@
 
 .card {
   margin-bottom: 1rem;
-  border-radius: 40px;
+  border-radius: 20px;
   background-color: #AFF0F2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Increase the size of the card on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Add a larger shadow on hover */
+  background-color: #E0F8F9; /* Change the background color on hover */
 }
 
 .card-title {
@@ -41,12 +48,12 @@
 }
 
 .btn-primary {
-  background-color: #ff0000;
+  background-color: #2eff00;
   border-color: #ff0000;
 }
 
 .btn-primary-view {
-  background-color: #808080;
+  background-color: #37702a;
   border-color: #000000;
   margin-left: 10px;
   margin-right: 10px;
@@ -56,8 +63,8 @@
 .btn-primary:focus,
 .btn-primary-view:hover,
 .btn-primary-view:focus {
-  background-color: #cc0000;
-  border-color: #cc0000;
+  background-color: #37702a;
+  border-color: #37702a;
 }
 
 #kk {
