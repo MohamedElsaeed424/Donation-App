@@ -3,6 +3,7 @@ import { RequestedItem } from "../../categories/super/RequestedItem.model";
 import { RequestedItemsService } from "../../requested-items.service";
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import {ItemCategory} from "../../categories/categories-models/all-categories.enum";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-requested-item-details',
@@ -18,6 +19,7 @@ export class RequestedItemDetailsComponent implements OnInit {
     private requestItemService: RequestedItemsService,
     private route: ActivatedRoute,
     private router: Router,
+
   ) {
     console.log('RequestedItemDetailsComponent constructor');
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TeachingPost} from "../../teaching-post.model";
 import {TeachingPostService} from "../../teaching-posts.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 
 @Component({
@@ -17,6 +18,7 @@ export class TeachingPostDetailsComponent implements OnInit {
     private teachingPostService: TeachingPostService,
     private route: ActivatedRoute,
     private router: Router,
+    private toastr: ToastrService
   ) {
     console.log('TeachingPostDetailsComponent constructor');
   }
@@ -28,6 +30,7 @@ export class TeachingPostDetailsComponent implements OnInit {
     });
   }
   submitDonation(){
-
+    this.toastr.success('Teaching Post fulfilled successfully' ,'Success');
+    this.router.navigate(['/teaching-posts']);
   }
 }
