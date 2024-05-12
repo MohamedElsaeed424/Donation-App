@@ -5,8 +5,10 @@
         <app-search-bar (searchQuery)="searchQuery = $event" [thing]="'Category'"></app-search-bar>
       </div>
     </div>  
+    <div class="row text-center requested-items-grid"
+    style="background-color: #eee; border-radius: 20px; max-width: 1200px; max-height: 900px; margin-left: 150px;">
       <div class="col-lg-10 offset-lg-1"> <!-- Center content with offset -->
-        <div class="requested-items-grid" style="margin-left: -150px;">
+        <div class="requested-items-grid" style="margin-left: -170px;">
           <div class="row">
             <ng-container *ngFor="let requestedItem of requestedItems | categoryFilter: searchQuery; let i = index">
               <div class="col-lg-4 mb-3"style="transition: all 0.3s ease;">
@@ -27,7 +29,7 @@
           </div>
         </div>
       </div>
-    
+    </div>
 
 
   </div>
