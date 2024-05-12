@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../auth/auth.service";
 import {OrganizationSubmissionService} from "../OrganizationSubmission.service";
@@ -23,7 +23,11 @@ export class CreatePostComponent implements OnInit{
       details:['', Validators.required]
     })
   }
+  @Output() animationTriggered: EventEmitter<any> = new EventEmitter();
 
+  triggerAnimation() {
+    this.animationTriggered.emit();
+  }
 
   submitForm (){
     const OrganizationSubmission= new OrganizationSubmissions(

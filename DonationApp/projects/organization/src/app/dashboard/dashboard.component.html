@@ -37,13 +37,15 @@
         <p>{{ organization.OrganizationRepresentative.contactNumber }}</p>
       </div>
       <div class="content-item">
-        <button class="btn btn-primary-acc" routerLink='/editProfile'>Edit Profile</button>      </div>
+        <button class="btn btn-primary-acc" routerLink='/editProfile'>Edit Profile</button>
+      </div>
     </div>
   </div>
   <div class="card">
-    <app-create-post></app-create-post>
+    <app-create-post (animationTriggered)="startAnimation()" ></app-create-post>
 <!--    <div id="paper-airplane" hidden="hidden"></div>-->
   </div>
 </div>
+<span id="airplane" *ngIf="isAnimating" class="animate"></span>
 </body>
 </html>
