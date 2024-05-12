@@ -40,6 +40,9 @@ import {
 import {DonorSubmissionsComponent} from './Donor/donor-submissions/donor-submissions.component';
 import {DonorSubmissionsService} from "./Donor/donor-submissions/services/DonorSubmissions.service";
 import { DonorsSubmissionDetailsComponent } from './Donor/donor-submissions/donors-submission-details/donors-submission-details.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
+// import { ChartsModule } from 'ng2-charts';
+import {BaseChartDirective} from "ng2-charts";
 
 @NgModule({
   declarations: [
@@ -63,14 +66,17 @@ import { DonorsSubmissionDetailsComponent } from './Donor/donor-submissions/dono
     OrganizationSubmissionDetailsComponent,
     DonorSubmissionsComponent,
     DonorsSubmissionDetailsComponent,
+    PieChartComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgOptimizedImage,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgOptimizedImage,
+        FormsModule,
+        ReactiveFormsModule,
+        BaseChartDirective,
+        // ChartsModule
+    ],
   providers: [OrganizationService,
     RegisteredDonorService,
     OrganizationPendingRequestService,

@@ -40,6 +40,9 @@ export class RegisteredDonorService {
   getDonors() {
     return this.donors;
   }
+  getDonorsByType(type: DonorType) {
+    return this.donors.filter(donor => donor.type === type);
+  }
 
   getDonorByIndex(index: number) {
     return this.donors[index];

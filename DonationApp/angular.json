@@ -32,7 +32,13 @@
             "tsConfig": "projects/donor/tsconfig.app.json",
             "assets": [
               "projects/donor/src/favicon.ico",
-              "projects/donor/src/assets"
+              "projects/donor/src/assets",
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "DonationApp/projects/organization/src/assets/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
               "projects/donor/src/styles.css" ,

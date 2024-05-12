@@ -57,3 +57,33 @@ body {
     transform: translateY(0);
   }
 }
+/*#paper-airplane {*/
+/*  width: 50px;*/
+/*  height: 50px;*/
+/*  background-image: url('paper-airplane.png');*/
+/*  background-size: cover;*/
+/*  position: absolute;*/
+/*  top: 50%;*/
+/*  left: 0;*/
+/*  transition: transform 2s ease;*/
+/*  animation: fly 5s linear infinite;*/
+/*  visibility: hidden;*/
+/*}*/
+
+/*@keyframes fly {*/
+/*  0% {*/
+/*    transform: translateX(0);*/
+/*    visibility: visible;*/
+/*  }*/
+/*  50% {*/
+/*    transform: translateX(50vw) translateY(-50%);*/
+/*  }*/
+/*  100% {*/
+/*    transform: translateX(100vw) translateY(0);*/
+/*    visibility: hidden;*/
+/*  }*/
+/*}*/
+
+/*#nav-item:hover #paper-airplane {*/
+/*  transform: scale(0);*/
+/*}*/

@@ -32,6 +32,8 @@
     "angular-file-uploader": "^7.1.1",
     "bootstrap": "^5.3.3",
     "dropbox": "^10.34.0",
+    "chart.js": "^4.4.2",
+    "ng2-charts": "^6.0.1",
     "ngx-material-timepicker": "^13.1.1",
     "ngx-toastr": "^18.0.0",
     "node-fetch": "^3.3.2",
