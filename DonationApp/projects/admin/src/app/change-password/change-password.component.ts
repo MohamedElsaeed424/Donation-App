@@ -15,7 +15,8 @@ export class ChangePasswordComponent implements OnInit {
   changePasswordForm: FormGroup
 
   constructor(private authservice: AuthService,
-              private toaster:ToastrService) {
+              private toaster:ToastrService
+  ) {
   }
 
   ngOnInit(): void {
@@ -33,7 +34,7 @@ export class ChangePasswordComponent implements OnInit {
       this.toaster.success("Password changed successfully.")
     }
     else {
-      this.toaster.error("Invalid password")
+      this.toaster.error("Invalid old password")
     }
   }
 
