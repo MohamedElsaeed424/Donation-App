@@ -3,6 +3,7 @@ import {AuthService} from "../auth.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {DonorService} from "../../Donors/donors.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-login',
@@ -24,18 +25,20 @@ export class LoginComponent implements OnInit{
     private authService: AuthService ,
     private donorService :DonorService,
     private router : Router ,
-    private route : ActivatedRoute) { }
+    private route : ActivatedRoute ,
+    private tostr : ToastrService) { }
 
   login() {
     let username = this.signInFrom.get('username').value
     let password = this.signInFrom.get('password').value
-    const isAuthenticated = this.authService.login(username,password);
+    const isAuthenticated:boolean = this.authService.login(username,password);
     if (isAuthenticated) {
       this.authService.currentUser = this.donorService.getDonorById(username);
-      this.redirectTo('/requested-items') ;
+      this.redirectTo('/Dashboard') ;
     } else {
+      this.tostr.error('Login with correct username or password' , 'Error');
       this.isValid = false ;
-      this.redirectTo('/login') ;
+      this.redirectTo('/auth/login') ;
     }
   }
 

@@ -27,7 +27,8 @@ export class AuthService{
 
   login(username: string, password: string): boolean {
     const user = this.users.find(u => u.userName === username && u.password === password);
-    if (user) {
+    if (user !== undefined){
+      console.log(user);
       localStorage.setItem('token', 'your_token_here');
       localStorage.setItem('currentUser', JSON.stringify(user));
       localStorage.setItem('userType', user.type.toString());

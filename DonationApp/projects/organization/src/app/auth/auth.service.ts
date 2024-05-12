@@ -51,6 +51,7 @@ export class AuthService {
     if (user) {
       this.username = username ;
       this.isLoggedIn = true ;
+      localStorage.setItem('token', 'your_token_here');
       this.currentOrganization = this.findOrganizationByUsername(this.username)
       console.log(this.username)
       return true;
