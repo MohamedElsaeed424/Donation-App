@@ -24,6 +24,24 @@ export class TimeSLotsService {
     return this.timeSlots
   }
 
+  isSlotUnique(slot: Slot): boolean {
+    // Iterate through existing time slots
+    for (const existingSlot of this.timeSlots) {
+      // Compare date and time
+      if (
+        existingSlot.date === slot.date &&
+        existingSlot.startTime === slot.startTime &&
+        existingSlot.endTime === slot.endTime
+      ) {
+        // Slot is not unique
+        return false;
+      }
+    }
+    // Slot is unique
+    return true;
+  }
+
+
 }
 
 

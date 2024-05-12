@@ -1,6 +1,6 @@
-
-#container0 {
-  margin-top: 20px;
+/* Custom styles can be added here */
+body {
+  background-color: #f8f9fa;
 }
 
 .card {
@@ -40,13 +40,4 @@
 .card.representative .card-header {
   background-color: #343a40;
   color: #fff;
-}
-
-/* New styles */
-body {
-  background-color: #f8f9fa;
-}
-
-.card {
-  border: none;
 }

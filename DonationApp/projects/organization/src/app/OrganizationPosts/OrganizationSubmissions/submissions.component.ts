@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {AuthService} from "../../auth/auth.service";
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-OrganizationSubmissions',
@@ -16,7 +17,8 @@ export class SubmissionsComponent implements OnInit {
 
   constructor(private OrganizationSubmissionsService: OrganizationSubmissionService,
               private route: Router,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private toaster: ToastrService) {
   }
 
   ngOnInit() {
@@ -26,6 +28,7 @@ export class SubmissionsComponent implements OnInit {
   dele
 
   rejectSubmission(i: number) {
+    this.toaster.success('submission deleted successfully.');
     this.OrganizationSubmissionsService.deletePost(i)
   }
 
@@ -43,7 +46,7 @@ export class SubmissionsComponent implements OnInit {
     return itemCategory === 'medical supplies' || itemCategory === 'school supplies' || itemCategory === 'blood donation';
   }
 
-  NavigateToDonors(i:number){
+  NavigateToDonors(i: number) {
     this.route.navigate(['/posts/allPosts/Fulfilled-Donors', i], {queryParams: {username: this.authService.username}})
   }
 
