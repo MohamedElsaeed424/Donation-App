@@ -4,6 +4,7 @@ import {Organization} from "../Organization.model";
 import {OrganizationFilterPipe} from "../organization-filter.pipe";
 import {Router} from "@angular/router";
 import {AuthService} from "../../login/services/auth.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-registered-organization',
@@ -19,8 +20,8 @@ export class RegisteredOrganizationComponent implements OnInit {
 
   constructor(private OrganizationService: OrganizationService,
               private route: Router,
-              private authservice: AuthService) {
-  }
+              private authservice: AuthService,
+              private toaster: ToastrService){}
 
   ngOnInit(): void {
     this.Organizations = this.OrganizationService.getOrganizations();
@@ -38,6 +39,7 @@ export class RegisteredOrganizationComponent implements OnInit {
 
   deleteOrganization(i: number) {
     this.OrganizationService.deleteOrganization(i)
+    this.toaster.success( 'Organization has been deleted successfully.');
   }
 
   NavigateToOrganizationDetails(i: number) {
