@@ -29,9 +29,12 @@ import {
 import {
   RegisteredOrganizationDetailsComponent
 } from "./Organization/registered-organization/registered-organization-details/registered-organization-details.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+
 
 const routes: Routes = [
   { path:'',  redirectTo:'auth/login', pathMatch : 'full' },
+  {path: 'Dashboard', component: DashboardComponent},
   {
     path: 'auth',
     component: AuthComponent,

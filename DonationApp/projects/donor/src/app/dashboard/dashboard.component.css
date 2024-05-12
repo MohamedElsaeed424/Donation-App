@@ -1,72 +1,7 @@
-.btn-primary-rej{
-  color: #fff;
-  background-color: #ff0000;
-  border-color: #ff0000;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.btn-primary-acc{
-  color: #ffffff;
-  background-color: #2eff00;
-  border-color: #2eff00;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.btn-primary-details{
-  color: #ffffff;
-  background-color: #1977c9;
-  border-color: #000000;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.btn_get_two:hover {
-  background: transparent;
-  color: #5e2ced;
-}
-
-.btn_get:hover {
-  color: #fff;
-  background: #6754e2;
-  border-color: #6754e2;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
 a:hover, a:focus, .btn:hover, .btn:focus, button:hover, button:focus {
   text-decoration: none;
   outline: none;
 }
-
-
-.btn_get_two {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  background: #5e2ced;
-  border-color: #5e2ced;
-  color: #fff;
-}
-
-#kk {
-  margin-top: 20px;
-  margin-left: 220px;
-  list-style: none; /* Remove default list styles */
-  padding: 0; /* Remove default padding */
-}
-
-#kk li {
-  display: inline; /* Display list items inline */
-  margin-right: 20px;
-  font-size: 20px;
-}
-
-.btn_get_two:hover {
-  background: transparent;
-  color: #5e2ced;
-}
-
 
 h1, h2, h3, h4, h5, h6 {
   color: #4b505e;
@@ -275,7 +210,7 @@ body {
   margin: 10px;
   padding: 20px;
   border: 1px solid #ccc;
-  background-color: #1C9B8E;
+  background-color: #eeebeb;
   animation: slideIn 2s ease forwards;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -324,8 +259,10 @@ body {
 
 .card {
   margin-bottom: 1rem;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #AFF0F2;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease; /* Add transition for smooth effect */
 }
@@ -349,6 +286,16 @@ body {
 #container2 .card-body{
   text-align: center;
 
+}
+#profile-pic{
+  /*position: relative;*/
+  /*align-self: center;*/
+}
+.quick-container{
+  display: grid;
+  /*grid-template-columns: 1fr 1fr;*/
+  grid-template-columns: auto auto auto;
+  padding: 10px;
 }
 
 
