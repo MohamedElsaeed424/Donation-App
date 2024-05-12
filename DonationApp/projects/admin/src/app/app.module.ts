@@ -43,6 +43,7 @@ import { DonorsSubmissionDetailsComponent } from './Donor/donor-submissions/dono
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 // import { ChartsModule } from 'ng2-charts';
 import {BaseChartDirective} from "ng2-charts";
+import {ToastrService} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import {BaseChartDirective} from "ng2-charts";
     DonorsPendingRequestService,
     OrganizationSubmissionService,
     DonorSubmissionsService,
+    ToastrService
   ],
     exports: [
         LoginComponent,

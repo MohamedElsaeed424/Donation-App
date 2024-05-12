@@ -17,7 +17,8 @@ a:hover {
   background-color: #45a049;
 }
 .requested-item-container {
-  min-width: 400px;
+  width: 1000px;
+  height: 200px;
   padding: 20px;
   border-radius: 10px;
   transition: border-color 0.3s ease, transform 0.3s ease;
