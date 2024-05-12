@@ -1,9 +1,9 @@
 <!-- navbar.component.html -->
-<body style="--bs-secondary: #000000;--bs-secondary-rgb: 68,167,255;--bs-primary: #842020;--bs-primary-rgb: 132,32,32;">
-<nav style="--bs-info: #204b54;--bs-info-rgb: 32,75,84;" class="navbar navbar-expand-md bg-body navbar-dark">
+<body >
+<nav class="navbar navbar-expand-md bg-body navbar-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/requested-items">
-      <img src="../../../assets/DonationApplicationTransperant.png" width="70" height="70" alt="Logo">
+    <a routerLink="/requested-items">
+      <img src="../../../assets/DonationApplicationTransperant.png" width="70px" height="70px"  alt="Logo">
     </a>
     <ul class="collapse navbar-collapse">
       <ul class="navbar-nav">
@@ -11,7 +11,7 @@
           <a class="nav-link" routerLink="/requested-items" routerLinkActive="active"><strong>Requested Items</strong></a>
         </li>
         <li class="nav-item dropdown" [ngClass]="{ 'show': categoriesDropdownOpen }">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="toggleCategoriesDropdown()" style="margin-left: 25px;">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (click)="toggleCategoriesDropdown()" >
             Categories
             <i class="fas fa-caret-down ml-2"></i> <!-- Font Awesome caret down icon -->
           </a>
@@ -26,8 +26,7 @@
           </ul>
         </li>
         <li class="nav-item dropdown" [ngClass]="{ 'show': organizationsDropdownOpen }">
-          <button class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()"
-                  style="margin-right: 6px;margin-left: 20px;">Organizations</button>
+          <a class="dropdown-toggle nav-link" (click)="toggleOrganizationsDropdown()">Organizations</a>
           <div class="dropdown-menu" [ngClass]="{ 'show': organizationsDropdownOpen }">
             <button class="dropdown-item" (click)="LoadRegisteredOrganizations()">registered organizations</button>
           </div>
@@ -40,7 +39,7 @@
           <a class="nav-link" routerLink="/medical-cases" routerLinkActive="active"><strong>Medical Cases</strong></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/manage-account" routerLinkActive="active" style="margin-left: 10px;"><strong>Manage Account</strong></a>
+          <a class="nav-link" routerLink="/manage-account" routerLinkActive="active"><strong>Manage Account</strong></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="" style="color: #3a8c7d; margin-left: 600px;" (click)="logout()"><strong>Logout</strong></a>
