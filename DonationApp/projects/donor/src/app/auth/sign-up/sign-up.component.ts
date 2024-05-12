@@ -14,6 +14,10 @@ import {ToastrService} from "ngx-toastr";
 export class SignUpComponent implements OnInit {
   selectedRole: string;
   donorSignupForm: FormGroup;
+  userLat: number;
+  userLng: number;
+  userMarkerLat: number;
+  userMarkerLng: number;
 
   constructor(
     private fb: FormBuilder,
@@ -25,7 +29,10 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
     this.createDonorSignupForm();
   }
-
+  setUserMarker(): void {
+    this.userMarkerLat = this.userLat; // Set marker latitude based on user input
+    this.userMarkerLng = this.userLng; // Set marker longitude based on user input
+  }
   createDonorSignupForm(): void {
     this.donorSignupForm = this.fb.group({
       firstName: ['', Validators.required],

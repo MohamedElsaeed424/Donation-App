@@ -11,7 +11,6 @@ import { DoctorSignupComponent } from './auth/sign-up/doctor-signup/doctor-signu
 import { TeacherSignupComponent } from './auth/sign-up/teacher-signup/teacher-signup.component';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { GoogleMapComponent } from './shared/google-map/google-map.component';
 import {GoogleMapsModule} from "@angular/google-maps";
 import {NgOptimizedImage} from "@angular/common";
 import { FileUploadComponent } from './shared/file-upload/file-upload.component';
@@ -114,7 +113,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     DoctorSignupComponent,
     TeacherSignupComponent,
-    GoogleMapComponent,
     FileUploadComponent,
     NavbarComponent,
     RequestedItemsComponent,
