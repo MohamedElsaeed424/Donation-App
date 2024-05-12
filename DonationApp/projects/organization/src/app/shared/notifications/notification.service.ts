@@ -51,7 +51,7 @@ export class NotificationService {
 
   addRandomNotificationEveryMinute(): void {
     // Use interval to trigger adding a notification every minute
-    interval(20000) // 60000 milliseconds = 1 minute
+    interval(10000) // 60000 milliseconds = 1 minute
       .subscribe(() => {
         // Create a random notification
         const randomNotification = this.generateRandomNotification();
