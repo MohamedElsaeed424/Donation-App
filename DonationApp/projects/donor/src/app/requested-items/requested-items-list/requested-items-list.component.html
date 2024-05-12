@@ -17,7 +17,7 @@
         <div class="requested-items-grid">
           <div class="row">
             <ng-container *ngFor="let requestedItem of requestedItems | categoryFilter: searchQuery; let i = index">
-              <div class="col-lg-4 mb-3"> <!-- Three items per row with margin bottom -->
+              <div class="col-lg-4 mb-3"style="transition: all 0.3s ease;"> <!-- Three items per row with margin bottom -->
                 <app-requested-item
                   [currentRequestedItem]="requestedItem"
                   [currentRequestedItemId]="requestedItem.id"
