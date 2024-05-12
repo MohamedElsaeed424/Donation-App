@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
     const isAuthenticated = this.authService.login(username,password);
     if (isAuthenticated) {
       this.authService.currentUser = this.donorService.getDonorById(username);
-      this.redirectTo('/requested-items') ;
+      this.redirectTo('/Dashboard') ;
     } else {
       this.isValid = false ;
       this.redirectTo('/login') ;
