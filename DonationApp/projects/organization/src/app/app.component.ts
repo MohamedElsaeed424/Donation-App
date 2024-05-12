@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "./auth/auth.service";
-import {NotificationService} from "../../../donor/src/app/shared/notifications/notification.service";
+import {NotificationService} from "./shared/notifications/notification.service";
 import {Subscription} from "rxjs";
 
 @Component({

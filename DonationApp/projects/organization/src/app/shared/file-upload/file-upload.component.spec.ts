@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GoogleMapComponent } from './google-map.component';
+import { FileUploadComponent } from './file-upload.component';
 
-describe('GoogleMapComponent', () => {
-  let component: GoogleMapComponent;
-  let fixture: ComponentFixture<GoogleMapComponent>;
+describe('FileUploadComponent', () => {
+  let component: FileUploadComponent;
+  let fixture: ComponentFixture<FileUploadComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [GoogleMapComponent]
+      declarations: [FileUploadComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(GoogleMapComponent);
+
+    fixture = TestBed.createComponent(FileUploadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,52 @@
+.fancy-login {
+  background: linear-gradient(145deg, #1c8674, #1c9b8e); /* Gradient between Dark Teal and Dark Cyan */
+  padding: 20px;
+  border-radius: 20px; /* Adjusted border radius */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.fancy-input {
+  background: #f0f0f0; /* Light Gray */
+  text-indent: 12px; /* Slightly increased */
+  border-radius: 12px; /* Reduced border radius */
+  border: none;
+  border-bottom: 2px solid transparent; /* Hide border bottom */
+  transition: all 0.3s ease;
+}
+
+.fancy-input:focus {
+  border-bottom: 2px solid #1c9b8e; /* Dark Cyan */
+}
+
+.fancy-button {
+  background: #1c9b8e; /* Dark Cyan */
+  border: none;
+  border-radius: 20px; /* Adjusted border radius */
+  padding: 14px 28px; /* Increased padding */
+  box-shadow: 0px 6px 10px rgba(28, 151, 138, 0.5); /* Soft shadow */
+  margin-top: 20px; /* Reduced margin */
+  color: white; /* Text color */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor */
+  transition: all 0.3s ease;
+}
+
+.fancy-button:hover {
+  background: #1c8674; /* Dark Teal */
+  transform: translateY(-3px);
+}
+
+.fancy-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.fancy-link a {
+  color: #0a3622; /* Dark Cyan */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.fancy-link a:hover {
+  color: #30d9c8; /* Bright Cyan */
+}

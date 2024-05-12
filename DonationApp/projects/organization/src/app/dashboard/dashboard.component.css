@@ -57,33 +57,28 @@ body {
     transform: translateY(0);
   }
 }
-/*#paper-airplane {*/
-/*  width: 50px;*/
-/*  height: 50px;*/
-/*  background-image: url('paper-airplane.png');*/
-/*  background-size: cover;*/
-/*  position: absolute;*/
-/*  top: 50%;*/
-/*  left: 0;*/
-/*  transition: transform 2s ease;*/
-/*  animation: fly 5s linear infinite;*/
-/*  visibility: hidden;*/
-/*}*/
+#airplane{
+  position: absolute;
+  top: 287px;
+  right: 320px;
+  width: 89px;
+  height: 50px;
+  background-image: url("/assets/airplane.png");
+  background-size: cover; /* Cover the entire container */
+  background-position: center;
+}
+.animate{
+  animation: animate 1.3s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(-130deg) translate(-120px);
+  }
+  50%{
+    transform: rotate(-170deg) translate(180px);
+  }
+  100% {
+    transform: rotate(-155deg) translate(800px);
+  }
+}
 
-/*@keyframes fly {*/
-/*  0% {*/
-/*    transform: translateX(0);*/
-/*    visibility: visible;*/
-/*  }*/
-/*  50% {*/
-/*    transform: translateX(50vw) translateY(-50%);*/
-/*  }*/
-/*  100% {*/
-/*    transform: translateX(100vw) translateY(0);*/
-/*    visibility: hidden;*/
-/*  }*/
-/*}*/
-
-/*#nav-item:hover #paper-airplane {*/
-/*  transform: scale(0);*/
-/*}*/

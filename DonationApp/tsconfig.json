@@ -2,7 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-  
     "outDir": "./dist/out-tsc",
     "strict": false,
     "noImplicitOverride": true,
@@ -11,6 +10,7 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "types": ["@angular/localize"],
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,

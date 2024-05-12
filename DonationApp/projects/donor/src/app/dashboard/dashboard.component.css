@@ -122,46 +122,8 @@ section h5 {
   color: white;
 }
 
-#uu {
-  background-color: #333;
-
-}
-
 .full-height {
   height: 100vh;
-}
-
-
-#container2 section header {
-  margin-left: -10px;
-}
-
-#container2 section {
-  max-height: 100px; /* Set a maximum height */
-  overflow-y: auto;
-  min-height: 200px;
-}
-
-#container2 section::-webkit-scrollbar {
-  width: 10px; /* Set width of the scrollbar */
-}
-
-/* Track */
-#container2 section::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Set background color of the scrollbar track */
-  background-color: white;;
-  border-radius: 30px;
-}
-
-/* Handle */
-#container2 section::-webkit-scrollbar-thumb {
-  background: #888; /* Set color of the scrollbar handle */
-  border-radius: 10px; /* Set rounded corners */
-}
-
-/* Handle on hover */
-#container2 section::-webkit-scrollbar-thumb:hover {
-  background: gray; /* Set color of the scrollbar handle on hover */
 }
 
 /* Body styles */
@@ -174,76 +136,47 @@ body {
   min-height: 970px;
 }
 
-#container2 {
-  min-width: 900px;
-  background-image: url('https://wallpapercave.com/wp/wp4103000.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: slideIn 2s ease forwards;
-  margin-top: 550px;
-
-}
-
-#container0 {
-  border-radius: 0.25rem;
-  padding: 1rem;
-  margin-top: 3rem;
-  text-align: center;
-  margin-bottom: -500px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .card-container {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
 }
 
-.card-container section {
-  flex: 1 0 calc(16.66% - 40px);
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: #eeebeb;
-  animation: slideIn 2s ease forwards;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 
-.card-container {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
 
 .card-container section {
   flex: 1 0 calc(16.66% - 40px);
   margin: 10px;
   padding: 20px;
   border: 1px solid #ccc;
-  background-color: #1C9B8E;
+  background-color: rgba(28, 155, 142, 0.62)  ;
   animation: slideIn 2s ease forwards;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
 }
 
-
-#container2 section {
-  background-color: #fff;
-  border-radius: 15px;
-  background-color: #1C9B8E;
-  animation: slideIn 2s ease forwards; /* Apply the animation */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 20px;
-  width: calc(33.33% - 40px);
+section.personal-info:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease;
 }
+section.right-container:hover{
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+/*section:hover{*/
+/*  transform: scale(1.05);*/
+/*  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);*/
+/*  background-color: #E0F8F9;*/
+/*}*/
 
+.right-container:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  background-color: #E0F8F9;
+}
 
 .card-container section h1 {
   text-align: center;
@@ -259,12 +192,16 @@ body {
 
 .card {
   margin-bottom: 1rem;
-  border-radius: 10px;
-  background-color: #AFF0F2;
+  background-color: inherit;
   padding: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 0;
+  text-align: center;
+  /*border: 1px solid rgba(0, 0, 0, 0.8);*/
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);*/
   transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+a{
+  text-decoration: none;
 }
 
 .card:hover {
@@ -283,19 +220,29 @@ body {
 /*  position: relative;*/
 /*  pos*/
 /*}*/
-#container2 .card-body{
-  text-align: center;
-
-}
 #profile-pic{
-  /*position: relative;*/
-  /*align-self: center;*/
+  display: inline-block;
+  max-width:230px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+  padding: 10px;
 }
 .quick-container{
   display: grid;
   /*grid-template-columns: 1fr 1fr;*/
   grid-template-columns: auto auto auto;
   padding: 10px;
+}
+#DName{
+  font-weight: bold;
+  font-size: xxx-large;
+}
+.li-info{
+  font-size: large;
+}
+.list-of-info{
+  list-style: none;
 }
 
 

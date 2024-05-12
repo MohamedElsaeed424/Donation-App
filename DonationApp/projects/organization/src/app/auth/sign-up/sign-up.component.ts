@@ -2,19 +2,25 @@ import {Component, Input, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {FileUploadService} from "../../shared/file-upload/file-upload.service";
+import {AuthService} from "../auth.service";
+import {Organization} from "../Organization.model";
+import {OrganizationRepresentitve} from "../OrganizationRepresentitve";
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent implements OnInit {
-  selectedRole: string;
   OrganizationSignupForm: FormGroup;
 
   constructor(private fb: FormBuilder,
               private route: ActivatedRoute,
               private router: Router ,
-              private toaster: ToastrService) { }
+              private toaster: ToastrService,
+              private fileUploadService :FileUploadService,
+              private authService: AuthService,) { }
 
   ngOnInit(): void {
     this.createOrganizaitonForm();
@@ -57,10 +63,35 @@ export class SignUpComponent implements OnInit {
     return this.OrganizationSignupForm.valid;
   }
 
+  getRegisteredOrganizations(){
+    const formValue = this.OrganizationSignupForm.value ;
+    return new Organization(
+      formValue.OrganizationName,
+      formValue.OrganizationType,
+      formValue.OrganizationAddress,
+      formValue.OrganizationArea,
+      formValue.OrganizationGovernment,
+      "",
+      new OrganizationRepresentitve(
+        formValue.firstName,
+        formValue.lastName,
+        formValue.gender,
+        formValue.email,
+        formValue.password,
+        formValue.contactNumber,
+      )
+    )
+  }
+
   submitOrgnanizationSignupInfo(): void {
+    if (this.fileUploadService.isUploaded){
     this.logOrganizationFormAttributes()
+      this.authService.addUser(this.getRegisteredOrganizations())
     this.toaster.success('Signed up successfully')
-    this.router.navigate(['../login'] , {relativeTo : this.route}) ;
+    this.router.navigate(['../login'] , {relativeTo : this.route}) ; }
+    else{
+      this.toaster.warning('file is not uploaded')
+    }
   }
 
 }

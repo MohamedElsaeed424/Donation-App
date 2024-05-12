@@ -1,7 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
 <div class="container">
   <div class="left-card">
-    <div class="card">
+    <div class="card" id="sched-setter">
       <div class="card-content">
+        <h2>Add Time Slot</h2>
         <label for="datepicker">Date</label>
         <input type="date" id="datepicker" class="input-field">
         <label for="start-time">Start Time</label>
@@ -13,18 +17,18 @@
     </div>
   </div>
   <div class="right-cards">
-    <!-- Placeholder for multiple cards on the right -->
-    <div class="card">
-      <div class="time-slot" *ngFor="let slot of timeSlots; let i = index">
+    <div class="card" *ngFor="let slot of timeSlots; let i = index">
+      <div class="time-slot">
         <div class="slot-details">
-          <p class="slot-date">Date: {{ slot.date }}</p>
-          <p class="slot-time">Start Time: {{ slot.startTime }}</p>
-          <p class="slot-time">End Time: {{ slot.endTime }}</p>
+          <p class="slot-date"><b>Date:</b> {{ slot.date }}</p>
+          <p class="slot-time"><b>Start:</b> {{ slot.startTime }}</p>
+          <p class="slot-time"><b>End:</b> {{ slot.endTime }}</p>
           <button class="remove-button" (click)="removeSlot(i)">Remove Slot</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-
+</body>
+</html>
 

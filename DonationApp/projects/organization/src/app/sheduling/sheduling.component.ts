@@ -30,8 +30,6 @@ export class ShedulingComponent implements OnInit{
     this.timeSlotsService.removeSlot(i)
   }
   AddSlot() {
-
-
     const dateInput = document.getElementById('datepicker') as HTMLInputElement;
     const startTimeInput = document.getElementById('start-time') as HTMLInputElement;
     const endTimeInput = document.getElementById('end-time') as HTMLInputElement;

@@ -15,6 +15,7 @@ export class EstimatedTimeComponent implements OnInit, OnDestroy {
   progressInterval: Subscription;
   deleted: boolean = false;
   currentUser = this.authService.currentUser;
+  audio = new Audio('../../assets/iphone_sound.mp3');
 
   constructor(
     private authService: AuthService,
@@ -44,6 +45,7 @@ export class EstimatedTimeComponent implements OnInit, OnDestroy {
         this.createNotification(); // Call function to create new notification
         this.notificationService.toggleNotifications(true);
         this.toastr.info('Delivery Arrived','Info');
+        this.audio.play();
       }
     });
   }

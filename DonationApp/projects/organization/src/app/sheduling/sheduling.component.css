@@ -7,10 +7,11 @@
 }
 
 .right-cards {
-  flex: 2;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  flex: 4;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust as needed */
+
 }
 
 .card-content {
@@ -22,7 +23,7 @@
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ddd;
-  border-radius: 3px;
+  border-radius: 5px; /* Updated for rounded corners */
 }
 
 .label {
@@ -32,11 +33,18 @@
 }
 
 .card {
-  background-color: #f2f2f2;
-  border-radius: 8px;
+  background-color: #fff; /* Set background to white */
+  border-radius: 8px; /* Updated for rounded corners */
   padding: 16px;
-  display: flex;
-  flex-wrap: wrap;
+  max-width: 250px;
+  max-height: 200px;
+  flex-grow: 1; /* Allow cards to fill the space */
+  margin-bottom: 16px;
+  animation: card-appear 0.5s ease-in-out forwards;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add subtle shadow for better visibility */
+}
+#sched-setter{
+  max-height: none;
 }
 
 .time-slot {
@@ -44,8 +52,8 @@
 }
 
 .slot-details {
-  background-color: #ffffff;
-  border-radius: 8px;
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 8px; /* Updated for rounded corners */
   padding: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -79,18 +87,5 @@
 .placeholder-button {
   background-color: green;
   color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-  width: 100%;
+  border-radius: 5px; /* Updated for rounded corners */
 }
-
-.placeholder-button:hover {
-  background-color: darkgreen;
-}
-
-

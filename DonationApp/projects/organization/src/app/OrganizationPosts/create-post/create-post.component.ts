@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../auth/auth.service";
 import {OrganizationSubmissionService} from "../OrganizationSubmission.service";
@@ -12,6 +12,7 @@ import {ToastrService} from "ngx-toastr";
 })
 export class CreatePostComponent implements OnInit{
   postForm:FormGroup
+  isAnimating: boolean = false;
   constructor(private authService:AuthService,
               private fb:FormBuilder,
               private OrganizationSubmissonService:OrganizationSubmissionService,
@@ -23,14 +24,30 @@ export class CreatePostComponent implements OnInit{
       details:['', Validators.required]
     })
   }
+  @Output() animationTriggered: EventEmitter<any> = new EventEmitter();
 
+  triggerAnimation() {
+    if(this.postForm.valid){
+      this.isAnimating = true;
+      if (this.isAnimating) {
+        // Reset animation when it ends
+        setTimeout(() => this.isAnimating = false, 1300);
+      }
+      this.animationTriggered.emit();
+    }
+
+  }
 
   submitForm (){
     const OrganizationSubmission= new OrganizationSubmissions(
       this.authService.currentOrganization,
       this.postForm.get('category').value,
       this.postForm.get('details').value) ;
-    this.toaster.success('post added successfully')
-    this.OrganizationSubmissonService.addPost(OrganizationSubmission)
+    if(this.postForm.valid){
+      this.OrganizationSubmissonService.addPost(OrganizationSubmission) ;
+      this.toaster.success('Post submitted successfully' ,"Success")
+    }else{
+      this.toaster.error('Please fill all the fields' ,"Error")
+    }
   }
 }

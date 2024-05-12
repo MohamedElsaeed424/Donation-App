@@ -1,7 +1,7 @@
 // notifications.service.ts
 
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import {BehaviorSubject, interval} from 'rxjs';
 import { Notificationn } from './notification.model';
 
 @Injectable({
@@ -24,7 +24,8 @@ export class NotificationService {
   private showNotificationsSource = new BehaviorSubject<boolean>(false);
   public notificationsSubject = new BehaviorSubject<Notificationn[]>(this.notifications);
   showNotifications$ = this.showNotificationsSource.asObservable();
-  constructor() { }
+  constructor() {
+  }
 
   getNotifications(): Notificationn[] {
     return this.notifications ;
@@ -46,4 +47,5 @@ export class NotificationService {
     this.notifications = [];
     this.notificationsSubject.next([]);
   }
+
 }
