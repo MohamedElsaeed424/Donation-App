@@ -12,21 +12,22 @@
       </div>
     </div>
     <div class="row text-center requested-items-grid">
-      <div class="col-lg-10">
+      <div class="col-lg-10 offset-lg-1"> <!-- Center content with offset -->
         <div class="requested-items-grid">
           <div class="row">
             <ng-container *ngFor="let requestedItem of requestedItems | categoryFilter: searchQuery; let i = index">
               <div class="col-lg-4 mb-3"> <!-- Three items per row with margin bottom -->
                 <app-requested-item
-                    [currentRequestedItem]="requestedItem"
-                    [currentRequestedItemId]="requestedItem.id"
-                    style="width: 100%;"
+                  [currentRequestedItem]="requestedItem"
+                  [currentRequestedItemId]="requestedItem.id"
+                  style="width: 100%;"
                 ></app-requested-item>
-            </div>
+              </div>
             </ng-container>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </div>
