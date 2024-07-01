@@ -64,7 +64,7 @@ const routes: Routes = [
     children:[
       { path: '', component: TeachingPostsListComponent,canActivate:[AuthGuard] },
       { path: 'teaching-post-details/:id', component: TeachingPostDetailsComponent,canActivate:[AuthGuard] },
-    ]
+    ] 
   },
   {
     path: 'medical-cases',
