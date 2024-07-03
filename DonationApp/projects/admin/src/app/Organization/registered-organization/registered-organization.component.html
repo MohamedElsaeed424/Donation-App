@@ -30,7 +30,7 @@
   <!-- Organizations list -->
   <div class="row">
     <div class="col-md-4"
-         *ngFor="let organization of Organizations |
+         *ngFor="let organization of Organizations.slice(0, Organizations.length) |
          organizationFilterPipe: searchTerm:area:type:government; let i = index">
       <div class="card mb-3">
         <div class="card-body">

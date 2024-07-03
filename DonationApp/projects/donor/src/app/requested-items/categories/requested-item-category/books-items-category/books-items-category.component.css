@@ -1,8 +1,8 @@
 .requested-items-grid {
     animation: slideIn 2s ease forwards;
-  
+
   }
-  
+
   @keyframes slideIn {
     0% {
       opacity: 0;
@@ -13,3 +13,16 @@
       transform: translateY(0);
     }
   }
+.card {
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  background-color: #ececec;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+
+.card:hover {
+  transform: scale(1.05); /* Increase the size of the card on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Add a larger shadow on hover */
+  background-color: #E0F8F9; /* Change the background color on hover */
+}
